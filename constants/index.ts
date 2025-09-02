@@ -29,6 +29,13 @@ export const PROJECTS = [
     image: "/projects/project-3.png",
     link: "https://github.com/subrat243",
   },
+  {
+    title: "Dynamic Packet Generation & Analysis",
+    description:
+      "Custom packet crafting, deep packet inspection, and vulnerability analysis pipelines to identify network misconfigurations and weak points.",
+    image: "/projects/project-3.png",
+    link: "https://github.com/subrat243",
+  },
 ] as const;
 
 export const FOOTER_DATA = [
@@ -44,7 +51,7 @@ export const FOOTER_DATA = [
       {
         name: "X",
         icon: RxTwitterLogo,
-        link: "https://x.com/subrat243",
+        link: "https://x.com/0xSubrat",
       },
       {
         name: "GitHub",

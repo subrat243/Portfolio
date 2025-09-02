@@ -41,13 +41,26 @@ export const HeroContent = () => {
 
         <motion.p
           variants={slideInFromLeft(0.8)}
-          className="text-lg text-gray-400 my-5 max-w-[600px]"
+          className="text-lg text-gray-400 my-1 max-w-[600px]"
         >
-          I&apos;m a Cybersecurity student specializing in network security, threat
-          detection, and ethical hacking. Explore my work and experience.
+          I&apos;m a Cybersecurity student and Cybersecurity enthusiast. I specialize in Penetration testing, Network security, and WebApp security. 
         </motion.p>
 
-        {/* Learn more button removed */}
+        <motion.p
+          variants={slideInFromLeft(0.8)}
+          className="text-lg text-gray-400 my-3 max-w-[600px]"
+        >
+          With hands-on experience in tools like Nmap, Wireshark, Metasploit, Burp Suite, and knowledge of network protocols and frameworks, I’m passionate about ethical hacking, digital forensics, and threat detection.
+        </motion.p>
+
+        <motion.p
+          variants={slideInFromLeft(0.8)}
+          className="text-lg text-gray-400 my-1 max-w-[600px]"
+        >
+          My goal is to keep growing as a learner in cybersecurity, explore ethical hacking through practical projects, and share my journey while contributing to a safer digital world.
+        </motion.p>
+
+
       </div>
 
       <motion.div
