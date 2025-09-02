@@ -6,13 +6,21 @@ import { Skills } from "@/components/main/skills";
 
 export default function Home() {
   return (
-    <main className="h-full w-full">
-      <div className="flex flex-col gap-20">
+    <main className="min-h-screen w-full relative">
+      <div className="flex flex-col">
         <Hero />
-        <About />
-        <Skills />
-        <Encryption />
-        <Projects />
+        <div className="py-10">
+          <About />
+        </div>
+        <div className="py-10">
+          <Skills />
+        </div>
+        <div className="py-10">
+          <Encryption />
+        </div>
+        <div className="py-10">
+          <Projects />
+        </div>
       </div>
     </main>
   );

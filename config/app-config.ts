@@ -45,6 +45,9 @@ export const APP_CONFIG = {
   // Assets Configuration
   assets: {
     images: {
+      logo: "/Cyber-Security.png",
+      profile: "/Cyber-Security.png",
+      hero: "/Cyber-Security.png",
       lockTop: "/lock-top.png",
       lockMain: "/lock-main.png",
       fallback: "/Cyber-Security.png",

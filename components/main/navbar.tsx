@@ -12,26 +12,30 @@ export const Navbar = () => {
   return (
     <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-50 px-10">
       {/* Navbar Container */}
-      <div className="w-full h-full flex items-center justify-between m-auto px-[10px] relative">
-        <div className="hidden md:block text-gray-300">Subrat Samantaray</div>
+      <div className="w-full h-full flex items-center justify-center m-auto px-[10px] relative">
+        {/* Brand Name - Left Side */}
+        <div className="absolute left-4 hidden md:block text-gray-300 font-semibold text-lg hover:text-white transition-colors duration-300">
+          Subrat Samantaray
+        </div>
 
-        {/* Web Navbar */}
-        <div className="hidden md:flex w-[500px] h-full flex-row items-center justify-center">
-          <div className="flex items-center justify-between w-full h-auto border-[rgba(145, 109, 255, 0.38)] bg-[rgb(3, 0, 20)] px-[20px] py-[10px] rounded-full text-gray-200">
+        {/* Web Navbar - Centered */}
+        <div className="hidden md:flex h-full flex-row items-center justify-center">
+          <nav className="flex items-center justify-center gap-6 lg:gap-8 h-auto border border-[rgba(145, 109, 255, 0.38)] bg-[rgb(3, 0, 20)] px-[25px] lg:px-[35px] py-[12px] rounded-full text-gray-200 backdrop-blur-sm shadow-lg hover:shadow-[rgba(112,66,248,0.25)] transition-all duration-300">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.title}
                 href={link.link}
-                className="cursor-pointer hover:text-[rgb(112,66,248)] transition"
+                className="cursor-pointer hover:text-[rgb(112,66,248)] transition-all duration-300 whitespace-nowrap text-sm lg:text-base font-medium relative group px-3 py-2 rounded-lg hover:bg-[rgba(112,66,248,0.1)]"
               >
                 {link.title}
+                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-cyan-500 group-hover:w-full group-hover:left-0 transition-all duration-300 rounded-full"></span>
               </Link>
             ))}
-          </div>
+          </nav>
         </div>
 
         {/* Download CV Button - Absolute Right Corner */}
-        <div className="hidden md:flex">
+        <div className="absolute right-4 hidden md:flex">
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -79,7 +83,7 @@ export const Navbar = () => {
         </div>
 
         {/* Mobile Layout - CV Button and Hamburger */}
-        <div className="md:hidden flex items-center gap-4">
+        <div className="absolute right-4 md:hidden flex items-center gap-4">
           {/* Mobile CV Button */}
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
@@ -101,26 +105,29 @@ export const Navbar = () => {
             ☰
           </button>
         </div>
+
+        {/* Mobile Brand Name - Centered */}
+        <div className="md:hidden text-gray-300 text-center font-semibold text-lg">
+          Subrat Samantaray
+        </div>
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute top-[65px] left-0 w-full bg-[#030014] p-5 flex flex-col items-center text-gray-300 md:hidden">
+        <div className="absolute top-[65px] left-0 w-full bg-[#030014]/95 backdrop-blur-md border-t border-[#2A0E61]/50 p-6 flex flex-col items-center text-gray-300 md:hidden shadow-2xl">
           {/* Links */}
-          <div className="flex flex-col items-center gap-4">
+          <nav className="flex flex-col items-center gap-5">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.title}
                 href={link.link}
-                className="cursor-pointer hover:text-[rgb(112,66,248)] transition text-center"
+                className="cursor-pointer hover:text-[rgb(112,66,248)] transition-all duration-300 text-center text-lg font-medium py-3 px-6 rounded-lg hover:bg-[#2A0E61]/30 hover:scale-105 w-full max-w-[200px]"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.title}
               </Link>
             ))}
-          </div>
-
-          <div className="flex justify-center gap-6 mt-6" />
+          </nav>
         </div>
       )}
     </div>

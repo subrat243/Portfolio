@@ -12,13 +12,19 @@ import {
 
 export const About = () => {
   return (
-    <section
+    <motion.section
       id="about"
-      className="flex flex-col items-center justify-center py-20 px-10"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      className="flex flex-col items-center justify-center py-20 px-10 relative z-10"
     >
       {/* Section Header */}
       <motion.div
         variants={slideInFromTop}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
         className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9] mb-10"
       >
         <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
@@ -29,6 +35,9 @@ export const About = () => {
         {/* Profile Card */}
         <motion.div
           variants={slideInFromLeft(0.5)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
           className="flex flex-col items-center"
         >
           <motion.div
@@ -106,6 +115,9 @@ export const About = () => {
         {/* About Content */}
         <motion.div
           variants={slideInFromRight(0.8)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
           className="flex flex-col gap-6 text-start lg:text-left max-w-2xl"
         >
           <motion.h2
@@ -188,6 +200,6 @@ export const About = () => {
           </motion.div>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
