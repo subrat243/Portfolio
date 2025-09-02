@@ -15,7 +15,7 @@ export const Encryption = () => {
         >
           Best Practices{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-            &
+            for
           </span>{" "}
           Security.
         </motion.div>
@@ -38,12 +38,11 @@ export const Encryption = () => {
             height={90}
             className="z-10"
           />
-          <div className="Welcome-box px-[15px] py-[4px] z-[20] border my-[20px] border-[#7042F88B] opacity-[0.9]">
-            <h1 className="Welcome-text text-[12px]">Encryption</h1>
+          <div className="Welcome-box px-[15px] py-[4px] z-[20] border my-[20px] border-[#7042F88B] opacity-[0.9] text-center">
+            <h1 className="Welcome-text text-[16px]">Security best practices focus on building strong defenses against cyber threats. <br />This includes using encryption to protect sensitive data, keeping software and systems updated,<br /> enforcing strong authentication, monitoring for unusual activity, and educating users about safe practices.<br /> By following these principles, systems remain resilient and trustworthy.</h1>
           </div>
         </div>
 
-        {/* Floating words removed */}
       </div>
 
       <div className="absolute z-[20] bottom-[10px] px-[5px]">
