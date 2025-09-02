@@ -73,7 +73,7 @@ export const HeroContent = () => {
           height={650}
           width={650}
           draggable={false}
-          className="select-none"
+          className="select-none opacity-50"
         />
       </motion.div>
     </motion.div>
