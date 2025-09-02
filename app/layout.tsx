@@ -6,6 +6,7 @@ import { Footer } from "@/components/main/footer";
 import { Navbar } from "@/components/main/navbar";
 import { StarsCanvas } from "@/components/main/star-background";
 import { FloatingSocial } from "@/components/main/floating-social";
+import ErrorBoundary from "@/components/error-boundary";
 import { siteConfig } from "@/config";
 import { cn } from "@/lib/utils";
 
@@ -28,11 +29,13 @@ export default function RootLayout({ children }: PropsWithChildren) {
           inter.className,
         )}
       >
-        <StarsCanvas />
-        <Navbar />
-        <FloatingSocial />
-        {children}
-        <Footer />
+        <ErrorBoundary>
+          <StarsCanvas />
+          <Navbar />
+          <FloatingSocial />
+          {children}
+          <Footer />
+        </ErrorBoundary>
       </body>
     </html>
   );

@@ -21,7 +21,7 @@ export const Navbar = () => {
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.title}
-                href={link.link.startsWith("#") ? `/${link.link}` : link.link}
+                href={link.link}
                 className="cursor-pointer hover:text-[rgb(112,66,248)] transition"
               >
                 {link.title}
@@ -111,7 +111,7 @@ export const Navbar = () => {
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.title}
-                href={link.link.startsWith("#") ? `/${link.link}` : link.link}
+                href={link.link}
                 className="cursor-pointer hover:text-[rgb(112,66,248)] transition text-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
