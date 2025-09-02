@@ -64,9 +64,6 @@ export const SKILLS_CATEGORIES = APP_CONFIG.skills.categories;
 
 // Asset URLs from centralized configuration
 export const ASSET_URLS = {
-  HERO_IMAGE: APP_CONFIG.assets.images.hero,
-  PROFILE_IMAGE: APP_CONFIG.assets.images.profile,
-  LOGO_IMAGE: APP_CONFIG.assets.images.logo,
   LOCK_TOP: APP_CONFIG.assets.images.lockTop,
   LOCK_MAIN: APP_CONFIG.assets.images.lockMain,
   HERO_VIDEO: APP_CONFIG.assets.videos.hero,
