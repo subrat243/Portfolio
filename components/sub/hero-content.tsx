@@ -23,7 +23,7 @@ export const HeroContent = () => {
           className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]]"
         >
           <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
-          <h1 className="Welcome-text text-[13px]">My Portfolio</h1>
+          <h1 className="Welcome-text text-[13px]">Welcome</h1>
         </motion.div>
 
         <motion.div
@@ -53,12 +53,12 @@ export const HeroContent = () => {
         className="w-full h-full flex justify-center items-center"
       >
         <Image
-          src="/Cyber-Security.png"
+          src="/sticker.png"
           alt="work icons"
-          height={650}
-          width={650}
+          height={250}
+          width={250}
           draggable={false}
-          className="select-none opacity-50"
+          className="select-none opacity-100"
         />
       </motion.div>
     </motion.div>

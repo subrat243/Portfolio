@@ -88,3 +88,12 @@ export const NAV_LINKS = [
     link: "#projects",
   },
 ] as const;
+
+// CV Download Link
+// To update this link:
+// 1. Upload your CV to Google Drive
+// 2. Right-click on the CV file → Share → Change to "Anyone with the link can view"
+// 3. Copy the sharing link and replace the URL below
+// 4. For direct download, replace "/view?usp=sharing" with "/export?format=pdf&download=1"
+export const CV_DOWNLOAD_URL =
+  "https://drive.google.com/file/d/your-cv-file-id/view?usp=sharing";
