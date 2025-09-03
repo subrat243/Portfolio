@@ -49,7 +49,7 @@ export const FloatingSocial = () => {
   ];
 
   return (
-    <div className="fixed right-6 top-1/2 -translate-y-1/2 z-50">
+    <div className="fixed right-6 top-1/2 -translate-y-1/2 z-[50]">
       <div className="flex flex-col items-center">
         {/* Toggle Button */}
         <motion.button
@@ -113,9 +113,7 @@ export const FloatingSocial = () => {
                       whileHover={{ rotate: [0, -10, 10, 0] }}
                       transition={{ duration: 0.5 }}
                     >
-                      <social.icon
-                        className="text-gray-300 text-lg group-hover:text-white transition-colors duration-200"
-                      />
+                      <social.icon className="text-gray-300 text-lg group-hover:text-white transition-colors duration-200" />
                     </motion.div>
 
                     {/* Tooltip */}
@@ -174,7 +172,7 @@ export const FloatingSocial = () => {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full blur-xl -z-10"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full blur-xl -z-[5]"
       />
     </div>
   );

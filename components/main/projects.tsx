@@ -8,13 +8,12 @@ export const Projects = () => {
   return (
     <section
       id="projects"
-      className="flex flex-col items-center justify-center py-20 min-h-screen bg-[#030014] relative overflow-x-hidden"
-      style={{ zIndex: 10 }}
+      className="flex flex-col items-center justify-center py-20 min-h-screen bg-transparent relative overflow-x-hidden z-[10]"
     >
       {/* Background overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/5 to-transparent z-0 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/5 to-transparent z-[0] pointer-events-none" />
 
-      <div className="relative z-10 w-full max-w-7xl">
+      <div className="relative z-[5] w-full max-w-7xl">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
@@ -44,8 +43,8 @@ export const Projects = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 px-8 relative z-20"
-          style={{ zIndex: 20, pointerEvents: "auto" }}
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 px-8 relative z-[15]"
+          style={{ pointerEvents: "auto" }}
         >
           {PROJECTS.map((project, index) => (
             <motion.div
@@ -90,9 +89,9 @@ export const Projects = () => {
             href="https://github.com/subrat243"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-medium rounded-lg hover:from-purple-600 hover:to-cyan-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 cursor-pointer z-[40]"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-medium rounded-lg hover:from-purple-600 hover:to-cyan-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 cursor-pointer relative"
             tabIndex={0}
-            style={{ pointerEvents: "auto", zIndex: 40, position: "relative" }}
+            style={{ pointerEvents: "auto" }}
           >
             View More on GitHub
           </a>

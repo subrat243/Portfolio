@@ -9,18 +9,10 @@ export default function Home() {
     <main className="min-h-screen w-full relative">
       <div className="flex flex-col">
         <Hero />
-        <div className="py-10">
-          <About />
-        </div>
-        <div className="py-10">
-          <Skills />
-        </div>
-        <div className="py-10">
-          <Encryption />
-        </div>
-        <div className="py-10">
-          <Projects />
-        </div>
+        <About />
+        <Skills />
+        <Encryption />
+        <Projects />
       </div>
     </main>
   );

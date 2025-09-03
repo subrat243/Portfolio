@@ -12,7 +12,7 @@ export const Encryption = () => {
       className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#030014]"
     >
       {/* Video in front */}
-      <div className="absolute inset-0 z-20 pointer-events-none">
+      <div className="absolute inset-0 z-[5] pointer-events-none">
         <video
           loop
           muted
@@ -25,10 +25,10 @@ export const Encryption = () => {
         </video>
       </div>
       {/* Overlay above video, below content */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#030014]/70 via-transparent to-[#030014]/70 z-30 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#030014]/70 via-transparent to-[#030014]/70 z-[8] pointer-events-none" />
 
       {/* Content Container */}
-      <div className="relative z-40 flex flex-col items-center justify-center max-w-6xl mx-auto px-8">
+      <div className="relative z-[15] flex flex-col items-center justify-center max-w-6xl mx-auto px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
@@ -67,7 +67,7 @@ export const Encryption = () => {
               alt="Lock main"
               width={90}
               height={90}
-              className="z-10"
+              className="relative"
             />
           </div>
 

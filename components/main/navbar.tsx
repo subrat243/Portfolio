@@ -10,7 +10,7 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-50 px-10">
+    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-[60] px-10">
       {/* Navbar Container */}
       <div className="w-full h-full flex items-center justify-center m-auto px-[10px] relative">
         {/* Brand Name - Left Side */}
@@ -63,11 +63,11 @@ export const Navbar = () => {
               <motion.div
                 whileHover={{ rotate: [0, -10, 10, 0] }}
                 transition={{ duration: 0.5 }}
-                className="relative z-10"
+                className="relative"
               >
                 <ArrowDownTrayIcon className="w-4 h-4" />
               </motion.div>
-              <span className="relative z-10">Download CV</span>
+              <span className="relative">Download CV</span>
             </Link>
 
             {/* Tooltip */}

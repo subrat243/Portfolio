@@ -7,7 +7,7 @@ import { FOOTER_DATA } from "@/constants";
 
 export const Footer = () => {
   return (
-    <footer className="w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px] relative z-40">
+    <footer className="w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px] relative z-[20]">
       <div className="w-full flex flex-col items-center justify-center m-auto">
         <div className="w-full h-full flex flex-col items-center justify-center gap-8">
           {/* Show both Social Media and Contact Me sections horizontally */}
@@ -55,7 +55,7 @@ export const Footer = () => {
                       <motion.div
                         whileHover={{ rotate: [0, -10, 10, 0] }}
                         transition={{ duration: 0.5 }}
-                        className="relative z-10"
+                        className="relative"
                       >
                         {Icon && (
                           <Icon className="text-xl text-gray-300 group-hover:text-white transition-colors duration-200" />
@@ -63,7 +63,7 @@ export const Footer = () => {
                       </motion.div>
 
                       {/* Text with gradient on hover */}
-                      <span className="text-[12px] md:text-[14px] ml-[6px] md:ml-[8px] relative z-10 text-gray-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-cyan-400 transition-all duration-200 font-medium">
+                      <span className="text-[12px] md:text-[14px] ml-[6px] md:ml-[8px] relative text-gray-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-cyan-400 transition-all duration-200 font-medium">
                         {name}
                       </span>
 

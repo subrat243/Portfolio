@@ -7,10 +7,10 @@ export const Skills = () => {
   return (
     <section
       id="skills"
-      className="flex flex-col items-center justify-center gap-3 min-h-screen relative overflow-hidden py-20 bg-[#030014]"
+      className="flex flex-col items-center justify-center gap-3 min-h-screen relative overflow-hidden py-20 bg-transparent"
     >
       {/* Video in front */}
-      <div className="absolute inset-0 z-20 pointer-events-none">
+      <div className="absolute inset-0 z-[5] pointer-events-none">
         <video
           className="w-full h-full object-cover opacity-80"
           preload="metadata"
@@ -23,8 +23,8 @@ export const Skills = () => {
         </video>
       </div>
       {/* Overlay above video, below content */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#030014]/70 via-transparent to-[#030014]/70 z-30 pointer-events-none" />
-      <div className="relative z-40 w-full max-w-7xl">
+      <div className="absolute inset-0 bg-gradient-to-b from-[#030014]/70 via-transparent to-[#030014]/70 z-[8] pointer-events-none" />
+      <div className="relative z-[15] w-full max-w-7xl">
         <SkillText />
 
         {/* Category Cards */}
