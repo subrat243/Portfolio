@@ -18,9 +18,9 @@ export const Navbar = () => {
           Subrat Samantaray
         </div>
 
-        {/* Web Navbar - Centered */}
-        <div className="hidden md:flex h-full flex-row items-center justify-center">
-          <nav className="flex items-center justify-center gap-6 lg:gap-8 h-auto bg-[rgb(3,0,20)] px-[25px] lg:px-[35px] py-[12px] rounded-full text-gray-200 backdrop-blur-sm opacity-50 shadow-lg hover:shadow-[rgba(112,66,248,0.25)] transition-all duration-300">
+        {/* Web Navbar */}
+        <div className="hidden md:flex h-full flex-row items-center">
+          <nav className="flex items-center gap-6 lg:gap-8 h-auto text-gray-200 transition-all duration-300">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.title}
