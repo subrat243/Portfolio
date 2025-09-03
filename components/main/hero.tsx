@@ -14,7 +14,7 @@ export const Hero = () => {
         loop
         preload="metadata"
         playsInline
-        className="rotate-180 absolute top-[-340px] left-0 w-full h-full object-cover z-30 blur-lg opacity-80 pointer-events-none"
+        className="rotate-180 absolute top-[-400px] left-0 w-full h-full object-cover z-30 blur-md opacity-100 pointer-events-none"
       >
         <source src="/videos/blackhole.webm" type="video/webm" />
       </video>

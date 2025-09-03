@@ -7,7 +7,7 @@ import { FOOTER_DATA } from "@/constants";
 
 export const Footer = () => {
   return (
-    <div className="w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px]">
+    <footer className="w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px] relative z-40">
       <div className="w-full flex flex-col items-center justify-center m-auto">
         <div className="w-full h-full flex flex-col items-center justify-center gap-8">
           {/* Show both Social Media and Contact Me sections horizontally */}
@@ -42,7 +42,7 @@ export const Footer = () => {
                     }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <Link
+                    <a
                       href={link}
                       target="_blank"
                       rel="noreferrer noopener"
@@ -74,7 +74,7 @@ export const Footer = () => {
                         transition={{ duration: 0.3 }}
                         className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 rounded-full"
                       />
-                    </Link>
+                    </a>
                   </motion.div>
                 ))}
               </div>
@@ -104,10 +104,10 @@ export const Footer = () => {
             }}
             className="mt-2 text-xs text-purple-400"
           >
-            Built with ❤️ and curiousity
+            Built with fun and Curiosity
           </motion.div>
         </motion.div>
       </div>
-    </div>
+    </footer>
   );
 };

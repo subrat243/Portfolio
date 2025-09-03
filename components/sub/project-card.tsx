@@ -19,16 +19,17 @@ export const ProjectCard = ({
   link,
 }: ProjectCardProps) => {
   return (
-    <motion.div
-      whileHover={{ y: -5 }}
-      transition={{ duration: 0.3 }}
-      className="group relative overflow-hidden rounded-xl shadow-xl border border-[#2A0E61] bg-gradient-to-br from-[#0b0b0b]/90 to-[#1a1a2e]/70 backdrop-blur-sm hover:border-purple-500/50 transition-all duration-300"
+    <Link
+      href={link}
+      target="_blank"
+      rel="noreferrer noopener"
+      className="block group"
+      tabIndex={0}
     >
-      <Link
-        href={link}
-        target="_blank"
-        rel="noreferrer noopener"
-        className="block"
+      <motion.div
+        whileHover={{ y: -5 }}
+        transition={{ duration: 0.3 }}
+        className="relative overflow-hidden rounded-xl shadow-xl border border-[#2A0E61] bg-gradient-to-br from-[#0b0b0b]/90 to-[#1a1a2e]/70 backdrop-blur-sm hover:border-purple-500/50 transition-all duration-300"
       >
         {/* Image Container */}
         <div className="relative overflow-hidden aspect-video">
@@ -61,7 +62,7 @@ export const ProjectCard = ({
           {/* Bottom Gradient Line */}
           <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
         </div>
-      </Link>
-    </motion.div>
+      </motion.div>
+    </Link>
   );
 };

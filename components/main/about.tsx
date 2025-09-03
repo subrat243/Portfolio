@@ -63,7 +63,7 @@ export const About = () => {
                   className="w-40 h-40 rounded-full border-4 border-purple-500 overflow-hidden mb-6 shadow-lg"
                 >
                   <Image
-                    src="/Cyber-Security.png"
+                    src="/luffy.jpeg"
                     alt="Subrat Samantaray"
                     width={160}
                     height={160}
@@ -78,7 +78,7 @@ export const About = () => {
                   Cybersecurity Student
                 </p>
                 <p className="text-gray-300 text-center text-sm mt-2">
-                  Ethical Hacker & Security Enthusiast
+                  Ethical Hacker & Security Researcher
                 </p>
               </div>
 

@@ -56,8 +56,8 @@ export const HeroContent = () => {
           <Image
             src="/spiderman.png"
             alt="Cybersecurity illustration"
-            height={500}
-            width={500}
+            height={400}
+            width={400}
             draggable={false}
             className="select-none opacity-80 hover:opacity-100 transition-opacity duration-300"
             priority
