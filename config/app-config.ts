@@ -74,7 +74,7 @@ export const APP_CONFIG = {
       id: "autovuln-scanner",
       title: "Automated Vulnerability Detection Tool",
       description:
-        "Regex-based threat detection using Ahmia.fi and Tor exit node rotation; improved search coverage by 40% and anonymity via automated IP rotation.",
+        "Python-based tool that automates network vulnerability scanning using Nmap. It scans targets (IP or domain) for open ports, detects services, and checks for known vulnerabilities.",
       image: "/projects/Attack.jpg",
       link: "https://github.com/subrat243",
       technologies: ["Python", "Tor", "Regex", "Security"],
@@ -84,17 +84,17 @@ export const APP_CONFIG = {
       id: "deauth-dos-tool",
       title: "DeAuth - The Network Stress Testing Tool",
       description:
-        "Traffic and packet generation using Scapy for performance and resilience testing; enhanced monitoring and 30% anomaly detection improvement.",
+        "A lightweight yet powerful network stress testing tool built with Scapy, designed to simulate diverse traffic patterns and protocols for both quick assessments and detailed network analysis.",
       image: "/projects/Exploitation.svg",
       link: "https://github.com/subrat243",
       technologies: ["Python", "Scapy", "Network Security"],
       featured: true,
     },
     {
-      id: "packet-analysis",
-      title: "Dynamic Packet Generation & Analysis",
+      id: "autopwn",
+      title: "AutoPwn - Penetration testing toolkit",
       description:
-        "Custom packet crafting, deep packet inspection, and vulnerability analysis pipelines to identify network misconfigurations and weak points.",
+        "A powerful and automated penetration testing toolkit designed to streamline reconnaissance, scanning, and exploitation. It integrates popular tools and techniques into a single Python script.",
       image: "/projects/Network-monitoring.svg",
       link: "https://github.com/subrat243",
       technologies: ["Network Analysis", "Security", "Python"],
