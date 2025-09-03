@@ -49,7 +49,7 @@ navigation: {
 
 **Solution:**
 - All image paths are centralized in `config/app-config.ts`
-- Automatic fallback to `/spiderman.png` for broken images
+- Automatic fallback to `/Cyber-Security.png` for broken images
 - Validation functions prevent invalid image paths
 
 **To Add New Images:**

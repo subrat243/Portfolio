@@ -37,7 +37,7 @@ export const validateNavLink = (link: string): string => {
 // Image error prevention
 export const validateImageSrc = (
   src: string,
-  fallback: string = "/spiderman.png",
+  fallback: string = "/Cyber-Security.png",
 ): string => {
   if (!src || src.trim() === "") {
     console.warn("Empty image src provided, using fallback:", fallback);

@@ -45,12 +45,12 @@ export const APP_CONFIG = {
   // Assets Configuration
   assets: {
     images: {
-      logo: "/spiderman.png",
-      profile: "/spiderman.png",
-      hero: "/spiderman.png",
+      logo: "/Cyber-Security.png",
+      profile: "/Cyber-Security.png",
+      hero: "/Cyber-Security.png",
       lockTop: "/lock-top.png",
       lockMain: "/lock-main.png",
-      fallback: "/spiderman.png",
+      fallback: "/Cyber-Security.png",
     },
     videos: {
       hero: "/videos/blackhole.webm",
@@ -72,17 +72,12 @@ export const APP_CONFIG = {
   projects: [
     {
       id: "deauth-dos-tool",
-      title: "DeAuth - The Network Stress Testing Tool",
+      title: "DeAuth - The Network Stree Teseting Tool",
       description:
-        "A WiFi deauthentication attack tool for network penetration testing. Performs stress testing on wireless networks to identify vulnerabilities and improve network security resilience.",
-      image: "/projects/DeAuth.jpeg",
+        "Regex-based threat detection using Ahmia.fi and Tor exit node rotation; improved search coverage by 40% and anonymity via automated IP rotation.",
+      image: "/public/projects/DeAuth.png",
       link: "https://github.com/subrat243",
-      technologies: [
-        "Python",
-        "WiFi Security",
-        "Penetration Testing",
-        "Network Analysis",
-      ],
+      technologies: ["Python", "Tor", "Regex", "Security"],
       featured: true,
     },
     {
@@ -90,7 +85,7 @@ export const APP_CONFIG = {
       title: "Network Stress Testing with IP Spoofing",
       description:
         "Traffic and packet generation using Scapy for performance and resilience testing; enhanced monitoring and 30% anomaly detection improvement.",
-      image: "/spiderman.png",
+      image: "/Cyber-Security.png",
       link: "https://github.com/subrat243",
       technologies: ["Python", "Scapy", "Network Security"],
       featured: true,
@@ -100,7 +95,7 @@ export const APP_CONFIG = {
       title: "Dynamic Packet Generation & Analysis",
       description:
         "Custom packet crafting, deep packet inspection, and vulnerability analysis pipelines to identify network misconfigurations and weak points.",
-      image: "/luffy.jpeg",
+      image: "/Cyber-Security.png",
       link: "https://github.com/subrat243",
       technologies: ["Network Analysis", "Security", "Python"],
       featured: true,
@@ -273,9 +268,9 @@ export const APP_CONFIG = {
   errorHandling: {
     logErrors: true,
     fallbackImages: {
-      profile: "/spiderman.png",
-      project: "/spiderman.png",
-      default: "/spiderman.png",
+      profile: "/Cyber-Security.png",
+      project: "/Cyber-Security.png",
+      default: "/Cyber-Security.png",
     },
     retryAttempts: 3,
     timeoutDuration: 10000,
