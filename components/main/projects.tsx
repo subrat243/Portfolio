@@ -8,12 +8,12 @@ export const Projects = () => {
   return (
     <section
       id="projects"
-      className="flex flex-col items-center justify-center py-20 min-h-screen bg-transparent relative overflow-x-hidden z-[10]"
+      className="flex flex-col items-center justify-center py-20 min-h-screen bg-transparent relative overflow-x-hidden z-[30]"
     >
       {/* Background overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/5 to-transparent z-[0] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/5 to-transparent z-[10] pointer-events-none" />
 
-      <div className="relative z-[5] w-full max-w-7xl">
+      <div className="relative z-[40] w-full max-w-7xl">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
@@ -43,7 +43,7 @@ export const Projects = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 px-8 relative z-[15]"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 px-8 relative z-[50]"
           style={{ pointerEvents: "auto" }}
         >
           {PROJECTS.map((project, index) => (
@@ -79,8 +79,7 @@ export const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center mt-16"
-          style={{ zIndex: 30 }}
+          className="text-center mt-16 z-[60] relative"
         >
           <p className="text-gray-400 mb-6">
             Interested in collaborating on cybersecurity projects?

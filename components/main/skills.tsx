@@ -7,7 +7,7 @@ export const Skills = () => {
   return (
     <section
       id="skills"
-      className="flex flex-col items-center justify-center gap-3 min-h-screen relative overflow-hidden py-20 bg-transparent"
+      className="flex flex-col items-center justify-center gap-3 min-h-screen relative overflow-hidden py-20 bg-transparent z-[30]"
     >
       {/* Video in front */}
       <div className="absolute inset-0 z-[5] pointer-events-none">
@@ -24,7 +24,7 @@ export const Skills = () => {
       </div>
       {/* Overlay above video, below content */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#030014]/70 via-transparent to-[#030014]/70 z-[8] pointer-events-none" />
-      <div className="relative z-[15] w-full max-w-7xl">
+      <div className="relative z-[40] w-full max-w-7xl">
         <SkillText />
 
         {/* Category Cards */}
@@ -44,7 +44,7 @@ export const Skills = () => {
                 scale: 1.05,
                 transition: { duration: 0.2 },
               }}
-              className="bg-gradient-to-br from-[#0b0b0b]/80 to-[#1a1a2e]/60 border border-[#2A0E61] rounded-2xl p-7 min-h-[240px] text-gray-200 shadow-xl backdrop-blur-sm hover:border-purple-500/50 transition-all duration-300"
+              className="bg-gradient-to-br from-[#0b0b0b]/80 to-[#1a1a2e]/60 border border-[#2A0E61] rounded-2xl p-7 min-h-[240px] text-gray-200 shadow-xl backdrop-blur-sm hover:border-purple-500/50 transition-all duration-300 z-[50]"
             >
               <h3 className="text-2xl font-bold mb-6 text-white bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
                 {cat.title}
@@ -58,7 +58,7 @@ export const Skills = () => {
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 + 0.3 }}
                     whileHover={{ scale: 1.1 }}
-                    className="text-sm px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-cyan-500/20 border border-[#2A0E61] hover:border-purple-400/50 transition-all duration-200 cursor-default"
+                    className="text-sm px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-cyan-500/20 border border-[#2A0E61] hover:border-purple-400/50 transition-all duration-200 cursor-default z-[60]"
                   >
                     {name}
                   </motion.span>

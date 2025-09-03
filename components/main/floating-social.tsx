@@ -54,18 +54,19 @@ export const FloatingSocial = () => {
         {/* Toggle Button */}
         <motion.button
           onClick={() => setIsExpanded(!isExpanded)}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
+          whileHover={{ scale: 1.08 }}
+          whileTap={{ scale: 0.96 }}
+          transition={{ type: "spring", stiffness: 350, damping: 20 }}
           className="w-14 h-14 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full flex items-center justify-center shadow-lg shadow-purple-500/25 hover:shadow-xl hover:shadow-purple-500/40 transition-all duration-300 mb-4"
         >
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait" initial={false}>
             {isExpanded ? (
               <motion.div
                 key="close"
                 initial={{ rotate: 180, opacity: 0 }}
                 animate={{ rotate: 0, opacity: 1 }}
                 exit={{ rotate: -180, opacity: 0 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.18 }}
               >
                 <MdClose className="text-white text-xl" />
               </motion.div>
@@ -75,7 +76,7 @@ export const FloatingSocial = () => {
                 initial={{ rotate: -180, opacity: 0 }}
                 animate={{ rotate: 0, opacity: 1 }}
                 exit={{ rotate: 180, opacity: 0 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.18 }}
               >
                 <MdShare className="text-white text-xl" />
               </motion.div>
@@ -87,20 +88,22 @@ export const FloatingSocial = () => {
         <AnimatePresence>
           {isExpanded && (
             <motion.div
-              initial={{ opacity: 0, y: -20, scale: 0.8 }}
+              initial={{ opacity: 0, y: -16, scale: 0.96 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -20, scale: 0.8 }}
-              transition={{ duration: 0.3 }}
+              exit={{ opacity: 0, y: -16, scale: 0.96 }}
+              transition={{ duration: 0.28, ease: "easeOut" }}
               className="flex flex-col gap-3"
+              layout
             >
               {socialLinks.map((social, index) => (
                 <motion.div
                   key={social.name}
-                  initial={{ opacity: 0, x: 20 }}
+                  initial={{ opacity: 0, x: 16 }}
                   animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 20 }}
-                  transition={{ delay: index * 0.1, duration: 0.2 }}
-                  whileHover={{ x: -5 }}
+                  exit={{ opacity: 0, x: 16 }}
+                  transition={{ delay: index * 0.07, duration: 0.18 }}
+                  whileHover={{ x: -3 }}
+                  layout
                 >
                   <Link
                     href={social.url}
@@ -111,15 +114,16 @@ export const FloatingSocial = () => {
                     {/* Icon */}
                     <motion.div
                       whileHover={{ rotate: [0, -10, 10, 0] }}
-                      transition={{ duration: 0.5 }}
+                      transition={{ duration: 0.35 }}
                     >
                       <social.icon className="text-gray-300 text-lg group-hover:text-white transition-colors duration-200" />
                     </motion.div>
 
                     {/* Tooltip */}
                     <motion.div
-                      initial={{ opacity: 0, x: 10, scale: 0.8 }}
+                      initial={{ opacity: 0, x: 10, scale: 0.92 }}
                       whileHover={{ opacity: 1, x: 0, scale: 1 }}
+                      transition={{ duration: 0.18 }}
                       className="absolute right-full mr-3 px-3 py-2 bg-black/90 text-white text-sm rounded-lg whitespace-nowrap pointer-events-none border border-gray-700"
                     >
                       {social.name}
@@ -127,19 +131,7 @@ export const FloatingSocial = () => {
                       <div className="absolute top-1/2 -right-1 -translate-y-1/2 w-2 h-2 bg-black/90 border-r border-b border-gray-700 rotate-45"></div>
                     </motion.div>
 
-                    {/* Pulse Effect */}
-                    <motion.div
-                      animate={{
-                        scale: [1, 1.2, 1],
-                        opacity: [0.5, 0, 0.5],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        delay: index * 0.2,
-                      }}
-                      className="absolute inset-0 rounded-full border-2 border-purple-400"
-                    />
+                    {/* Pulse Effect - Only on toggle button, not every social link */}
                   </Link>
                 </motion.div>
               ))}
@@ -152,9 +144,9 @@ export const FloatingSocial = () => {
           {isExpanded && (
             <motion.div
               initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "100px", opacity: 0.3 }}
+              animate={{ height: "100px", opacity: 0.22 }}
               exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.3, delay: 0.2 }}
+              transition={{ duration: 0.22, delay: 0.1 }}
               className="w-px bg-gradient-to-b from-purple-500 to-transparent mt-4"
             />
           )}
@@ -164,11 +156,11 @@ export const FloatingSocial = () => {
       {/* Background Glow */}
       <motion.div
         animate={{
-          scale: [1, 1.1, 1],
-          opacity: [0.1, 0.2, 0.1],
+          scale: [1, 1.08, 1],
+          opacity: [0.12, 0.18, 0.12],
         }}
         transition={{
-          duration: 3,
+          duration: 2.5,
           repeat: Infinity,
           ease: "easeInOut",
         }}

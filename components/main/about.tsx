@@ -17,7 +17,7 @@ export const About = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
-      className="flex flex-col items-center justify-center py-20 px-10 relative z-[10] bg-transparent"
+      className="flex flex-col items-center justify-center py-20 px-10 relative z-[30] bg-transparent"
     >
       {/* Section Header */}
       <motion.div
@@ -51,12 +51,12 @@ export const About = () => {
             }}
             className="relative group perspective-1000"
           >
-            <div className="relative w-80 h-96 bg-transparent rounded-2xl border border-[#2A0E61] overflow-hidden shadow-2xl">
+            <div className="relative w-80 h-96 bg-transparent rounded-2xl border border-[#2A0E61] overflow-hidden shadow-2xl z-[35]">
               {/* Card Background Effect */}
-              <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" />
+              <div className="absolute inset-0 bg-black/20 backdrop-blur-sm z-[36]" />
 
               {/* Profile Image */}
-              <div className="relative z-[5] flex flex-col items-center justify-center h-full p-6">
+              <div className="relative z-[40] flex flex-col items-center justify-center h-full p-6">
                 <motion.div
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
