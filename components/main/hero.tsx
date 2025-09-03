@@ -3,7 +3,10 @@ import { StarsCanvas } from "@/components/main/star-background";
 
 export const Hero = () => {
   return (
-    <div className="relative flex flex-col min-h-screen w-full overflow-hidden bg-transparent">
+    <div
+      id="home"
+      className="relative flex flex-col min-h-screen w-full overflow-hidden bg-transparent"
+    >
       {/* Stars Animation */}
       <div className="absolute inset-0 z-[10] pointer-events-none">
         <StarsCanvas />
