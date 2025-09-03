@@ -1,5 +1,6 @@
 "use client";
 import { SkillText } from "@/components/sub/skill-text";
+import { StarsCanvas } from "@/components/main/star-background";
 import { motion } from "framer-motion";
 import { SKILLS_CATEGORIES } from "@/constants";
 
@@ -9,10 +10,15 @@ export const Skills = () => {
       id="skills"
       className="flex flex-col items-center justify-center gap-3 min-h-screen relative overflow-hidden py-20 bg-transparent z-[30]"
     >
-      {/* Video in front */}
+      {/* Stars Animation above video */}
+      <div className="absolute inset-0 z-[7] pointer-events-none">
+        <StarsCanvas />
+      </div>
+
+      {/* Video below stars */}
       <div className="absolute inset-0 z-[5] pointer-events-none">
         <video
-          className="w-full h-full object-cover opacity-80"
+          className="w-full h-full object-cover opacity-90"
           preload="metadata"
           playsInline
           loop
@@ -22,8 +28,11 @@ export const Skills = () => {
           <source src="/videos/skills-bg.webm" type="video/webm" />
         </video>
       </div>
-      {/* Overlay above video, below content */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#030014]/70 via-transparent to-[#030014]/70 z-[8] pointer-events-none" />
+
+      {/* Top and bottom gradient overlays for seamless blending */}
+      <div className="absolute top-0 left-0 w-full h-16 z-[8] pointer-events-none bg-gradient-to-b from-[#030014] to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-16 z-[8] pointer-events-none bg-gradient-to-t from-[#030014] to-transparent" />
+
       <div className="relative z-[40] w-full max-w-7xl">
         <SkillText />
 
@@ -44,7 +53,7 @@ export const Skills = () => {
                 scale: 1.05,
                 transition: { duration: 0.2 },
               }}
-              className="bg-gradient-to-br from-[#0b0b0b]/80 to-[#1a1a2e]/60 border border-[#2A0E61] rounded-2xl p-7 min-h-[240px] text-gray-200 shadow-xl backdrop-blur-sm hover:border-purple-500/50 transition-all duration-300 z-[50]"
+              className="bg-gradient-to-br from-[#0b0b0b]/90 to-[#1a1a2e]/80 border border-[#2A0E61] rounded-2xl p-7 min-h-[240px] text-gray-200 shadow-xl backdrop-blur-md hover:border-purple-500/50 transition-all duration-300 z-[50]"
             >
               <h3 className="text-2xl font-bold mb-6 text-white bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
                 {cat.title}
