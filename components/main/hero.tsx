@@ -26,7 +26,7 @@ export const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-[20] flex-1 flex items-center justify-center">
+      <div className="relative z-[30] flex-1 flex items-center justify-center">
         <HeroContent />
       </div>
     </div>

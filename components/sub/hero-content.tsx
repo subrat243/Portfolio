@@ -50,7 +50,7 @@ export const HeroContent = () => {
 
       <motion.div
         variants={slideInFromRight(0.8)}
-        className="flex-1 w-full flex justify-center items-center"
+        className="flex-1 w-full flex justify-center items-center z-[20] relative"
       >
         <div className="relative">
           <Image

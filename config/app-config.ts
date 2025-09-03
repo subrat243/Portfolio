@@ -75,7 +75,7 @@ export const APP_CONFIG = {
       title: "DeAuth - The Network Stree Teseting Tool",
       description:
         "Regex-based threat detection using Ahmia.fi and Tor exit node rotation; improved search coverage by 40% and anonymity via automated IP rotation.",
-      image: "/public/projects/DeAuth.png",
+      image: "/projects/DeAuth.png",
       link: "https://github.com/subrat243",
       technologies: ["Python", "Tor", "Regex", "Security"],
       featured: true,
@@ -85,7 +85,7 @@ export const APP_CONFIG = {
       title: "Network Stress Testing with IP Spoofing",
       description:
         "Traffic and packet generation using Scapy for performance and resilience testing; enhanced monitoring and 30% anomaly detection improvement.",
-      image: "/Cyber-Security.png",
+      image: "/projects/DeAuth.png",
       link: "https://github.com/subrat243",
       technologies: ["Python", "Scapy", "Network Security"],
       featured: true,
@@ -95,7 +95,7 @@ export const APP_CONFIG = {
       title: "Dynamic Packet Generation & Analysis",
       description:
         "Custom packet crafting, deep packet inspection, and vulnerability analysis pipelines to identify network misconfigurations and weak points.",
-      image: "/Cyber-Security.png",
+      image: "/projects/DeAuth.png",
       link: "https://github.com/subrat243",
       technologies: ["Network Analysis", "Security", "Python"],
       featured: true,
@@ -260,7 +260,7 @@ export const APP_CONFIG = {
     contactForm: true,
     socialLinks: true,
     cvDownload: true,
-    floatingSocial: true,
+
     starBackground: true,
   },
 
