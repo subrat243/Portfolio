@@ -18,7 +18,7 @@ export const Skills = () => {
       {/* Video below stars */}
       <div className="absolute inset-0 z-[5] pointer-events-none">
         <video
-          className="w-full h-full object-cover opacity-90"
+          className="w-full h-full object-cover"
           preload="metadata"
           playsInline
           loop
