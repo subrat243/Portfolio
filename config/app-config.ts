@@ -45,12 +45,12 @@ export const APP_CONFIG = {
   // Assets Configuration
   assets: {
     images: {
-      logo: "/Cyber-Security.png",
-      profile: "/Cyber-Security.png",
-      hero: "/Cyber-Security.png",
+      logo: "/Luffy.jpeg",
+      profile: "/Luffy.jpeg",
+      hero: "/Luffy.jpeg",
       lockTop: "/lock-top.png",
       lockMain: "/lock-main.png",
-      fallback: "/Cyber-Security.png",
+      fallback: "/Luffy.jpeg",
     },
     videos: {
       hero: "/videos/blackhole.webm",
@@ -268,9 +268,9 @@ export const APP_CONFIG = {
   errorHandling: {
     logErrors: true,
     fallbackImages: {
-      profile: "/Cyber-Security.png",
-      project: "/Cyber-Security.png",
-      default: "/Cyber-Security.png",
+      profile: "/Luffy.jpeg",
+      project: "/Luffy.jpeg",
+      default: "/Luffy.jpeg",
     },
     retryAttempts: 3,
     timeoutDuration: 10000,
