@@ -4,19 +4,22 @@ import { SparklesIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+import {
+  slideInFromLeft,
+  slideInFromRight,
+  slideInFromTop,
+} from "@/lib/motion";
+
 export const HeroContent = () => {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
+      initial="hidden"
+      animate="visible"
       className="flex flex-col md:flex-row items-center justify-center px-8 md:px-20 py-20 w-full h-full"
     >
       <div className="flex-1 w-full flex flex-col gap-5 justify-center text-start mb-10 md:mb-0">
         <motion.div
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
+          variants={slideInFromTop}
           className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-90 inline-flex items-center w-fit"
         >
           <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
@@ -24,9 +27,7 @@ export const HeroContent = () => {
         </motion.div>
 
         <motion.div
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
+          variants={slideInFromLeft(0.5)}
           className="flex flex-col gap-6 mt-6"
         >
           <h1 className="text-4xl md:text-6xl font-bold text-white max-w-[600px] leading-tight">
@@ -39,9 +40,7 @@ export const HeroContent = () => {
         </motion.div>
 
         <motion.p
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.8, duration: 0.5 }}
+          variants={slideInFromLeft(0.8)}
           className="text-lg text-gray-400 my-5 max-w-[600px] leading-relaxed"
         >
           Welcome to my cybersecurity journey! Explore my skills, projects, and
@@ -50,9 +49,7 @@ export const HeroContent = () => {
       </div>
 
       <motion.div
-        initial={{ x: 100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ delay: 0.8, duration: 0.5 }}
+        variants={slideInFromRight(0.8)}
         className="flex-1 w-full flex justify-center items-center"
       >
         <div className="relative">
