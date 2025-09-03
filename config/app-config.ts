@@ -71,21 +71,21 @@ export const APP_CONFIG = {
   // Projects Configuration
   projects: [
     {
-      id: "deauth-dos-tool",
-      title: "DeAuth - The Network Stree Teseting Tool",
+      id: "autovuln-scanner",
+      title: "Automated Vulnerability Detection Tool",
       description:
         "Regex-based threat detection using Ahmia.fi and Tor exit node rotation; improved search coverage by 40% and anonymity via automated IP rotation.",
-      image: "/projects/DeAuth.png",
+      image: "/projects/Attack.jpg",
       link: "https://github.com/subrat243",
       technologies: ["Python", "Tor", "Regex", "Security"],
       featured: true,
     },
     {
-      id: "network-stress-testing",
-      title: "Network Stress Testing with IP Spoofing",
+      id: "deauth-dos-tool",
+      title: "DeAuth - The Network Stress Testing Tool",
       description:
         "Traffic and packet generation using Scapy for performance and resilience testing; enhanced monitoring and 30% anomaly detection improvement.",
-      image: "/projects/DeAuth.png",
+      image: "/projects/Exploitation.svg",
       link: "https://github.com/subrat243",
       technologies: ["Python", "Scapy", "Network Security"],
       featured: true,
@@ -95,7 +95,7 @@ export const APP_CONFIG = {
       title: "Dynamic Packet Generation & Analysis",
       description:
         "Custom packet crafting, deep packet inspection, and vulnerability analysis pipelines to identify network misconfigurations and weak points.",
-      image: "/projects/DeAuth.png",
+      image: "/projects/Network-monitoring.svg",
       link: "https://github.com/subrat243",
       technologies: ["Network Analysis", "Security", "Python"],
       featured: true,
