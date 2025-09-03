@@ -1,4 +1,5 @@
 "use client";
+
 import { SkillText } from "@/components/sub/skill-text";
 import { StarsCanvas } from "@/components/main/star-background";
 import { motion } from "framer-motion";

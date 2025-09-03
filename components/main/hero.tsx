@@ -1,4 +1,5 @@
 "use client";
+
 import { HeroContent } from "@/components/sub/hero-content";
 import { StarsCanvas } from "@/components/main/star-background";
 
