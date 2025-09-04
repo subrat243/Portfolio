@@ -10,7 +10,7 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-[60] px-10">
+    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-navigation px-10">
       {/* Navbar Container */}
       <div className="w-full h-full flex items-center justify-center m-auto px-[10px] relative">
         {/* Brand Name - Left Side */}
@@ -114,7 +114,7 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute top-[65px] left-0 w-full bg-[#030014]/95 backdrop-blur-md border-t border-[#2A0E61]/50 p-6 flex flex-col items-center text-gray-300 md:hidden shadow-2xl">
+        <div className="absolute top-[65px] left-0 w-full bg-[#030014]/95 backdrop-blur-md border-t border-[#2A0E61]/50 p-6 flex flex-col items-center text-gray-300 md:hidden shadow-2xl z-modal">
           {/* Links */}
           <nav className="flex flex-col items-center gap-5">
             {NAV_LINKS.map((link) => (

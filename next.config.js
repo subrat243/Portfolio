@@ -1,42 +1,95 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable React strict mode for better debugging
-  reactStrictMode: true,
-
-  // Disable x-powered-by header for security
+  // Optimize for Vercel deployment
   poweredByHeader: false,
-
-  // Enable SWC minification for better performance
+  reactStrictMode: true,
   swcMinify: true,
-
-  // Enable gzip compression
   compress: true,
-
-  // Configure trailing slashes
   trailingSlash: false,
-
-  // Generate ETags for static assets
-  generateEtags: true,
 
   // Image optimization settings
   images: {
     formats: ["image/webp", "image/avif"],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 31536000,
     dangerouslyAllowSVG: true,
-    contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
+    ],
   },
 
-  // Compiler optimizations
-  compiler: {
-    removeConsole: process.env.NODE_ENV === "production",
+  // Webpack configuration for asset handling
+  webpack: (config, { dev, isServer }) => {
+    // Handle video files
+    config.module.rules.push({
+      test: /\.(mp4|webm|ogg|swf|ogv)$/,
+      type: "asset/resource",
+      generator: {
+        filename: "static/videos/[name].[hash][ext]",
+      },
+    });
+
+    // Handle SVG files
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"],
+    });
+
+    // Optimize for production
+    if (!dev) {
+      config.optimization = {
+        ...config.optimization,
+        splitChunks: {
+          ...config.optimization.splitChunks,
+          cacheGroups: {
+            ...config.optimization.splitChunks.cacheGroups,
+            styles: {
+              name: "styles",
+              test: /\.(css|scss|sass)$/,
+              chunks: "all",
+              enforce: true,
+            },
+          },
+        },
+      };
+    }
+
+    return config;
   },
 
   // Headers for better caching and security
   async headers() {
     return [
+      {
+        source: "/:path*",
+        headers: [
+          {
+            key: "X-DNS-Prefetch-Control",
+            value: "on",
+          },
+          {
+            key: "X-XSS-Protection",
+            value: "1; mode=block",
+          },
+          {
+            key: "X-Frame-Options",
+            value: "SAMEORIGIN",
+          },
+          {
+            key: "X-Content-Type-Options",
+            value: "nosniff",
+          },
+          {
+            key: "Referrer-Policy",
+            value: "origin-when-cross-origin",
+          },
+        ],
+      },
       {
         source: "/videos/:path*",
         headers: [
@@ -47,7 +100,7 @@ const nextConfig = {
         ],
       },
       {
-        source: "/images/:path*",
+        source: "/projects/:path*",
         headers: [
           {
             key: "Cache-Control",
@@ -56,70 +109,21 @@ const nextConfig = {
         ],
       },
       {
-        source: "/(.*)",
+        source: "/:path*.{jpg,jpeg,png,webp,avif,svg}",
         headers: [
           {
-            key: "X-Frame-Options",
-            value: "DENY",
-          },
-          {
-            key: "X-Content-Type-Options",
-            value: "nosniff",
-          },
-          {
-            key: "Referrer-Policy",
-            value: "strict-origin-when-cross-origin",
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
           },
         ],
       },
     ];
   },
 
-  // Webpack configuration
-  webpack: (config, { dev, isServer }) => {
-    // Handle video files
-    config.module.rules.push({
-      test: /\.(webm|mp4|ogg|ogv)$/,
-      use: {
-        loader: "file-loader",
-        options: {
-          publicPath: "/_next/static/media/",
-          outputPath: "static/media/",
-          name: "[name].[hash].[ext]",
-        },
-      },
-    });
-
-    return config;
-  },
-
-  // TypeScript configuration
-  typescript: {
-    ignoreBuildErrors: false,
-  },
-
-  // ESLint configuration
-  eslint: {
-    ignoreDuringBuilds: false,
-  },
-
-  // Configure static optimization
-  staticPageGenerationTimeout: 60,
-
   // Environment variables
   env: {
-    CUSTOM_KEY: process.env.CUSTOM_KEY || "default_value",
-  },
-
-  // Redirects
-  async redirects() {
-    return [
-      {
-        source: "/home",
-        destination: "/",
-        permanent: true,
-      },
-    ];
+    NEXT_PUBLIC_SITE_URL:
+      process.env.NEXT_PUBLIC_SITE_URL || "https://0x-subrat.vercel.app",
   },
 };
 

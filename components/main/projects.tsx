@@ -3,17 +3,29 @@ import { motion } from "framer-motion";
 import { ProjectCard } from "@/components/sub/project-card";
 import { PROJECTS } from "@/constants";
 import { SparklesIcon } from "@heroicons/react/24/solid";
+import { StarsCanvas } from "@/components/main/star-background";
 
 export const Projects = () => {
   return (
     <section
       id="projects"
-      className="flex flex-col items-center justify-center py-20 min-h-screen bg-transparent relative overflow-x-hidden z-[30]"
+      className="flex flex-col items-center justify-center py-20 min-h-screen bg-[#030014] relative overflow-hidden z-content"
     >
-      {/* Background overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/5 to-transparent z-[10] pointer-events-none" />
+      {/* Background Stars */}
+      <div className="absolute inset-0 z-stars pointer-events-none opacity-20">
+        <StarsCanvas />
+      </div>
 
-      <div className="relative z-[40] w-full max-w-7xl">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 z-overlay pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/8 via-transparent to-cyan-900/8"></div>
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent"></div>
+        <div className="absolute top-20 left-10 w-32 h-32 bg-purple-500/5 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-20 right-10 w-32 h-32 bg-cyan-500/5 rounded-full blur-2xl"></div>
+      </div>
+
+      <div className="relative z-content w-full max-w-7xl">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
@@ -43,7 +55,7 @@ export const Projects = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 px-8 relative z-[50]"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 px-8 relative z-card"
           style={{ pointerEvents: "auto" }}
         >
           {PROJECTS.map((project, index) => (
@@ -79,7 +91,7 @@ export const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center mt-16 z-[60] relative"
+          className="text-center mt-16 z-content relative"
         >
           <p className="text-gray-400 mb-6">
             Interested in collaborating on cybersecurity projects?

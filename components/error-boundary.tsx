@@ -69,12 +69,12 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
       // Default error UI
       return (
-        <div className="min-h-screen flex items-center justify-center bg-[#030014] px-4">
+        <div className="min-h-screen flex items-center justify-center bg-[#030014] px-4 z-modal relative">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="max-w-md w-full bg-gradient-to-br from-purple-500/10 to-cyan-500/10 border border-purple-500/20 rounded-xl p-8 text-center"
+            className="max-w-md w-full bg-gradient-to-br from-purple-500/10 to-cyan-500/10 border border-purple-500/20 rounded-xl p-8 text-center z-modal relative"
           >
             {/* Error Icon */}
             <motion.div
@@ -93,7 +93,8 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
             {/* Error Description */}
             <p className="text-gray-300 mb-6 leading-relaxed">
               We encountered an unexpected error while rendering this component.
-              Don&apos;t worry, this has been logged and we&apos;re working on fixing it.
+              Don&apos;t worry, this has been logged and we&apos;re working on
+              fixing it.
             </p>
 
             {/* Error Details (Development Only) */}
@@ -114,7 +115,9 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
                   </pre>
                   {this.state.errorInfo && (
                     <>
-                      <strong className="text-red-400 mt-2 block">Stack:</strong>
+                      <strong className="text-red-400 mt-2 block">
+                        Stack:
+                      </strong>
                       <pre className="whitespace-pre-wrap break-words text-xs">
                         {this.state.errorInfo.componentStack}
                       </pre>
@@ -138,7 +141,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => window.location.href = "/"}
+                onClick={() => (window.location.href = "/")}
                 className="flex-1 px-6 py-3 bg-gray-700 text-white font-medium rounded-lg hover:bg-gray-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-900"
               >
                 Go Home
@@ -152,7 +155,8 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
               transition={{ delay: 0.5 }}
               className="text-xs text-gray-400 mt-4"
             >
-              If this problem persists, please refresh the page or contact support.
+              If this problem persists, please refresh the page or contact
+              support.
             </motion.p>
           </motion.div>
         </div>
@@ -166,7 +170,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 // HOC wrapper for functional components
 export const withErrorBoundary = <P extends object>(
   Component: React.ComponentType<P>,
-  errorFallback?: ReactNode
+  errorFallback?: ReactNode,
 ) => {
   const WrappedComponent = (props: P) => (
     <ErrorBoundary fallback={errorFallback}>

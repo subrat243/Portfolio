@@ -1,10 +1,7 @@
 {
   "version": 2,
   "buildCommand": "npm run build",
-  "outputDirectory": ".next",
   "framework": "nextjs",
-  "installCommand": "npm install",
-  "devCommand": "npm run dev",
   "regions": ["iad1"],
   "functions": {
     "app/api/contact/route.ts": {
@@ -13,24 +10,28 @@
   },
   "headers": [
     {
-      "source": "/videos/(.*)",
+      "source": "/(.*)",
       "headers": [
         {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
         },
         {
-          "key": "Content-Type",
-          "value": "video/webm"
+          "key": "X-Frame-Options",
+          "value": "DENY"
         },
         {
-          "key": "Accept-Ranges",
-          "value": "bytes"
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "origin-when-cross-origin"
         }
       ]
     },
     {
-      "source": "/images/(.*)",
+      "source": "/videos/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -48,27 +49,11 @@
       ]
     },
     {
-      "source": "/(.*)",
+      "source": "/(.*\\.(jpg|jpeg|png|webp|avif|svg|ico)$)",
       "headers": [
         {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        },
-        {
-          "key": "Permissions-Policy",
-          "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
         }
       ]
     }
@@ -78,29 +63,6 @@
       "source": "/home",
       "destination": "/",
       "permanent": true
-    },
-    {
-      "source": "/www/(.*)",
-      "destination": "/$1",
-      "permanent": true
     }
-  ],
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
-    }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  },
-  "build": {
-    "env": {
-      "NEXT_TELEMETRY_DISABLED": "1"
-    }
-  },
-  "github": {
-    "enabled": false
-  },
-  "crons": []
+  ]
 }

@@ -6,11 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "verify-deployment": "node scripts/verify-deployment.js",
-    "pre-deploy": "npm run lint && npm run build && npm run verify-deployment"
+    "lint": "next lint"
   },
-  "author": "Subrat Samantaray <subratsamantaray43@gmail.com> (https://github.com/subrat243)",
+  "author": "Sanidhya Kumar Verma <sanidhya.verma12345@gmail.com> (https://github.com/sanidhyy)",
   "description": "Welcome to my full stack Next.js 14 space portfolio.",
   "keywords": [
     "reactjs",
@@ -46,21 +44,21 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/subrat243/portfolio.git"
+    "url": "git+https://github.com/sanidhyy/space-portfolioit.git"
   },
-  "homepage": "https://github.com/subrat243/portfolio#readme",
+  "homepage": "https://github.com/sanidhyy/space-portfolio#readme",
   "bugs": {
-    "url": "https://github.com/subrat243/portfolio/issues",
-    "email": "subratsamantaray43@gmail.com"
+    "url": "https://github.com/sanidhyy/space-portfolio/issues",
+    "email": "sanidhya.verma12345@gmail.com"
   },
   "funding": [
     {
-      "type": "github",
-      "url": "https://github.com/sponsors/subrat243"
+      "type": "patreon",
+      "url": "https://www.patreon.com/sanidhy"
     },
     {
       "type": "Buy me a coffee",
-      "url": "https://www.buymeacoffee.com/subrat243"
+      "url": "https://www.buymeacoffee.com/sanidhy"
     }
   ],
   "dependencies": {
@@ -83,7 +81,6 @@
     "@types/react-dom": "^18",
     "@types/three": "^0.180.0",
     "autoprefixer": "^10.0.1",
-    "cssnano": "^7.1.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "postcss": "^8",
