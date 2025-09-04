@@ -4,9 +4,45 @@
 @tailwind components;
 @tailwind utilities;
 
+/* CSS Variables for consistent theming */
+:root {
+    --primary-bg: #030014;
+    --secondary-bg: #0b0b0b;
+    --tertiary-bg: #1a1a2e;
+    --border-primary: #2a0e61;
+    --text-primary: #ffffff;
+    --text-secondary: #e5e7eb;
+    --text-muted: #9ca3af;
+    --purple-primary: #7042f8;
+    --cyan-primary: #00d2ff;
+}
+
+/* Base styles */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+    overflow-x: hidden;
+}
+
+/* Custom fonts */
 .cursive {
     font-family: "Cedarville Cursive", cursive;
 }
+
+/* Welcome text gradient */
 .Welcome-text {
     background:
         linear-gradient(
@@ -19,7 +55,10 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: transparent;
 }
+
+/* Welcome box styling */
 .Welcome-box {
     isolation: isolate;
     overflow: hidden;
@@ -29,13 +68,20 @@
     border-radius: 32px;
     box-shadow: inset 0 -7px 11px #a48fff1f;
     display: flex;
-
     position: relative;
     width: -moz-max-content;
     width: max-content;
     transition: 0.45s cubic-bezier(0.6, 0.6, 0, 1) box-shadow;
+    background: rgba(112, 66, 248, 0.1);
+    border: 1px solid rgba(112, 66, 248, 0.3);
 }
 
+.Welcome-box:hover {
+    box-shadow: inset 0 -7px 11px #a48fff40;
+    border-color: rgba(112, 66, 248, 0.5);
+}
+
+/* Button styling */
 .button-primary {
     background:
         linear-gradient(
@@ -45,7 +91,10 @@
         ),
         rgba(113, 47, 255, 0.12);
     box-shadow: inset 0 0 12px #bf97ff3d;
+    border: 1px solid rgba(112, 66, 248, 0.3);
+    transition: all 0.3s ease;
 }
+
 .button-primary:hover {
     background:
         linear-gradient(
@@ -55,19 +104,36 @@
         ),
         rgba(113, 47, 255, 0.24);
     box-shadow: inset 0 0 12px #bf97ff70;
+    border-color: rgba(112, 66, 248, 0.6);
+    transform: translateY(-1px);
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
+/* Scrollbar styling */
 .scrollbar-hidden {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
 }
+
 .scrollbar-hidden::-webkit-scrollbar {
     display: none;
 }
 
-html {
-    scroll-behavior: smooth;
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(112, 66, 248, 0.5);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(112, 66, 248, 0.7);
 }
 
 /* 3D perspective for animated cards */
@@ -79,12 +145,238 @@ html {
     transform-style: preserve-3d;
 }
 
-/* Additional card animation styles */
+/* Card animation styles */
 .card-hover-effect {
     transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
 }
 
 .card-hover-effect:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 20px 40px rgba(112, 66, 248, 0.3);
+}
+
+.card-hover-effect::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transition: left 0.5s;
+}
+
+.card-hover-effect:hover::before {
+    left: 100%;
+}
+
+/* Video styling for consistent cross-platform display */
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Ensure videos don't interfere with interactions */
+video[data-background="true"] {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Gradient overlays */
+.gradient-overlay-top {
+    background: linear-gradient(
+        to bottom,
+        var(--primary-bg) 0%,
+        rgba(3, 0, 20, 0.8) 30%,
+        transparent 100%
+    );
+}
+
+.gradient-overlay-bottom {
+    background: linear-gradient(
+        to top,
+        var(--primary-bg) 0%,
+        rgba(3, 0, 20, 0.8) 30%,
+        transparent 100%
+    );
+}
+
+/* Text selection styling */
+::selection {
+    background-color: rgba(112, 66, 248, 0.3);
+    color: white;
+}
+
+::-moz-selection {
+    background-color: rgba(112, 66, 248, 0.3);
+    color: white;
+}
+
+/* Focus styles for accessibility */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus {
+    outline: 2px solid rgba(112, 66, 248, 0.6);
+    outline-offset: 2px;
+}
+
+/* Loading animation */
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Backdrop blur fallback */
+.backdrop-blur-fallback {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+@supports (backdrop-filter: blur(10px)) {
+    .backdrop-blur-fallback {
+        background: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+    }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .Welcome-box {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    video {
+        transform: scale(1.1);
+    }
+
+    .card-hover-effect:hover {
+        transform: translateY(-5px) scale(1.01);
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .Welcome-text {
+        -webkit-text-fill-color: #ffffff;
+        color: #ffffff;
+    }
+
+    .Welcome-box {
+        border: 2px solid #ffffff;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Print styles */
+@media print {
+    video {
+        display: none;
+    }
+
+    .Welcome-box,
+    .button-primary {
+        background: white !important;
+        color: black !important;
+        border: 1px solid black !important;
+    }
+}
+
+/* Dark mode enhancements */
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+    }
+}
+
+/* Ensure consistent font rendering across browsers */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Fix for iOS Safari video playback */
+@supports (-webkit-touch-callout: none) {
+    video {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/* Ensure proper stacking context */
+.z-layer-1 {
+    z-index: 1;
+}
+.z-layer-5 {
+    z-index: 5;
+}
+.z-layer-10 {
+    z-index: 10;
+}
+.z-layer-15 {
+    z-index: 15;
+}
+.z-layer-20 {
+    z-index: 20;
+}
+.z-layer-30 {
+    z-index: 30;
+}
+.z-layer-40 {
+    z-index: 40;
+}
+.z-layer-50 {
+    z-index: 50;
+}
+.z-layer-60 {
+    z-index: 60;
+}
+
+/* Performance optimizations */
+.gpu-accelerated {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
 }

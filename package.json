@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "verify-deployment": "node scripts/verify-deployment.js",
+    "pre-deploy": "npm run lint && npm run build && npm run verify-deployment"
   },
   "author": "Sanidhya Kumar Verma <sanidhya.verma12345@gmail.com> (https://github.com/sanidhyy)",
   "description": "Welcome to my full stack Next.js 14 space portfolio.",
@@ -81,6 +83,7 @@
     "@types/react-dom": "^18",
     "@types/three": "^0.180.0",
     "autoprefixer": "^10.0.1",
+    "cssnano": "^7.1.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "postcss": "^8",
