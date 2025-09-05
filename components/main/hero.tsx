@@ -10,22 +10,16 @@ export const Hero = () => {
       id="home"
       className="relative flex flex-col min-h-screen w-full overflow-hidden bg-[#030014]"
     >
-      {/* Blackhole Video - Bottom layer */}
-      <div className="absolute inset-0 z-video pointer-events-none">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="rotate-180 absolute top-[-400px] w-full h-full object-cover blur-sm opacity-80 pointer-events-none"
-        >
-          <source src="/videos/blackhole.webm" type="video/webm" />
-        </video>
+      {/* Background Stars */}
+      <div className="absolute inset-0 z-stars pointer-events-none opacity-30">
+        <StarsCanvas />
       </div>
 
-      {/* Stars Animation - Above video but below content */}
-      <div className="absolute inset-0 z-overlay pointer-events-none opacity-60">
-        <StarsCanvas />
+      {/* Background Pattern */}
+      <div className="absolute inset-0 z-overlay pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-cyan-900/10"></div>
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent"></div>
       </div>
 
       {/* Content - Top layer */}

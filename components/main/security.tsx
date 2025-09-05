@@ -19,23 +19,8 @@ export const Security = () => {
       viewport={{ once: true, amount: 0.3 }}
       className="flex flex-col items-center justify-center py-20 px-8 lg:px-10 relative min-h-screen overflow-hidden bg-[#030014] border-t border-[#2A0E61]/50"
     >
-      {/* Video background - Bottom layer */}
-      <div className="absolute inset-0 z-video pointer-events-none">
-        <video
-          className="w-full h-full object-cover opacity-40"
-          preload="metadata"
-          playsInline
-          loop
-          muted
-          autoPlay
-        >
-          <source src="/videos/encryption-bg.webm" type="video/webm" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-
-      {/* Stars Animation - Above video but below content */}
-      <div className="absolute inset-0 z-overlay pointer-events-none opacity-40">
+      {/* Background Stars */}
+      <div className="absolute inset-0 z-stars pointer-events-none opacity-30">
         <StarsCanvas />
       </div>
 
@@ -45,10 +30,6 @@ export const Security = () => {
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent"></div>
       </div>
-
-      {/* Enhanced gradient overlays for seamless blending */}
-      <div className="absolute top-0 left-0 w-full h-20 z-overlay pointer-events-none bg-gradient-to-b from-[#030014] via-[#030014]/80 to-transparent" />
-      <div className="absolute bottom-0 left-0 w-full h-20 z-overlay pointer-events-none bg-gradient-to-t from-[#030014] via-[#030014]/80 to-transparent" />
 
       <div className="relative z-content w-full max-w-7xl">
         {/* Section Header */}

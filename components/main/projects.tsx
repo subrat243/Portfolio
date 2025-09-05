@@ -12,17 +12,15 @@ export const Projects = () => {
       className="flex flex-col items-center justify-center py-20 px-8 lg:px-10 relative min-h-screen overflow-hidden bg-[#030014] border-t border-[#2A0E61]/50"
     >
       {/* Background Stars */}
-      <div className="absolute inset-0 z-stars pointer-events-none opacity-20">
+      <div className="absolute inset-0 z-stars pointer-events-none opacity-30">
         <StarsCanvas />
       </div>
 
       {/* Background Pattern */}
       <div className="absolute inset-0 z-overlay pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/8 via-transparent to-cyan-900/8"></div>
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent"></div>
-        <div className="absolute top-20 left-10 w-32 h-32 bg-purple-500/5 rounded-full blur-2xl"></div>
-        <div className="absolute bottom-20 right-10 w-32 h-32 bg-cyan-500/5 rounded-full blur-2xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-cyan-900/10"></div>
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent"></div>
       </div>
 
       <div className="relative z-content w-full max-w-7xl">
