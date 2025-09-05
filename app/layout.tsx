@@ -60,8 +60,10 @@ export default function RootLayout({ children }: PropsWithChildren) {
         suppressHydrationWarning
       >
         <ErrorBoundary>
-          <div className="relative w-full z-context">
-            <StarsCanvas />
+          <div className="relative w-full">
+            <div className="fixed inset-0 z-stars">
+              <StarsCanvas />
+            </div>
             <div className="relative z-content">
               <Navbar />
               <main className="relative z-content">{children}</main>

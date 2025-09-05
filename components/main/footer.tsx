@@ -7,9 +7,9 @@ import { FOOTER_DATA } from "@/constants";
 
 export const Footer = () => {
   return (
-    <footer className="w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px] relative z-content border-t border-[#2A0E61]/50">
+    <footer className="w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px] relative z-footer border-t border-[#2A0E61]/50">
       {/* Background Pattern */}
-      <div className="absolute inset-0 z-overlay pointer-events-none">
+      <div className="absolute inset-0 z-stars pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-cyan-900/10"></div>
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent"></div>

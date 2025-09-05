@@ -245,42 +245,68 @@ body {
     transition-duration: 0.15s;
 }
 
-/* Z-index utilities for consistent layering */
+/* Z-index utilities for consistent layering
+ *
+ * Z-INDEX HIERARCHY (lowest to highest):
+ * -10: Background elements (behind everything)
+ *   1: Context containers and stars
+ *   2: Video backgrounds
+ *   3: Overlay backgrounds and gradients
+ *   5: Footer content
+ *  10: Main content sections
+ *  15: Cards and interactive elements
+ *  50: Navigation bar (always visible)
+ * 900: Dropdowns and tooltips
+ * 999: Modals and overlays
+ *1000: Tooltips (highest priority)
+ */
 .z-background {
-    z-index: -1;
+    z-index: -10;
 }
 
 .z-stars {
-    z-index: 0;
+    z-index: 1;
 }
 
 .z-video {
-    z-index: 5;
+    z-index: 2;
 }
 
 .z-overlay {
-    z-index: 10;
+    z-index: 3;
 }
 
 .z-content {
-    z-index: 20;
+    z-index: 10;
 }
 
 .z-card {
-    z-index: 30;
+    z-index: 15;
 }
 
 .z-navigation {
-    z-index: 60;
+    z-index: 50;
 }
 
 .z-modal {
-    z-index: 100;
+    z-index: 999;
+}
+
+.z-tooltip {
+    z-index: 1000;
+}
+
+.z-dropdown {
+    z-index: 900;
 }
 
 .z-context {
     position: relative;
-    z-index: 0;
+    z-index: 1;
+}
+
+.z-footer {
+    z-index: 5;
 }
 
 /* Performance optimizations */
