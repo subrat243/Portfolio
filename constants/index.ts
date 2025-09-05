@@ -139,7 +139,8 @@ export const getSafeAssetUrl = (assetPath: string): string => {
 
 // Export default configuration
 export { APP_CONFIG };
-export default {
+
+const constantsExport = {
   PROJECTS,
   FOOTER_DATA,
   NAV_LINKS,
@@ -154,3 +155,5 @@ export default {
   getSafeUrl,
   getSafeAssetUrl,
 };
+
+export default constantsExport;

@@ -12,14 +12,16 @@ export const Navbar = () => {
   return (
     <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-navigation px-10">
       {/* Navbar Container */}
-      <div className="w-full h-full flex items-center justify-center m-auto px-[10px] relative">
-        {/* Brand Name - Left Side */}
-        <div className="absolute left-4 hidden md:block text-gray-300 font-semibold text-lg hover:text-white transition-colors duration-300">
-          Subrat Samantaray
+      <div className="w-full h-full flex items-center justify-between m-auto px-[10px] relative">
+        {/* Brand/Logo - Left Side */}
+        <div className="hidden md:block text-gray-300 font-bold text-xl hover:text-white transition-colors duration-300">
+          <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+            Portfolio
+          </span>
         </div>
 
-        {/* Web Navbar */}
-        <div className="hidden md:flex h-full flex-row items-center">
+        {/* Web Navbar - Center */}
+        <div className="hidden md:flex h-full flex-row items-center absolute left-1/2 transform -translate-x-1/2">
           <nav className="flex items-center gap-6 lg:gap-8 h-auto text-gray-200 transition-all duration-300">
             {NAV_LINKS.map((link) => (
               <Link
@@ -82,33 +84,38 @@ export const Navbar = () => {
           </motion.div>
         </div>
 
-        {/* Mobile Layout - CV Button and Hamburger */}
-        <div className="absolute right-4 md:hidden flex items-center gap-4">
-          {/* Mobile CV Button */}
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Link
-              href={CV_DOWNLOAD_URL}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="flex items-center gap-1 px-3 py-1.5 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full text-white text-sm font-medium hover:from-purple-600 hover:to-cyan-600 transition-all duration-300"
+        {/* Mobile Layout - Brand, CV Button and Hamburger */}
+        <div className="md:hidden w-full flex items-center justify-between">
+          {/* Mobile Brand - Left */}
+          <div className="text-gray-300 font-bold text-lg">
+            <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              Portfolio
+            </span>
+          </div>
+
+          {/* Mobile Right Side - CV Button and Hamburger */}
+          <div className="flex items-center gap-4">
+            {/* Mobile CV Button */}
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                href={CV_DOWNLOAD_URL}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="flex items-center gap-1 px-3 py-1.5 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full text-white text-sm font-medium hover:from-purple-600 hover:to-cyan-600 transition-all duration-300"
+              >
+                <ArrowDownTrayIcon className="w-3 h-3" />
+                CV
+              </Link>
+            </motion.div>
+
+            {/* Hamburger Menu */}
+            <button
+              className="text-white focus:outline-none text-3xl"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              <ArrowDownTrayIcon className="w-3 h-3" />
-              CV
-            </Link>
-          </motion.div>
-
-          {/* Hamburger Menu */}
-          <button
-            className="text-white focus:outline-none text-3xl"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            ☰
-          </button>
-        </div>
-
-        {/* Mobile Brand Name - Centered */}
-        <div className="md:hidden text-gray-300 text-center font-semibold text-lg">
-          Subrat Samantaray
+              ☰
+            </button>
+          </div>
         </div>
       </div>
 

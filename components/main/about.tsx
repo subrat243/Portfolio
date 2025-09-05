@@ -18,7 +18,7 @@ export const About = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
-      className="flex flex-col items-center justify-center py-20 px-8 lg:px-10 relative min-h-screen overflow-hidden bg-[#030014]"
+      className="flex flex-col items-center justify-center py-20 px-8 lg:px-10 relative min-h-screen overflow-hidden bg-[#030014] border-t border-[#2A0E61]/50"
     >
       {/* Background Stars */}
       <div className="absolute inset-0 z-stars pointer-events-none opacity-30">

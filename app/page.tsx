@@ -1,7 +1,7 @@
 import { About } from "@/components/main/about";
-import { Encryption } from "@/components/main/encryption";
 import { Hero } from "@/components/main/hero";
 import { Projects } from "@/components/main/projects";
+import { Security } from "@/components/main/security";
 import { Skills } from "@/components/main/skills";
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
         <Hero />
         <About />
         <Skills />
-        <Encryption />
+        <Security />
         <Projects />
       </div>
     </main>

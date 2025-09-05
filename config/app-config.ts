@@ -29,6 +29,7 @@ export const APP_CONFIG = {
       { title: "Home", href: "#home", isExternal: false },
       { title: "About me", href: "#about", isExternal: false },
       { title: "Skills", href: "#skills", isExternal: false },
+      { title: "Security", href: "#security", isExternal: false },
       { title: "Projects", href: "#projects", isExternal: false },
     ],
   },
@@ -139,6 +140,78 @@ export const APP_CONFIG = {
           "HTTP/HTTPS",
           "DNS",
           "Subnetting",
+        ],
+      },
+    ],
+  },
+
+  // Security Best Practices Configuration
+  security: {
+    bestPractices: [
+      {
+        title: "Network Security",
+        practices: [
+          "Implement network segmentation",
+          "Use strong firewall configurations",
+          "Regular network monitoring and logging",
+          "Secure wireless network configurations",
+          "VPN implementation for remote access",
+          "Regular penetration testing",
+        ],
+      },
+      {
+        title: "Access Control",
+        practices: [
+          "Multi-factor authentication (MFA)",
+          "Principle of least privilege",
+          "Regular access reviews",
+          "Strong password policies",
+          "Role-based access control (RBAC)",
+          "Session management controls",
+        ],
+      },
+      {
+        title: "Data Protection",
+        practices: [
+          "Data encryption at rest and in transit",
+          "Regular data backups",
+          "Data loss prevention (DLP)",
+          "Secure data disposal",
+          "Data classification and handling",
+          "Privacy by design principles",
+        ],
+      },
+      {
+        title: "Incident Response",
+        practices: [
+          "Develop incident response plan",
+          "Regular security awareness training",
+          "Threat intelligence integration",
+          "Forensic readiness preparation",
+          "Business continuity planning",
+          "Regular security assessments",
+        ],
+      },
+      {
+        title: "Application Security",
+        practices: [
+          "Secure code development practices",
+          "Regular security code reviews",
+          "Web application firewalls (WAF)",
+          "API security implementations",
+          "Input validation and sanitization",
+          "Security testing automation",
+        ],
+      },
+      {
+        title: "Compliance & Governance",
+        practices: [
+          "Regular compliance audits",
+          "Security policy development",
+          "Risk assessment procedures",
+          "Vendor security assessments",
+          "Security metrics and reporting",
+          "Continuous improvement processes",
         ],
       },
     ],
@@ -289,6 +362,8 @@ export type AppConfig = typeof APP_CONFIG;
 export type NavigationLink = (typeof APP_CONFIG.navigation.links)[0];
 export type Project = (typeof APP_CONFIG.projects)[0];
 export type SkillCategory = (typeof APP_CONFIG.skills.categories)[0];
+export type SecurityBestPractice =
+  (typeof APP_CONFIG.security.bestPractices)[0];
 
 // Validation functions
 export const validateConfig = () => {

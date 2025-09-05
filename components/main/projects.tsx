@@ -9,7 +9,7 @@ export const Projects = () => {
   return (
     <section
       id="projects"
-      className="flex flex-col items-center justify-center py-20 min-h-screen bg-[#030014] relative overflow-hidden z-content"
+      className="flex flex-col items-center justify-center py-20 px-8 lg:px-10 relative min-h-screen overflow-hidden bg-[#030014] border-t border-[#2A0E61]/50"
     >
       {/* Background Stars */}
       <div className="absolute inset-0 z-stars pointer-events-none opacity-20">

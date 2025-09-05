@@ -9,7 +9,7 @@ export const Skills = () => {
   return (
     <section
       id="skills"
-      className="flex flex-col items-center justify-center gap-3 min-h-screen relative overflow-hidden py-20 bg-[#030014]"
+      className="flex flex-col items-center justify-center py-20 px-8 lg:px-10 relative min-h-screen overflow-hidden bg-[#030014] border-t border-[#2A0E61]/50"
     >
       {/* Video background - Bottom layer */}
       <div className="absolute inset-0 z-video pointer-events-none">
@@ -31,15 +31,22 @@ export const Skills = () => {
         <StarsCanvas />
       </div>
 
+      {/* Background Pattern */}
+      <div className="absolute inset-0 z-overlay pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-cyan-900/10"></div>
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent"></div>
+      </div>
+
       {/* Enhanced gradient overlays for seamless blending */}
       <div className="absolute top-0 left-0 w-full h-20 z-overlay pointer-events-none bg-gradient-to-b from-[#030014] via-[#030014]/80 to-transparent" />
       <div className="absolute bottom-0 left-0 w-full h-20 z-overlay pointer-events-none bg-gradient-to-t from-[#030014] via-[#030014]/80 to-transparent" />
 
-      <div className="relative z-content w-full max-w-7xl px-4">
+      <div className="relative z-content w-full max-w-7xl">
         <SkillText />
 
         {/* Category Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-8 w-full px-8 mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-8 w-full mt-10">
           {SKILLS_CATEGORIES.map((cat, i) => (
             <motion.div
               key={cat.title}
