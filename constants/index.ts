@@ -62,15 +62,6 @@ export const CV_DOWNLOAD_URL = APP_CONFIG.cv.downloadUrl;
 // Skills data from centralized configuration
 export const SKILLS_CATEGORIES = APP_CONFIG.skills.categories;
 
-// Asset URLs from centralized configuration
-export const ASSET_URLS = {
-  LOCK_TOP: APP_CONFIG.assets.images.lockTop,
-  LOCK_MAIN: APP_CONFIG.assets.images.lockMain,
-  HERO_VIDEO: APP_CONFIG.assets.videos.hero,
-  SKILLS_VIDEO: APP_CONFIG.assets.videos.skills,
-  ENCRYPTION_VIDEO: APP_CONFIG.assets.videos.encryption,
-} as const;
-
 // Animation variants from centralized configuration
 export const ANIMATION_VARIANTS = APP_CONFIG.animations.variants;
 
@@ -110,33 +101,6 @@ export const getSafeUrl = (url: string, fallback: string = "/"): string => {
   }
 };
 
-// Helper function to get safe asset URLs
-export const getSafeAssetUrl = (assetPath: string): string => {
-  const fallback = APP_CONFIG.assets.images.fallback;
-
-  if (!assetPath || assetPath.trim() === "") {
-    console.warn("Empty asset path provided, using fallback");
-    return fallback;
-  }
-
-  // Check if it's a valid asset path
-  if (
-    assetPath.startsWith("/") &&
-    (assetPath.includes(".png") ||
-      assetPath.includes(".jpg") ||
-      assetPath.includes(".jpeg") ||
-      assetPath.includes(".webp") ||
-      assetPath.includes(".svg") ||
-      assetPath.includes(".webm") ||
-      assetPath.includes(".mp4"))
-  ) {
-    return assetPath;
-  }
-
-  console.warn(`Invalid asset path: ${assetPath}, using fallback`);
-  return fallback;
-};
-
 // Export default configuration
 export { APP_CONFIG };
 
@@ -146,14 +110,12 @@ const constantsExport = {
   NAV_LINKS,
   CV_DOWNLOAD_URL,
   SKILLS_CATEGORIES,
-  ASSET_URLS,
   ANIMATION_VARIANTS,
   THEME_CONFIG,
   SITE_CONFIG,
   FEATURES,
   ERROR_CONFIG,
   getSafeUrl,
-  getSafeAssetUrl,
 };
 
 export default constantsExport;

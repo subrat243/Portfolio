@@ -49,14 +49,7 @@ export const APP_CONFIG = {
       logo: "/Luffy.jpeg",
       profile: "/Luffy.jpeg",
       hero: "/Luffy.jpeg",
-      lockTop: "/lock-top.png",
-      lockMain: "/lock-main.png",
       fallback: "/Luffy.jpeg",
-    },
-    videos: {
-      hero: "/videos/blackhole.webm",
-      skills: "/videos/skills-bg.webm",
-      encryption: "/videos/encryption-bg.webm",
     },
   },
 
@@ -307,7 +300,6 @@ export const APP_CONFIG = {
     prefetch: true,
     cacheHeaders: {
       images: "public, max-age=31536000, immutable",
-      videos: "public, max-age=31536000, immutable",
       static: "public, max-age=3600",
     },
   },
@@ -387,7 +379,6 @@ export const validateConfig = () => {
   const requiredAssets = [
     APP_CONFIG.assets.images.logo,
     APP_CONFIG.assets.images.profile,
-    APP_CONFIG.assets.videos.hero,
   ];
 
   if (errors.length > 0) {

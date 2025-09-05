@@ -25,15 +25,6 @@ const nextConfig = {
 
   // Webpack configuration for asset handling
   webpack: (config, { dev, isServer }) => {
-    // Handle video files
-    config.module.rules.push({
-      test: /\.(mp4|webm|ogg|swf|ogv)$/,
-      type: "asset/resource",
-      generator: {
-        filename: "static/videos/[name].[hash][ext]",
-      },
-    });
-
     // Handle SVG files
     config.module.rules.push({
       test: /\.svg$/,
