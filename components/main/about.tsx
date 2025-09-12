@@ -21,19 +21,19 @@ export const About = () => {
       className="flex flex-col items-center justify-center py-20 px-8 lg:px-10 relative min-h-screen overflow-hidden bg-[#030014] border-t border-[#2A0E61]/50"
     >
       {/* Background Stars */}
-      <div className="absolute inset-0 z-stars pointer-events-none opacity-30">
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-30">
         <StarsCanvas />
       </div>
 
       {/* Background Pattern */}
-      <div className="absolute inset-0 z-overlay pointer-events-none">
+      <div className="absolute inset-0 z-[1] pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-cyan-900/10"></div>
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent"></div>
       </div>
 
       {/* Content Container */}
-      <div className="relative z-content w-full max-w-7xl">
+      <div className="relative z-10 w-full max-w-7xl">
         {/* Section Header */}
         <motion.div
           variants={slideInFromTop}
@@ -66,7 +66,7 @@ export const About = () => {
               }}
               className="relative group perspective-1000"
             >
-              <div className="relative w-80 h-96 bg-gradient-to-br from-[#0b0b0b]/90 to-[#1a1a2e]/80 backdrop-blur-md rounded-2xl border border-purple-500/30 overflow-hidden shadow-2xl hover:shadow-glow z-card">
+              <div className="relative w-80 h-96 bg-gradient-to-br from-[#0b0b0b]/90 to-[#1a1a2e]/80 backdrop-blur-md rounded-2xl border border-purple-500/30 overflow-hidden shadow-2xl hover:shadow-glow z-20">
                 {/* Card Background Effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 backdrop-blur-sm" />
 

@@ -11,24 +11,24 @@ export const Hero = () => {
       className="relative flex flex-col min-h-screen w-full overflow-hidden bg-[#030014]"
     >
       {/* Background Stars */}
-      <div className="absolute inset-0 z-stars pointer-events-none opacity-30">
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-30">
         <StarsCanvas />
       </div>
 
       {/* Background Pattern */}
-      <div className="absolute inset-0 z-overlay pointer-events-none">
+      <div className="absolute inset-0 z-[1] pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-cyan-900/10"></div>
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent"></div>
       </div>
 
       {/* Content - Top layer */}
-      <div className="relative z-content flex-1 flex items-center justify-center">
+      <div className="relative z-10 flex-1 flex items-center justify-center">
         <HeroContent />
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-content">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

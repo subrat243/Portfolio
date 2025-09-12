@@ -12,18 +12,18 @@ export const Skills = () => {
       className="flex flex-col items-center justify-center py-20 px-8 lg:px-10 relative min-h-screen overflow-hidden bg-[#030014] border-t border-[#2A0E61]/50"
     >
       {/* Background Stars */}
-      <div className="absolute inset-0 z-stars pointer-events-none opacity-30">
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-30">
         <StarsCanvas />
       </div>
 
       {/* Background Pattern */}
-      <div className="absolute inset-0 z-overlay pointer-events-none">
+      <div className="absolute inset-0 z-[1] pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-cyan-900/10"></div>
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent"></div>
       </div>
 
-      <div className="relative z-content w-full max-w-7xl">
+      <div className="relative z-10 w-full max-w-7xl">
         <SkillText />
 
         {/* Category Cards */}
@@ -44,7 +44,7 @@ export const Skills = () => {
                 y: -5,
                 transition: { duration: 0.3 },
               }}
-              className="bg-gradient-to-br from-[#0b0b0b]/90 to-[#1a1a2e]/80 border border-[#2A0E61] rounded-2xl p-7 min-h-[240px] text-gray-200 shadow-xl backdrop-blur-md hover:border-purple-500/50 transition-all duration-300 z-card"
+              className="bg-gradient-to-br from-[#0b0b0b]/90 to-[#1a1a2e]/80 border border-[#2A0E61] rounded-2xl p-7 min-h-[240px] text-gray-200 shadow-xl backdrop-blur-md hover:border-purple-500/50 transition-all duration-300 z-20"
             >
               <h3 className="text-2xl font-bold mb-6 text-white bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
                 {cat.title}

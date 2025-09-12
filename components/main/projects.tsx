@@ -12,18 +12,18 @@ export const Projects = () => {
       className="flex flex-col items-center justify-center py-20 px-8 lg:px-10 relative min-h-screen overflow-hidden bg-[#030014] border-t border-[#2A0E61]/50"
     >
       {/* Background Stars */}
-      <div className="absolute inset-0 z-stars pointer-events-none opacity-30">
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-30">
         <StarsCanvas />
       </div>
 
       {/* Background Pattern */}
-      <div className="absolute inset-0 z-overlay pointer-events-none">
+      <div className="absolute inset-0 z-[1] pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-cyan-900/10"></div>
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent"></div>
       </div>
 
-      <div className="relative z-content w-full max-w-7xl">
+      <div className="relative z-10 w-full max-w-7xl">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
@@ -53,7 +53,7 @@ export const Projects = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 px-8 relative z-card"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 px-8 relative z-20"
           style={{ pointerEvents: "auto" }}
         >
           {PROJECTS.map((project, index) => (
@@ -89,7 +89,7 @@ export const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center mt-16 z-content relative"
+          className="text-center mt-16 z-10 relative"
         >
           <p className="text-gray-400 mb-6">
             Interested in collaborating on cybersecurity projects?

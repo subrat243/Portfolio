@@ -61,12 +61,12 @@ export default function RootLayout({ children }: PropsWithChildren) {
       >
         <ErrorBoundary>
           <div className="relative w-full">
-            <div className="fixed inset-0 z-stars">
+            <div className="fixed inset-0 z-0 pointer-events-none">
               <StarsCanvas />
             </div>
-            <div className="relative z-content">
+            <div className="relative z-10">
               <Navbar />
-              <main className="relative z-content">{children}</main>
+              <main className="relative z-10">{children}</main>
               <Footer />
             </div>
           </div>

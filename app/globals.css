@@ -306,7 +306,7 @@ body {
 }
 
 .z-footer {
-    z-index: 5;
+    z-index: 100;
 }
 
 /* Performance optimizations */
