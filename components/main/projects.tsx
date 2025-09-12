@@ -133,9 +133,9 @@ export const Projects = () => {
                 </span>
               </h3>
               <p className="text-gray-400 mb-6 leading-relaxed">
-                I'm always excited to work on new cybersecurity projects and
-                explore innovative security solutions. Let's build something
-                amazing together!
+                I&apos;m always excited to work on new cybersecurity projects
+                and explore innovative security solutions. Let&apos;s build
+                something amazing together!
               </p>
             </div>
 
