@@ -47,8 +47,11 @@ export default function RootLayout({ children }: PropsWithChildren) {
         />
         <meta name="theme-color" content="#030014" />
         <meta name="color-scheme" content="dark" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/Luffy.jpeg" />
-        <link rel="icon" type="image/jpeg" href="/Luffy.jpeg" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.jpeg" />
+        <link rel="icon" type="image/jpeg" sizes="32x32" href="/favicon.jpeg" />
+        <link rel="icon" type="image/jpeg" sizes="16x16" href="/favicon.jpeg" />
+        <link rel="icon" type="image/jpeg" href="/favicon.jpeg" />
+        <link rel="manifest" href="/site.webmanifest" />
         <meta name="msapplication-TileColor" content="#030014" />
       </head>
       <body

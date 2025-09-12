@@ -1,0 +1,35 @@
+{
+  "name": "Subrat Samantaray - Cybersecurity Portfolio",
+  "short_name": "Portfolio",
+  "description": "Cybersecurity student specializing in network security, threat detection, and offensive security.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030014",
+  "theme_color": "#030014",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/favicon.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/favicon.jpeg",
+      "sizes": "180x180",
+      "type": "image/jpeg",
+      "purpose": "apple touch icon"
+    }
+  ],
+  "categories": ["portfolio", "cybersecurity", "technology"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false
+}

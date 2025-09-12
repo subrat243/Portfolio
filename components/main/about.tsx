@@ -78,7 +78,7 @@ export const About = () => {
                     className="w-40 h-40 rounded-full border-4 border-purple-500 overflow-hidden mb-6 shadow-xl"
                   >
                     <Image
-                      src="/Luffy.jpeg"
+                      src="/profile.gif"
                       alt="Subrat Samantaray"
                       width={160}
                       height={160}

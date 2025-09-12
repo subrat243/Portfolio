@@ -9,6 +9,7 @@ export const PROJECTS = APP_CONFIG.projects.map((project) => ({
   description: project.description,
   image: project.image,
   link: project.link,
+  technologies: project.technologies,
 }));
 
 // Footer data with validated social links
