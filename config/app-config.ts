@@ -56,10 +56,10 @@ export const APP_CONFIG = {
   // CV Download Configuration
   cv: {
     downloadUrl:
-      "https://drive.google.com/file/d/your-cv-file-id/view?usp=sharing",
+      "https://drive.google.com/file/d/1kfXtd5pP0-SNshTl11I5TnvT03DxIPDa/view?usp=sharing",
     directDownloadUrl:
-      "https://drive.google.com/file/d/your-cv-file-id/export?format=pdf&download=1",
-    filename: "Subrat_Samantaray_CV.pdf",
+      "https://drive.google.com/file/d/1kfXtd5pP0-SNshTl11I5TnvT03DxIPDa/view?usp=drive_link",
+    filename: "Subrat_Samantaray_Resume.pdf",
   },
 
   // Projects Configuration
