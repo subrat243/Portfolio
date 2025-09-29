@@ -46,10 +46,10 @@ export const APP_CONFIG = {
   // Assets Configuration
   assets: {
     images: {
-      logo: "/Luffy.jpeg",
-      profile: "/Luffy.jpeg",
-      hero: "/Luffy.jpeg",
-      fallback: "/Luffy.jpeg",
+      logo: "/favicon.png",
+      profile: "/favicon.png",
+      hero: "/favicon.png",
+      fallback: "/favicon.png",
     },
   },
 
@@ -102,56 +102,6 @@ export const APP_CONFIG = {
       image: "/projects/Data-security.svg",
       link: "https://github.com/subrat243/Hashify",
       technologies: ["Python", "Hash", "Cryptography", "Security"],
-      featured: true,
-    },
-    {
-      id: "phishing-detector",
-      title: "AI-Powered Phishing Detection System",
-      description:
-        "Machine learning-based system that analyzes URLs, email content, and website characteristics to detect phishing attempts with high accuracy using natural language processing.",
-      image: "/projects/Exploitation.svg",
-      link: "https://github.com/subrat243",
-      technologies: ["Python", "Machine Learning", "NLP", "Security"],
-      featured: true,
-    },
-    {
-      id: "crypto-analyzer",
-      title: "Cryptographic Protocol Analyzer",
-      description:
-        "Advanced tool for analyzing and testing cryptographic implementations, detecting weak encryption algorithms, and identifying potential vulnerabilities in SSL/TLS configurations.",
-      image: "/projects/Network-monitoring.svg",
-      link: "https://github.com/subrat243",
-      technologies: ["Cryptography", "SSL/TLS", "Python", "Analysis"],
-      featured: true,
-    },
-    {
-      id: "incident-response",
-      title: "Digital Forensics Toolkit",
-      description:
-        "Comprehensive digital forensics and incident response toolkit for analyzing system artifacts, memory dumps, and network traffic to identify security breaches and attack patterns.",
-      image: "/projects/Attack.jpg",
-      link: "https://github.com/subrat243",
-      technologies: [
-        "Forensics",
-        "Memory Analysis",
-        "Network",
-        "Investigation",
-      ],
-      featured: true,
-    },
-    {
-      id: "malware-sandbox",
-      title: "Malware Analysis Sandbox",
-      description:
-        "Isolated environment for safe malware analysis and reverse engineering, featuring dynamic analysis, behavioral monitoring, and automated report generation for threat intelligence.",
-      image: "/projects/Exploitation.svg",
-      link: "https://github.com/subrat243",
-      technologies: [
-        "Malware Analysis",
-        "Reverse Engineering",
-        "Sandboxing",
-        "Python",
-      ],
       featured: true,
     },
   ],
@@ -393,9 +343,9 @@ export const APP_CONFIG = {
   errorHandling: {
     logErrors: true,
     fallbackImages: {
-      profile: "/Luffy.jpeg",
-      project: "/Luffy.jpeg",
-      default: "/Luffy.jpeg",
+      profile: "/favicon.png",
+      project: "/favicon.png",
+      default: "/favicon.png",
     },
     retryAttempts: 3,
     timeoutDuration: 10000,
