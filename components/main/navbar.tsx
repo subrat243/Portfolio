@@ -16,7 +16,7 @@ export const Navbar = () => {
         {/* Brand/Logo - Left Side */}
         <div className="hidden md:block text-gray-300 font-bold text-xl hover:text-white transition-colors duration-300">
           <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-            Portfolio
+            ^_^
           </span>
         </div>
 
@@ -89,7 +89,7 @@ export const Navbar = () => {
           {/* Mobile Brand - Left */}
           <div className="text-gray-300 font-bold text-lg">
             <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-              Portfolio
+              ^_^
             </span>
           </div>
 

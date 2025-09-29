@@ -29,7 +29,7 @@ export const HeroContent = () => {
           className="Welcome-box py-[8px] px-[7px] border border-purple-500/55 opacity-90 inline-flex items-center w-fit backdrop-blur-md"
         >
           <SparklesIcon className="text-purple-400 mr-[10px] h-5 w-5" />
-          <h1 className="Welcome-text text-[13px] font-medium">My Portfolio</h1>
+          <h1 className="Welcome-text text-[13px] font-medium">Hack Yourself First</h1>
         </motion.div>
 
         {/* Main Heading with Typing Animation */}
@@ -57,14 +57,7 @@ export const HeroContent = () => {
                   className="text-gradient-primary"
                   showCursor={true}
                 />
-                <motion.span
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1.5, duration: 0.5 }}
-                  className="text-purple-400 text-3xl sm:text-4xl md:text-5xl lg:text-6xl ml-2"
-                >
-                  ^_^
-                </motion.span>
+                
               </div>
             )}
           </div>

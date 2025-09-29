@@ -56,9 +56,9 @@ export const APP_CONFIG = {
   // CV Download Configuration
   cv: {
     downloadUrl:
-      "https://drive.google.com/file/d/1kfXtd5pP0-SNshTl11I5TnvT03DxIPDa/view?usp=sharing",
+      "https://drive.google.com/file/d/1WfqN880l_3L2lpYShY7ugSLNm_NFchB_/view?usp=sharing",
     directDownloadUrl:
-      "https://drive.google.com/file/d/1kfXtd5pP0-SNshTl11I5TnvT03DxIPDa/view?usp=drive_link",
+      "https://drive.google.com/file/d/1WfqN880l_3L2lpYShY7ugSLNm_NFchB_/view?usp=drive_link",
     filename: "Subrat_Samantaray_Resume.pdf",
   },
 
@@ -111,18 +111,21 @@ export const APP_CONFIG = {
     categories: [
       {
         title: "Security Tools",
-        items: ["Nmap", "Wireshark", "Metasploit", "Nessus", "Burp Suite"],
+        items: ["Kali Linux", "Nmap", "Wireshark", "Metasploit", "Burp Suite", "Nessus", "John the Ripper", "Bettercap"],
+      },
+      {
+        title: "Security Technologies",
+        items: ["IDS/IPS", "SIEM", "Antivirus", "VPNs", "Endpoint Security", "Firewalls"],
       },
       {
         title: "Security Practices",
         items: [
-          "VAPT",
+          "Vulnerability Assessment",
           "Firewall Management",
-          "Cryptography",
-          "VPNs",
-          "IDS/IPS",
-          "SIEM",
-          "Antivirus",
+          "Log Analysis",
+          "Threat Analysis",
+          "Risk Assessment",
+          "Penetration Testing",
         ],
       },
       {
@@ -130,8 +133,8 @@ export const APP_CONFIG = {
         items: ["NIST", "ISO 27001/27002", "PCI DSS", "HIPAA", "GDPR"],
       },
       {
-        title: "Operating Systems & Virtualization",
-        items: ["Linux", "Windows", "VMWare", "VirtualBox"],
+        title: "OS, Virtualization & Platforms",
+        items: ["Linux", "Windows", "VMWare", "VirtualBox","Git", "GitHub"],
       },
       {
         title: "Network Concepts",
@@ -143,6 +146,7 @@ export const APP_CONFIG = {
           "HTTP/HTTPS",
           "DNS",
           "Subnetting",
+          "Routing"
         ],
       },
     ],
