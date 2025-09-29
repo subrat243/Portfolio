@@ -65,13 +65,13 @@ export const APP_CONFIG = {
   // Projects Configuration
   projects: [
     {
-      id: "autovuln-scanner",
-      title: "Automated Vulnerability Detection Tool",
+      id: "vuln-scanner",
+      title: "Automated Vulnerability Scanning Tool",
       description:
-        "Python-based tool that automates network vulnerability scanning using Nmap. It scans targets (IP or domain) for open ports, detects services, and checks for known vulnerabilities.",
+        "Python-based tool that automates vulnerability scanning using Nmap. It scans targets (IP or domain) for open ports, detects services, and checks for known vulnerabilities.",
       image: "/projects/Attack.jpg",
-      link: "https://github.com/subrat243",
-      technologies: ["Python", "Tor", "Regex", "Security"],
+      link: "https://github.com/subrat243/Vuln-Scanner",
+      technologies: ["Python", "NMAP", "Security"],
       featured: true,
     },
     {
@@ -80,28 +80,28 @@ export const APP_CONFIG = {
       description:
         "A lightweight yet powerful network stress testing tool built with Scapy, designed to simulate diverse traffic patterns and protocols for both quick assessments and detailed network analysis.",
       image: "/projects/Exploitation.svg",
-      link: "https://github.com/subrat243",
+      link: "https://github.com/subrat243/DeAuth",
       technologies: ["Python", "Scapy", "Network Security"],
       featured: true,
     },
     {
-      id: "autopwn",
-      title: "AutoPwn - Penetration testing toolkit",
+      id: "wifi-deauth-tool",
+      title: "Wifi Deauthentication Toolkit",
       description:
-        "A powerful and automated penetration testing toolkit designed to streamline reconnaissance, scanning, and exploitation. It integrates popular tools and techniques into a single Python script.",
+        "A Bash script for performing Wi-Fi deauthentication attacks using the Aircrack-ng suite. This tool is designed for educational purposes and authorized penetration testing.",
       image: "/projects/Network-monitoring.svg",
-      link: "https://github.com/subrat243",
-      technologies: ["Network Analysis", "Security", "Python"],
+      link: "https://github.com/subrat243/Wifi-Deauthentication-Tool",
+      technologies: ["Network Analysis", "Security", "Bash"],
       featured: true,
     },
     {
-      id: "webapp-scanner",
-      title: "Web Application Security Scanner",
+      id: "hashify",
+      title: "Hashify - Hash Identifier Tool",
       description:
-        "Comprehensive web application security scanner that identifies OWASP Top 10 vulnerabilities including SQL injection, XSS, CSRF, and authentication bypass vulnerabilities.",
-      image: "/projects/Attack.jpg",
-      link: "https://github.com/subrat243",
-      technologies: ["Python", "Web Security", "OWASP", "SQLi"],
+        "Script to identifies hash types using a comprehensive library of regular expressions, combining the modern structure of hashify with the extensive algorithm list.",
+      image: "/projects/Data-security.svg",
+      link: "https://github.com/subrat243/Hashify",
+      technologies: ["Python", "Hash", "Cryptography", "Security"],
       featured: true,
     },
     {
