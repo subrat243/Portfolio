@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useId } from "react";
 import { LockClosedIcon, ShieldCheckIcon } from "@heroicons/react/24/solid";
 
 export const HoverEffect = ({
@@ -20,6 +20,7 @@ export const HoverEffect = ({
   className?: string;
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const containerId = useId();
 
   return (
     <div
@@ -37,7 +38,7 @@ export const HoverEffect = ({
                 <motion.span
                   key="hoverBackground"
                   className="absolute inset-0 h-full w-full bg-[#9BA4B5]/30 block rounded-3xl"
-                  layoutId="hoverBackground"
+                  layoutId={`hoverBackground-${containerId}`}
                   initial={{ opacity: 0 }}
                   animate={{
                     opacity: 1,
@@ -48,7 +49,7 @@ export const HoverEffect = ({
                     transition: { duration: 0.15 },
                   }}
                   transition={{
-                    layout: { duration: 0.25, ease: "easeOut" },
+                    layout: { type: "spring", bounce: 0.2, duration: 0.6 },
                   }}
                 />
               )}
