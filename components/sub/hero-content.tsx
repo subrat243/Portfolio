@@ -12,6 +12,7 @@ import {
   slideInFromTop,
 } from "@/lib/motion";
 import { EncryptedText } from "@/components/ui/encrypted-text";
+import { AsciiAnimation } from "@/components/ui/ascii-animation";
 
 export const HeroContent = () => {
   const [showSecondLine, setShowSecondLine] = useState(false);
@@ -164,7 +165,7 @@ export const HeroContent = () => {
             style={{ width: "130%", height: "130%", left: "-15%", top: "-15%" }}
           />
 
-          {/* Main Image */}
+          {/* Main Image / ASCII Animation */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5, rotateY: 180 }}
             animate={{ opacity: 1, scale: 1, rotateY: 0 }}
@@ -176,17 +177,7 @@ export const HeroContent = () => {
             }}
             className="relative z-10"
           >
-            <Image
-              src="/loop.gif"
-              alt="Cybersecurity Expert - Subrat Samantaray"
-              height={400}
-              width={400}
-              draggable={false}
-              className="select-none transition-all duration-300 gpu-optimized mix-blend-multiply invert"
-              priority
-              unoptimized
-              quality={95}
-            />
+            <AsciiAnimation />
           </motion.div>
 
           {/* Floating particles */}
