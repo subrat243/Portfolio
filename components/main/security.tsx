@@ -75,7 +75,7 @@ export const Security = () => {
             Visitor Security Guide: Protecting Your Digital Footprint
           </h2>
           <p className="text-base md:text-lg text-[#394867] mb-6 leading-relaxed">
-            Welcome! As a visitor in an increasingly interconnected digital landscape, understanding core security principles is your first line of defense. Whether you are browsing the web, managing an organization, or building software, implementing structured security practices ensures your digital assets remain uncompromised.
+            Welcome! As a visitor in an interconnected digital world, understanding core security principles is your first line of defense. Implementing these structured practices ensures your digital identity and assets remain uncompromised.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-[#394867]">
             <div className="p-4 bg-[#F1F6F9] rounded-xl border border-[#9BA4B5]/20">
