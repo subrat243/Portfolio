@@ -5,7 +5,6 @@ import type { PropsWithChildren } from "react";
 import { Footer } from "@/components/main/footer";
 import { Navbar } from "@/components/main/navbar";
 import { StarsCanvas } from "@/components/main/star-background";
-import { LinuxLoader } from "@/components/ui/linux-loader";
 
 import ErrorBoundary from "@/components/error-boundary";
 import { siteConfig } from "@/config";
@@ -64,7 +63,6 @@ export default function RootLayout({ children }: PropsWithChildren) {
         suppressHydrationWarning
       >
         <ErrorBoundary>
-          <LinuxLoader />
           <div className="relative w-full">
             <div className="relative z-10">
               <Navbar />

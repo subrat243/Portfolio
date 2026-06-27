@@ -95,12 +95,7 @@ export const TextRevealCard = ({
           transition={isMouseOver ? { duration: 0 } : { duration: 0.4 }}
           className="absolute bg-[#1F2121] z-20 will-change-transform flex flex-col items-center justify-center w-full h-full"
         >
-          <p
-            style={{
-              textShadow: "0px 2px 10px rgba(255,255,255,0.3)",
-            }}
-            className="text-xl sm:text-2xl md:text-3xl font-bold text-white text-center z-30"
-          >
+          <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white text-center z-30">
             {revealText}
           </p>
           {revealSlogan && (
