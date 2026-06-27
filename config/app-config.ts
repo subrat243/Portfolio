@@ -178,28 +178,6 @@ export const APP_CONFIG = {
         ],
       },
       {
-        title: "Data Protection",
-        practices: [
-          "Data encryption at rest and in transit",
-          "Regular data backups",
-          "Data loss prevention (DLP)",
-          "Secure data disposal",
-          "Data classification and handling",
-          "Privacy by design principles",
-        ],
-      },
-      {
-        title: "Incident Response",
-        practices: [
-          "Develop incident response plan",
-          "Regular security awareness training",
-          "Threat intelligence integration",
-          "Forensic readiness preparation",
-          "Business continuity planning",
-          "Regular security assessments",
-        ],
-      },
-      {
         title: "Application Security",
         practices: [
           "Secure code development practices",
@@ -208,17 +186,6 @@ export const APP_CONFIG = {
           "API security implementations",
           "Input validation and sanitization",
           "Security testing automation",
-        ],
-      },
-      {
-        title: "Compliance & Governance",
-        practices: [
-          "Regular compliance audits",
-          "Security policy development",
-          "Risk assessment procedures",
-          "Vendor security assessments",
-          "Security metrics and reporting",
-          "Continuous improvement processes",
         ],
       },
     ],
