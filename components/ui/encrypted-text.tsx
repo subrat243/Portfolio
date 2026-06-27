@@ -63,6 +63,7 @@ export const EncryptedText: React.FC<EncryptedTextProps> = ({
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true });
 
+  const [isMounted, setIsMounted] = useState<boolean>(false);
   const [revealCount, setRevealCount] = useState<number>(0);
   const animationFrameRef = useRef<number | null>(null);
   const startTimeRef = useRef<number>(0);
@@ -73,11 +74,15 @@ export const EncryptedText: React.FC<EncryptedTextProps> = ({
   );
 
   useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
     onCompleteRef.current = onComplete;
   }, [onComplete]);
 
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView || !isMounted) return;
 
     let isCancelled = false;
 
@@ -139,7 +144,7 @@ export const EncryptedText: React.FC<EncryptedTextProps> = ({
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [isInView, text, revealDelayMs, charset, flipDelayMs, startDelayMs]);
+  }, [isInView, isMounted, text, revealDelayMs, charset, flipDelayMs, startDelayMs]);
 
   if (!text) return null;
 
@@ -152,17 +157,21 @@ export const EncryptedText: React.FC<EncryptedTextProps> = ({
     >
       {text.split("").map((char, index) => {
         const isRevealed = index < revealCount;
-        const displayChar = isRevealed
+        const displayChar = !isMounted
           ? char
-          : char === " "
-            ? " "
-            : (scrambleCharsRef.current[index] ??
-              generateRandomCharacter(charset));
+          : isRevealed
+            ? char
+            : char === " "
+              ? " "
+              : (scrambleCharsRef.current[index] ??
+                generateRandomCharacter(charset));
 
         return (
           <span
             key={index}
-            className={cn(isRevealed ? revealedClassName : encryptedClassName)}
+            className={cn(
+              (!isMounted || isRevealed) ? revealedClassName : encryptedClassName,
+            )}
           >
             {displayChar}
           </span>
