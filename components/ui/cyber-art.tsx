@@ -159,7 +159,7 @@ const CyberCore = () => {
 export const CyberArt = () => {
   return (
     <div className="w-full h-full flex items-center justify-center relative select-none cursor-grab active:cursor-grabbing">
-      <Canvas camera={{ position: [0, 0, 8.5], fov: 55 }}>
+      <Canvas camera={{ position: [0, 0, 7.2], fov: 55 }}>
         <ambientLight intensity={0.7} />
         <pointLight position={[10, 10, 10]} intensity={1.5} />
         <directionalLight position={[-5, 5, -5]} intensity={0.8} />

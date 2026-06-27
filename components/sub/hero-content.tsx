@@ -137,12 +137,12 @@ export const HeroContent = () => {
         </motion.div>
       </div>
 
-      {/* Right Content Section / Hologram Globe */}
+      {/* Right Content Section / Cyber Art */}
       <motion.div
         variants={slideInFromRight(0.8)}
-        className="flex-1 w-full max-w-lg flex justify-center items-center relative order-1 lg:order-2 pointer-events-auto my-auto"
+        className="flex-1 w-full max-w-xl lg:max-w-2xl flex justify-center items-center relative order-1 lg:order-2 pointer-events-auto my-auto"
       >
-        <div className="relative group w-[380px] h-[380px] sm:w-[440px] sm:h-[440px] md:w-[500px] md:h-[500px] flex items-center justify-center">
+        <div className="relative group w-[400px] h-[400px] sm:w-[480px] sm:h-[480px] md:w-[560px] md:h-[560px] lg:w-[600px] lg:h-[600px] flex items-center justify-center">
           {/* Glowing background effect */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
