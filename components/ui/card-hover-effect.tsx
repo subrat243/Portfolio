@@ -48,7 +48,7 @@ export const HoverEffect = ({
                   }}
                   exit={{
                     opacity: 0,
-                    transition: { duration: 0.15, delay: 0.2 },
+                    transition: { duration: 0.15 },
                   }}
                 />
               )}
