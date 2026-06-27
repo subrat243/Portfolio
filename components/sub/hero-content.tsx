@@ -151,20 +151,6 @@ export const HeroContent = () => {
             className="absolute inset-0 bg-[#9BA4B5]/10 rounded-full blur-3xl transform scale-110"
           />
 
-          {/* Animated rings - guaranteed perfect full circles */}
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-0 border-2 border-[#9BA4B5]/40 rounded-full hidden md:block aspect-square"
-            style={{ width: "110%", height: "110%", left: "-5%", top: "-5%" }}
-          />
-          <motion.div
-            animate={{ rotate: -360 }}
-            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-0 border-2 border-[#394867]/20 rounded-full border-dashed hidden md:block aspect-square"
-            style={{ width: "130%", height: "130%", left: "-15%", top: "-15%" }}
-          />
-
           {/* Main Holo Globe */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
