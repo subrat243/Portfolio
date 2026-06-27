@@ -142,27 +142,13 @@ export const HeroContent = () => {
         variants={slideInFromRight(0.8)}
         className="flex-1 w-full max-w-lg flex justify-center items-center relative order-1 lg:order-2 pointer-events-auto"
       >
-        <div className="relative group">
+        <div className="relative group w-full">
           {/* Glowing background effect */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 0.6, scale: 1 }}
             transition={{ delay: 2, duration: 1.5 }}
             className="absolute inset-0 bg-[#9BA4B5]/10 rounded-full blur-3xl transform scale-110"
-          />
-
-          {/* Animated rings */}
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-0 border-2 border-[#9BA4B5]/40 rounded-full hidden md:block"
-            style={{ width: "110%", height: "110%", left: "-5%", top: "-5%" }}
-          />
-          <motion.div
-            animate={{ rotate: -360 }}
-            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-0 border-2 border-[#394867]/20 rounded-full border-dashed hidden md:block"
-            style={{ width: "130%", height: "130%", left: "-15%", top: "-15%" }}
           />
 
           {/* Main Holo Globe */}
