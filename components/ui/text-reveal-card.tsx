@@ -67,7 +67,7 @@ export const TextRevealCard = ({
       onTouchMove={touchMoveHandler}
       ref={cardRef}
       className={cn(
-        "bg-[#1d1c20] border border-white/[0.08] w-full max-w-4xl rounded-2xl p-6 relative overflow-hidden flex flex-col items-center justify-center",
+        "bg-[#1F2121] border border-white/[0.08] w-full max-w-4xl rounded-2xl p-6 relative overflow-hidden flex flex-col items-center justify-center",
         className
       )}
     >
@@ -89,13 +89,13 @@ export const TextRevealCard = ({
                 }
           }
           transition={isMouseOver ? { duration: 0 } : { duration: 0.4 }}
-          className="absolute bg-[#1d1c20] z-20 will-change-transform flex items-center justify-center w-full h-full"
+          className="absolute bg-[#1F2121] z-20 will-change-transform flex items-center justify-center w-full h-full"
         >
           <p
             style={{
-              textShadow: "4px 4px 15px rgba(0,0,0,0.5)",
+              textShadow: "0px 2px 10px rgba(255,255,255,0.3)",
             }}
-            className="text-lg sm:text-2xl md:text-3xl py-4 font-bold text-white bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-300 text-center"
+            className="text-xl sm:text-2xl md:text-3xl font-bold text-white text-center z-30"
           >
             {revealText}
           </p>
@@ -107,11 +107,11 @@ export const TextRevealCard = ({
             opacity: widthPercentage > 0 ? 1 : 0,
           }}
           transition={isMouseOver ? { duration: 0 } : { duration: 0.4 }}
-          className="h-24 w-[6px] bg-gradient-to-b from-transparent via-neutral-800 to-transparent absolute z-50 will-change-transform"
+          className="h-24 w-[6px] bg-gradient-to-b from-transparent via-white to-transparent absolute z-50 will-change-transform"
         ></motion.div>
 
-        <div className="overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,white,transparent)] flex items-center justify-center w-full h-full">
-          <p className="text-lg sm:text-2xl md:text-3xl py-4 font-bold bg-clip-text text-transparent bg-[#323238] text-center">
+        <div className="flex items-center justify-center w-full h-full relative">
+          <p className="text-xl sm:text-2xl md:text-3xl font-bold text-[#9BA4B5] text-center z-10">
             {text}
           </p>
           <MemoizedStars />
