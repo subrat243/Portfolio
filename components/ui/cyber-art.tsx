@@ -113,6 +113,29 @@ const CyberCore = () => {
         </mesh>
       ))}
 
+      {/* Vulnerability Scanner Wave Ring */}
+      <mesh ref={scannerRef} rotation={[Math.PI / 2, 0, 0]}>
+        <ringGeometry args={[1.9, 2.4, 32]} />
+        <meshBasicMaterial color="#00ffcc" transparent opacity={0.4} side={THREE.DoubleSide} />
+      </mesh>
+
+      {/* Outer High-Tech Alignment Rings */}
+      <group ref={outerRingsRef}>
+        <mesh rotation={[0.4, 0, 0]}>
+          <torusGeometry args={[2.9, 0.015, 16, 100]} />
+          <meshBasicMaterial color="#394867" transparent opacity={0.6} />
+        </mesh>
+        <mesh rotation={[-0.4, 0.3, 0]}>
+          <torusGeometry args={[3.3, 0.01, 16, 100]} />
+          <meshBasicMaterial color="#9BA4B5" transparent opacity={0.4} />
+        </mesh>
+        {/* Rotating lock node */}
+        <mesh position={[0, 3.3, 0]}>
+          <octahedronGeometry args={[0.15, 0]} />
+          <meshBasicMaterial color="#00ffcc" />
+        </mesh>
+      </group>
+
       {/* Floating Cryptographic Data Streams */}
       <group ref={textGroupRef}>
         {cyberWords.map((item, i) => (
