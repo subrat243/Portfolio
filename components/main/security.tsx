@@ -55,9 +55,9 @@ export const Security = () => {
         >
           <TextRevealCard
             text="Cybersecurity Best Practices"
-            slogan="Secure by design, resilient by defense"
+            slogan="Essential security measures that every organization and individual must follow"
             revealText="Protecting digital assets & systems"
-            revealSlogan="Continuous vigilance against evolving cyber threats"
+            revealSlogan="Protecting digital assets requires universal commitment and continuous vigilance"
             className="w-full max-w-4xl mx-auto bg-[#1F2121] border-[#9BA4B5]/30 rounded-2xl shadow-lg p-6"
           />
         </motion.div>
