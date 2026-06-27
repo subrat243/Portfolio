@@ -12,7 +12,7 @@ import {
   slideInFromTop,
 } from "@/lib/motion";
 import { EncryptedText } from "@/components/ui/encrypted-text";
-import { AsciiAnimation } from "@/components/ui/ascii-animation";
+import { HoloGlobe } from "@/components/ui/holo-globe";
 
 export const HeroContent = () => {
   const [showSecondLine, setShowSecondLine] = useState(false);
@@ -165,19 +165,14 @@ export const HeroContent = () => {
             style={{ width: "130%", height: "130%", left: "-15%", top: "-15%" }}
           />
 
-          {/* Main Image / ASCII Animation */}
+          {/* Main Holo Globe */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.5, rotateY: 180 }}
-            animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.5, duration: 1, ease: "easeOut" }}
-            whileHover={{
-              scale: 1.05,
-              rotateY: 5,
-              transition: { duration: 0.3 },
-            }}
-            className="relative z-10"
+            className="relative z-10 w-full"
           >
-            <AsciiAnimation />
+            <HoloGlobe />
           </motion.div>
 
           {/* Floating particles */}
