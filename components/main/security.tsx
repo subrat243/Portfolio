@@ -65,6 +65,7 @@ export const Security = () => {
         {/* Security Practice Categories & Defense in Depth */}
         <div className="w-full mt-10">
           <HoverEffect
+            id="security"
             items={[
               ...APP_CONFIG.security.bestPractices,
               {

@@ -7,6 +7,7 @@ import { LockClosedIcon, ShieldCheckIcon } from "@heroicons/react/24/solid";
 export const HoverEffect = ({
   items,
   className,
+  id,
 }: {
   items: {
     title: string;
@@ -18,6 +19,7 @@ export const HoverEffect = ({
     items?: string[];
   }[];
   className?: string;
+  id?: string;
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const containerId = useId();
@@ -28,7 +30,6 @@ export const HoverEffect = ({
         "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10 gap-4",
         className
       )}
-      onMouseLeave={() => setHoveredIndex(null)}
     >
       {items.map((item, idx) => {
         const content = (
@@ -38,7 +39,7 @@ export const HoverEffect = ({
                 <motion.span
                   key="hoverBackground"
                   className="absolute inset-0 h-full w-full bg-[#9BA4B5]/30 block rounded-3xl"
-                  layoutId={`hoverBackground-${containerId}`}
+                  layoutId={`hoverBackground-${id || containerId}`}
                   initial={{ opacity: 0 }}
                   animate={{
                     opacity: 1,
@@ -46,10 +47,7 @@ export const HoverEffect = ({
                   }}
                   exit={{
                     opacity: 0,
-                    transition: { duration: 0.15 },
-                  }}
-                  transition={{
-                    layout: { type: "spring", bounce: 0.2, duration: 0.6 },
+                    transition: { duration: 0.15, delay: 0.2 },
                   }}
                 />
               )}
@@ -194,6 +192,7 @@ export const HoverEffect = ({
               key={item.link}
               className={wrapperClass}
               onMouseEnter={() => setHoveredIndex(idx)}
+              onMouseLeave={() => setHoveredIndex(null)}
             >
               {content}
             </a>
@@ -205,6 +204,7 @@ export const HoverEffect = ({
             key={item.title}
             className={wrapperClass}
             onMouseEnter={() => setHoveredIndex(idx)}
+            onMouseLeave={() => setHoveredIndex(null)}
           >
             {content}
           </div>

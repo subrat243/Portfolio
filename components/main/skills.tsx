@@ -25,6 +25,7 @@ export const Skills = () => {
         {/* Category Cards */}
         <div className="w-full mt-10">
           <HoverEffect
+            id="skills"
             items={SKILLS_CATEGORIES}
             className="grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 py-10"
           />
