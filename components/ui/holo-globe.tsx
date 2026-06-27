@@ -6,14 +6,15 @@ import * as THREE from "three";
 
 const GlobeModel = () => {
   const globeRef = useRef<THREE.Group>(null);
-  const ring1Ref = useRef<THREE.Mesh>(null);
-  const ring2Ref = useRef<THREE.Mesh>(null);
+  const ring1Ref = useRef<THREE.Group>(null);
+  const ring2Ref = useRef<THREE.Group>(null);
+  const ring3Ref = useRef<THREE.Group>(null);
   const satellitesRef = useRef<THREE.Group>(null);
 
   // Generate random points on sphere for holographic data nodes
   const points = useMemo(() => {
     const pts = [];
-    const count = 150;
+    const count = 180;
     const radius = 1.82;
     for (let i = 0; i < count; i++) {
       // Fibonacci lattice for even distribution
@@ -27,19 +28,19 @@ const GlobeModel = () => {
     return pts;
   }, []);
 
-  // Generate satellite positions
+  // Generate independent satellite positions
   const satellites = useMemo(() => {
     const sats = [];
-    const radius = 2.2;
-    for (let i = 0; i < 6; i++) {
+    const radius = 2.4;
+    for (let i = 0; i < 8; i++) {
       const u = Math.random();
       const v = Math.random();
       const theta = u * 2.0 * Math.PI;
       const phi = Math.acos(2.0 * v - 1.0);
-      const x = (radius + Math.random() * 0.5) * Math.sin(phi) * Math.cos(theta);
-      const y = (radius + Math.random() * 0.5) * Math.sin(phi) * Math.sin(theta);
-      const z = (radius + Math.random() * 0.5) * Math.cos(phi);
-      sats.push({ pos: [x, y, z] as [number, number, number], speed: Math.random() * 0.5 + 0.5 });
+      const x = (radius + Math.random() * 0.6) * Math.sin(phi) * Math.cos(theta);
+      const y = (radius + Math.random() * 0.6) * Math.sin(phi) * Math.sin(theta);
+      const z = (radius + Math.random() * 0.6) * Math.cos(phi);
+      sats.push({ pos: [x, y, z] as [number, number, number] });
     }
     return sats;
   }, []);
@@ -48,17 +49,25 @@ const GlobeModel = () => {
     if (globeRef.current) {
       globeRef.current.rotation.y += delta * 0.15;
     }
+    // Ring 1 revolving gyroscopically
     if (ring1Ref.current) {
-      ring1Ref.current.rotation.z += delta * 0.2;
-      ring1Ref.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.5) * 0.1;
+      ring1Ref.current.rotation.y += delta * 0.4;
+      ring1Ref.current.rotation.x += delta * 0.15;
     }
+    // Ring 2 revolving at a different angle
     if (ring2Ref.current) {
-      ring2Ref.current.rotation.z -= delta * 0.25;
-      ring2Ref.current.rotation.y = Math.cos(state.clock.elapsedTime * 0.5) * 0.1;
+      ring2Ref.current.rotation.x -= delta * 0.35;
+      ring2Ref.current.rotation.z += delta * 0.2;
     }
+    // Ring 3 revolving opposite direction
+    if (ring3Ref.current) {
+      ring3Ref.current.rotation.y -= delta * 0.5;
+      ring3Ref.current.rotation.z -= delta * 0.15;
+    }
+    // Satellites group rotation
     if (satellitesRef.current) {
-      satellitesRef.current.rotation.y -= delta * 0.1;
-      satellitesRef.current.rotation.x += delta * 0.05;
+      satellitesRef.current.rotation.y -= delta * 0.12;
+      satellitesRef.current.rotation.x += delta * 0.08;
     }
   });
 
@@ -75,40 +84,71 @@ const GlobeModel = () => {
         {/* Outer Wireframe Grid */}
         <mesh>
           <sphereGeometry args={[1.8, 32, 16]} />
-          <meshBasicMaterial color="#9BA4B5" wireframe transparent opacity={0.3} />
+          <meshBasicMaterial color="#9BA4B5" wireframe transparent opacity={0.35} />
         </mesh>
 
         {/* Data Nodes (Points on sphere) */}
         {points.map((pos, i) => (
           <mesh key={i} position={[pos.x, pos.y, pos.z]}>
-            <sphereGeometry args={[0.02, 8, 8]} />
-            <meshBasicMaterial color={i % 5 === 0 ? "#00ffcc" : "#9BA4B5"} transparent opacity={0.8} />
+            <sphereGeometry args={[0.025, 8, 8]} />
+            <meshBasicMaterial color={i % 4 === 0 ? "#00ffcc" : "#9BA4B5"} transparent opacity={0.85} />
           </mesh>
         ))}
       </group>
 
-      {/* Orbital Ring 1 */}
-      <mesh ref={ring1Ref} rotation={[0.4, 0.2, 0]}>
-        <torusGeometry args={[2.3, 0.008, 16, 100]} />
-        <meshBasicMaterial color="#9BA4B5" transparent opacity={0.4} />
-      </mesh>
+      {/* Orbital Ring 1 (Inner Gyro Ring) */}
+      <group ref={ring1Ref} rotation={[Math.PI / 4, 0.2, 0]}>
+        <mesh>
+          <torusGeometry args={[2.2, 0.012, 16, 100]} />
+          <meshBasicMaterial color="#9BA4B5" transparent opacity={0.5} />
+        </mesh>
+        {/* Orbiting node on Ring 1 */}
+        <mesh position={[2.2, 0, 0]}>
+          <sphereGeometry args={[0.06, 16, 16]} />
+          <meshBasicMaterial color="#00ffcc" />
+        </mesh>
+      </group>
 
-      {/* Orbital Ring 2 */}
-      <mesh ref={ring2Ref} rotation={[-0.3, 0.4, 0]}>
-        <torusGeometry args={[2.7, 0.012, 16, 100]} />
-        <meshBasicMaterial color="#00ffcc" transparent opacity={0.3} />
-      </mesh>
+      {/* Orbital Ring 2 (Outer Cyber Ring) */}
+      <group ref={ring2Ref} rotation={[-Math.PI / 3, Math.PI / 6, 0]}>
+        <mesh>
+          <torusGeometry args={[2.6, 0.015, 16, 100]} />
+          <meshBasicMaterial color="#00ffcc" transparent opacity={0.4} />
+        </mesh>
+        {/* Orbiting node on Ring 2 */}
+        <mesh position={[0, 2.6, 0]}>
+          <sphereGeometry args={[0.07, 16, 16]} />
+          <meshBasicMaterial color="#00ffcc" />
+        </mesh>
+        <mesh position={[0, -2.6, 0]}>
+          <sphereGeometry args={[0.05, 16, 16]} />
+          <meshBasicMaterial color="#9BA4B5" />
+        </mesh>
+      </group>
 
-      {/* Satellites */}
+      {/* Orbital Ring 3 (Equatorial Tech Ring) */}
+      <group ref={ring3Ref} rotation={[0.2, -Math.PI / 4, 0]}>
+        <mesh>
+          <torusGeometry args={[3.0, 0.01, 16, 100]} />
+          <meshBasicMaterial color="#9BA4B5" transparent opacity={0.4} />
+        </mesh>
+        {/* Orbiting node on Ring 3 */}
+        <mesh position={[-3.0, 0, 0]}>
+          <sphereGeometry args={[0.06, 16, 16]} />
+          <meshBasicMaterial color="#00ffcc" />
+        </mesh>
+      </group>
+
+      {/* Floating Satellites */}
       <group ref={satellitesRef}>
         {satellites.map((sat, i) => (
           <group key={i} position={sat.pos}>
             <mesh>
-              <sphereGeometry args={[0.05, 16, 16]} />
+              <sphereGeometry args={[0.04, 16, 16]} />
               <meshBasicMaterial color="#00ffcc" />
             </mesh>
             <mesh>
-              <sphereGeometry args={[0.08, 16, 16]} />
+              <sphereGeometry args={[0.07, 16, 16]} />
               <meshBasicMaterial color="#00ffcc" transparent opacity={0.3} />
             </mesh>
           </group>
@@ -120,8 +160,8 @@ const GlobeModel = () => {
 
 export const HoloGlobe = () => {
   return (
-    <div className="w-full h-[400px] sm:h-[450px] md:h-[500px] flex items-center justify-center relative select-none cursor-grab active:cursor-grabbing">
-      <Canvas camera={{ position: [0, 0, 6], fov: 60 }}>
+    <div className="w-full h-[420px] sm:h-[480px] md:h-[560px] flex items-center justify-center relative select-none cursor-grab active:cursor-grabbing">
+      <Canvas camera={{ position: [0, 0, 5.2], fov: 55 }}>
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} intensity={1} />
         <React.Suspense fallback={null}>
@@ -138,12 +178,12 @@ export const HoloGlobe = () => {
       </Canvas>
       
       {/* Holographic HUD Overlays */}
-      <div className="absolute top-4 left-4 border border-[#9BA4B5]/30 bg-[#212A3E]/40 backdrop-blur-md px-3 py-1 rounded text-[10px] text-[#00ffcc] tracking-widest uppercase flex items-center gap-2">
+      <div className="absolute top-4 left-4 border border-[#9BA4B5]/30 bg-[#212A3E]/40 backdrop-blur-md px-3 py-1.5 rounded text-[10px] text-[#00ffcc] tracking-widest uppercase flex items-center gap-2 shadow-lg">
         <span className="w-1.5 h-1.5 rounded-full bg-[#00ffcc] animate-pulse"></span>
         Sec-Ops Core // Active
       </div>
-      <div className="absolute bottom-4 right-4 border border-[#9BA4B5]/30 bg-[#212A3E]/40 backdrop-blur-md px-3 py-1 rounded text-[10px] text-[#9BA4B5] tracking-widest uppercase flex items-center gap-2">
-        Global Defense // 99.9%
+      <div className="absolute bottom-4 right-4 border border-[#9BA4B5]/30 bg-[#212A3E]/40 backdrop-blur-md px-3 py-1.5 rounded text-[10px] text-[#9BA4B5] tracking-widest uppercase flex items-center gap-2 shadow-lg">
+        Orbital Gyro // 360°
       </div>
     </div>
   );
