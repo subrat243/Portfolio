@@ -39,7 +39,10 @@ export const HoverEffect = ({
               {hoveredIndex === idx && (
                 <motion.span
                   key="hoverBackground"
-                  className="absolute inset-0 h-full w-full bg-[#9BA4B5]/30 block rounded-3xl"
+                  className={cn(
+                    "absolute inset-0 h-full w-full block rounded-3xl",
+                    id === "skills" ? "bg-[#394867]/40" : "bg-[#9BA4B5]/30"
+                  )}
                   layoutId={`hoverBackground-${id || containerId}`}
                   initial={{ opacity: 0 }}
                   animate={{
