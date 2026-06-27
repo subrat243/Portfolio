@@ -101,20 +101,20 @@ export const ProjectSlider = ({ projects }: ProjectSliderProps) => {
           whileHover={{ scale: 1.1, x: -5 }}
           whileTap={{ scale: 0.9 }}
           onClick={prevSlide}
-          className="absolute left-4 z-40 p-3 bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/30 hover:border-purple-400 rounded-full backdrop-blur-sm transition-all duration-300 group"
+          className="absolute left-4 z-40 p-3 bg-white/80 hover:bg-[#212A3E]/5 border border-[#9BA4B5]/40 hover:border-[#212A3E] rounded-full backdrop-blur-sm transition-all duration-300 group"
           aria-label="Previous project"
         >
-          <ChevronLeftIcon className="w-6 h-6 text-purple-400 group-hover:text-purple-300" />
+          <ChevronLeftIcon className="w-6 h-6 text-[#212A3E]" />
         </motion.button>
 
         <motion.button
           whileHover={{ scale: 1.1, x: 5 }}
           whileTap={{ scale: 0.9 }}
           onClick={nextSlide}
-          className="absolute right-4 z-40 p-3 bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/30 hover:border-purple-400 rounded-full backdrop-blur-sm transition-all duration-300 group"
+          className="absolute right-4 z-40 p-3 bg-white/80 hover:bg-[#212A3E]/5 border border-[#9BA4B5]/40 hover:border-[#212A3E] rounded-full backdrop-blur-sm transition-all duration-300 group"
           aria-label="Next project"
         >
-          <ChevronRightIcon className="w-6 h-6 text-purple-400 group-hover:text-purple-300" />
+          <ChevronRightIcon className="w-6 h-6 text-[#212A3E]" />
         </motion.button>
       </div>
 
@@ -128,8 +128,8 @@ export const ProjectSlider = ({ projects }: ProjectSliderProps) => {
             onClick={() => goToSlide(index)}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
               index === currentIndex
-                ? "bg-gradient-to-r from-purple-500 to-cyan-500 shadow-lg shadow-purple-500/50"
-                : "bg-gray-600 hover:bg-gray-500"
+                ? "bg-[#212A3E] shadow-sm shadow-[#212A3E]/30 scale-125"
+                : "bg-[#9BA4B5] hover:bg-[#394867]"
             }`}
             aria-label={`Go to project ${index + 1}`}
           />

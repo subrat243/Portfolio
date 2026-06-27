@@ -26,7 +26,7 @@ const cedarville = Cedarville_Cursive({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#030014",
+  themeColor: "#F1F6F9",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -37,7 +37,7 @@ export const metadata: Metadata = siteConfig;
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="en" className={cn(inter.variable, cedarville.variable)}>
+    <html lang="en" className={cn("light", inter.variable, cedarville.variable)}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -45,18 +45,18 @@ export default function RootLayout({ children }: PropsWithChildren) {
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
-        <meta name="theme-color" content="#030014" />
-        <meta name="color-scheme" content="dark" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
-        <link rel="icon" type="image/jpeg" sizes="32x32" href="/favicon.png" />
-        <link rel="icon" type="image/jpeg" sizes="16x16" href="/favicon.png" />
-        <link rel="icon" type="image/jpeg" href="/favicon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-        <meta name="msapplication-TileColor" content="#030014" />
+        <meta name="theme-color" content="#F1F6F9" />
+        <meta name="color-scheme" content="light" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+        <link rel="icon" href="/favicon/favicon.ico" />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
+        <meta name="msapplication-TileColor" content="#F1F6F9" />
       </head>
       <body
         className={cn(
-          "bg-[#030014] overflow-y-scroll overflow-x-hidden antialiased",
+          "bg-[#F1F6F9] text-[#212A3E] overflow-y-scroll overflow-x-hidden antialiased",
           inter.className,
           "min-h-screen font-sans",
         )}
@@ -64,9 +64,6 @@ export default function RootLayout({ children }: PropsWithChildren) {
       >
         <ErrorBoundary>
           <div className="relative w-full">
-            <div className="fixed inset-0 z-0 pointer-events-none">
-              <StarsCanvas />
-            </div>
             <div className="relative z-10">
               <Navbar />
               <main className="relative z-10">{children}</main>

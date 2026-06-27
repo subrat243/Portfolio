@@ -10,6 +10,7 @@ import {
   slideInFromRight,
   slideInFromTop,
 } from "@/lib/motion";
+import { CometCard } from "@/components/ui/comet-card";
 
 export const About = () => {
   return (
@@ -18,19 +19,14 @@ export const About = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
-      className="flex flex-col items-center justify-center py-20 px-8 lg:px-10 relative min-h-screen overflow-hidden bg-[#030014] border-t border-[#2A0E61]/50"
+      className="flex flex-col items-center justify-center py-20 px-8 lg:px-10 relative min-h-screen overflow-hidden bg-[#F1F6F9]"
     >
       {/* Background Stars */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-30">
         <StarsCanvas />
       </div>
 
-      {/* Background Pattern */}
-      <div className="absolute inset-0 z-[1] pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-cyan-900/10"></div>
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent"></div>
-      </div>
+
 
       {/* Content Container */}
       <div className="relative z-10 w-full max-w-7xl">
@@ -40,9 +36,9 @@ export const About = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9] mb-10 mx-auto"
+          className="Welcome-box py-[8px] px-[7px] border border-[#9BA4B5]/40 opacity-[0.9] mb-10 mx-auto"
         >
-          <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
+          <SparklesIcon className="text-[#394867] mr-[10px] h-5 w-5" />
           <h1 className="Welcome-text text-[13px]">About Me</h1>
         </motion.div>
 
@@ -56,74 +52,42 @@ export const About = () => {
             className="flex flex-col items-center"
           >
             <motion.div
-              initial={{ scale: 0.8, opacity: 0, rotateY: 180 }}
-              whileInView={{ scale: 1, opacity: 1, rotateY: 0 }}
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              whileHover={{
-                scale: 1.05,
-                rotateY: 5,
-                transition: { duration: 0.3 },
-              }}
-              className="relative group perspective-1000"
+              className="relative group"
             >
-              <div className="relative w-80 h-96 bg-gradient-to-br from-[#0b0b0b]/90 to-[#1a1a2e]/80 backdrop-blur-md rounded-2xl border border-purple-500/30 overflow-hidden shadow-2xl hover:shadow-glow z-20">
-                {/* Card Background Effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 backdrop-blur-sm" />
-
-                {/* Profile Image */}
-                <div className="relative flex flex-col items-center justify-center h-full p-6">
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.3 }}
-                    className="w-40 h-40 rounded-full border-4 border-purple-500 overflow-hidden mb-6 shadow-xl"
-                  >
-                    <Image
-                      src="/profile.jpg"
-                      alt="Subrat Samantaray"
-                      width={130}
-                      height={130}
-                      className="w-full h-full object-cover"
-                    />
-                  </motion.div>
-
-                  <h3 className="text-2xl font-bold text-white mb-2">
-                    Subrat Samantaray
-                  </h3>
-                  <p className="text-purple-400 text-center font-semibold">
-                    Cybersecurity Student
-                  </p>
-                  <p className="text-gray-300 text-center text-sm mt-2">
-                    Ethical Hacker & Security Researcher
-                  </p>
+              <CometCard className="w-80">
+                <div
+                  className="flex w-80 cursor-pointer flex-col items-stretch rounded-[16px] border-0 bg-[#1F2121] p-2 md:p-4 shadow-xl"
+                  style={{
+                    transformStyle: "preserve-3d",
+                    transform: "none",
+                    opacity: 1,
+                  }}
+                >
+                  <div className="mx-2 flex-1">
+                    <div className="relative mt-2 aspect-[3/4] w-full overflow-hidden rounded-[16px]">
+                      <Image
+                        loading="lazy"
+                        className="absolute inset-0 h-full w-full rounded-[16px] bg-[#000000] object-cover"
+                        alt="Subrat Samantaray"
+                        src="/profile.jpg"
+                        fill
+                        sizes="(max-width: 768px) 100vw, 320px"
+                        style={{
+                          boxShadow: "rgba(0, 0, 0, 0.05) 0px 5px 6px 0px",
+                          opacity: 1,
+                        }}
+                      />
+                    </div>
+                  </div>
+                  <div className="mt-2 flex flex-shrink-0 items-center justify-between p-4 font-mono text-white">
+                    <div className="text-xs font-bold">Subrat Samantaray</div>
+                    <div className="text-xs text-gray-300 opacity-50">#0x7F8E</div>
+                  </div>
                 </div>
-
-                {/* Floating Elements */}
-                <motion.div
-                  animate={{
-                    y: [-10, 10, -10],
-                    opacity: [0.5, 1, 0.5],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  className="absolute top-4 right-4 w-3 h-3 bg-cyan-400 rounded-full"
-                />
-                <motion.div
-                  animate={{
-                    y: [10, -10, 10],
-                    opacity: [0.5, 1, 0.5],
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 1,
-                  }}
-                  className="absolute bottom-4 left-4 w-2 h-2 bg-purple-400 rounded-full"
-                />
-              </div>
+              </CometCard>
             </motion.div>
           </motion.div>
 
@@ -137,52 +101,50 @@ export const About = () => {
           >
             <motion.h2
               variants={slideInFromRight(0.6)}
-              className="text-4xl font-bold text-gradient-primary"
+              className="text-4xl font-bold text-[#212A3E]"
             >
               Who Am I?
             </motion.h2>
 
             <motion.p
               variants={slideInFromRight(0.9)}
-              className="text-lg text-gray-300 leading-relaxed"
+              className="text-lg text-[#394867] leading-relaxed"
             >
               I&apos;m a passionate{" "}
-              <span className="text-purple-400 font-semibold">
+              <span className="text-[#212A3E] font-bold">
                 Cybersecurity student
               </span>{" "}
-              and
-              <span className="text-cyan-400 font-semibold">
-                {" "}
+              and{" "}
+              <span className="text-[#212A3E] font-bold">
                 security enthusiast
               </span>{" "}
               who thrives on exploring the intricate world of digital security.
-              I specialize in{" "}
-              <span className="text-purple-400">Penetration Testing</span>,
-              <span className="text-cyan-400"> Network Security</span>, and{" "}
-              <span className="text-purple-400">Web Application Security</span>.
+              I specialize in <span className="text-[#394867] font-semibold">Penetration Testing</span>,{" "}
+              <span className="text-[#394867] font-semibold">Network Security</span>, and{" "}
+              <span className="text-[#394867] font-semibold">Web Application Security</span>.
             </motion.p>
 
             <motion.p
               variants={slideInFromRight(1.1)}
-              className="text-lg text-gray-300 leading-relaxed"
+              className="text-lg text-[#394867]/90 leading-relaxed"
             >
               With hands-on experience using industry-standard tools like{" "}
-              <span className="text-green-400">Nmap</span>,
-              <span className="text-blue-400"> Wireshark</span>,{" "}
-              <span className="text-red-400">Metasploit</span>, and
-              <span className="text-orange-400"> Burp Suite</span>, I have
+              <span className="text-[#212A3E] font-medium">Nmap</span>,{" "}
+              <span className="text-[#212A3E] font-medium">Wireshark</span>,{" "}
+              <span className="text-[#212A3E] font-medium">Metasploit</span>, and{" "}
+              <span className="text-[#212A3E] font-medium">Burp Suite</span>, I have
               developed a deep understanding of network protocols, security
               frameworks, and threat detection methodologies.
             </motion.p>
 
             <motion.p
               variants={slideInFromRight(1.3)}
-              className="text-lg text-gray-300 leading-relaxed"
+              className="text-lg text-[#394867]/90 leading-relaxed"
             >
               My passion extends beyond technical skills to include{" "}
-              <span className="text-purple-400">ethical hacking</span>,
-              <span className="text-cyan-400"> digital forensics</span>, and{" "}
-              <span className="text-green-400">threat intelligence</span>. My
+              <span className="text-[#212A3E] font-medium">ethical hacking</span>,{" "}
+              <span className="text-[#212A3E] font-medium">digital forensics</span>, and{" "}
+              <span className="text-[#212A3E] font-medium">threat intelligence</span>. My
               ultimate goal is to contribute to building a safer digital world
               through continuous learning, practical security implementations,
               and knowledge sharing with the cybersecurity community.
@@ -207,7 +169,7 @@ export const About = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.05 }}
-                  className="px-4 py-2 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 border border-purple-500/30 rounded-full text-sm text-white hover:border-purple-400 transition-all duration-300"
+                  className="px-4 py-2 bg-white border border-[#9BA4B5]/40 rounded-full text-sm text-[#212A3E] hover:border-[#212A3E] hover:bg-[#212A3E]/5 transition-all duration-300 font-medium"
                 >
                   {skill}
                 </motion.span>

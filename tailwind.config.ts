@@ -71,8 +71,15 @@ const config: Config = {
         "slide-in-right": "slideInRight 0.5s ease-out",
         "slide-in-up": "slideInUp 0.5s ease-out",
         float: "float 3s ease-in-out infinite",
+        "cell-ripple":
+          "cell-ripple var(--duration, 200ms) ease-out var(--delay, 0ms)",
       },
       keyframes: {
+        "cell-ripple": {
+          "0%": { opacity: "0.2" },
+          "50%": { opacity: "0.6" },
+          "100%": { opacity: "0.2" },
+        },
         fadeIn: {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },

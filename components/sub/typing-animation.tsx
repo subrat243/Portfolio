@@ -55,7 +55,7 @@ export const TypingAnimation = ({
       {displayedText}
       {showCursor && showBlinkingCursor && (
         <motion.span
-          className="inline-block ml-1 w-0.5 h-6 md:h-8 bg-gradient-to-b from-purple-500 to-cyan-500"
+          className="inline-block ml-1 w-0.5 h-6 md:h-8 bg-[#212A3E]"
           animate={{
             opacity: [1, 0, 1],
           }}

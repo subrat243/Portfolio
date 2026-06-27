@@ -9,19 +9,14 @@ export const Skills = () => {
   return (
     <section
       id="skills"
-      className="flex flex-col items-center justify-center py-20 px-8 lg:px-10 relative min-h-screen overflow-hidden bg-[#030014] border-t border-[#2A0E61]/50"
+      className="flex flex-col items-center justify-center py-20 px-8 lg:px-10 relative min-h-screen overflow-hidden bg-[#F1F6F9]"
     >
       {/* Background Stars */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-30">
         <StarsCanvas />
       </div>
 
-      {/* Background Pattern */}
-      <div className="absolute inset-0 z-[1] pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-cyan-900/10"></div>
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent"></div>
-      </div>
+
 
       <div className="relative z-10 w-full max-w-7xl">
         <SkillText />
@@ -44,9 +39,9 @@ export const Skills = () => {
                 y: -5,
                 transition: { duration: 0.3 },
               }}
-              className="bg-gradient-to-br from-[#0b0b0b]/90 to-[#1a1a2e]/80 border border-[#2A0E61] rounded-2xl p-7 min-h-[240px] text-gray-200 shadow-xl backdrop-blur-md hover:border-purple-500/50 transition-all duration-300 z-20"
+              className="bg-white border border-[#9BA4B5]/40 rounded-2xl p-7 min-h-[240px] text-[#212A3E] shadow-sm hover:shadow-md hover:border-[#212A3E]/50 transition-all duration-300 z-20"
             >
-              <h3 className="text-2xl font-bold mb-6 text-white bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              <h3 className="text-2xl font-bold mb-6 text-[#212A3E]">
                 {cat.title}
               </h3>
               <div className="flex flex-wrap gap-3">
@@ -58,7 +53,7 @@ export const Skills = () => {
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 + 0.3 }}
                     whileHover={{ scale: 1.1 }}
-                    className="text-sm px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-cyan-500/20 border border-[#2A0E61] hover:border-purple-400/50 transition-all duration-200 cursor-default"
+                    className="text-sm px-4 py-2 rounded-full bg-[#F1F6F9] border border-[#9BA4B5]/30 text-[#394867] hover:border-[#212A3E] hover:bg-[#212A3E]/5 transition-all duration-200 cursor-default font-medium"
                   >
                     {name}
                   </motion.span>

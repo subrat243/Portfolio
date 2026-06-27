@@ -4,19 +4,100 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 import { FOOTER_DATA } from "@/constants";
+import { APP_CONFIG } from "@/config/app-config";
+import { StarsCanvas } from "@/components/main/star-background";
 
 export const Footer = () => {
   return (
-    <footer className="w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px] relative z-[9999] border-t border-[#2A0E61]/50">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 -z-10 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-cyan-900/10"></div>
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent"></div>
+    <footer id="contact" className="w-full h-full bg-[#F1F6F9] text-[#394867] shadow-md p-[15px] py-20 relative z-[9999] overflow-hidden">
+      {/* Background Stars */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-30">
+        <StarsCanvas />
       </div>
 
       <div className="w-full flex flex-col items-center justify-center m-auto relative z-[10000] pointer-events-auto">
-        <div className="w-full h-full flex flex-col items-center justify-center gap-8">
+        {/* Call to Action - Ready to Collaborate */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16 z-10 relative w-full px-4"
+        >
+          <motion.div
+            initial={{ scale: 0.9 }}
+            whileInView={{ scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="space-y-6"
+          >
+            <div className="max-w-2xl mx-auto">
+              <h3 className="text-3xl font-bold text-[#212A3E] mb-4">
+                <span>
+                  Ready to Collaborate?
+                </span>
+              </h3>
+              <p className="text-[#394867] mb-6 leading-relaxed text-base md:text-lg">
+                I&apos;m always excited to work on new cybersecurity projects
+                and explore innovative security solutions. Let&apos;s build
+                something amazing together!
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <motion.a
+                href="https://github.com/subrat243"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#212A3E] text-white font-semibold rounded-lg hover:bg-[#394867] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#212A3E]/45 focus:ring-offset-2 shadow-md hover:shadow-lg cursor-pointer relative group"
+                tabIndex={0}
+                style={{ pointerEvents: "auto" }}
+              >
+                <span className="relative z-10">View More Projects</span>
+                <svg
+                  className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </motion.a>
+
+              <motion.a
+                href={APP_CONFIG.social.email}
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-[#212A3E] text-[#212A3E] font-semibold rounded-lg hover:bg-[#212A3E]/5 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#212A3E]/45 focus:ring-offset-2 cursor-pointer"
+                style={{ pointerEvents: "auto" }}
+              >
+                <span>Get In Touch</span>
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+                  />
+                </svg>
+              </motion.a>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        <div className="w-full max-w-5xl h-full flex flex-col md:flex-row items-center justify-around gap-10 md:gap-6 mx-auto border-t border-[#9BA4B5]/20 pt-12">
           {/* Show both Social Media and Contact Me sections horizontally */}
           {FOOTER_DATA.map((column, columnIndex) => (
             <motion.div
@@ -24,11 +105,11 @@ export const Footer = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: columnIndex * 0.2, duration: 0.5 }}
-              className="flex flex-col items-center justify-center w-full pointer-events-auto"
+              className="flex-1 flex flex-col items-center justify-center pointer-events-auto"
             >
               <motion.h3
                 whileHover={{ scale: 1.05 }}
-                className="font-bold text-[18px] mb-4 text-white cursor-default"
+                className="font-bold text-[18px] mb-4 text-[#212A3E] cursor-default"
               >
                 {column.title}
               </motion.h3>
@@ -54,12 +135,9 @@ export const Footer = () => {
                       href={link}
                       target="_blank"
                       rel="noreferrer noopener"
-                      className="flex flex-row items-center group relative p-2 md:p-3 rounded-xl transition-all duration-300 hover:bg-gradient-to-r hover:from-purple-500/10 hover:to-cyan-500/10 hover:shadow-lg hover:shadow-purple-500/20 border border-transparent hover:border-purple-500/30 cursor-pointer z-[10001] pointer-events-auto"
+                      className="flex flex-row items-center group relative p-2 md:p-3 rounded-xl transition-all duration-300 hover:bg-[#394867]/10 border border-transparent hover:border-[#9BA4B5]/30 cursor-pointer z-[10001] pointer-events-auto"
                       style={{ pointerEvents: "auto", position: "relative" }}
                     >
-                      {/* Background glow effect */}
-                      <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-500/0 to-cyan-500/0 group-hover:from-purple-500/20 group-hover:to-cyan-500/20 transition-all duration-300 opacity-0 group-hover:opacity-100 pointer-events-none"></div>
-
                       {/* Icon with animation */}
                       <motion.div
                         whileHover={{ rotate: [0, -10, 10, 0] }}
@@ -67,12 +145,12 @@ export const Footer = () => {
                         className="relative pointer-events-none"
                       >
                         {Icon && (
-                          <Icon className="text-xl text-gray-300 group-hover:text-white transition-colors duration-200 pointer-events-none" />
+                          <Icon className="text-xl text-[#394867] group-hover:text-[#212A3E] transition-colors duration-200 pointer-events-none" />
                         )}
                       </motion.div>
 
-                      {/* Text with gradient on hover */}
-                      <span className="text-[12px] md:text-[14px] ml-[6px] md:ml-[8px] relative text-gray-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-cyan-400 transition-all duration-200 font-medium pointer-events-none">
+                      {/* Text */}
+                      <span className="text-[12px] md:text-[14px] ml-[6px] md:ml-[8px] relative text-[#394867] group-hover:text-[#212A3E] transition-all duration-200 font-medium pointer-events-none">
                         {name}
                       </span>
 
@@ -81,7 +159,7 @@ export const Footer = () => {
                         initial={{ width: 0 }}
                         whileHover={{ width: "100%" }}
                         transition={{ duration: 0.3 }}
-                        className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 rounded-full pointer-events-none"
+                        className="absolute bottom-0 left-0 h-0.5 bg-[#212A3E] rounded-full pointer-events-none"
                       />
                     </a>
                   </motion.div>
@@ -95,9 +173,9 @@ export const Footer = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.5 }}
-          className="mt-8 md:mt-12 mb-[20px] text-[13px] md:text-[15px] text-center border-t border-gray-700/50 pt-6 md:pt-8 w-full max-w-4xl pointer-events-auto"
+          className="mt-8 md:mt-12 mb-[20px] text-[13px] md:text-[15px] text-center border-t border-[#9BA4B5]/30 pt-6 md:pt-8 w-full max-w-4xl pointer-events-auto"
         >
-          <span className="text-gray-400">
+          <span className="text-[#9BA4B5]">
             &copy; Subrat Samantaray {new Date().getFullYear()} All rights
             reserved.
           </span>
@@ -111,7 +189,7 @@ export const Footer = () => {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="mt-2 text-xs text-purple-400"
+            className="mt-2 text-xs text-[#394867]"
           >
             Built with fun and Curiosity
           </motion.div>
