@@ -10,6 +10,12 @@ import {
 } from "@/lib/motion";
 import { APP_CONFIG } from "@/config/app-config";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
+import {
+  TextRevealCard,
+  TextRevealCardDescription,
+  TextRevealCardTitle,
+} from "@/components/ui/text-reveal-card";
+import { ShieldCheckIcon } from "@heroicons/react/24/solid";
 
 export const Security = () => {
   return (
@@ -40,25 +46,28 @@ export const Security = () => {
           <h1 className="Welcome-text text-[13px]">Security Best Practices</h1>
         </motion.div>
 
-        {/* Main Title */}
+        {/* Main Title / TextRevealCard */}
         <motion.div
           variants={slideInFromTop}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="flex items-center justify-center w-full mb-12"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-[#212A3E] mb-4">
-            <span>
-              Cybersecurity
-            </span>{" "}
-            Best Practices
-          </h2>
-          <p className="text-xl text-[#394867] max-w-3xl mx-auto leading-relaxed">
-            Essential security practices and methodologies to protect digital
-            assets and maintain a robust security posture in today&apos;s threat
-            landscape.
-          </p>
+          <TextRevealCard
+            text="Cybersecurity Best Practices"
+            revealText="Protecting digital assets & systems"
+            className="w-full max-w-5xl mx-auto bg-[#1F2121] border-[#9BA4B5]/30 rounded-2xl shadow-lg"
+          >
+            <TextRevealCardTitle className="text-3xl lg:text-4xl font-bold text-white mb-3">
+              Cybersecurity Best Practices
+            </TextRevealCardTitle>
+            <TextRevealCardDescription className="text-base lg:text-lg text-[#a9a9a9] max-w-3xl leading-relaxed">
+              Essential security practices and methodologies to protect digital
+              assets and maintain a robust security posture in today&apos;s threat
+              landscape.
+            </TextRevealCardDescription>
+          </TextRevealCard>
         </motion.div>
 
         {/* Security Practice Categories & Defense in Depth */}
