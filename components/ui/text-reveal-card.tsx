@@ -104,7 +104,7 @@ export const TextRevealCard = ({
             {revealText}
           </p>
           {revealSlogan && (
-            <p className="text-xs sm:text-sm text-cyan-400 font-medium text-center z-30 mt-1 tracking-wide">
+            <p className="text-xs sm:text-sm text-white font-medium text-center z-30 mt-1 tracking-wide">
               {revealSlogan}
             </p>
           )}
