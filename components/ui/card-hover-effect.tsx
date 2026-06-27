@@ -51,9 +51,7 @@ export const HoverEffect = ({
                     transition: { duration: 0.15, delay: 0.2 },
                   }}
                   transition={{
-                    type: "spring",
-                    stiffness: 250,
-                    damping: 25,
+                    layout: { type: "spring", bounce: 0.2, duration: 0.6 },
                   }}
                 />
               )}
