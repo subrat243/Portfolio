@@ -26,7 +26,7 @@ export const Skills = () => {
         <div className="w-full mt-10">
           <HoverEffect
             items={SKILLS_CATEGORIES}
-            className="grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 py-0"
+            className="grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 py-10"
           />
         </div>
       </div>

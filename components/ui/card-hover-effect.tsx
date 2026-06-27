@@ -58,7 +58,7 @@ export const HoverEffect = ({
                 item.principles
                   ? "p-6 md:p-8 bg-white border-[#9BA4B5]/40 shadow-sm hover:shadow-md transition-all duration-300 w-full text-center"
                   : item.items
-                  ? "bg-white border border-[#9BA4B5]/40 rounded-2xl p-7 min-h-[240px] text-[#212A3E] shadow-sm hover:shadow-md hover:border-[#212A3E]/50 transition-all duration-300 z-20"
+                  ? "p-3 bg-white border-[#9BA4B5]/40 shadow-sm hover:shadow-md transition-all duration-300 min-h-[280px]"
                   : item.practices
                   ? "p-3 bg-white border-[#9BA4B5]/40 shadow-sm hover:shadow-md transition-all duration-300 min-h-[320px]"
                   : "bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700"
@@ -93,9 +93,14 @@ export const HoverEffect = ({
                 </>
               ) : item.items ? (
                 <>
-                  <h3 className="text-2xl font-bold mb-6 text-[#212A3E]">
-                    {item.title}
-                  </h3>
+                  <div className="flex items-center mb-6">
+                    <div className="p-2 rounded-lg bg-[#F1F6F9] border border-[#9BA4B5]/30 mr-4">
+                      <ShieldCheckIcon className="w-6 h-6 text-[#212A3E]" />
+                    </div>
+                    <h3 className="text-xl font-bold text-[#212A3E]">
+                      {item.title}
+                    </h3>
+                  </div>
                   <div className="flex flex-wrap gap-3">
                     {item.items.map((name, i) => (
                       <motion.span
@@ -104,13 +109,27 @@ export const HoverEffect = ({
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.1 + 0.3 }}
-                        whileHover={{ scale: 1.1 }}
+                        whileHover={{ scale: 1.05 }}
                         className="text-sm px-4 py-2 rounded-full bg-[#F1F6F9] border border-[#9BA4B5]/30 text-[#394867] hover:border-[#212A3E] hover:bg-[#212A3E]/5 transition-all duration-200 cursor-default font-medium"
                       >
                         {name}
                       </motion.span>
                     ))}
                   </div>
+                  {/* Decorative Elements */}
+                  <motion.div
+                    animate={{
+                      opacity: [0.3, 0.6, 0.3],
+                      scale: [1, 1.1, 1],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: idx * 0.5,
+                    }}
+                    className="absolute top-4 right-4 w-2 h-2 bg-[#9BA4B5] rounded-full"
+                  />
                 </>
               ) : item.practices ? (
                 <>
