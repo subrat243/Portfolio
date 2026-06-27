@@ -56,12 +56,12 @@ export const Security = () => {
           <TextRevealCard
             text="Cybersecurity Best Practices"
             revealText="Protecting digital assets & systems"
-            className="w-full max-w-5xl mx-auto bg-[#1F2121] border-[#9BA4B5]/30 rounded-2xl shadow-lg"
+            className="w-full max-w-4xl mx-auto bg-[#1F2121] border-[#9BA4B5]/30 rounded-2xl shadow-lg p-6"
           >
-            <TextRevealCardTitle className="text-3xl lg:text-4xl font-bold text-white mb-3">
+            <TextRevealCardTitle className="text-2xl lg:text-3xl font-bold text-white mb-2">
               Cybersecurity Best Practices
             </TextRevealCardTitle>
-            <TextRevealCardDescription className="text-base lg:text-lg text-[#a9a9a9] max-w-3xl leading-relaxed">
+            <TextRevealCardDescription className="text-sm lg:text-base text-[#a9a9a9] max-w-3xl leading-relaxed">
               Essential security practices and methodologies to protect digital
               assets and maintain a robust security posture in today&apos;s threat
               landscape.
