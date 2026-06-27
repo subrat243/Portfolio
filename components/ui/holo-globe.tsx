@@ -176,15 +176,6 @@ export const HoloGlobe = () => {
           />
         </React.Suspense>
       </Canvas>
-      
-      {/* Holographic HUD Overlays */}
-      <div className="absolute top-2 left-2 sm:top-4 sm:left-4 border border-[#9BA4B5]/30 bg-[#212A3E]/40 backdrop-blur-md px-3 py-1.5 rounded text-[10px] text-[#00ffcc] tracking-widest uppercase flex items-center gap-2 shadow-lg z-20">
-        <span className="w-1.5 h-1.5 rounded-full bg-[#00ffcc] animate-pulse"></span>
-        Sec-Ops Core // Active
-      </div>
-      <div className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 border border-[#9BA4B5]/30 bg-[#212A3E]/40 backdrop-blur-md px-3 py-1.5 rounded text-[10px] text-[#9BA4B5] tracking-widest uppercase flex items-center gap-2 shadow-lg z-20">
-        Orbital Gyro // 360°
-      </div>
     </div>
   );
 };
