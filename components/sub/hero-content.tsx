@@ -12,7 +12,7 @@ import {
   slideInFromTop,
 } from "@/lib/motion";
 import { EncryptedText } from "@/components/ui/encrypted-text";
-import { HoloGlobe } from "@/components/ui/holo-globe";
+import { CyberArt } from "@/components/ui/cyber-art";
 
 export const HeroContent = () => {
   const [showSecondLine, setShowSecondLine] = useState(false);
@@ -151,14 +151,14 @@ export const HeroContent = () => {
             className="absolute inset-0 bg-[#9BA4B5]/10 rounded-full blur-3xl transform scale-110"
           />
 
-          {/* Main Holo Globe */}
+          {/* Main Cyber Art */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.5, duration: 1, ease: "easeOut" }}
             className="relative z-10 w-full h-full flex items-center justify-center"
           >
-            <HoloGlobe />
+            <CyberArt />
           </motion.div>
 
           {/* Floating particles */}
