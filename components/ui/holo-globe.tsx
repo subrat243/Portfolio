@@ -160,7 +160,7 @@ const GlobeModel = () => {
 
 export const HoloGlobe = () => {
   return (
-    <div className="w-full h-[420px] sm:h-[480px] md:h-[560px] flex items-center justify-center relative select-none cursor-grab active:cursor-grabbing">
+    <div className="w-full h-full flex items-center justify-center relative select-none cursor-grab active:cursor-grabbing">
       <Canvas camera={{ position: [0, 0, 5.2], fov: 55 }}>
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} intensity={1} />

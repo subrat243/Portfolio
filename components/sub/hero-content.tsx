@@ -137,12 +137,12 @@ export const HeroContent = () => {
         </motion.div>
       </div>
 
-      {/* Right Image Section */}
+      {/* Right Content Section / Hologram Globe */}
       <motion.div
         variants={slideInFromRight(0.8)}
-        className="flex-1 w-full max-w-lg flex justify-center items-center relative order-1 lg:order-2 pointer-events-auto"
+        className="flex-1 w-full max-w-lg flex justify-center items-center relative order-1 lg:order-2 pointer-events-auto my-auto"
       >
-        <div className="relative group w-full">
+        <div className="relative group w-[380px] h-[380px] sm:w-[440px] sm:h-[440px] md:w-[500px] md:h-[500px] flex items-center justify-center">
           {/* Glowing background effect */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -151,12 +151,26 @@ export const HeroContent = () => {
             className="absolute inset-0 bg-[#9BA4B5]/10 rounded-full blur-3xl transform scale-110"
           />
 
+          {/* Animated rings - guaranteed perfect full circles */}
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            className="absolute inset-0 border-2 border-[#9BA4B5]/40 rounded-full hidden md:block aspect-square"
+            style={{ width: "110%", height: "110%", left: "-5%", top: "-5%" }}
+          />
+          <motion.div
+            animate={{ rotate: -360 }}
+            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            className="absolute inset-0 border-2 border-[#394867]/20 rounded-full border-dashed hidden md:block aspect-square"
+            style={{ width: "130%", height: "130%", left: "-15%", top: "-15%" }}
+          />
+
           {/* Main Holo Globe */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.5, duration: 1, ease: "easeOut" }}
-            className="relative z-10 w-full"
+            className="relative z-10 w-full h-full flex items-center justify-center"
           >
             <HoloGlobe />
           </motion.div>
