@@ -9,14 +9,14 @@ export const HoverEffect = ({
   className,
   id,
 }: {
-  items: {
+  items: readonly {
     title: string;
     description?: string;
-    practices?: string[];
+    practices?: readonly string[];
     link?: string;
-    principles?: string[];
+    principles?: readonly string[];
     fullWidth?: boolean;
-    items?: string[];
+    items?: readonly string[];
   }[];
   className?: string;
   id?: string;
