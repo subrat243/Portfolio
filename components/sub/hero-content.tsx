@@ -177,13 +177,14 @@ export const HeroContent = () => {
             className="relative z-10"
           >
             <Image
-              src="/spiderman.png"
+              src="/loop.gif"
               alt="Cybersecurity Expert - Subrat Samantaray"
               height={400}
               width={400}
               draggable={false}
               className="select-none transition-all duration-300 gpu-optimized drop-shadow-2xl"
               priority
+              unoptimized
               quality={95}
             />
           </motion.div>
