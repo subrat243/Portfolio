@@ -182,7 +182,7 @@ export const HeroContent = () => {
               height={400}
               width={400}
               draggable={false}
-              className="select-none transition-all duration-300 gpu-optimized drop-shadow-2xl"
+              className="select-none transition-all duration-300 gpu-optimized mix-blend-multiply invert"
               priority
               unoptimized
               quality={95}
