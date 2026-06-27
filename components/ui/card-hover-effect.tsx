@@ -15,6 +15,7 @@ export const HoverEffect = ({
     link?: string;
     principles?: string[];
     fullWidth?: boolean;
+    items?: string[];
   }[];
   className?: string;
 }) => {
@@ -56,6 +57,8 @@ export const HoverEffect = ({
               className={
                 item.principles
                   ? "p-6 md:p-8 bg-white border-[#9BA4B5]/40 shadow-sm hover:shadow-md transition-all duration-300 w-full text-center"
+                  : item.items
+                  ? "bg-white border border-[#9BA4B5]/40 rounded-2xl p-7 min-h-[240px] text-[#212A3E] shadow-sm hover:shadow-md hover:border-[#212A3E]/50 transition-all duration-300 z-20"
                   : item.practices
                   ? "p-3 bg-white border-[#9BA4B5]/40 shadow-sm hover:shadow-md transition-all duration-300 min-h-[320px]"
                   : "bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700"
@@ -84,6 +87,27 @@ export const HoverEffect = ({
                         className="px-4 py-2 bg-white border border-[#9BA4B5]/40 rounded-full text-sm text-[#212A3E] hover:border-[#212A3E] hover:bg-[#212A3E]/5 transition-all duration-300 font-medium"
                       >
                         {principle}
+                      </motion.span>
+                    ))}
+                  </div>
+                </>
+              ) : item.items ? (
+                <>
+                  <h3 className="text-2xl font-bold mb-6 text-[#212A3E]">
+                    {item.title}
+                  </h3>
+                  <div className="flex flex-wrap gap-3">
+                    {item.items.map((name, i) => (
+                      <motion.span
+                        key={`${item.title}-${name}`}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.1 + 0.3 }}
+                        whileHover={{ scale: 1.1 }}
+                        className="text-sm px-4 py-2 rounded-full bg-[#F1F6F9] border border-[#9BA4B5]/30 text-[#394867] hover:border-[#212A3E] hover:bg-[#212A3E]/5 transition-all duration-200 cursor-default font-medium"
+                      >
+                        {name}
                       </motion.span>
                     ))}
                   </div>
