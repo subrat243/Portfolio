@@ -15,7 +15,6 @@ import {
   TextRevealCardDescription,
   TextRevealCardTitle,
 } from "@/components/ui/text-reveal-card";
-import { ShieldCheckIcon } from "@heroicons/react/24/solid";
 
 export const Security = () => {
   return (
