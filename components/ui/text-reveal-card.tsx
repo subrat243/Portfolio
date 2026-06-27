@@ -7,11 +7,15 @@ import { cn } from "@/lib/utils";
 export const TextRevealCard = ({
   text,
   revealText,
+  slogan,
+  revealSlogan,
   children,
   className,
 }: {
   text: string;
   revealText: string;
+  slogan?: string;
+  revealSlogan?: string;
   children?: React.ReactNode;
   className?: string;
 }) => {
@@ -89,7 +93,7 @@ export const TextRevealCard = ({
                 }
           }
           transition={isMouseOver ? { duration: 0 } : { duration: 0.4 }}
-          className="absolute bg-[#1F2121] z-20 will-change-transform flex items-center justify-center w-full h-full"
+          className="absolute bg-[#1F2121] z-20 will-change-transform flex flex-col items-center justify-center w-full h-full"
         >
           <p
             style={{
@@ -99,6 +103,11 @@ export const TextRevealCard = ({
           >
             {revealText}
           </p>
+          {revealSlogan && (
+            <p className="text-xs sm:text-sm text-cyan-400 font-medium text-center z-30 mt-1 tracking-wide">
+              {revealSlogan}
+            </p>
+          )}
         </motion.div>
         <motion.div
           animate={{
@@ -110,10 +119,15 @@ export const TextRevealCard = ({
           className="h-24 w-[6px] bg-gradient-to-b from-transparent via-white to-transparent absolute z-50 will-change-transform"
         ></motion.div>
 
-        <div className="flex items-center justify-center w-full h-full relative">
+        <div className="flex flex-col items-center justify-center w-full h-full relative">
           <p className="text-xl sm:text-2xl md:text-3xl font-bold text-[#9BA4B5] text-center z-10">
             {text}
           </p>
+          {slogan && (
+            <p className="text-xs sm:text-sm text-[#9BA4B5]/60 font-medium text-center z-10 mt-1 tracking-wide">
+              {slogan}
+            </p>
+          )}
           <MemoizedStars />
         </div>
       </div>
