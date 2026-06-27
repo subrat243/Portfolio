@@ -67,13 +67,13 @@ export const TextRevealCard = ({
       onTouchMove={touchMoveHandler}
       ref={cardRef}
       className={cn(
-        "bg-[#1d1c20] border border-white/[0.08] w-full max-w-4xl rounded-2xl p-6 relative overflow-hidden",
+        "bg-[#1d1c20] border border-white/[0.08] w-full max-w-4xl rounded-2xl p-6 relative overflow-hidden flex flex-col items-center justify-center",
         className
       )}
     >
       {children}
 
-      <div className="h-24 relative flex items-center overflow-hidden">
+      <div className="h-24 w-full relative flex items-center justify-center overflow-hidden">
         <motion.div
           style={{
             width: "100%",
@@ -89,13 +89,13 @@ export const TextRevealCard = ({
                 }
           }
           transition={isMouseOver ? { duration: 0 } : { duration: 0.4 }}
-          className="absolute bg-[#1d1c20] z-20 will-change-transform"
+          className="absolute bg-[#1d1c20] z-20 will-change-transform flex items-center justify-center w-full h-full"
         >
           <p
             style={{
               textShadow: "4px 4px 15px rgba(0,0,0,0.5)",
             }}
-            className="text-lg sm:text-2xl md:text-3xl py-4 font-bold text-white bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-300"
+            className="text-lg sm:text-2xl md:text-3xl py-4 font-bold text-white bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-300 text-center"
           >
             {revealText}
           </p>
@@ -110,8 +110,8 @@ export const TextRevealCard = ({
           className="h-24 w-[6px] bg-gradient-to-b from-transparent via-neutral-800 to-transparent absolute z-50 will-change-transform"
         ></motion.div>
 
-        <div className="overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,white,transparent)]">
-          <p className="text-lg sm:text-2xl md:text-3xl py-4 font-bold bg-clip-text text-transparent bg-[#323238]">
+        <div className="overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,white,transparent)] flex items-center justify-center w-full h-full">
+          <p className="text-lg sm:text-2xl md:text-3xl py-4 font-bold bg-clip-text text-transparent bg-[#323238] text-center">
             {text}
           </p>
           <MemoizedStars />

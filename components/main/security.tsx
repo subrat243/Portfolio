@@ -57,16 +57,7 @@ export const Security = () => {
             text="Cybersecurity Best Practices"
             revealText="Protecting digital assets & systems"
             className="w-full max-w-4xl mx-auto bg-[#1F2121] border-[#9BA4B5]/30 rounded-2xl shadow-lg p-6"
-          >
-            <TextRevealCardTitle className="text-2xl lg:text-3xl font-bold text-white mb-2">
-              Cybersecurity Best Practices
-            </TextRevealCardTitle>
-            <TextRevealCardDescription className="text-sm lg:text-base text-[#a9a9a9] max-w-3xl leading-relaxed">
-              Essential security practices and methodologies to protect digital
-              assets and maintain a robust security posture in today&apos;s threat
-              landscape.
-            </TextRevealCardDescription>
-          </TextRevealCard>
+          />
         </motion.div>
 
         {/* Security Practice Categories & Defense in Depth */}
