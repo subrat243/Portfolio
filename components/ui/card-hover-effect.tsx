@@ -30,6 +30,7 @@ export const HoverEffect = ({
         "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10 gap-4",
         className
       )}
+      onMouseLeave={() => setHoveredIndex(null)}
     >
       {items.map((item, idx) => {
         const content = (
@@ -48,6 +49,11 @@ export const HoverEffect = ({
                   exit={{
                     opacity: 0,
                     transition: { duration: 0.15, delay: 0.2 },
+                  }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 250,
+                    damping: 25,
                   }}
                 />
               )}
@@ -192,7 +198,6 @@ export const HoverEffect = ({
               key={item.link}
               className={wrapperClass}
               onMouseEnter={() => setHoveredIndex(idx)}
-              onMouseLeave={() => setHoveredIndex(null)}
             >
               {content}
             </a>
@@ -204,7 +209,6 @@ export const HoverEffect = ({
             key={item.title}
             className={wrapperClass}
             onMouseEnter={() => setHoveredIndex(idx)}
-            onMouseLeave={() => setHoveredIndex(null)}
           >
             {content}
           </div>
