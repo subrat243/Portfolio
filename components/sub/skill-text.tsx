@@ -8,6 +8,7 @@ import {
   slideInFromRight,
   slideInFromTop,
 } from "@/lib/motion";
+import { KineticText } from "@/registry/magicui/kinetic-text";
 
 export const SkillText = () => {
   return (
@@ -24,9 +25,9 @@ export const SkillText = () => {
 
       <motion.div
         variants={slideInFromLeft(0.5)}
-        className="text-4xl md:text-5xl font-bold text-[#212A3E] mt-[10px] text-center mb-[15px]"
+        className="mt-[10px] mb-[15px]"
       >
-        Skills and Technologies.
+        <KineticText text="Skills and Technologies." className="text-4xl md:text-5xl font-bold text-[#212A3E] text-center [font-optical-sizing:auto]" />
       </motion.div>
 
       <motion.div

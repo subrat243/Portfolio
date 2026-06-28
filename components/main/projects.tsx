@@ -5,6 +5,7 @@ import { PROJECTS } from "@/constants";
 import { APP_CONFIG } from "@/config/app-config";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import { StarsCanvas } from "@/components/main/star-background";
+import { KineticText } from "@/registry/magicui/kinetic-text";
 
 export const Projects = () => {
   // Split projects into rows of 4
@@ -39,9 +40,9 @@ export const Projects = () => {
             <h2 className="Welcome-text text-[13px]">Featured Work</h2>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-[#212A3E] text-center">
-            My Projects
-          </h1>
+          <div className="my-2">
+            <KineticText text="My Projects" className="text-4xl md:text-5xl font-bold text-[#212A3E] text-center [font-optical-sizing:auto]" />
+          </div>
 
           <p className="text-[#394867] text-lg mt-4 max-w-2xl mx-auto text-center">
             Explore my cybersecurity projects and tools that demonstrate my
