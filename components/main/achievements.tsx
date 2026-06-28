@@ -24,6 +24,7 @@ const CERTIFICATE_CARDS = [
     id: 0,
     name: "Offensive Pentesting Professional",
     designation: "Advanced Pentesting Labs & Network Scanning",
+    image: "/projects/Attack.jpg",
     content: (
       <div className="relative w-full h-full min-h-[112px] flex items-center justify-center overflow-hidden bg-[#212A3E]/5 p-1">
         <Image
@@ -40,6 +41,7 @@ const CERTIFICATE_CARDS = [
     id: 1,
     name: "Certified Network Security Specialist",
     designation: "Network Monitoring & Packet Inspection",
+    image: "/projects/Network-monitoring.svg",
     content: (
       <div className="relative w-full h-full min-h-[112px] flex items-center justify-center overflow-hidden bg-[#212A3E]/5 p-2">
         <Image
@@ -56,6 +58,7 @@ const CERTIFICATE_CARDS = [
     id: 2,
     name: "Web App Vulnerability Assessment",
     designation: "Enterprise Bug Bounty & Disclosures",
+    image: "/projects/Exploitation.svg",
     content: (
       <div className="relative w-full h-full min-h-[112px] flex items-center justify-center overflow-hidden bg-[#212A3E]/5 p-2">
         <Image
