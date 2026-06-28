@@ -15,7 +15,7 @@ export default function GlobeDemo() {
     atmosphereColor: "#9BA4B5",
     atmosphereAltitude: 0.1,
     emissive: "#212A3E",
-    emissiveIntensity: 0.15,
+    emissiveIntensity: 0.4,
     shininess: 0.9,
     polygonColor: "rgba(221, 230, 237, 0.85)",
     ambientLight: "#9BA4B5",
