@@ -48,7 +48,7 @@ export const Achievements = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col items-center justify-center mb-16 pointer-events-auto"
+          className="flex flex-col items-center justify-center mb-6 pointer-events-auto"
         >
           <div className="Welcome-box py-[8px] px-[7px] border border-[#9BA4B5]/40 opacity-90 inline-flex items-center mb-8 mx-auto">
             <SparklesIcon className="text-[#394867] mr-[10px] h-5 w-5" />
