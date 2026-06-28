@@ -1,9 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { SparklesIcon, TrophyIcon, ShieldCheckIcon, AcademicCapIcon, StarIcon } from "@heroicons/react/24/solid";
 import { KineticText } from "@/components/ui/kinetic-text";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
+import { CardStack } from "@/components/ui/card-stack";
 
 const Skeleton = ({ tag, Icon }: { tag: string; Icon: any }) => (
   <div className="flex flex-1 w-full h-full min-h-[7rem] rounded-xl bg-gradient-to-br from-[#F1F6F9] to-[#DDE6ED] border border-[#9BA4B5]/30 p-4 flex flex-col justify-between overflow-hidden relative group/skeleton">
@@ -16,6 +18,57 @@ const Skeleton = ({ tag, Icon }: { tag: string; Icon: any }) => (
     <div className="absolute -bottom-2 -right-2 w-24 h-24 bg-[#9BA4B5]/10 rounded-full blur-xl group-hover/skeleton:bg-[#9BA4B5]/20 transition-all duration-300" />
   </div>
 );
+
+const CERTIFICATE_CARDS = [
+  {
+    id: 0,
+    name: "Offensive Pentesting Professional",
+    designation: "Advanced Pentesting Labs & Network Scanning",
+    content: (
+      <div className="relative w-full h-full min-h-[112px] flex items-center justify-center overflow-hidden bg-[#212A3E]/5 p-1">
+        <Image
+          src="/projects/Attack.jpg"
+          alt="Offensive Pentesting Certificate"
+          fill
+          sizes="280px"
+          className="object-cover rounded-lg opacity-90"
+        />
+      </div>
+    ),
+  },
+  {
+    id: 1,
+    name: "Certified Network Security Specialist",
+    designation: "Network Monitoring & Packet Inspection",
+    content: (
+      <div className="relative w-full h-full min-h-[112px] flex items-center justify-center overflow-hidden bg-[#212A3E]/5 p-2">
+        <Image
+          src="/projects/Network-monitoring.svg"
+          alt="Network Security Certificate"
+          width={180}
+          height={100}
+          className="object-contain h-full"
+        />
+      </div>
+    ),
+  },
+  {
+    id: 2,
+    name: "Web App Vulnerability Assessment",
+    designation: "Enterprise Bug Bounty & Disclosures",
+    content: (
+      <div className="relative w-full h-full min-h-[112px] flex items-center justify-center overflow-hidden bg-[#212A3E]/5 p-2">
+        <Image
+          src="/projects/Exploitation.svg"
+          alt="Web App Security Certificate"
+          width={180}
+          height={100}
+          className="object-contain h-full"
+        />
+      </div>
+    ),
+  },
+];
 
 const ACHIEVEMENTS_DATA = [
   {
@@ -86,12 +139,19 @@ export const Achievements = () => {
           <BentoGrid className="max-w-6xl mx-auto">
             {ACHIEVEMENTS_DATA.map((item, i) => {
               const IconComponent = item.icon;
+              const isCert = item.title === "Offensive Security & Pentesting Prep";
               return (
                 <BentoGridItem
                   key={item.title}
                   title={item.title}
                   description={item.description}
-                  header={<Skeleton tag={item.tag} Icon={IconComponent} />}
+                  header={
+                    isCert ? (
+                      <CardStack items={CERTIFICATE_CARDS} />
+                    ) : (
+                      <Skeleton tag={item.tag} Icon={IconComponent} />
+                    )
+                  }
                   icon={<IconComponent className="h-6 w-6 text-[#212A3E]" />}
                   className={i === 0 || i === 3 ? "md:col-span-2" : ""}
                 />
@@ -103,4 +163,5 @@ export const Achievements = () => {
     </section>
   );
 };
+
 

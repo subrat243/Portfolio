@@ -32,7 +32,7 @@ export const About = () => {
           className="Welcome-box py-[8px] px-[7px] border border-[#9BA4B5]/40 opacity-[0.9] mb-3 mx-auto"
         >
           <SparklesIcon className="text-[#394867] mr-[10px] h-5 w-5" />
-          <h1 className="Welcome-text text-[13px]">About Me</h1>
+          <h1 className="Welcome-text text-[13px]">Wanna Know About Me</h1>
         </motion.div>
 
         <div className="flex flex-col lg:flex-row items-center justify-center gap-10 w-full">
