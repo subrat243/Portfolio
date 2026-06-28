@@ -97,7 +97,7 @@ export const About = () => {
               variants={slideInFromRight(0.6)}
               className="pointer-events-auto"
             >
-              <KineticText text="Who Am I?" className="text-5xl md:text-6xl font-bold text-[#212A3E] text-left justify-start [font-optical-sizing:auto]" />
+              <KineticText text="Who Am I?" className="text-4xl md:text-5xl font-bold text-[#212A3E] text-left justify-start [font-optical-sizing:auto]" />
             </motion.div>
 
             <motion.p
