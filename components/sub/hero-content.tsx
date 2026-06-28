@@ -12,7 +12,7 @@ import {
   slideInFromTop,
 } from "@/lib/motion";
 import { EncryptedText } from "@/components/ui/encrypted-text";
-import { InteractiveTerminal } from "@/components/ui/interactive-terminal";
+import { IconCloudDemo } from "@/components/ui/icon-cloud-demo";
 
 export const HeroContent = () => {
   const [showSecondLine, setShowSecondLine] = useState(false);
@@ -137,12 +137,12 @@ export const HeroContent = () => {
         </motion.div>
       </div>
 
-      {/* Right Content Section / Cyber Art */}
+      {/* Right Content Section / Interactive Terminal */}
       <motion.div
         variants={slideInFromRight(0.8)}
         className="flex-1 w-full max-w-xl lg:max-w-2xl flex justify-center items-center relative order-1 lg:order-2 pointer-events-auto my-auto"
       >
-        <div className="relative group w-[400px] h-[400px] sm:w-[480px] sm:h-[480px] md:w-[560px] md:h-[560px] lg:w-[600px] lg:h-[600px] flex items-center justify-center">
+        <div className="relative group w-full max-w-[540px] lg:max-w-[580px] h-auto flex items-center justify-center">
           {/* Glowing background effect */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -151,14 +151,14 @@ export const HeroContent = () => {
             className="absolute inset-0 bg-[#9BA4B5]/10 rounded-full blur-3xl transform scale-110"
           />
 
-          {/* Main Interactive Terminal */}
+          {/* Main Icon Cloud Demo */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.5, duration: 1, ease: "easeOut" }}
             className="relative z-10 w-full h-full flex items-center justify-center pointer-events-auto"
           >
-            <InteractiveTerminal />
+            <IconCloudDemo />
           </motion.div>
 
           {/* Floating particles */}
