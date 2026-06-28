@@ -28,8 +28,8 @@ export const APP_CONFIG = {
     links: [
       { title: "About me", href: "#about", isExternal: false },
       { title: "Skills", href: "#skills", isExternal: false },
-      { title: "Security", href: "#security", isExternal: false },
       { title: "Projects", href: "#projects", isExternal: false },
+      { title: "Security", href: "#security", isExternal: false },
     ],
   },
 
