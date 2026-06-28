@@ -6,6 +6,8 @@ import { APP_CONFIG } from "@/config/app-config";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import { StarsCanvas } from "@/components/main/star-background";
 
+import InfiniteMovingCardsDemo from "@/components/infinite-moving-cards-demo";
+
 export const Projects = () => {
   // Split projects into rows of 4
   const projectRows = [];
@@ -105,6 +107,10 @@ export const Projects = () => {
             </motion.div>
           ))}
         </motion.div>
+
+        <div className="mt-16 w-full relative z-20">
+          <InfiniteMovingCardsDemo />
+        </div>
 
       </div>
     </section>

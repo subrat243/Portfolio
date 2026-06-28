@@ -85,7 +85,7 @@ export const About = () => {
                   </div>
                   <div className="mt-2 flex flex-shrink-0 items-center justify-between p-4 font-mono text-white">
                     <div className="text-xs font-bold">Subrat Samantaray</div>
-                    <div className="text-xs text-gray-300 opacity-50">#0x7F8E</div>
+                    <div className="text-xs text-gray-300 opacity-50">#kaizen</div>
                   </div>
                 </div>
               </CometCard>
@@ -167,9 +167,7 @@ export const About = () => {
                 "Penetration Testing",
                 "Network Security",
                 "Web App Security",
-                "Threat Detection",
-                "Digital Forensics",
-                "Ethical Hacking",
+                "Security Analyst"
               ].map((skill, index) => (
                 <motion.span
                   key={skill}

@@ -73,8 +73,15 @@ const config: Config = {
         float: "float 3s ease-in-out infinite",
         "cell-ripple":
           "cell-ripple var(--duration, 200ms) ease-out var(--delay, 0ms)",
+        scroll:
+          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
       keyframes: {
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
         "cell-ripple": {
           "0%": { opacity: "0.2" },
           "50%": { opacity: "0.6" },
