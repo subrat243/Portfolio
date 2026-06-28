@@ -159,7 +159,7 @@ export function IconCloud({ icons = [], images = [] }: IconCloudProps) {
               zIndex: Math.round(item.z + 200),
             }}
           >
-            <div className="w-14 h-14 sm:w-18 sm:h-18 flex items-center justify-center pointer-events-auto hover:scale-125 transition-transform duration-200 text-[#212A3E] dark:text-white [&>svg]:w-full [&>svg]:h-full [&>svg]:object-contain">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center pointer-events-auto hover:scale-125 transition-transform duration-200 text-[#212A3E] dark:text-white [&>svg]:w-full [&>svg]:h-full [&>svg]:object-contain">
               {item.element}
             </div>
           </div>
