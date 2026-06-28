@@ -26,7 +26,7 @@ interface HighlighterProps {
 
 export const Highlighter: React.FC<HighlighterProps> = ({
   children,
-  color = "#ffd1dc",
+  color = "#9BA4B5",
   action = "highlight",
   strokeWidth = 1.5,
   animationDuration = 500,
@@ -54,26 +54,30 @@ export const Highlighter: React.FC<HighlighterProps> = ({
     const shouldShow = isView ? inView : true;
 
     if (shouldShow) {
-      const annotation = annotate(containerRef.current, {
-        type: action,
-        color,
-        strokeWidth,
-        animationDuration,
-        iterations,
-        padding,
-        multiline,
-      });
+      // Delay annotation until Framer Motion entrance animations settle to prevent miscalculation
+      const timer = setTimeout(() => {
+        if (!containerRef.current) return;
+        const annotation = annotate(containerRef.current, {
+          type: action,
+          color,
+          strokeWidth,
+          animationDuration,
+          iterations,
+          padding,
+          multiline,
+        });
 
-      annotation.show();
+        annotation.show();
+      }, 600);
 
       return () => {
-        annotation.remove();
+        clearTimeout(timer);
       };
     }
   }, [inView, isView, action, color, strokeWidth, animationDuration, iterations, padding, multiline]);
 
   return (
-    <span ref={setRefs} className={className}>
+    <span ref={setRefs} className={`relative inline-block ${className}`}>
       {children}
     </span>
   );
