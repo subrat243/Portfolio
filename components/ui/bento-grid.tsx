@@ -51,7 +51,7 @@ export const BentoGridItem = ({
             {description}
           </div>
         </div>
-        <div className="flex-1 w-full flex items-center justify-center py-4 lg:py-0">
+        <div className="flex-1 w-full flex items-center justify-center py-4 lg:py-0 pointer-events-auto">
           {header}
         </div>
       </div>

@@ -137,7 +137,7 @@ export const Achievements = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="w-full relative z-20 mt-4"
+          className="w-full relative z-20 mt-4 pointer-events-auto"
         >
           <BentoGrid className="max-w-6xl mx-auto">
             {ACHIEVEMENTS_DATA.map((item, i) => {
