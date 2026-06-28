@@ -8,11 +8,9 @@ import { useState } from "react";
 import { TypingAnimation } from "@/components/sub/typing-animation";
 import {
   slideInFromLeft,
-  slideInFromRight,
   slideInFromTop,
 } from "@/lib/motion";
 import { EncryptedText } from "@/components/ui/encrypted-text";
-import { IconCloudDemo } from "@/components/ui/icon-cloud-demo";
 
 export const HeroContent = () => {
   const [showSecondLine, setShowSecondLine] = useState(false);
@@ -136,75 +134,6 @@ export const HeroContent = () => {
           </motion.a>
         </motion.div>
       </div>
-
-      {/* Right Content Section / Interactive Terminal */}
-      <motion.div
-        variants={slideInFromRight(0.8)}
-        className="flex-1 w-full max-w-xl lg:max-w-2xl flex justify-center items-center relative order-1 lg:order-2 pointer-events-auto my-auto"
-      >
-        <div className="relative group w-full max-w-[540px] lg:max-w-[580px] h-auto flex items-center justify-center">
-          {/* Glowing background effect */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 0.6, scale: 1 }}
-            transition={{ delay: 2, duration: 1.5 }}
-            className="absolute inset-0 bg-[#9BA4B5]/10 rounded-full blur-3xl transform scale-110"
-          />
-
-          {/* Main Icon Cloud Demo */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1.5, duration: 1, ease: "easeOut" }}
-            className="relative z-10 w-full h-full flex items-center justify-center pointer-events-auto"
-          >
-            <IconCloudDemo />
-          </motion.div>
-
-          {/* Floating particles */}
-          <motion.div
-            animate={{
-              y: [-10, 10, -10],
-              x: [-5, 5, -5],
-              opacity: [0.5, 1, 0.5],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="absolute top-10 right-10 w-3 h-3 bg-[#394867] rounded-full blur-sm"
-          />
-          <motion.div
-            animate={{
-              y: [10, -10, 10],
-              x: [5, -5, 5],
-              opacity: [0.3, 0.8, 0.3],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1,
-            }}
-            className="absolute bottom-10 left-10 w-2 h-2 bg-[#9BA4B5] rounded-full blur-sm"
-          />
-          <motion.div
-            animate={{
-              y: [-5, 5, -5],
-              x: [-8, 8, -8],
-              opacity: [0.4, 0.9, 0.4],
-            }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 2,
-            }}
-            className="absolute top-1/2 left-5 w-1.5 h-1.5 bg-[#9BA4B5]/70 rounded-full blur-sm"
-          />
-        </div>
-      </motion.div>
     </motion.div>
   );
 };
