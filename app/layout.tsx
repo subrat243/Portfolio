@@ -64,12 +64,10 @@ export default function RootLayout({ children }: PropsWithChildren) {
       >
         <ErrorBoundary>
           <div className="relative w-full">
-            <div className="relative z-10">
-              <Navbar />
-              <main className="relative z-10">{children}</main>
-              <Footer />
-            </div>
+            <Navbar />
             <StarsCanvas />
+            <main className="relative w-full">{children}</main>
+            <Footer />
           </div>
         </ErrorBoundary>
       </body>

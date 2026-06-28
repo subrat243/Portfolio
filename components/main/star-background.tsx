@@ -41,7 +41,7 @@ export const StarBackground = (props: PointsProps) => {
 };
 
 export const StarsCanvas = () => (
-  <div className="w-full h-full fixed inset-0 z-[9999] pointer-events-none opacity-50">
+  <div className="w-full h-full fixed inset-0 z-[5] pointer-events-none opacity-50">
     <Canvas camera={{ position: [0, 0, 1] }} style={{ pointerEvents: "none" }}>
       <Suspense fallback={null}>
         <StarBackground />
