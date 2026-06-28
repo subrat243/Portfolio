@@ -34,7 +34,7 @@ export function IconCloud({ icons = [], images = [] }: IconCloudProps) {
   // Initial spherical coordinates using Fibonacci lattice
   const initialItems = useMemo(() => {
     const positions: CloudItem[] = [];
-    const radius = 160; // radius of the sphere in px
+    const radius = 150; // radius of the sphere in px
     for (let i = 0; i < count; i++) {
       const phi = Math.acos(-1 + (2 * i) / count);
       const theta = Math.sqrt(count * Math.PI) * phi;
@@ -101,7 +101,7 @@ export function IconCloud({ icons = [], images = [] }: IconCloudProps) {
         const scale = perspective / (perspective - z2);
         const opacity = Math.min(Math.max((z2 + 200) / 350, 0.25), 1);
 
-        el.style.transform = `translate3d(${x1 * scale}px, ${y2 * scale}px, 0px) scale(${scale})`;
+        el.style.transform = `translate3d(calc(-50% + ${x1 * scale}px), calc(-50% + ${y2 * scale}px), 0px) scale(${scale})`;
         el.style.opacity = `${opacity}`;
         el.style.zIndex = `${Math.round(z2 + 200)}`;
       });
@@ -143,23 +143,23 @@ export function IconCloud({ icons = [], images = [] }: IconCloudProps) {
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
-      className="relative flex w-[350px] h-[350px] sm:w-[420px] sm:h-[420px] md:w-[500px] md:h-[500px] items-center justify-center select-none cursor-grab active:cursor-grabbing overflow-hidden pointer-events-auto my-auto"
+      className="relative flex w-[350px] h-[350px] sm:w-[420px] sm:h-[420px] md:w-[500px] md:h-[500px] items-center justify-center select-none cursor-grab active:cursor-grabbing overflow-visible pointer-events-auto my-auto"
     >
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-auto">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0 h-0 flex items-center justify-center pointer-events-auto">
         {initialItems.map((item, index) => (
           <div
             key={item.id}
             ref={(el) => {
               itemRefs.current[index] = el;
             }}
-            className="absolute flex items-center justify-center transition-transform duration-75 ease-out"
+            className="absolute flex items-center justify-center transition-transform duration-75 ease-out origin-center"
             style={{
-              transform: `translate3d(${item.x}px, ${item.y}px, 0px) scale(${item.scale})`,
+              transform: `translate3d(calc(-50% + ${item.x}px), calc(-50% + ${item.y}px), 0px) scale(${item.scale})`,
               opacity: item.opacity,
               zIndex: Math.round(item.z + 200),
             }}
           >
-            <div className="w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center pointer-events-auto hover:scale-125 transition-transform duration-200 text-white [&>svg]:w-full [&>svg]:h-full [&>svg]:object-contain">
+            <div className="w-14 h-14 sm:w-18 sm:h-18 flex items-center justify-center pointer-events-auto hover:scale-125 transition-transform duration-200 text-[#212A3E] dark:text-white [&>svg]:w-full [&>svg]:h-full [&>svg]:object-contain">
               {item.element}
             </div>
           </div>
