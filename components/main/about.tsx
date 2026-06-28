@@ -11,6 +11,7 @@ import {
 } from "@/lib/motion";
 import { CometCard } from "@/components/ui/comet-card";
 import { Highlighter } from "@/components/ui/highlighter";
+import { KineticText } from "@/components/ui/kinetic-text";
 
 export const About = () => {
   return (
@@ -92,12 +93,12 @@ export const About = () => {
             viewport={{ once: true }}
             className="flex flex-col gap-6 text-start lg:text-left max-w-2xl"
           >
-            <motion.h2
+            <motion.div
               variants={slideInFromRight(0.6)}
-              className="text-4xl font-bold text-[#212A3E]"
+              className="pointer-events-auto"
             >
-              Who Am I?
-            </motion.h2>
+              <KineticText text="Who Am I?" className="text-5xl md:text-6xl font-bold text-[#212A3E] text-left justify-start [font-optical-sizing:auto]" />
+            </motion.div>
 
             <motion.p
               variants={slideInFromRight(0.9)}
