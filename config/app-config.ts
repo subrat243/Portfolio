@@ -26,7 +26,6 @@ export const APP_CONFIG = {
   // Navigation Configuration
   navigation: {
     links: [
-      { title: "Home", href: "#home", isExternal: false },
       { title: "About me", href: "#about", isExternal: false },
       { title: "Skills", href: "#skills", isExternal: false },
       { title: "Security", href: "#security", isExternal: false },

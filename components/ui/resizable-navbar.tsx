@@ -236,7 +236,7 @@ export const NavbarLogo = () => {
       href="#home"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-xl font-bold text-[#212A3E] hover:text-[#394867] transition-colors"
     >
-      <span>^_^</span>
+      <span>Home</span>
     </a>
   );
 };
