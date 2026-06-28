@@ -103,6 +103,36 @@ export const APP_CONFIG = {
       technologies: ["Python", "Hash", "Cryptography", "Security"],
       featured: true,
     },
+    {
+      id: "port-scanner",
+      title: "Advanced Port Scanner & Service Detector",
+      description:
+        "High-performance asynchronous port scanner engineered in Python. It rapidly detects available network services, identifies banner grabs, and maps potential attack surfaces.",
+      image: "/projects/Attack.jpg",
+      link: "https://github.com/subrat243/Port-Scanner",
+      technologies: ["Python", "Networking", "Socket", "Security"],
+      featured: true,
+    },
+    {
+      id: "log-analyzer",
+      title: "Intrusion Detection & Log Analyzer",
+      description:
+        "Automated log analysis and parsing toolkit designed to analyze web server logs for SQL Injection, XSS attempts, and anomalous traffic patterns in real-time.",
+      image: "/projects/Network-monitoring.svg",
+      link: "https://github.com/subrat243/Log-Analyzer",
+      technologies: ["Python", "Regex", "SIEM", "Security"],
+      featured: true,
+    },
+    {
+      id: "crypto-utility",
+      title: "Secure File Encryption Utility",
+      description:
+        "Advanced cryptographic tool implementing AES-256 encryption and key derivation functions to protect sensitive files and securely manage cryptographic keys.",
+      image: "/projects/Data-security.svg",
+      link: "https://github.com/subrat243/Crypto-Utility",
+      technologies: ["Python", "Cryptography", "AES-256", "Security"],
+      featured: true,
+    },
   ],
 
   // Skills Configuration
