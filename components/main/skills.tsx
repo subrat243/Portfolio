@@ -4,6 +4,7 @@ import { SkillText } from "@/components/sub/skill-text";
 import { motion } from "framer-motion";
 import { SKILLS_CATEGORIES } from "@/constants";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
+import LinkPreviewDemo from "@/components/link-preview-demo";
 
 export const Skills = () => {
   return (
@@ -21,6 +22,11 @@ export const Skills = () => {
             items={SKILLS_CATEGORIES}
             className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-10"
           />
+        </div>
+
+        {/* Link Preview Demo */}
+        <div className="w-full mt-12 relative z-20">
+          <LinkPreviewDemo />
         </div>
       </div>
     </section>

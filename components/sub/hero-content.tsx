@@ -40,7 +40,7 @@ export const HeroContent = () => {
           <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#212A3E] leading-tight pointer-events-none">
             <div className="mb-2 pointer-events-none">
               <EncryptedText
-                text="Hey, I'm "
+                text="Hello, I'm "
                 encryptedClassName="text-[#9BA4B5] font-mono"
                 revealedClassName="text-[#212A3E]"
                 revealDelayMs={100}
@@ -51,7 +51,7 @@ export const HeroContent = () => {
             {showSecondLine && (
               <div className="flex items-center gap-2 pointer-events-none">
                 <EncryptedText
-                  text="Subrat..."
+                  text="Subrat Samantaray"
                   encryptedClassName="text-[#9BA4B5] font-mono"
                   revealedClassName="text-[#394867]"
                   revealDelayMs={120}
@@ -92,8 +92,8 @@ export const HeroContent = () => {
           >
             {[
               "Penetration Tester",
+              "Security Analyst",
               "Security Researcher",
-              "Ethical Hacker",
             ].map((role, index) => (
               <motion.span
                 key={role}

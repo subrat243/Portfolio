@@ -7,10 +7,10 @@ export const APP_CONFIG = {
     name: "Subrat Samantaray Portfolio",
     title: "Subrat Samantaray | Cybersecurity Portfolio",
     description:
-      "Cybersecurity student specializing in network security, threat detection, and offensive security.",
+      "A Cybersecurity student.",
     url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
     author: "Subrat Samantaray",
-    email: "subratsamantaray43@gmail.com",
+    email: "[EMAIL_ADDRESS]",
     keywords: [
       "cybersecurity",
       "penetration testing",
@@ -164,7 +164,7 @@ export const APP_CONFIG = {
       },
       {
         title: "OS, Virtualization & Platforms",
-        items: ["Linux", "Windows", "VMWare", "VirtualBox","Git", "GitHub"],
+        items: ["Linux", "Windows", "VMWare", "VirtualBox", "Git", "GitHub"],
       },
       {
         title: "Network Concepts",
