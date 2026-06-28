@@ -8,9 +8,11 @@ import { useState } from "react";
 import { TypingAnimation } from "@/components/sub/typing-animation";
 import {
   slideInFromLeft,
+  slideInFromRight,
   slideInFromTop,
 } from "@/lib/motion";
 import { EncryptedText } from "@/components/ui/encrypted-text";
+import { CyberGlobe } from "@/components/cyber-globe/CyberGlobe";
 
 export const HeroContent = () => {
   const [showSecondLine, setShowSecondLine] = useState(false);
@@ -21,8 +23,8 @@ export const HeroContent = () => {
       animate="visible"
       className="flex flex-col lg:flex-row items-center justify-between px-6 md:px-12 lg:px-20 py-12 md:py-20 w-full h-full max-w-7xl mx-auto gap-8 lg:gap-12 pointer-events-none"
     >
-      {/* Left Content Section */}
-      <div className="flex-1 w-full flex flex-col gap-6 md:gap-8 justify-center text-left lg:pr-8 order-2 lg:order-1 pointer-events-none">
+      {/* Left Content Section (40% width) */}
+      <div className="lg:w-[40%] w-full flex flex-col gap-6 md:gap-8 justify-center text-left order-2 lg:order-1 pointer-events-none">
         {/* Welcome Badge */}
         <motion.div
           variants={slideInFromTop}
@@ -134,6 +136,14 @@ export const HeroContent = () => {
           </motion.a>
         </motion.div>
       </div>
+
+      {/* Right Content Section - 3D Cyber Threat Globe (60% width) */}
+      <motion.div
+        variants={slideInFromRight(1.2)}
+        className="lg:w-[60%] w-full flex items-center justify-center order-1 lg:order-2 pointer-events-auto"
+      >
+        <CyberGlobe />
+      </motion.div>
     </motion.div>
   );
 };
