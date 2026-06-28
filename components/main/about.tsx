@@ -11,6 +11,7 @@ import {
   slideInFromTop,
 } from "@/lib/motion";
 import { CometCard } from "@/components/ui/comet-card";
+import { Highlighter } from "@/components/ui/highlighter";
 
 export const About = () => {
   return (
@@ -111,17 +112,18 @@ export const About = () => {
               className="text-lg text-[#394867] leading-relaxed"
             >
               I&apos;m a passionate{" "}
-              <span className="text-[#212A3E] font-bold">
+              <Highlighter isView action="highlight" color="#87CEFA" className="text-[#212A3E] font-bold">
                 Cybersecurity student
-              </span>{" "}
+              </Highlighter>{" "}
               and{" "}
-              <span className="text-[#212A3E] font-bold">
+              <Highlighter isView action="underline" color="#FF9800" className="text-[#212A3E] font-bold">
                 security enthusiast
-              </span>{" "}
+              </Highlighter>{" "}
               who thrives on exploring the intricate world of digital security.
-              I specialize in <span className="text-[#394867] font-semibold">Penetration Testing</span>,{" "}
-              <span className="text-[#394867] font-semibold">Network Security</span>, and{" "}
-              <span className="text-[#394867] font-semibold">Web Application Security</span>.
+              I specialize in{" "}
+              <Highlighter isView action="highlight" color="#ffd1dc" className="text-[#212A3E] font-semibold">
+                Penetration Testing, Network Security, and Web Application Security
+              </Highlighter>.
             </motion.p>
 
             <motion.p
@@ -129,10 +131,9 @@ export const About = () => {
               className="text-lg text-[#394867]/90 leading-relaxed"
             >
               With hands-on experience using industry-standard tools like{" "}
-              <span className="text-[#212A3E] font-medium">Nmap</span>,{" "}
-              <span className="text-[#212A3E] font-medium">Wireshark</span>,{" "}
-              <span className="text-[#212A3E] font-medium">Metasploit</span>, and{" "}
-              <span className="text-[#212A3E] font-medium">Burp Suite</span>, I have
+              <Highlighter isView action="box" color="#394867" className="text-[#212A3E] font-medium px-1">
+                Nmap, Wireshark, Metasploit, and Burp Suite
+              </Highlighter>, I have
               developed a deep understanding of network protocols, security
               frameworks, and threat detection methodologies.
             </motion.p>
@@ -142,9 +143,9 @@ export const About = () => {
               className="text-lg text-[#394867]/90 leading-relaxed"
             >
               My passion extends beyond technical skills to include{" "}
-              <span className="text-[#212A3E] font-medium">ethical hacking</span>,{" "}
-              <span className="text-[#212A3E] font-medium">digital forensics</span>, and{" "}
-              <span className="text-[#212A3E] font-medium">threat intelligence</span>. My
+              <Highlighter isView action="highlight" color="#FEF08A" className="text-[#212A3E] font-medium">
+                ethical hacking, digital forensics, and threat intelligence
+              </Highlighter>. My
               ultimate goal is to contribute to building a safer digital world
               through continuous learning, practical security implementations,
               and knowledge sharing with the cybersecurity community.
