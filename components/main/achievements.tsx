@@ -153,7 +153,8 @@ export const Achievements = () => {
                     )
                   }
                   icon={<IconComponent className="h-6 w-6 text-[#212A3E]" />}
-                  className={i === 0 || i === 3 ? "md:col-span-2" : ""}
+                  className={i === 1 || i === 2 ? "md:col-span-2" : ""}
+                  isHorizontal={isCert}
                 />
               );
             })}

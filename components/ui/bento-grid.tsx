@@ -10,7 +10,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "mx-auto grid max-w-7xl grid-cols-1 gap-6 md:auto-rows-[22rem] md:grid-cols-3",
+        "mx-auto grid max-w-7xl grid-cols-1 gap-6 md:grid-cols-3",
         className,
       )}
     >
@@ -25,13 +25,39 @@ export const BentoGridItem = ({
   description,
   header,
   icon,
+  isHorizontal,
 }: {
   className?: string;
   title?: string | React.ReactNode;
   description?: string | React.ReactNode;
   header?: React.ReactNode;
   icon?: React.ReactNode;
+  isHorizontal?: boolean;
 }) => {
+  if (isHorizontal) {
+    return (
+      <div
+        className={cn(
+          "group/bento shadow-lg row-span-1 flex flex-col lg:flex-row items-center justify-between gap-8 rounded-2xl border border-[#9BA4B5]/40 bg-white p-8 transition-all duration-300 hover:shadow-xl hover:border-[#212A3E] dark:border-white/[0.2] dark:bg-black dark:shadow-none pointer-events-auto",
+          className,
+        )}
+      >
+        <div className="flex-1 transition duration-200 group-hover/bento:translate-x-1 flex flex-col justify-center text-left">
+          {icon}
+          <div className="mt-4 mb-2 font-sans text-2xl font-bold text-[#212A3E] group-hover/bento:text-[#394867] transition-colors duration-300">
+            {title}
+          </div>
+          <div className="font-sans text-base font-normal text-[#394867]/90 leading-relaxed">
+            {description}
+          </div>
+        </div>
+        <div className="flex-1 w-full flex items-center justify-center py-4 lg:py-0">
+          {header}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div
       className={cn(
