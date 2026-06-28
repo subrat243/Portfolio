@@ -20,7 +20,7 @@ export const Projects = () => {
           transition={{ duration: 0.6 }}
           className="flex flex-col items-center justify-center mb-2 pointer-events-auto"
         >
-          <div className="Welcome-box py-[8px] px-[7px] border border-[#9BA4B5]/40 opacity-90 inline-flex items-center mb-8 mx-auto">
+          <div className="Welcome-box py-[8px] px-[7px] border border-[#9BA4B5]/40 opacity-90 inline-flex items-center mb-3 mx-auto">
             <SparklesIcon className="text-[#394867] mr-[10px] h-5 w-5" />
             <h2 className="Welcome-text text-[13px]">Featured Work</h2>
           </div>
