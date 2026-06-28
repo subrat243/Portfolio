@@ -77,8 +77,10 @@ export const Highlighter: React.FC<HighlighterProps> = ({
   }, [inView, isView, action, color, strokeWidth, animationDuration, iterations, padding, multiline]);
 
   return (
-    <span ref={setRefs} className={`relative inline-block ${className}`}>
-      {children}
+    <span className="relative inline-block">
+      <span ref={setRefs} className={`relative inline-block ${className}`}>
+        {children}
+      </span>
     </span>
   );
 };
