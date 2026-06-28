@@ -9,7 +9,7 @@ export const Projects = () => {
   return (
     <section
       id="projects"
-      className="flex flex-col items-center justify-center py-20 px-8 lg:px-10 relative min-h-screen overflow-hidden bg-transparent"
+      className="flex flex-col items-center justify-center py-12 px-8 lg:px-10 relative overflow-hidden bg-transparent"
     >
       <div className="relative z-10 w-full max-w-[1400px]">
         {/* Section Header */}
