@@ -2,7 +2,6 @@
 import { motion } from "framer-motion";
 import { PROJECTS } from "@/constants";
 import { SparklesIcon } from "@heroicons/react/24/solid";
-import { StarsCanvas } from "@/components/main/star-background";
 import { InfiniteMovingProjects } from "@/components/ui/infinite-moving-projects";
 
 export const Projects = () => {
@@ -11,13 +10,6 @@ export const Projects = () => {
       id="projects"
       className="flex flex-col items-center justify-center py-20 px-8 lg:px-10 relative min-h-screen overflow-hidden bg-[#F1F6F9]"
     >
-      {/* Background Stars */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-30">
-        <StarsCanvas />
-      </div>
-
-
-
       <div className="relative z-10 w-full max-w-[1400px]">
         {/* Section Header */}
         <motion.div

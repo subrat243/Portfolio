@@ -69,29 +69,29 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
       // Default error UI
       return (
-        <div className="min-h-screen flex items-center justify-center bg-[#030014] px-4 z-modal relative">
+        <div className="min-h-screen flex items-center justify-center bg-[#F1F6F9] px-4 z-modal relative">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="max-w-md w-full bg-gradient-to-br from-purple-500/10 to-cyan-500/10 border border-purple-500/20 rounded-xl p-8 text-center z-modal relative"
+            className="max-w-md w-full bg-white border border-[#9BA4B5]/40 rounded-2xl p-8 text-center shadow-xl z-modal relative"
           >
             {/* Error Icon */}
             <motion.div
               animate={{ rotate: [0, -5, 5, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center"
+              className="w-20 h-20 mx-auto mb-6 bg-[#212A3E]/5 border border-[#9BA4B5]/30 rounded-full flex items-center justify-center"
             >
               <span className="text-3xl">⚠️</span>
             </motion.div>
 
             {/* Error Title */}
-            <h1 className="text-2xl font-bold text-white mb-4">
+            <h1 className="text-2xl font-bold text-[#212A3E] mb-4">
               Oops! Something went wrong
             </h1>
 
             {/* Error Description */}
-            <p className="text-gray-300 mb-6 leading-relaxed">
+            <p className="text-[#394867]/90 mb-6 leading-relaxed">
               We encountered an unexpected error while rendering this component.
               Don&apos;t worry, this has been logged and we&apos;re working on
               fixing it.
@@ -105,20 +105,20 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
                 transition={{ delay: 0.3 }}
                 className="mb-6 text-left"
               >
-                <summary className="cursor-pointer text-red-400 hover:text-red-300 transition-colors">
+                <summary className="cursor-pointer text-[#394867] font-semibold hover:text-[#212A3E] transition-colors">
                   View Error Details (Dev Mode)
                 </summary>
-                <div className="mt-3 p-4 bg-black/30 rounded-lg text-xs text-gray-400 overflow-auto max-h-40">
-                  <strong className="text-red-400">Error:</strong>
-                  <pre className="whitespace-pre-wrap break-words">
+                <div className="mt-3 p-4 bg-[#212A3E]/5 border border-[#9BA4B5]/20 rounded-lg text-xs text-[#394867] overflow-auto max-h-40">
+                  <strong className="text-[#212A3E]">Error:</strong>
+                  <pre className="whitespace-pre-wrap break-words mt-1">
                     {this.state.error.message}
                   </pre>
                   {this.state.errorInfo && (
                     <>
-                      <strong className="text-red-400 mt-2 block">
+                      <strong className="text-[#212A3E] mt-3 block">
                         Stack:
                       </strong>
-                      <pre className="whitespace-pre-wrap break-words text-xs">
+                      <pre className="whitespace-pre-wrap break-words text-xs mt-1">
                         {this.state.errorInfo.componentStack}
                       </pre>
                     </>
@@ -130,19 +130,19 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-3">
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
                 onClick={this.handleRetry}
-                className="flex-1 px-6 py-3 bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-medium rounded-lg hover:from-purple-600 hover:to-cyan-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+                className="flex-1 px-6 py-3 bg-[#212A3E] text-white font-medium rounded-xl hover:bg-[#394867] transition-all duration-300 shadow-md focus:outline-none focus:ring-2 focus:ring-[#212A3E] focus:ring-offset-2"
               >
                 Try Again
               </motion.button>
 
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
                 onClick={() => (window.location.href = "/")}
-                className="flex-1 px-6 py-3 bg-gray-700 text-white font-medium rounded-lg hover:bg-gray-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+                className="flex-1 px-6 py-3 bg-white border border-[#9BA4B5]/40 text-[#212A3E] font-medium rounded-xl hover:border-[#212A3E] hover:bg-[#212A3E]/5 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#212A3E] focus:ring-offset-2"
               >
                 Go Home
               </motion.button>
@@ -153,7 +153,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="text-xs text-gray-400 mt-4"
+              className="text-xs text-[#394867]/70 mt-6"
             >
               If this problem persists, please refresh the page or contact
               support.

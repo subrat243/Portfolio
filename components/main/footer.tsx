@@ -5,16 +5,10 @@ import { motion } from "framer-motion";
 
 import { FOOTER_DATA } from "@/constants";
 import { APP_CONFIG } from "@/config/app-config";
-import { StarsCanvas } from "@/components/main/star-background";
 
 export const Footer = () => {
   return (
     <footer id="contact" className="w-full h-full bg-[#F1F6F9] text-[#394867] shadow-md p-[15px] py-20 relative z-[9999] overflow-hidden">
-      {/* Background Stars */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-30">
-        <StarsCanvas />
-      </div>
-
       <div className="w-full flex flex-col items-center justify-center m-auto relative z-[10000] pointer-events-auto">
         {/* Call to Action - Ready to Collaborate */}
         <motion.div
