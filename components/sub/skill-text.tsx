@@ -2,6 +2,7 @@
 
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
+import { KineticText } from "@/components/ui/kinetic-text";
 
 import {
   slideInFromLeft,
@@ -24,9 +25,9 @@ export const SkillText = () => {
 
       <motion.div
         variants={slideInFromLeft(0.5)}
-        className="text-4xl md:text-5xl font-bold text-[#212A3E] mt-[10px] text-center mb-[15px]"
+        className="mt-[10px] text-center mb-[15px] pointer-events-auto"
       >
-        Skills and Technologies.
+        <KineticText text="Skills and Technologies." className="text-4xl md:text-5xl font-bold text-[#212A3E] justify-center text-center [font-optical-sizing:auto]" />
       </motion.div>
 
       <motion.div

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { PROJECTS } from "@/constants";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import { InfiniteMovingProjects } from "@/components/ui/infinite-moving-projects";
+import { KineticText } from "@/components/ui/kinetic-text";
 
 export const Projects = () => {
   return (
@@ -17,16 +18,14 @@ export const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col items-center justify-center mb-16"
+          className="flex flex-col items-center justify-center mb-16 pointer-events-auto"
         >
           <div className="Welcome-box py-[8px] px-[7px] border border-[#9BA4B5]/40 opacity-90 inline-flex items-center mb-8 mx-auto">
             <SparklesIcon className="text-[#394867] mr-[10px] h-5 w-5" />
             <h2 className="Welcome-text text-[13px]">Featured Work</h2>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-[#212A3E] text-center">
-            My Projects
-          </h1>
+          <KineticText text="My Projects" className="text-4xl md:text-5xl font-bold text-[#212A3E] text-center justify-center [font-optical-sizing:auto]" />
 
           <p className="text-[#394867] text-lg mt-4 max-w-2xl mx-auto text-center">
             Explore my cybersecurity projects and tools that demonstrate my
