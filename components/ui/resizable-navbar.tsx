@@ -231,12 +231,21 @@ export const MobileNavToggle = ({
 };
 
 export const NavbarLogo = () => {
+  const [hovered, setHovered] = useState(false);
   return (
     <a
       href="#home"
-      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-xl font-bold text-[#212A3E] hover:text-[#394867] transition-colors"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="relative z-20 mr-4 px-4 py-2 text-sm font-medium text-[#394867] hover:text-[#212A3E] transition-colors"
     >
-      <span>Home</span>
+      {hovered && (
+        <motion.div
+          layoutId="logoHovered"
+          className="absolute inset-0 h-full w-full rounded-full bg-[#394867]/10"
+        />
+      )}
+      <span className="relative z-20">Home</span>
     </a>
   );
 };
