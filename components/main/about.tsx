@@ -19,7 +19,7 @@ export const About = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
-      className="flex flex-col items-center justify-center py-12 px-8 lg:px-10 relative overflow-hidden bg-transparent"
+      className="flex flex-col items-center justify-center py-20 px-8 lg:px-10 relative min-h-screen overflow-hidden bg-transparent"
     >
       {/* Content Container */}
       <div className="relative z-10 w-full max-w-7xl">

@@ -11,6 +11,7 @@ import {
   slideInFromTop,
 } from "@/lib/motion";
 import { EncryptedText } from "@/components/ui/encrypted-text";
+import GlobeDemo from "@/components/globe-demo";
 
 export const HeroContent = () => {
   const [showSecondLine, setShowSecondLine] = useState(false);
@@ -134,6 +135,12 @@ export const HeroContent = () => {
           </motion.a>
         </motion.div>
       </div>
+
+      {/* Right Content Section (Interactive Globe) */}
+      <div className="flex-1 w-full flex items-center justify-center order-1 lg:order-2 pointer-events-auto">
+        <GlobeDemo />
+      </div>
     </motion.div>
   );
 };
+
