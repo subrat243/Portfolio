@@ -26,7 +26,7 @@ export const SkillText = () => {
         variants={slideInFromLeft(0.5)}
         className="text-4xl md:text-5xl font-bold text-[#212A3E] mt-[10px] text-center mb-[15px]"
       >
-        Technical Skills and Technologies.
+        Skills and Technologies.
       </motion.div>
 
       <motion.div
