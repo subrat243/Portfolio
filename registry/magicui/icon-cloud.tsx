@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 
 interface IconCloudProps {
   icons?: React.ReactNode[];
@@ -34,7 +34,7 @@ export function IconCloud({ icons = [], images = [] }: IconCloudProps) {
   // Initial spherical coordinates using Fibonacci lattice
   const initialItems = useMemo(() => {
     const positions: CloudItem[] = [];
-    const radius = 150; // radius of the sphere in px
+    const radius = 160; // radius of the sphere in px
     for (let i = 0; i < count; i++) {
       const phi = Math.acos(-1 + (2 * i) / count);
       const theta = Math.sqrt(count * Math.PI) * phi;
@@ -62,10 +62,7 @@ export function IconCloud({ icons = [], images = [] }: IconCloudProps) {
     return positions;
   }, [count, allElements]);
 
-  const [items, setItems] = useState<CloudItem[]>(initialItems);
-  const initialItemsRef = useRef(initialItems);
-  initialItemsRef.current = initialItems;
-
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
   const rotationRef = useRef({ x: 0, y: 0 });
   const isDraggingRef = useRef(false);
   const previousMousePosRef = useRef({ x: 0, y: 0 });
@@ -87,7 +84,10 @@ export function IconCloud({ icons = [], images = [] }: IconCloudProps) {
       const sinY = Math.sin(rotationRef.current.y);
       const cosY = Math.cos(rotationRef.current.y);
 
-      const updatedItems: CloudItem[] = initialItemsRef.current.map((pos) => {
+      initialItems.forEach((pos, index) => {
+        const el = itemRefs.current[index];
+        if (!el) return;
+
         // Rotate around Y axis
         const x1 = pos.x0 * cosY + pos.z0 * sinY;
         const z1 = -pos.x0 * sinY + pos.z0 * cosY;
@@ -101,19 +101,10 @@ export function IconCloud({ icons = [], images = [] }: IconCloudProps) {
         const scale = perspective / (perspective - z2);
         const opacity = Math.min(Math.max((z2 + 200) / 350, 0.25), 1);
 
-        return {
-          ...pos,
-          x: x1 * scale,
-          y: y2 * scale,
-          z: z2,
-          scale,
-          opacity,
-        };
+        el.style.transform = `translate3d(${x1 * scale}px, ${y2 * scale}px, 0px) scale(${scale})`;
+        el.style.opacity = `${opacity}`;
+        el.style.zIndex = `${Math.round(z2 + 200)}`;
       });
-
-      // Sort by Z index to ensure correct visual layering
-      updatedItems.sort((a, b) => a.z - b.z);
-      setItems(updatedItems);
 
       animationFrameId = requestAnimationFrame(updatePositions);
     };
@@ -123,7 +114,7 @@ export function IconCloud({ icons = [], images = [] }: IconCloudProps) {
     return () => {
       cancelAnimationFrame(animationFrameId);
     };
-  }, []); // Empty dependency array ensures this effect runs exactly ONCE and never causes a re-render loop
+  }, [initialItems]);
 
   const handleMouseDown = (e: React.MouseEvent) => {
     isDraggingRef.current = true;
@@ -152,12 +143,15 @@ export function IconCloud({ icons = [], images = [] }: IconCloudProps) {
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
-      className="relative flex w-[350px] h-[350px] sm:w-[420px] sm:h-[420px] md:w-[500px] md:h-[500px] items-center justify-center select-none cursor-grab active:cursor-grabbing overflow-hidden pointer-events-auto"
+      className="relative flex w-[350px] h-[350px] sm:w-[420px] sm:h-[420px] md:w-[500px] md:h-[500px] items-center justify-center select-none cursor-grab active:cursor-grabbing overflow-hidden pointer-events-auto my-auto"
     >
-      <div className="absolute inset-0 flex items-center justify-center">
-        {items.map((item) => (
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-auto">
+        {initialItems.map((item, index) => (
           <div
             key={item.id}
+            ref={(el) => {
+              itemRefs.current[index] = el;
+            }}
             className="absolute flex items-center justify-center transition-transform duration-75 ease-out"
             style={{
               transform: `translate3d(${item.x}px, ${item.y}px, 0px) scale(${item.scale})`,
@@ -165,7 +159,7 @@ export function IconCloud({ icons = [], images = [] }: IconCloudProps) {
               zIndex: Math.round(item.z + 200),
             }}
           >
-            <div className="w-10 h-10 sm:w-14 sm:h-14 flex items-center justify-center pointer-events-auto hover:scale-125 transition-transform duration-200 text-white [&>svg]:w-full [&>svg]:h-full">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center pointer-events-auto hover:scale-125 transition-transform duration-200 text-white [&>svg]:w-full [&>svg]:h-full [&>svg]:object-contain">
               {item.element}
             </div>
           </div>
