@@ -43,7 +43,7 @@ export const Security = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="flex items-center justify-center w-full mb-6"
+          className="flex items-center justify-center w-full mb-2"
         >
           <TextRevealCard
             text="Cybersecurity Best Practices"
@@ -55,7 +55,7 @@ export const Security = () => {
         </motion.div>
 
         {/* Security Practice Categories & Defense in Depth */}
-        <div className="w-full mt-4">
+        <div className="w-full mt-2">
           <HoverEffect
             id="security"
             items={[

@@ -32,7 +32,7 @@ export const SkillText = () => {
 
       <motion.div
         variants={slideInFromRight(0.5)}
-        className="cursive text-[20px] text-[#394867] mb-2 mt-[5px] text-center"
+        className="cursive text-[20px] text-[#394867] mb-0 mt-[5px] text-center"
       >
         Always learning, always building.
       </motion.div>

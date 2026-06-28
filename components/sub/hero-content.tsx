@@ -11,7 +11,6 @@ import {
   slideInFromTop,
 } from "@/lib/motion";
 import { EncryptedText } from "@/components/ui/encrypted-text";
-import { AsciiGlobe } from "@/components/ascii-globe/AsciiGlobe";
 
 export const HeroContent = () => {
   const [showSecondLine, setShowSecondLine] = useState(false);
@@ -134,11 +133,6 @@ export const HeroContent = () => {
             Learn More
           </motion.a>
         </motion.div>
-      </div>
-
-      {/* Right Content Section - Interactive ASCII Globe */}
-      <div className="flex-1 w-full flex items-center justify-center order-1 lg:order-2 pointer-events-auto my-auto">
-        <AsciiGlobe />
       </div>
     </motion.div>
   );
