@@ -11,7 +11,6 @@ import {
   slideInFromTop,
 } from "@/lib/motion";
 import { EncryptedText } from "@/components/ui/encrypted-text";
-import { CyberWordCloud } from "@/components/ui/cyber-word-cloud";
 
 export const HeroContent = () => {
   const [showSecondLine, setShowSecondLine] = useState(false);
@@ -20,7 +19,7 @@ export const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-col lg:flex-row items-center justify-between px-6 md:px-12 lg:px-20 py-12 md:py-20 w-full h-full max-w-7xl mx-auto gap-8 lg:gap-12 pointer-events-none"
+      className="flex flex-col lg:flex-row items-center justify-between px-6 md:px-12 lg:px-10 py-12 md:py-20 w-full h-full max-w-[1400px] mx-auto gap-8 lg:gap-12 pointer-events-none"
     >
       {/* Left Content Section */}
       <div className="flex-1 w-full flex flex-col gap-4 md:gap-5 justify-center text-left lg:pr-8 order-2 lg:order-1 pointer-events-none">
@@ -134,11 +133,6 @@ export const HeroContent = () => {
             Learn More
           </motion.a>
         </motion.div>
-      </div>
-
-      {/* Right Content Section - Cyber Word Cloud */}
-      <div className="flex-1 w-full flex items-center justify-center order-1 lg:order-2 pointer-events-none">
-        <CyberWordCloud />
       </div>
     </motion.div>
   );
