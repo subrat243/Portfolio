@@ -12,6 +12,7 @@ import {
 import { CometCard } from "@/components/ui/comet-card";
 import { Highlighter } from "@/components/ui/highlighter";
 import { KineticText } from "@/components/ui/kinetic-text";
+import { WavyBackground } from "@/components/ui/wavy-background";
 
 export const About = () => {
   return (
@@ -20,10 +21,9 @@ export const About = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
-      className="flex flex-col items-center justify-center py-20 px-8 lg:px-10 relative min-h-screen overflow-hidden bg-transparent"
+      className="relative w-full"
     >
-      {/* Content Container */}
-      <div className="relative z-10 w-full max-w-7xl">
+      <WavyBackground containerClassName="py-20 px-8 lg:px-10 min-h-screen">
         {/* Section Header */}
         <motion.div
           variants={slideInFromTop}
@@ -176,7 +176,7 @@ export const About = () => {
             </motion.div>
           </motion.div>
         </div>
-      </div>
+      </WavyBackground>
     </motion.section>
   );
 };
