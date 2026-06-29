@@ -36,7 +36,7 @@ export const Highlighter: React.FC<HighlighterProps> = ({
   isView = false,
   className = "",
 }) => {
-  const containerRef = useRef<HTMLSpanElement>(null);
+  const containerRef = useRef<HTMLSpanElement | null>(null);
   const { ref: inViewRef, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
