@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 import { FOOTER_DATA } from "@/constants";
 import { APP_CONFIG } from "@/config/app-config";
+import { WordRotate } from "@/registry/magicui/word-rotate";
 
 export const Footer = () => {
   return (
@@ -26,11 +27,12 @@ export const Footer = () => {
             className="space-y-6"
           >
             <div className="max-w-2xl mx-auto">
-              <h3 className="text-3xl font-bold text-[#212A3E] mb-4">
-                <span>
-                  Ready to Collaborate?
-                </span>
-              </h3>
+              <div className="mb-4 pointer-events-auto">
+                <WordRotate
+                  className="text-3xl font-bold text-[#212A3E] justify-center text-center"
+                  words={["Ready to Collaborate?", "Ready to Innovate?", "Ready to Secure?", "Ready to Build?"]}
+                />
+              </div>
               <p className="text-[#394867] mb-6 leading-relaxed text-base md:text-lg">
                 I&apos;m always excited to work on new cybersecurity projects
                 and explore innovative security solutions. Let&apos;s build
