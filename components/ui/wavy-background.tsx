@@ -12,7 +12,7 @@ export const WavyBackground = ({
   backgroundFill,
   blur = 10,
   speed = "fast",
-  waveOpacity = 0.5,
+  waveOpacity = 0.25,
   ...props
 }: {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -94,7 +94,7 @@ export const WavyBackground = ({
   const render = () => {
     if (!ctx) return;
     ctx.fillStyle = backgroundFill || "#F8F9FA";
-    ctx.globalAlpha = waveOpacity || 0.5;
+    ctx.globalAlpha = waveOpacity ?? 0.25;
     ctx.fillRect(0, 0, w, h);
     drawWave(5);
     animationId = requestAnimationFrame(render);
@@ -121,7 +121,7 @@ export const WavyBackground = ({
   return (
     <div
       className={cn(
-        "relative flex flex-col items-center justify-center overflow-hidden w-full min-h-screen py-20 px-8 lg:px-10",
+        "relative flex flex-col items-center justify-center overflow-hidden w-full min-h-screen",
         containerClassName
       )}
     >
@@ -133,7 +133,7 @@ export const WavyBackground = ({
           ...(isSafari ? { filter: `blur(${blur}px)` } : {}),
         }}
       ></canvas>
-      <div className={cn("relative z-10 w-full max-w-7xl", className)} {...props}>
+      <div className={cn("relative z-10 w-full", className)} {...props}>
         {children}
       </div>
     </div>
