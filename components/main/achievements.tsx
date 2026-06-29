@@ -117,7 +117,7 @@ export const Achievements = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col items-center justify-center mb-2 pointer-events-auto"
+          className="flex flex-col items-center justify-center mb-8 pointer-events-auto"
         >
           <div className="Welcome-box py-[8px] px-[7px] border border-[#9BA4B5]/40 opacity-90 inline-flex items-center mb-3 mx-auto">
             <SparklesIcon className="text-[#394867] mr-[10px] h-5 w-5" />
@@ -137,7 +137,7 @@ export const Achievements = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="w-full relative z-20 mt-4 pointer-events-auto"
+          className="w-full relative z-20 mt-10 pointer-events-auto"
         >
           <BentoGrid className="max-w-6xl mx-auto">
             {ACHIEVEMENTS_DATA.map((item, i) => {
