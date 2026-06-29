@@ -9,7 +9,7 @@ import { WavyBackground } from "@/components/ui/wavy-background";
 export const Skills = () => {
   return (
     <section id="skills" className="relative w-full">
-      <WavyBackground containerClassName="py-20 px-8 lg:px-10 min-h-screen">
+      <WavyBackground containerClassName="py-20 px-8 lg:px-10 min-h-screen" waveOpacity={0.12}>
         <div className="relative z-10 w-full max-w-7xl mx-auto">
           <SkillText />
 
