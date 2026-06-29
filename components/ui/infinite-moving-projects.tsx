@@ -16,7 +16,7 @@ export const InfiniteMovingProjects = ({
     description: string;
     image: string;
     link: string;
-    technologies: string[];
+    technologies: string[] | readonly string[];
   }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
@@ -28,6 +28,7 @@ export const InfiniteMovingProjects = ({
 
   useEffect(() => {
     addAnimation();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const [start, setStart] = useState(false);
   function addAnimation() {
