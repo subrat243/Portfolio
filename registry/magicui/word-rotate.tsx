@@ -30,7 +30,7 @@ export function WordRotate({
   }, [words.length, duration]);
 
   return (
-    <div className="overflow-hidden py-2 flex justify-center items-center">
+    <div className="overflow-hidden py-2 flex justify-start items-center">
       <AnimatePresence mode="wait">
         <motion.h1
           key={words[index]}
@@ -38,7 +38,7 @@ export function WordRotate({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className={cn(className)}
+          className={cn("text-left", className)}
           {...motionProps}
         >
           {words[index]}

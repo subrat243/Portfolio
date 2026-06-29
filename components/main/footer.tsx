@@ -28,11 +28,15 @@ export const Footer = () => {
           >
             <div className="max-w-2xl mx-auto">
               <div className="mb-4 pointer-events-auto flex items-center justify-center text-3xl font-bold text-[#212A3E]">
-                <span className="py-2">Ready to&nbsp;</span>
-                <WordRotate
-                  className="text-3xl font-bold text-[#212A3E] inline-block"
-                  words={["Collaborate?", "Innovate?", "Secure?", "Build?"]}
-                />
+                <div className="py-2 flex items-center justify-end w-[140px] md:w-[160px] text-right">
+                  <span>Ready to</span>
+                </div>
+                <div className="flex items-center justify-start w-[200px] md:w-[220px] pl-2">
+                  <WordRotate
+                    className="text-3xl font-bold text-[#212A3E] text-left"
+                    words={["Collaborate", "Innovate", "Secure", "Build"]}
+                  />
+                </div>
               </div>
               <p className="text-[#394867] mb-6 leading-relaxed text-base md:text-lg">
                 I&apos;m always excited to work on new cybersecurity projects
