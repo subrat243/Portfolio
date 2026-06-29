@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 import { FOOTER_DATA } from "@/constants";
 import { APP_CONFIG } from "@/config/app-config";
-import { WordRotate } from "@/registry/magicui/word-rotate";
+import { LayoutTextFlip } from "@/components/ui/layout-text-flip";
 
 export const Footer = () => {
   return (
@@ -27,17 +27,12 @@ export const Footer = () => {
             className="space-y-6"
           >
             <div className="max-w-2xl mx-auto">
-              <div className="mb-4 pointer-events-auto flex items-center justify-center text-3xl font-bold text-[#212A3E]">
-                <div className="py-2 flex items-center justify-end w-[140px] md:w-[160px] text-right">
-                  <span>Ready to</span>
-                </div>
-                <div className="flex items-center justify-start w-[200px] md:w-[220px] pl-2">
-                  <WordRotate
-                    className="text-3xl font-bold text-[#212A3E] text-left"
-                    words={["Collaborate", "Innovate", "Secure", "Build"]}
-                  />
-                </div>
-              </div>
+              <motion.div className="relative my-4 flex flex-col items-center justify-center gap-3 text-center sm:mb-6 sm:flex-row pointer-events-auto">
+                <LayoutTextFlip
+                  text="Ready to"
+                  words={["Collaborate?", "Innovate?", "Secure?", "Build?"]}
+                />
+              </motion.div>
               <p className="text-[#394867] mb-6 leading-relaxed text-base md:text-lg">
                 I&apos;m always excited to work on new cybersecurity projects
                 and explore innovative security solutions. Let&apos;s build
