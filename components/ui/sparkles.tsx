@@ -17,6 +17,10 @@ type ParticlesProps = {
   particleColor?: string;
   particleDensity?: number;
 };
+const initParticles = async (engine: Engine) => {
+  await loadSlim(engine);
+};
+
 export const SparklesCore = (props: ParticlesProps) => {
   const {
     id,
@@ -28,10 +32,6 @@ export const SparklesCore = (props: ParticlesProps) => {
     particleColor,
     particleDensity,
   } = props;
-
-  const init = React.useCallback(async (engine: Engine) => {
-    await loadSlim(engine);
-  }, []);
 
   const controls = useAnimation();
 
@@ -49,7 +49,7 @@ export const SparklesCore = (props: ParticlesProps) => {
   const generatedId = useId();
   return (
     <motion.div animate={controls} className={cn("opacity-0", className)}>
-      <ParticlesProvider init={init}>
+      <ParticlesProvider init={initParticles}>
         <Particles
           id={id || generatedId}
           className={cn("h-full w-full")}
