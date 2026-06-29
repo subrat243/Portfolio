@@ -25,7 +25,7 @@ export const SkillText = () => {
 
       <motion.div
         variants={slideInFromLeft(0.5)}
-        className="mt-4 text-center mb-[4px] pointer-events-auto"
+        className="mt-0 text-center mb-[4px] pointer-events-auto"
       >
         <KineticText text="Skills and Technologies." className="text-4xl md:text-5xl font-bold text-[#212A3E] justify-center text-center [font-optical-sizing:auto]" />
       </motion.div>
