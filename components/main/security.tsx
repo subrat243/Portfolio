@@ -9,6 +9,7 @@ import {
 } from "@/lib/motion";
 import { APP_CONFIG } from "@/config/app-config";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
+import { Cover } from "@/components/ui/cover";
 import {
   TextRevealCard,
   TextRevealCardDescription,
@@ -36,6 +37,17 @@ export const Security = () => {
           <ShieldCheckIcon className="text-[#394867] mr-[10px] h-5 w-5" />
           <h1 className="Welcome-text text-[13px]">Security Best Practices</h1>
         </motion.div>
+
+        {/* Cover Title */}
+        <motion.h1
+          variants={slideInFromTop}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#212A3E] max-w-7xl mx-auto text-center mt-6 mb-10 relative z-20 py-6 pointer-events-auto"
+        >
+          Cybersecurity & <Cover>Best Practices</Cover>
+        </motion.h1>
 
         {/* Main Title / TextRevealCard */}
         <motion.div
