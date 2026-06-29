@@ -10,11 +10,6 @@ import {
 import { APP_CONFIG } from "@/config/app-config";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
 import { Cover } from "@/components/ui/cover";
-import {
-  TextRevealCard,
-  TextRevealCardDescription,
-  TextRevealCardTitle,
-} from "@/components/ui/text-reveal-card";
 
 export const Security = () => {
   return (
@@ -48,23 +43,6 @@ export const Security = () => {
         >
           Cybersecurity & <Cover>Best Practices</Cover>
         </motion.h1>
-
-        {/* Main Title / TextRevealCard */}
-        <motion.div
-          variants={slideInFromTop}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="flex items-center justify-center w-full mb-2"
-        >
-          <TextRevealCard
-            text="Cybersecurity Best Practices"
-            slogan="Essential security measures that every organization and individual must follow"
-            revealText="Protecting digital assets & systems"
-            revealSlogan="Protecting digital assets requires universal commitment and continuous vigilance"
-            className="w-full max-w-4xl mx-auto bg-[#1F2121] border-[#9BA4B5]/30 rounded-2xl shadow-lg p-6"
-          />
-        </motion.div>
 
         {/* Security Practice Categories & Defense in Depth */}
         <div className="w-full mt-2">
