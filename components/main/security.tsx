@@ -39,10 +39,21 @@ export const Security = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#212A3E] max-w-7xl mx-auto text-center mt-6 mb-10 relative z-20 py-6 pointer-events-auto"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#212A3E] max-w-7xl mx-auto text-center mt-6 mb-4 relative z-20 py-6 pointer-events-auto"
         >
           Cybersecurity & <Cover>Best Practices</Cover>
         </motion.h1>
+
+        {/* Sub Heading */}
+        <motion.p
+          variants={slideInFromTop}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="text-[#394867] text-lg mt-4 mb-12 max-w-2xl mx-auto text-center pointer-events-auto font-medium"
+        >
+          Fundamental security principles and advanced defensive methodologies essential for protecting modern systems and mitigating emerging threats.
+        </motion.p>
 
         {/* Security Practice Categories & Defense in Depth */}
         <div className="w-full mt-2">
