@@ -9,9 +9,9 @@ export const Projects = () => {
   return (
     <section
       id="projects"
-      className="flex flex-col items-center justify-center py-20 px-8 lg:px-10 relative min-h-screen overflow-hidden bg-transparent"
+      className="flex flex-col items-center justify-center py-20 relative min-h-screen overflow-hidden bg-transparent w-full"
     >
-      <div className="relative z-10 w-full max-w-[1400px]">
+      <div className="relative z-10 w-full max-w-[1400px] px-8 lg:px-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
@@ -32,19 +32,18 @@ export const Projects = () => {
             skills in ethical hacking, network security, and threat detection.
           </p>
         </motion.div>
-
-        {/* Infinite Moving Project Cards */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="w-full relative z-20"
-        >
-          <InfiniteMovingProjects items={PROJECTS} direction="right" speed="slow" />
-        </motion.div>
-
       </div>
+
+      {/* Infinite Moving Project Cards - Edge to Edge */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="w-full relative z-20 mt-4"
+      >
+        <InfiniteMovingProjects items={PROJECTS} direction="right" speed="slow" />
+      </motion.div>
     </section>
   );
 };
