@@ -93,9 +93,8 @@ export const WavyBackground = ({
   let animationId: number;
   const render = () => {
     if (!ctx) return;
-    ctx.fillStyle = backgroundFill || "#F8F9FA";
+    ctx.clearRect(0, 0, w, h);
     ctx.globalAlpha = waveOpacity ?? 0.25;
-    ctx.fillRect(0, 0, w, h);
     drawWave(5);
     animationId = requestAnimationFrame(render);
   };
@@ -113,8 +112,8 @@ export const WavyBackground = ({
     // I'm sorry but i have got to support it on safari.
     setIsSafari(
       typeof window !== "undefined" &&
-        navigator.userAgent.includes("Safari") &&
-        !navigator.userAgent.includes("Chrome")
+      navigator.userAgent.includes("Safari") &&
+      !navigator.userAgent.includes("Chrome")
     );
   }, []);
 
@@ -131,6 +130,7 @@ export const WavyBackground = ({
         id="canvas"
         style={{
           ...(isSafari ? { filter: `blur(${blur}px)` } : {}),
+          maskImage: "linear-gradient(to bottom, transparent, white 10%, white 90%, transparent)",
         }}
       ></canvas>
       <div className={cn("relative z-10 w-full", className)} {...props}>
