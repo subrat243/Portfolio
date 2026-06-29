@@ -27,10 +27,11 @@ export const Footer = () => {
             className="space-y-6"
           >
             <div className="max-w-2xl mx-auto">
-              <div className="mb-4 pointer-events-auto">
+              <div className="mb-4 pointer-events-auto flex items-center justify-center text-3xl font-bold text-[#212A3E]">
+                <span className="py-2">Ready to&nbsp;</span>
                 <WordRotate
-                  className="text-3xl font-bold text-[#212A3E] justify-center text-center"
-                  words={["Ready to Collaborate?", "Ready to Innovate?", "Ready to Secure?", "Ready to Build?"]}
+                  className="text-3xl font-bold text-[#212A3E] inline-block"
+                  words={["Collaborate?", "Innovate?", "Secure?", "Build?"]}
                 />
               </div>
               <p className="text-[#394867] mb-6 leading-relaxed text-base md:text-lg">
