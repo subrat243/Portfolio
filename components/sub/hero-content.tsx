@@ -8,9 +8,11 @@ import { useState } from "react";
 import { TypingAnimation } from "@/components/sub/typing-animation";
 import {
   slideInFromLeft,
+  slideInFromRight,
   slideInFromTop,
 } from "@/lib/motion";
 import { EncryptedText } from "@/components/ui/encrypted-text";
+import { ChromeDino } from "@/components/ui/chrome-dino";
 
 export const HeroContent = () => {
   const [showSecondLine, setShowSecondLine] = useState(false);
@@ -134,6 +136,14 @@ export const HeroContent = () => {
           </motion.a>
         </motion.div>
       </div>
+
+      {/* Right Content Section - Chrome Dino Game */}
+      <motion.div
+        variants={slideInFromRight(0.8)}
+        className="flex-1 w-full flex items-center justify-center lg:justify-end order-1 lg:order-2 pointer-events-none"
+      >
+        <ChromeDino />
+      </motion.div>
     </motion.div>
   );
 };
