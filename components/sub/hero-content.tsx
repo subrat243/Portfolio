@@ -1,6 +1,5 @@
 "use client";
 
-import { SparklesIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
@@ -29,8 +28,7 @@ export const HeroContent = () => {
           variants={slideInFromTop}
           className="Welcome-box py-[8px] px-[7px] border border-[#9BA4B5]/40 opacity-90 inline-flex items-center w-fit backdrop-blur-md pointer-events-auto"
         >
-          <SparklesIcon className="text-[#394867] mr-[10px] h-5 w-5" />
-          <h1 className="Welcome-text text-[13px] font-medium">Hack Yourself First</h1>
+          <h1 className="Welcome-text text-[13px] font-medium px-2">Hack Yourself First</h1>
         </motion.div>
 
         {/* Main Heading with Encrypted Text Animation */}
