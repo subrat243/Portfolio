@@ -137,7 +137,7 @@ export const HeroContent = () => {
       </div>
 
       {/* Right Content Section - Profile Card */}
-      <div className="flex-1 w-full flex justify-center items-center order-1 lg:order-2 pointer-events-none mt-10 lg:mt-0">
+      <div className="flex-1 w-full flex justify-center lg:justify-end items-center order-1 lg:order-2 pointer-events-none mt-10 lg:mt-0">
         <motion.div
           variants={slideInFromRight(0.5)}
           className="flex flex-col items-center pointer-events-auto"
