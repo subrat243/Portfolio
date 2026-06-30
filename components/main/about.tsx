@@ -51,6 +51,15 @@ export const About = () => {
             </motion.div>
 
             <motion.p
+              variants={slideInFromRight(0.7)}
+              className="text-lg text-[#394867] leading-relaxed"
+            >
+              <span className="font-semibold text-[#212A3E]">Every vulnerability tells a story.</span>
+              <br />
+              Some reveal a simple mistake. Others expose overlooked assumptions.
+            </motion.p>
+
+            <motion.p
               variants={slideInFromRight(0.9)}
               className="text-lg text-[#394867] leading-relaxed"
             >
