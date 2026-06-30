@@ -82,7 +82,7 @@ export const About = () => {
               <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
                 network defense
               </Highlighter>. Through{" "}
-              <Highlighter isView action="highlight" color="#DDE6ED" className="text-[#212A3E] font-medium px-1">
+              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
                 hands-on labs
               </Highlighter>, security research, and personal projects, I continuously explore how systems fail, how attackers think, and how stronger defenses can be built.
             </motion.p>
