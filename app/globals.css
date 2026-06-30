@@ -313,13 +313,13 @@ video {
 
 /* Selection styles */
 ::selection {
-    background-color: rgba(124, 58, 237, 0.3);
-    color: #ffffff;
+    background-color: var(--color-primary-cyan);
+    color: var(--color-dark-main);
 }
 
 ::-moz-selection {
-    background-color: rgba(124, 58, 237, 0.3);
-    color: #ffffff;
+    background-color: var(--color-primary-cyan);
+    color: var(--color-dark-main);
 }
 
 /* Mobile optimizations */
