@@ -4,19 +4,21 @@ import React from "react";
 import { motion } from "framer-motion";
 import { HeroContent } from "@/components/sub/hero-content";
 import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
-import { MatrixBackground } from "@/components/main/matrix-background";
+
 
 export const Hero = () => {
   return (
     <div
       id="home"
-      className="relative flex flex-col min-h-screen w-full overflow-hidden bg-[#F1F6F9]"
+      className="relative flex flex-col min-h-screen w-full overflow-hidden bg-transparent"
     >
+      {/* Blocker for Matrix in the center */}
+      <div className="absolute inset-0 z-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at top, #F1F6F9 20%, transparent 70%)" }} />
+
       {/* Background Ripple Effect */}
-      <div className="absolute inset-0 z-0 pointer-events-auto opacity-100">
+      <div className="absolute inset-0 z-[1] pointer-events-auto opacity-100">
         <BackgroundRippleEffect rows={20} cols={30} cellSize={60} />
       </div>
-      <MatrixBackground />
 
 
 
