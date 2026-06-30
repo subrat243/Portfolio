@@ -23,17 +23,6 @@ export const About = () => {
     >
       {/* Content Container */}
       <div className="relative z-10 w-full max-w-7xl">
-        {/* Section Header */}
-        <motion.div
-          variants={slideInFromTop}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="Welcome-box py-[8px] px-[7px] border border-[#9BA4B5]/40 opacity-[0.9] mb-3 mx-auto"
-        >
-          <h1 className="Welcome-text text-[13px] px-2">Behind the Terminal</h1>
-        </motion.div>
-
         <div className="flex flex-col items-center justify-center gap-10 w-full">
           {/* About Content */}
           <motion.div
@@ -41,8 +30,15 @@ export const About = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="flex flex-col gap-6 text-start lg:text-left max-w-[850px] mx-auto"
+            className="flex flex-col gap-6 text-start lg:text-left max-w-[850px] mx-auto w-full"
           >
+            {/* Section Header */}
+            <motion.div
+              variants={slideInFromTop}
+              className="Welcome-box py-[8px] px-[7px] border border-[#9BA4B5]/40 opacity-[0.9] self-start mb-[-10px]"
+            >
+              <h1 className="Welcome-text text-[13px] px-2">Behind the Terminal</h1>
+            </motion.div>
             <motion.div
               variants={slideInFromRight(0.6)}
               className="pointer-events-auto"
@@ -67,17 +63,17 @@ export const About = () => {
               className="text-lg text-[#394867]/90 leading-relaxed"
             >
               As a{" "}
-              <span className="text-[#212A3E]">
+              <span className="text-[#212A3E] font-medium">
                 cybersecurity enthusiast
               </span>{" "}
               and a learner who thrives on exploring the intricate world of digital security, I focused on{" "}
-              <span className="text-[#212A3E]">
+              <span className="text-[#212A3E] font-medium">
                 penetration testing
               </span>,{" "}
-              <span className="text-[#212A3E]">
+              <span className="text-[#212A3E] font-medium">
                 web security
               </span>, and{" "}
-              <span className="text-[#212A3E]">
+              <span className="text-[#212A3E] font-medium">
                 network defense
               </span>. I enjoy turning curiosity into practical skills through real-world labs, security research, and personal projects.
             </motion.p>
