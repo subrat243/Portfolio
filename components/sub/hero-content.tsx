@@ -50,7 +50,7 @@ export const HeroContent = () => {
               />
             </div>
             {showSecondLine && (
-              <div className="flex items-center gap-2 pointer-events-none">
+              <div className="flex items-center gap-2 pointer-events-none md:whitespace-nowrap">
                 <EncryptedText
                   text="Subrat Samantaray"
                   encryptedClassName="text-[#9BA4B5] font-mono"
