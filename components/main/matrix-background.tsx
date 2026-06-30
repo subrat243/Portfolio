@@ -82,7 +82,7 @@ export const MatrixBackground = () => {
   }, []);
 
   return (
-    <div className="w-full h-full fixed inset-0 z-[-1] pointer-events-none opacity-30">
+    <div className="w-full h-full fixed inset-0 z-0 pointer-events-none opacity-30">
       <canvas
         ref={canvasRef}
         className="block w-full h-full"
