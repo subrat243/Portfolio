@@ -83,10 +83,10 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
   return (
     <motion.div
       animate={{
-        backdropFilter: visible ? "blur(12px)" : "blur(8px)",
+        backdropFilter: visible ? "blur(16px)" : "none",
         boxShadow: visible
-          ? "0 10px 30px -5px rgba(34, 42, 53, 0.08), 0 1px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset"
-          : "0 4px 6px -1px rgba(155, 164, 181, 0.03)",
+          ? "0 8px 32px 0 rgba(31, 38, 135, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.6)"
+          : "none",
         width: visible ? "60%" : "100%",
         borderRadius: visible ? "9999px" : "0px",
         y: visible ? 16 : 0,
@@ -94,8 +94,8 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         paddingRight: visible ? "1.5rem" : "2.5rem",
         paddingTop: visible ? "0.6rem" : "0.8rem",
         paddingBottom: visible ? "0.6rem" : "0.8rem",
-        backgroundColor: visible ? "rgba(255, 255, 255, 0.92)" : "rgba(241, 246, 249, 0.75)",
-        borderColor: visible ? "rgba(155, 164, 181, 0.25)" : "rgba(155, 164, 181, 0.15)",
+        backgroundColor: visible ? "rgba(255, 255, 255, 0.4)" : "transparent",
+        borderColor: visible ? "rgba(255, 255, 255, 0.6)" : "transparent",
       }}
       transition={{
         duration: 0.7,
@@ -147,10 +147,10 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
   return (
     <motion.div
       animate={{
-        backdropFilter: visible ? "blur(12px)" : "blur(8px)",
+        backdropFilter: visible ? "blur(16px)" : "none",
         boxShadow: visible
-          ? "0 10px 30px -5px rgba(34, 42, 53, 0.08), 0 1px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset"
-          : "0 4px 6px -1px rgba(155, 164, 181, 0.03)",
+          ? "0 8px 32px 0 rgba(31, 38, 135, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.6)"
+          : "none",
         width: visible ? "90%" : "100%",
         borderRadius: visible ? "2rem" : "0px",
         y: visible ? 16 : 0,
@@ -158,8 +158,8 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
         paddingRight: visible ? "1rem" : "1.5rem",
         paddingTop: visible ? "0.75rem" : "0.75rem",
         paddingBottom: visible ? "0.75rem" : "0.75rem",
-        backgroundColor: visible ? "rgba(255, 255, 255, 0.92)" : "rgba(241, 246, 249, 0.75)",
-        borderColor: visible ? "rgba(155, 164, 181, 0.25)" : "rgba(155, 164, 181, 0.15)",
+        backgroundColor: visible ? "rgba(255, 255, 255, 0.4)" : "transparent",
+        borderColor: visible ? "rgba(255, 255, 255, 0.6)" : "transparent",
       }}
       transition={{
         duration: 0.7,
@@ -205,7 +205,7 @@ export const MobileNavMenu = ({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           className={cn(
-            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-2xl bg-white px-6 py-8 shadow-xl border border-[#9BA4B5]/30",
+            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-2xl bg-white/50 backdrop-blur-xl px-6 py-8 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] border border-white/60",
             className,
           )}
         >
