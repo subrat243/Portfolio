@@ -36,12 +36,12 @@ export const HeroContent = () => {
           variants={slideInFromLeft(0.5)}
           className="flex flex-col gap-4 pointer-events-none"
         >
-          <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] font-bold text-[#212A3E] leading-[1.1] pointer-events-none">
+          <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] font-bold text-[var(--color-primary-purple)] leading-[1.1] pointer-events-none transition-colors duration-300">
             <div className="mb-2 pointer-events-none">
               <EncryptedText
                 text="Hello, I'm "
-                encryptedClassName="text-[#9BA4B5] font-mono"
-                revealedClassName="text-[#212A3E]"
+                encryptedClassName="text-[var(--color-border-primary)] font-mono"
+                revealedClassName="text-[var(--color-primary-purple)] transition-colors duration-300"
                 revealDelayMs={100}
                 flipDelayMs={80}
                 onComplete={() => setShowSecondLine(true)}
@@ -51,8 +51,8 @@ export const HeroContent = () => {
               <div className="flex items-center gap-2 pointer-events-none md:whitespace-nowrap">
                 <EncryptedText
                   text="Subrat Samantaray"
-                  encryptedClassName="text-[#9BA4B5] font-mono"
-                  revealedClassName="text-[#394867]"
+                  encryptedClassName="text-[var(--color-border-primary)] font-mono"
+                  revealedClassName="text-[var(--color-primary-cyan)] transition-colors duration-300"
                   revealDelayMs={120}
                   flipDelayMs={80}
                 />
@@ -70,12 +70,12 @@ export const HeroContent = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.8, duration: 0.8 }}
-            className="text-base md:text-lg text-[#394867]/90 leading-relaxed mb-6 pointer-events-none font-medium"
+            className="text-base md:text-lg text-[var(--color-primary-cyan)] leading-relaxed mb-6 pointer-events-none font-medium transition-colors duration-300"
           >
             <EncryptedText
               text="Welcome to my cybersecurity journey! Explore my skills, projects, and passion for ethical hacking."
-              encryptedClassName="text-[#9BA4B5] font-mono"
-              revealedClassName="text-[#212A3E]"
+              encryptedClassName="text-[var(--color-border-primary)] font-mono"
+              revealedClassName="text-[var(--color-primary-purple)] transition-colors duration-300"
               revealDelayMs={20}
               flipDelayMs={40}
               startDelayMs={1800}
@@ -100,7 +100,7 @@ export const HeroContent = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 3.2 + index * 0.2, duration: 0.4 }}
                 whileHover={{ scale: 1.05 }}
-                className="px-4 py-2 bg-white border border-[#9BA4B5]/40 rounded-full text-sm text-[#212A3E] hover:border-[#212A3E]/60 transition-all duration-300 backdrop-blur-sm font-medium pointer-events-auto"
+                className="px-4 py-2 bg-[var(--color-dark-main)] border border-[var(--color-border-primary)] rounded-full text-sm text-[var(--color-primary-purple)] hover:border-[var(--color-primary-purple)] transition-all duration-300 backdrop-blur-sm font-medium pointer-events-auto"
               >
                 {role}
               </motion.span>
@@ -119,7 +119,7 @@ export const HeroContent = () => {
             href="#projects"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-[#212A3E] text-white font-semibold rounded-lg hover:bg-[#394867] transition-all duration-300 shadow-md hover:shadow-lg text-center pointer-events-auto"
+            className="px-8 py-4 bg-[var(--color-primary-purple)] text-[var(--color-dark-main)] font-semibold rounded-lg hover:bg-[var(--color-primary-cyan)] transition-all duration-300 shadow-md hover:shadow-lg text-center pointer-events-auto"
           >
             View My Work
           </motion.a>
@@ -127,7 +127,7 @@ export const HeroContent = () => {
             href="#about"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-transparent border-2 border-[#212A3E] text-[#212A3E] font-semibold rounded-lg hover:bg-[#212A3E]/5 transition-all duration-300 text-center pointer-events-auto"
+            className="px-8 py-4 bg-transparent border-2 border-[var(--color-primary-purple)] text-[var(--color-primary-purple)] font-semibold rounded-lg hover:bg-[var(--color-primary-purple)]/5 transition-all duration-300 text-center pointer-events-auto"
           >
             Learn More
           </motion.a>

@@ -53,7 +53,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
       </head>
       <body
         className={cn(
-          "bg-[#F1F6F9] dark:bg-dark-100 text-[#212A3E] dark:text-white overflow-y-scroll overflow-x-hidden antialiased transition-colors duration-300",
+          "bg-[var(--color-dark-main)] text-[var(--color-primary-purple)] overflow-y-scroll overflow-x-hidden antialiased transition-colors duration-300",
           inter.className,
           "min-h-screen font-sans",
         )}
