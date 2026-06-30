@@ -141,7 +141,22 @@ export const APP_CONFIG = {
     categories: [
       {
         title: "Security Tools",
-        items: ["Kali Linux", "Nmap", "Wireshark", "Metasploit", "Burp Suite", "Nessus", "John the Ripper", "Bettercap"],
+        items: [
+          "Burp Suite",
+          "Nmap",
+          "Metasploit",
+          "Nessus",
+          "Hydra",
+          "John the Ripper",
+          "Hashcat",
+          "Gobuster",
+          "FFUF",
+          "Dirsearch",
+          "SQLMap",
+          "Nikto",
+          "Netcat",
+          "Nuclei"
+        ],
       },
       {
         title: "Security Technologies",
