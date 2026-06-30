@@ -83,9 +83,9 @@ const config: Config = {
           },
         },
         "cell-ripple": {
-          "0%": { opacity: "0.2" },
-          "50%": { opacity: "0.6" },
-          "100%": { opacity: "0.2" },
+          "0%": { opacity: "0.03" },
+          "50%": { opacity: "0.4" },
+          "100%": { opacity: "0.03" },
         },
         fadeIn: {
           "0%": { opacity: "0" },
