@@ -104,15 +104,22 @@ export const About = () => {
 
           </motion.div>
 
-          {/* GIF Placeholder Frame */}
+          {/* GIF Frame */}
           <motion.div
             variants={slideInFromRight(1.5)}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="w-full max-w-[1000px] h-[300px] bg-[#9BA4B5]/10 border-2 border-dashed border-[#9BA4B5]/40 rounded-2xl flex items-center justify-center backdrop-blur-sm"
+            className="w-full max-w-[1000px] mt-8 mx-auto relative rounded-2xl overflow-hidden shadow-glow border border-[#9BA4B5]/20"
           >
-            <span className="text-[#394867]/60 font-medium">1000 x 300 GIF Space</span>
+            <Image
+              src="/working.gif"
+              alt="Working GIF"
+              width={1000}
+              height={300}
+              className="w-full h-auto object-cover"
+              unoptimized
+            />
           </motion.div>
         </div>
       </div>
