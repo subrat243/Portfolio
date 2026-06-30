@@ -118,6 +118,7 @@ export const About = () => {
               width={1000}
               height={300}
               className="w-full h-auto object-cover"
+              style={{ marginBottom: "-6%" }}
               unoptimized
             />
           </motion.div>
