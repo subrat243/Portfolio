@@ -4,7 +4,7 @@ import type { PropsWithChildren } from "react";
 
 import { Footer } from "@/components/main/footer";
 import { Navbar } from "@/components/main/navbar";
-import { MatrixBackground } from "@/components/main/matrix-background";
+
 
 import ErrorBoundary from "@/components/error-boundary";
 import { siteConfig } from "@/config";
@@ -61,7 +61,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
         <ErrorBoundary>
           <div className="relative w-full">
             <Navbar />
-            <MatrixBackground />
+
             <main className="relative w-full">{children}</main>
             <Footer />
           </div>

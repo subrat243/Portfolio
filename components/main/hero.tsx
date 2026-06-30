@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { HeroContent } from "@/components/sub/hero-content";
 import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
+import { MatrixBackground } from "@/components/main/matrix-background";
 
 export const Hero = () => {
   return (
@@ -15,6 +16,7 @@ export const Hero = () => {
       <div className="absolute inset-0 z-0 pointer-events-auto opacity-100">
         <BackgroundRippleEffect rows={20} cols={30} cellSize={60} />
       </div>
+      <MatrixBackground />
 
 
 
