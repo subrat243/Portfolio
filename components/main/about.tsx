@@ -56,14 +56,14 @@ export const About = () => {
             >
               <span className="font-semibold text-[#212A3E]">Every vulnerability tells a story.</span>
               <br />
-              Some reveal a simple mistake. Others expose overlooked assumptions.
+              Some are the result of simple mistakes. Others reveal hidden assumptions waiting to be challenged.
             </motion.p>
 
             <motion.p
               variants={slideInFromRight(0.9)}
               className="text-lg text-[#394867] leading-relaxed"
             >
-              Behind every terminal command is a curious mind driven by one question:
+              Behind every terminal command is a simple question that drives my curiosity:
               <br />
               <span className="italic font-medium text-[#212A3E] mt-2 block">&quot;How can this be made more secure?&quot;</span>
             </motion.p>
@@ -72,39 +72,37 @@ export const About = () => {
               variants={slideInFromRight(1.1)}
               className="text-lg text-[#394867]/90 leading-relaxed"
             >
-              I&apos;m a{" "}
+              As a{" "}
               <Highlighter isView action="highlight" color="#DDE6ED" className="text-[#212A3E] font-bold px-1">
                 cybersecurity enthusiast
-              </Highlighter>{" "}
-              focused on{" "}
+              </Highlighter>
+              , I focus on{" "}
               <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
                 penetration testing
               </Highlighter>,{" "}
               <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
-                web security
+                web application security
               </Highlighter>, and{" "}
               <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
                 network defense
-              </Highlighter>. I enjoy turning curiosity into practical skills through{" "}
+              </Highlighter>. I enjoy learning through{" "}
               <Highlighter isView action="highlight" color="#DDE6ED" className="text-[#212A3E] font-medium px-1">
-                real-world labs
-              </Highlighter>, security research, and personal projects.
+                hands-on labs
+              </Highlighter>
+              , building practical projects, and exploring real-world attack techniques to strengthen my technical skills.
             </motion.p>
 
             <motion.p
               variants={slideInFromRight(1.3)}
               className="text-lg text-[#394867]/90 leading-relaxed"
             >
-              I believe that the best security professionals{" "}
+              My goal is simple: to{" "}
               <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
-                never stop learning
+                think critically
               </Highlighter>,{" "}
               <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
-                never stop experimenting
-              </Highlighter>, and{" "}
-              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
-                never stop improving
-              </Highlighter>.
+                learn relentlessly
+              </Highlighter>, and contribute to building a safer digital world.
             </motion.p>
 
           </motion.div>
