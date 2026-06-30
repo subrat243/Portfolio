@@ -31,7 +31,7 @@ export const BackgroundRippleEffect = ({
           rows={rows}
           cols={cols}
           cellSize={cellSize}
-          borderColor="rgba(57, 72, 103, 0.15)"
+          borderColor="rgba(57, 72, 103, 0.11)"
           clickedCell={clickedCell}
           onCellClick={(row, col) => {
             setClickedCell({ row, col });
