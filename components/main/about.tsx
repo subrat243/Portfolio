@@ -91,15 +91,15 @@ export const About = () => {
               variants={slideInFromRight(1.3)}
               className="text-lg text-[#394867]/90 leading-relaxed"
             >
-              My goal is simple: to{" "}
+              My goal is simple:{" "}
               <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
-                think critically
+                never stop learning
               </Highlighter>,{" "}
               <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
-                learn relentlessly
+                never stop experimenting
               </Highlighter>, and{" "}
               <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
-                contribute to building a safer digital world
+                never stop improving
               </Highlighter>.
             </motion.p>
 
