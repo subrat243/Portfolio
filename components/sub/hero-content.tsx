@@ -38,7 +38,7 @@ export const HeroContent = () => {
           variants={slideInFromLeft(0.5)}
           className="flex flex-col gap-4 pointer-events-none"
         >
-          <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#212A3E] leading-tight pointer-events-none">
+          <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] font-bold text-[#212A3E] leading-[1.1] pointer-events-none">
             <div className="mb-2 pointer-events-none">
               <EncryptedText
                 text="Hello, I'm "
