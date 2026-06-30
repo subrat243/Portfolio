@@ -41,7 +41,7 @@ export const About = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="flex flex-col gap-6 text-start lg:text-left max-w-2xl mx-auto"
+            className="flex flex-col gap-6 text-start lg:text-left max-w-[800px] mx-auto"
           >
             <motion.div
               variants={slideInFromRight(0.6)}
@@ -100,7 +100,7 @@ export const About = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="w-full max-w-[1000px] mt-8 mx-auto relative rounded-2xl overflow-hidden shadow-glow border border-[#9BA4B5]/20"
+            className="w-full max-w-[800px] mt-8 mx-auto relative rounded-2xl overflow-hidden shadow-glow border border-[#9BA4B5]/20"
           >
             <Image
               src="/working.gif"
