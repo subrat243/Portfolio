@@ -57,7 +57,7 @@ export const About = () => {
               Behind every terminal command is a curious mind driven by one question:
               <br />
               <br />
-              <Highlighter isView action="highlight" color="#DDE6ED" className="text-[#212A3E] px-1 italic">
+              <Highlighter isView action="box" color="#DDE6ED" className="text-[#212A3E] px-1 italic">
                 &quot;How can this be made more secure?&quot;
               </Highlighter>
             </motion.p>
@@ -70,7 +70,7 @@ export const About = () => {
               <Highlighter isView action="highlight" color="#DDE6ED" className="text-[#212A3E] font-bold px-1">
                 cybersecurity enthusiast
               </Highlighter>{" "}
-              and learner who thrives on exploring the intricate world of digital security, I focused on{" "}
+              and a learner who thrives on exploring the intricate world of digital security, I focused on{" "}
               <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-semibold">
                 penetration testing
               </Highlighter>,{" "}
