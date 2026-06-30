@@ -83,7 +83,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
   return (
     <motion.div
       animate={{
-        backdropFilter: visible ? "blur(16px)" : "blur(0px)",
+        backdropFilter: visible ? "blur(16px)" : "blur(8px)",
         boxShadow: visible
           ? "0 10px 30px -5px rgba(34, 42, 53, 0.08), 0 1px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset"
           : "0 4px 6px -1px rgba(155, 164, 181, 0.03)",
@@ -94,8 +94,8 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         paddingRight: visible ? "1.5rem" : "2.5rem",
         paddingTop: visible ? "0.6rem" : "0.8rem",
         paddingBottom: visible ? "0.6rem" : "0.8rem",
-        backgroundColor: visible ? "rgba(255, 255, 255, 0.4)" : "transparent",
-        borderColor: visible ? "rgba(255, 255, 255, 0.5)" : "transparent",
+        backgroundColor: visible ? "rgba(255, 255, 255, 0.4)" : "rgba(241, 246, 249, 0.75)",
+        borderColor: visible ? "rgba(155, 164, 181, 0.25)" : "rgba(155, 164, 181, 0.15)",
       }}
       transition={{
         duration: 0.7,
@@ -147,7 +147,7 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
   return (
     <motion.div
       animate={{
-        backdropFilter: visible ? "blur(16px)" : "blur(0px)",
+        backdropFilter: visible ? "blur(16px)" : "blur(8px)",
         boxShadow: visible
           ? "0 10px 30px -5px rgba(34, 42, 53, 0.08), 0 1px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset"
           : "0 4px 6px -1px rgba(155, 164, 181, 0.03)",
@@ -158,8 +158,8 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
         paddingRight: visible ? "1rem" : "1.5rem",
         paddingTop: visible ? "0.75rem" : "0.75rem",
         paddingBottom: visible ? "0.75rem" : "0.75rem",
-        backgroundColor: visible ? "rgba(255, 255, 255, 0.4)" : "transparent",
-        borderColor: visible ? "rgba(255, 255, 255, 0.5)" : "transparent",
+        backgroundColor: visible ? "rgba(255, 255, 255, 0.4)" : "rgba(241, 246, 249, 0.75)",
+        borderColor: visible ? "rgba(155, 164, 181, 0.25)" : "rgba(155, 164, 181, 0.15)",
       }}
       transition={{
         duration: 0.7,
