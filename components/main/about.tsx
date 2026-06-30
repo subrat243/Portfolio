@@ -66,7 +66,10 @@ export const About = () => {
               variants={slideInFromRight(1.1)}
               className="text-lg text-[#394867]/90 leading-relaxed"
             >
-              As a <span className="text-[#212A3E] font-bold">cybersecurity enthusiast</span>{" "}
+              As a{" "}
+              <span className="text-[#212A3E] font-bold">
+                cybersecurity enthusiast
+              </span>{" "}
               and a learner who thrives on exploring the intricate world of digital security, I focused on{" "}
               <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-semibold">
                 penetration testing
@@ -83,7 +86,10 @@ export const About = () => {
               variants={slideInFromRight(1.3)}
               className="text-lg text-[#394867]/90 leading-relaxed"
             >
-              My goal is simple: <span className="text-[#212A3E] font-medium">never stop learning</span>, <span className="text-[#212A3E] font-medium">never stop experimenting</span>, and <span className="text-[#212A3E] font-medium">never stop improving</span>.
+              My goal is simple:{" "}
+              <Highlighter isView action="highlight" color="#DDE6ED" className="text-[#212A3E] font-medium px-1">never stop learning</Highlighter>,{" "}
+              <Highlighter isView action="highlight" color="#DDE6ED" className="text-[#212A3E] font-medium px-1">never stop experimenting</Highlighter>, and{" "}
+              <Highlighter isView action="highlight" color="#DDE6ED" className="text-[#212A3E] font-medium px-1">never stop improving</Highlighter>.
             </motion.p>
 
           </motion.div>
