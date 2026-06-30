@@ -67,17 +67,17 @@ export const About = () => {
               className="text-lg text-[#394867]/90 leading-relaxed"
             >
               As a{" "}
-              <span className="text-[#212A3E] font-bold">
+              <span className="text-[#212A3E]">
                 cybersecurity enthusiast
               </span>{" "}
               and a learner who thrives on exploring the intricate world of digital security, I focused on{" "}
-              <span className="text-[#212A3E] font-semibold">
+              <span className="text-[#212A3E]">
                 penetration testing
               </span>,{" "}
-              <span className="text-[#212A3E] font-semibold">
+              <span className="text-[#212A3E]">
                 web security
               </span>, and{" "}
-              <span className="text-[#212A3E] font-semibold">
+              <span className="text-[#212A3E]">
                 network defense
               </span>. I enjoy turning curiosity into practical skills through real-world labs, security research, and personal projects.
             </motion.p>
