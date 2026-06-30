@@ -11,7 +11,6 @@ import { siteConfig } from "@/config";
 import { cn } from "@/lib/utils";
 
 import "./globals.css";
-import { ThemeProvider } from "./providers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -53,22 +52,20 @@ export default function RootLayout({ children }: PropsWithChildren) {
       </head>
       <body
         className={cn(
-          "bg-[var(--color-dark-main)] text-[var(--color-primary-purple)] overflow-y-scroll overflow-x-hidden antialiased transition-colors duration-300",
+          "bg-[#F1F6F9] text-[#212A3E] overflow-y-scroll overflow-x-hidden antialiased",
           inter.className,
           "min-h-screen font-sans",
         )}
         suppressHydrationWarning
       >
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-          <ErrorBoundary>
-            <div className="relative w-full">
-              <Navbar />
-              <StarsCanvas />
-              <main className="relative w-full">{children}</main>
-              <Footer />
-            </div>
-          </ErrorBoundary>
-        </ThemeProvider>
+        <ErrorBoundary>
+          <div className="relative w-full">
+            <Navbar />
+            <StarsCanvas />
+            <main className="relative w-full">{children}</main>
+            <Footer />
+          </div>
+        </ErrorBoundary>
       </body>
     </html>
   );
