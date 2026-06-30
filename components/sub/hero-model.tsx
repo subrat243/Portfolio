@@ -1,51 +1,18 @@
 "use client";
 
-import { Suspense, useRef, useEffect } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Suspense, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF, Environment, Center } from "@react-three/drei";
 import { motion } from "framer-motion";
 import * as THREE from "three";
 
 function Model() {
-  const { scene } = useGLTF("/3d-model/scene.glb");
+  const { scene } = useGLTF("/3d-model/world.glb");
   const ref = useRef<THREE.Group>(null);
-
-  useEffect(() => {
-    scene.traverse((child: any) => {
-      if (child.isMesh && child.material) {
-        const mat = child.material;
-
-        // "hide" material — invisible bounding geometry
-        if (mat.name === "hide") {
-          child.visible = false;
-          return;
-        }
-
-        // Render the plasma as dark, visible geometry
-        mat.transparent = true;
-        mat.side = THREE.DoubleSide;
-        mat.depthWrite = false;
-        mat.blending = THREE.NormalBlending;
-        mat.opacity = 0.7;
-
-        // Dark base color
-        mat.color = new THREE.Color(0x1a1a2e);
-
-        // Subtle dark emissive for depth
-        if (mat.map) {
-          mat.emissiveMap = mat.map;
-          mat.emissive = new THREE.Color(0x16213e);
-          mat.emissiveIntensity = 0.3;
-        }
-
-        mat.needsUpdate = true;
-      }
-    });
-  }, [scene]);
 
   useFrame((_, delta) => {
     if (ref.current) {
-      ref.current.rotation.y += delta * 0.3;
+      ref.current.rotation.y += delta * 0.15;
     }
   });
 
@@ -54,18 +21,6 @@ function Model() {
       <primitive object={scene} />
     </group>
   );
-}
-
-function SceneSetup() {
-  const { gl } = useThree();
-
-  useEffect(() => {
-    gl.toneMapping = THREE.ACESFilmicToneMapping;
-    gl.toneMappingExposure = 1.5;
-    gl.outputColorSpace = THREE.SRGBColorSpace;
-  }, [gl]);
-
-  return null;
 }
 
 function LoadingFallback() {
@@ -94,28 +49,23 @@ export const HeroModel = () => {
           camera={{ position: [0, 0, 5], fov: 50 }}
           gl={{
             antialias: true,
-            alpha: false,
+            alpha: true,
             powerPreference: "high-performance",
           }}
           style={{ background: "transparent" }}
         >
-          <SceneSetup />
-
-          {/* Lighting - bright and multi-directional for plasma glow */}
-          <ambientLight intensity={1.0} />
-          <directionalLight position={[5, 5, 5]} intensity={2.0} />
-          <directionalLight position={[-5, 3, -5]} intensity={1.0} color="#a78bfa" />
-          <directionalLight position={[0, -3, 5]} intensity={0.8} color="#60a5fa" />
-          <pointLight position={[3, 0, 3]} intensity={1.5} color="#c084fc" />
-          <pointLight position={[-3, 0, -3]} intensity={1.5} color="#38bdf8" />
+          {/* Simple, clean lighting */}
+          <ambientLight intensity={1.5} />
+          <directionalLight position={[5, 5, 5]} intensity={2} />
+          <directionalLight position={[-5, -5, -5]} intensity={0.5} />
 
           {/* 3D Model - auto-centered and fitted */}
           <Center>
             <Model />
           </Center>
 
-          {/* Environment for reflections & iridescence */}
-          <Environment preset="sunset" />
+          {/* Environment for PBR reflections */}
+          <Environment preset="city" />
 
           {/* Controls */}
           <OrbitControls
@@ -132,4 +82,4 @@ export const HeroModel = () => {
 };
 
 // Preload the model
-useGLTF.preload("/3d-model/scene.glb");
+useGLTF.preload("/3d-model/world.glb");
