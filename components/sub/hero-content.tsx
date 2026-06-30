@@ -87,7 +87,7 @@ export const HeroContent = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 3.2, duration: 0.6 }}
-            className="flex flex-wrap gap-3 pointer-events-auto"
+            className="flex flex-wrap gap-3 pointer-events-none"
           >
             {[
               "Penetration Tester",
@@ -100,7 +100,7 @@ export const HeroContent = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 3.2 + index * 0.2, duration: 0.4 }}
                 whileHover={{ scale: 1.05 }}
-                className="px-4 py-2 bg-white border border-[#9BA4B5]/40 rounded-full text-sm text-[#212A3E] hover:border-[#212A3E]/60 transition-all duration-300 backdrop-blur-sm font-medium"
+                className="px-4 py-2 bg-white border border-[#9BA4B5]/40 rounded-full text-sm text-[#212A3E] hover:border-[#212A3E]/60 transition-all duration-300 backdrop-blur-sm font-medium pointer-events-auto"
               >
                 {role}
               </motion.span>
@@ -113,13 +113,13 @@ export const HeroContent = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 4, duration: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 mt-6 pointer-events-auto"
+          className="flex flex-col sm:flex-row gap-4 mt-6 pointer-events-none"
         >
           <motion.a
             href="#projects"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-[#212A3E] text-white font-semibold rounded-lg hover:bg-[#394867] transition-all duration-300 shadow-md hover:shadow-lg text-center"
+            className="px-8 py-4 bg-[#212A3E] text-white font-semibold rounded-lg hover:bg-[#394867] transition-all duration-300 shadow-md hover:shadow-lg text-center pointer-events-auto"
           >
             View My Work
           </motion.a>
@@ -127,7 +127,7 @@ export const HeroContent = () => {
             href="#about"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-transparent border-2 border-[#212A3E] text-[#212A3E] font-semibold rounded-lg hover:bg-[#212A3E]/5 transition-all duration-300 text-center"
+            className="px-8 py-4 bg-transparent border-2 border-[#212A3E] text-[#212A3E] font-semibold rounded-lg hover:bg-[#212A3E]/5 transition-all duration-300 text-center pointer-events-auto"
           >
             Learn More
           </motion.a>
@@ -138,13 +138,13 @@ export const HeroContent = () => {
       <div className="w-full lg:w-[40%] xl:w-[35%] flex justify-center items-center order-1 lg:order-2 pointer-events-none mt-10 lg:mt-0">
         <motion.div
           variants={slideInFromRight(0.5)}
-          className="flex flex-col items-center pointer-events-auto"
+          className="flex flex-col items-center pointer-events-none"
         >
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
-            className="relative group"
+            className="relative group pointer-events-auto"
           >
             <CometCard className="w-80">
               <div
