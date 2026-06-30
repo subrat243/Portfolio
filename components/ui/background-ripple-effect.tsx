@@ -31,8 +31,7 @@ export const BackgroundRippleEffect = ({
           rows={rows}
           cols={cols}
           cellSize={cellSize}
-          borderColor="rgba(57, 72, 103, 1)"
-          fillColor="rgba(57, 72, 103, 0.3)"
+          borderColor="rgba(57, 72, 103, 0.15)"
           clickedCell={clickedCell}
           onCellClick={(row, col) => {
             setClickedCell({ row, col });
@@ -109,12 +108,11 @@ const DivGrid = ({
           <div
             key={idx}
             className={cn(
-              "cell relative border-[0.5px] opacity-20 transition-all duration-150 will-change-transform hover:opacity-50 bg-blend-normal",
+              "cell relative border-[0.5px] bg-transparent transition-colors duration-150 will-change-transform hover:bg-[#394867]/20",
               clickedCell && "animate-cell-ripple [animation-fill-mode:none]",
               !interactive && "pointer-events-none",
             )}
             style={{
-              backgroundColor: fillColor,
               borderColor: borderColor,
               ...style,
             }}
