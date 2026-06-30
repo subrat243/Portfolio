@@ -49,8 +49,8 @@ type DivGridProps = {
   rows: number;
   cols: number;
   cellSize: number; // in pixels
-  borderColor: string;
-  fillColor: string;
+  borderColor?: string;
+  fillColor?: string;
   clickedCell: { row: number; col: number } | null;
   onCellClick?: (row: number, col: number) => void;
   interactive?: boolean;
