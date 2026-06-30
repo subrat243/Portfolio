@@ -72,20 +72,19 @@ export const About = () => {
               variants={slideInFromRight(1.1)}
               className="text-lg text-[#394867]/90 leading-relaxed"
             >
-              I don&apos;t just learn cybersecurity—I explore it. Every challenge is an opportunity to think like an attacker and build like a defender. I explore{" "}
+              That curiosity has led me into the world of cybersecurity, where I focus on{" "}
               <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
                 penetration testing
               </Highlighter>,{" "}
               <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
-                web security
+                web application security
               </Highlighter>, and{" "}
               <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
                 network defense
-              </Highlighter>{" "}
-              through{" "}
+              </Highlighter>. Through{" "}
               <Highlighter isView action="highlight" color="#DDE6ED" className="text-[#212A3E] font-medium px-1">
-                practical labs
-              </Highlighter>, CTFs, research, and projects that transform curiosity into experience.
+                hands-on labs
+              </Highlighter>, security research, and personal projects, I continuously explore how systems fail, how attackers think, and how stronger defenses can be built.
             </motion.p>
 
             <motion.p
