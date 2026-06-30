@@ -11,7 +11,6 @@ import {
   slideInFromTop,
 } from "@/lib/motion";
 import { EncryptedText } from "@/components/ui/encrypted-text";
-import { Globe } from "@/registry/magicui/globe";
 
 export const HeroContent = () => {
   const [showSecondLine, setShowSecondLine] = useState(false);
@@ -136,20 +135,22 @@ export const HeroContent = () => {
         </motion.div>
       </div>
 
-      {/* Right Content Section - Globe */}
+      {/* Right Content - 3D Space Station */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.5, duration: 1 }}
-        className="flex-1 w-full relative flex size-full items-center justify-center overflow-hidden rounded-2xl border border-[#9BA4B5]/30 bg-gradient-to-br from-[#F1F6F9]/50 to-[#DDE6ED]/50 backdrop-blur-sm px-8 pt-8 pb-60 md:pb-80 min-h-[450px] md:min-h-[550px] order-1 lg:order-2 pointer-events-auto shadow-xl"
+        transition={{ delay: 1.5, duration: 1, ease: "easeOut" }}
+        className="flex-1 w-full max-w-[600px] aspect-square relative order-1 lg:order-2 pointer-events-auto hidden lg:flex items-center justify-center"
       >
-        <span className="pointer-events-none bg-gradient-to-b from-[#212A3E] to-[#9BA4B5]/80 bg-clip-text text-center text-6xl md:text-8xl font-bold leading-none whitespace-pre-wrap text-transparent absolute top-12 select-none [font-optical-sizing:auto]">
-          Global Threat Intel
-        </span>
-        <Globe className="top-28 md:top-36 w-full max-w-[500px]" />
-        <div className="pointer-events-none absolute inset-0 h-full bg-[radial-gradient(circle_at_50%_200%,rgba(33,42,62,0.15),rgba(255,255,255,0))]" />
+        <iframe
+          title="Space Station 3"
+          className="w-full h-full rounded-2xl"
+          frameBorder="0"
+          allowFullScreen
+          allow="autoplay; fullscreen; xr-spatial-tracking"
+          src="https://sketchfab.com/models/a7a6ad10261149cab31aa394bfcf8940/embed?autostart=1&transparent=1&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0"
+        />
       </motion.div>
     </motion.div>
   );
 };
-
