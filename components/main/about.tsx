@@ -71,15 +71,15 @@ export const About = () => {
                 cybersecurity enthusiast
               </span>{" "}
               and a learner who thrives on exploring the intricate world of digital security, I focused on{" "}
-              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-semibold">
+              <span className="text-[#212A3E] font-semibold">
                 penetration testing
-              </Highlighter>,{" "}
-              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-semibold">
+              </span>,{" "}
+              <span className="text-[#212A3E] font-semibold">
                 web security
-              </Highlighter>, and{" "}
-              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-semibold">
+              </span>, and{" "}
+              <span className="text-[#212A3E] font-semibold">
                 network defense
-              </Highlighter>. I enjoy turning curiosity into practical skills through real-world labs, security research, and personal projects.
+              </span>. I enjoy turning curiosity into practical skills through real-world labs, security research, and personal projects.
             </motion.p>
 
             <motion.p
@@ -87,9 +87,9 @@ export const About = () => {
               className="text-lg text-[#394867]/90 leading-relaxed"
             >
               My goal is simple:{" "}
-              <Highlighter isView action="highlight" color="#DDE6ED" className="text-[#212A3E] font-medium px-1">never stop learning</Highlighter>,{" "}
-              <Highlighter isView action="highlight" color="#DDE6ED" className="text-[#212A3E] font-medium px-1">never stop experimenting</Highlighter>, and{" "}
-              <Highlighter isView action="highlight" color="#DDE6ED" className="text-[#212A3E] font-medium px-1">never stop improving</Highlighter>.
+              <span className="text-[#212A3E] font-medium">never stop learning</span>,{" "}
+              <span className="text-[#212A3E] font-medium">never stop experimenting</span>, and{" "}
+              <span className="text-[#212A3E] font-medium">never stop improving</span>.
             </motion.p>
 
           </motion.div>
