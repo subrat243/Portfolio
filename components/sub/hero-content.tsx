@@ -4,6 +4,7 @@ import { SparklesIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
+import dynamic from "next/dynamic";
 
 import { TypingAnimation } from "@/components/sub/typing-animation";
 import {
@@ -11,6 +12,11 @@ import {
   slideInFromTop,
 } from "@/lib/motion";
 import { EncryptedText } from "@/components/ui/encrypted-text";
+
+const HeroModel = dynamic(
+  () => import("@/components/sub/hero-model").then((mod) => mod.HeroModel),
+  { ssr: false }
+);
 
 export const HeroContent = () => {
   const [showSecondLine, setShowSecondLine] = useState(false);
@@ -135,22 +141,8 @@ export const HeroContent = () => {
         </motion.div>
       </div>
 
-      {/* Right Content - 3D Space Station */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1.5, duration: 1, ease: "easeOut" }}
-        className="flex-1 w-full max-w-[600px] aspect-square relative order-1 lg:order-2 pointer-events-auto hidden lg:flex items-center justify-center"
-      >
-        <iframe
-          title="Space Station 3"
-          className="w-full h-full rounded-2xl"
-          frameBorder="0"
-          allowFullScreen
-          allow="autoplay; fullscreen; xr-spatial-tracking"
-          src="https://sketchfab.com/models/a7a6ad10261149cab31aa394bfcf8940/embed?autostart=1&transparent=1&ui_theme=dark&ui_infos=0&ui_controls=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_ar=0&ui_help=0&ui_settings=0&ui_vr=0&ui_fullscreen=0&ui_annotations=0"
-        />
-      </motion.div>
+      {/* Right Side - 3D Model */}
+      <HeroModel />
     </motion.div>
   );
 };
