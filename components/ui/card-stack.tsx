@@ -59,8 +59,9 @@ export const CardStack = ({
               }}
               animate={{
                 top: index * -CARD_OFFSET,
-                scale: 1 - index * SCALE_FACTOR, // decrease scale for cards that are behind
+                scale: Math.max(0, 1 - index * SCALE_FACTOR), // decrease scale for cards that are behind, prevent negative
                 zIndex: cards.length - index, // decrease z-index for the cards that are behind
+                opacity: index < 3 ? 1 - index * 0.2 : 0, // fade out and hide cards deeper in the stack
               }}
             >
               <div className="font-normal text-[#212A3E] flex-1 flex items-center justify-center overflow-hidden rounded-xl bg-[#F1F6F9] border border-[#9BA4B5]/20 mb-3 relative group-hover:opacity-95 transition-opacity pointer-events-none">

@@ -19,59 +19,42 @@ const Skeleton = ({ tag, Icon }: { tag: string; Icon: any }) => (
   </div>
 );
 
-const CERTIFICATE_CARDS = [
-  {
-    id: 0,
-    name: "Jr Penetration Tester",
-    designation: "TryHackMe",
-    image: "/certs/jr-pentester.jpg",
-    content: (
-      <div className="relative w-full h-full min-h-[112px] flex items-center justify-center overflow-hidden bg-[#212A3E]/5 p-1">
-        <Image
-          src="/certs/jr-pentester.jpg"
-          alt="Jr Penetration Tester Certificate"
-          fill
-          sizes="280px"
-          className="object-cover rounded-lg opacity-90"
-        />
-      </div>
-    ),
-  },
-  {
-    id: 1,
-    name: "Certified Network Security Professional",
-    designation: "ICSI",
-    image: "/certs/cnsp.jpg",
-    content: (
-      <div className="relative w-full h-full min-h-[112px] flex items-center justify-center overflow-hidden bg-[#212A3E]/5 p-1">
-        <Image
-          src="/certs/cnsp.jpg"
-          alt="Certified Network Security Professional Certificate"
-          fill
-          sizes="280px"
-          className="object-cover rounded-lg opacity-90"
-        />
-      </div>
-    ),
-  },
-  {
-    id: 2,
-    name: "Pre Security",
-    designation: "TryHackMe",
-    image: "/certs/pre-security.jpg",
-    content: (
-      <div className="relative w-full h-full min-h-[112px] flex items-center justify-center overflow-hidden bg-[#212A3E]/5 p-1">
-        <Image
-          src="/certs/pre-security.jpg"
-          alt="Pre Security Certificate"
-          fill
-          sizes="280px"
-          className="object-cover rounded-lg opacity-90"
-        />
-      </div>
-    ),
-  },
+const CERT_DATA = [
+  { name: "Jr Penetration Tester", designation: "TryHackMe", file: "jr-pentester.jpg" },
+  { name: "Pre Security", designation: "TryHackMe", file: "pre-security.jpg" },
+  { name: "Certified Network Security Professional", designation: "ICSI", file: "cnsp.jpg" },
+  { name: "Advent of Cyber", designation: "TryHackMe", file: "aoc-2025.jpg" },
+  { name: "Certified Cyber Security Expert", designation: "Certification", file: "ccep.jpg" },
+  { name: "Cyber Dojo", designation: "Certification", file: "cyberdojo.jpg" },
+  { name: "Cybersecurity Fundamental", designation: "Certification", file: "cybersec-fundamental.jpg" },
+  { name: "Skill India Cybersecurity", designation: "Skill India", file: "cybersec-skillindia.jpg" },
+  { name: "Cybersecurity 101", designation: "Certification", file: "cybersecurity-101.jpg" },
+  { name: "Cybersecurity Fundamentals", designation: "Certification", file: "cybersecurity-fundamentals.jpg" },
+  { name: "Defensive Security & Cyber Risk", designation: "Certification", file: "defensive-security-and-cyber-risk.jpg" },
+  { name: "Defensive Security Operations", designation: "Certification", file: "defensive-security-operations.jpg" },
+  { name: "Cybersecurity Internship", designation: "Internship Studio", file: "internship-studio.jpg" },
+  { name: "Intro to Cybersecurity", designation: "Certification", file: "intro-to-cybersec.jpg" },
+  { name: "Network Basics", designation: "Certification", file: "network-basic.jpg" },
+  { name: "Network Fundamentals", designation: "Certification", file: "network-fundamentals.jpg" },
 ];
+
+const CERTIFICATE_CARDS = CERT_DATA.map((cert, index) => ({
+  id: index,
+  name: cert.name,
+  designation: cert.designation,
+  image: `/certs/${cert.file}`,
+  content: (
+    <div className="relative w-full h-full min-h-[112px] flex items-center justify-center overflow-hidden bg-[#212A3E]/5 p-1">
+      <Image
+        src={`/certs/${cert.file}`}
+        alt={`${cert.name} Certificate`}
+        fill
+        sizes="280px"
+        className="object-cover rounded-lg opacity-90"
+      />
+    </div>
+  ),
+}));
 
 const ACHIEVEMENTS_DATA = [
   {
