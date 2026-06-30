@@ -2,12 +2,12 @@
 
 import { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, useGLTF, Environment, Center } from "@react-three/drei";
+import { OrbitControls, useGLTF, Environment, Center, Bounds } from "@react-three/drei";
 import { motion } from "framer-motion";
 import * as THREE from "three";
 
 function Model() {
-  const { scene } = useGLTF("/3d-model/world.glb");
+  const { scene } = useGLTF("/3d-model/robo.glb");
   const ref = useRef<THREE.Group>(null);
 
   useFrame((_, delta) => {
@@ -60,9 +60,11 @@ export const HeroModel = () => {
           <directionalLight position={[-5, -5, -5]} intensity={0.5} />
 
           {/* 3D Model - auto-centered and fitted */}
-          <Center>
-            <Model />
-          </Center>
+          <Bounds fit clip observe margin={1.2}>
+            <Center>
+              <Model />
+            </Center>
+          </Bounds>
 
           {/* Environment for PBR reflections */}
           <Environment preset="city" />
@@ -82,4 +84,4 @@ export const HeroModel = () => {
 };
 
 // Preload the model
-useGLTF.preload("/3d-model/world.glb");
+useGLTF.preload("/3d-model/robo.glb");
