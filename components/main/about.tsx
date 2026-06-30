@@ -72,11 +72,7 @@ export const About = () => {
               variants={slideInFromRight(1.1)}
               className="text-lg text-[#394867]/90 leading-relaxed"
             >
-              As a{" "}
-              <Highlighter isView action="highlight" color="#DDE6ED" className="text-[#212A3E] font-bold px-1">
-                cybersecurity enthusiast,
-              </Highlighter>{" "}
-              I focused on{" "}
+              I don&apos;t just learn cybersecurity—I explore it. Every challenge is an opportunity to think like an attacker and build like a defender. I explore{" "}
               <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
                 penetration testing
               </Highlighter>,{" "}
@@ -85,10 +81,11 @@ export const About = () => {
               </Highlighter>, and{" "}
               <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
                 network defense
-              </Highlighter>.I enjoy learning through{" "}
+              </Highlighter>{" "}
+              through{" "}
               <Highlighter isView action="highlight" color="#DDE6ED" className="text-[#212A3E] font-medium px-1">
-                real-world labs
-              </Highlighter>, building practical projects, CTFs and Security Reseacrh.
+                practical labs
+              </Highlighter>, CTFs, research, and projects that transform curiosity into experience.
             </motion.p>
 
             <motion.p
