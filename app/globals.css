@@ -381,19 +381,6 @@ video {
         );
     }
 
-    .mask-radial-inverse-at-top {
-        -webkit-mask-image: radial-gradient(
-            ellipse at top,
-            transparent 20%,
-            black 70%
-        );
-        mask-image: radial-gradient(
-            ellipse at top,
-            transparent 20%,
-            black 70%
-        );
-    }
-
     .mask-radial-from-20\% {
         -webkit-mask-image: radial-gradient(
             ellipse at top,
@@ -410,4 +397,24 @@ video {
     .opacity-600 {
         opacity: 0.6;
     }
+}
+
+/* Magic UI Animated Theme Toggler View Transitions */
+::view-transition-group(root) {
+  animation-duration: var(--magicui-theme-toggle-vt-duration, 400ms);
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::view-transition-new(root),
+::view-transition-old(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+[data-magicui-theme-vt="active"]::view-transition-old(root) {
+  z-index: 1;
+}
+[data-magicui-theme-vt="active"]::view-transition-new(root) {
+  z-index: 2;
+  clip-path: var(--magicui-theme-vt-clip-from, circle(0px at center));
 }

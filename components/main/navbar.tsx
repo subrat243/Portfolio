@@ -17,7 +17,7 @@ import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { theme, resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export const Navbar = () => {
             {mounted && (
               <AnimatedThemeToggler
                 variant="star"
-                theme={theme === "dark" ? "dark" : "light"}
+                theme={resolvedTheme === "dark" ? "dark" : "light"}
                 onThemeChange={(t) => setTheme(t)}
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-[#212A3E]/5 text-[#394867] dark:text-gray-300 dark:bg-white/5 hover:bg-[#212A3E]/10 dark:hover:bg-white/10 transition-colors"
               />
@@ -59,7 +59,7 @@ export const Navbar = () => {
               {mounted && (
                 <AnimatedThemeToggler
                   variant="star"
-                  theme={theme === "dark" ? "dark" : "light"}
+                  theme={resolvedTheme === "dark" ? "dark" : "light"}
                   onThemeChange={(t) => setTheme(t)}
                   className="w-10 h-10 flex items-center justify-center rounded-full bg-[#212A3E]/5 text-[#394867] dark:text-gray-300 dark:bg-white/5 hover:bg-[#212A3E]/10 dark:hover:bg-white/10 transition-colors"
                 />
