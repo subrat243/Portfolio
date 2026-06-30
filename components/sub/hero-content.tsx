@@ -7,9 +7,11 @@ import { useState } from "react";
 
 import {
   slideInFromLeft,
+  slideInFromRight,
   slideInFromTop,
 } from "@/lib/motion";
 import { EncryptedText } from "@/components/ui/encrypted-text";
+import { CometCard } from "@/components/ui/comet-card";
 
 export const HeroContent = () => {
   const [showSecondLine, setShowSecondLine] = useState(false);
@@ -131,6 +133,53 @@ export const HeroContent = () => {
           >
             Learn More
           </motion.a>
+        </motion.div>
+      </div>
+
+      {/* Right Content Section - Profile Card */}
+      <div className="flex-1 w-full flex justify-center items-center order-1 lg:order-2 pointer-events-none mt-10 lg:mt-0">
+        <motion.div
+          variants={slideInFromRight(0.5)}
+          className="flex flex-col items-center pointer-events-auto"
+        >
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
+            className="relative group"
+          >
+            <CometCard className="w-80">
+              <div
+                className="flex w-80 cursor-pointer flex-col items-stretch rounded-[16px] border-0 bg-[#1F2121] p-2 md:p-4 shadow-xl"
+                style={{
+                  transformStyle: "preserve-3d",
+                  transform: "none",
+                  opacity: 1,
+                }}
+              >
+                <div className="mx-2 flex-1">
+                  <div className="relative mt-2 aspect-[3/4] w-full overflow-hidden rounded-[16px]">
+                    <Image
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full rounded-[16px] bg-[#000000] object-cover"
+                      alt="Subrat Samantaray"
+                      src="/profile.jpg"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 320px"
+                      style={{
+                        boxShadow: "rgba(0, 0, 0, 0.05) 0px 5px 6px 0px",
+                        opacity: 1,
+                      }}
+                    />
+                  </div>
+                </div>
+                <div className="mt-2 flex flex-shrink-0 items-center justify-between p-4 font-mono text-white">
+                  <div className="text-xs font-bold">Subrat Samantaray</div>
+                  <div className="text-xs text-gray-300 opacity-50">#kaizen</div>
+                </div>
+              </div>
+            </CometCard>
+          </motion.div>
         </motion.div>
       </div>
     </motion.div>
