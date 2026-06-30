@@ -2,7 +2,7 @@
 
 import { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, useGLTF, Environment, Center, Bounds } from "@react-three/drei";
+import { OrbitControls, useGLTF, Environment, Center } from "@react-three/drei";
 import { motion } from "framer-motion";
 import * as THREE from "three";
 
@@ -18,7 +18,7 @@ function Model() {
 
   return (
     <group ref={ref} dispose={null}>
-      <primitive object={scene} />
+      <primitive object={scene} scale={0.2} position={[0, -1, 0]} />
     </group>
   );
 }
@@ -46,7 +46,7 @@ export const HeroModel = () => {
     >
       <Suspense fallback={<LoadingFallback />}>
         <Canvas
-          camera={{ position: [0, 0, 5], fov: 50 }}
+          camera={{ position: [0, 0, 5], fov: 50, near: 0.1, far: 1000 }}
           gl={{
             antialias: true,
             alpha: true,
@@ -59,12 +59,10 @@ export const HeroModel = () => {
           <directionalLight position={[5, 5, 5]} intensity={2} />
           <directionalLight position={[-5, -5, -5]} intensity={0.5} />
 
-          {/* 3D Model - auto-centered and fitted */}
-          <Bounds fit clip observe margin={1.2}>
-            <Center>
-              <Model />
-            </Center>
-          </Bounds>
+          {/* 3D Model - auto-centered */}
+          <Center>
+            <Model />
+          </Center>
 
           {/* Environment for PBR reflections */}
           <Environment preset="city" />
