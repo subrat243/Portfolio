@@ -41,7 +41,7 @@ export const About = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="flex flex-col gap-6 text-start lg:text-left max-w-2xl mx-auto"
+            className="flex flex-col gap-6 text-start lg:text-left max-w-[800px] mx-auto"
           >
             <motion.div
               variants={slideInFromRight(0.6)}
