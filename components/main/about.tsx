@@ -56,14 +56,14 @@ export const About = () => {
             >
               <span className="font-semibold text-[#212A3E]">Every vulnerability tells a story.</span>
               <br />
-              Some are the result of simple mistakes. Others reveal hidden assumptions waiting to be challenged.
+              Some reveal a simple mistake. Others expose overlooked assumptions.
             </motion.p>
 
             <motion.p
               variants={slideInFromRight(0.9)}
               className="text-lg text-[#394867] leading-relaxed"
             >
-              Behind every terminal command is a simple question that drives my curiosity:
+              Behind every terminal command is a curious mind driven by one question:
               <br />
               <span className="italic font-medium text-[#212A3E] mt-2 block">&quot;How can this be made more secure?&quot;</span>
             </motion.p>
@@ -74,22 +74,21 @@ export const About = () => {
             >
               As a{" "}
               <Highlighter isView action="highlight" color="#DDE6ED" className="text-[#212A3E] font-bold px-1">
-                cybersecurity enthusiast
-              </Highlighter>
-              , I focus on{" "}
+                cybersecurity enthusiast,
+              </Highlighter>{" "}
+              I focused on{" "}
               <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
                 penetration testing
               </Highlighter>,{" "}
               <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
-                web application security
+                web security
               </Highlighter>, and{" "}
               <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
                 network defense
-              </Highlighter>. I enjoy learning through{" "}
+              </Highlighter>.I enjoy learning through{" "}
               <Highlighter isView action="highlight" color="#DDE6ED" className="text-[#212A3E] font-medium px-1">
-                hands-on labs
-              </Highlighter>
-              , building practical projects, and exploring real-world attack techniques to strengthen my technical skills.
+                real-world labs
+              </Highlighter>, security research, and personal projects.
             </motion.p>
 
             <motion.p
@@ -102,7 +101,10 @@ export const About = () => {
               </Highlighter>,{" "}
               <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
                 learn relentlessly
-              </Highlighter>, and contribute to building a safer digital world.
+              </Highlighter>, and{" "}
+              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
+                contribute to building a safer digital world
+              </Highlighter>.
             </motion.p>
 
           </motion.div>
