@@ -24,11 +24,11 @@ export const Projects = () => {
             <h2 className="Welcome-text text-[13px] px-2">Featured Work</h2>
           </div>
 
-          <KineticText text="My Projects" className="text-4xl md:text-5xl font-bold text-[#212A3E] text-center justify-center [font-optical-sizing:auto]" />
+          <KineticText text="Featured Projects" className="text-4xl md:text-5xl font-bold text-[#212A3E] text-center justify-center [font-optical-sizing:auto]" />
 
           <p className="text-[#394867] text-lg mt-4 max-w-2xl mx-auto text-center">
-            Explore my cybersecurity projects and tools that demonstrate my
-            skills in ethical hacking, network security, and threat detection.
+            Every project begins with a question and ends with a lesson.
+            These projects demonstrate my approach to cybersecurity—building tools, automating tasks, and applying knowledge to solve real-world security challenges.
           </p>
         </motion.div>
       </div>

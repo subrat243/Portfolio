@@ -84,7 +84,7 @@ const config: Config = {
         },
         "cell-ripple": {
           "0%": { backgroundColor: "transparent", borderColor: "rgba(57, 72, 103, 0.15)" },
-          "50%": { backgroundColor: "rgba(57, 72, 103, 0.2)", borderColor: "rgba(57, 72, 103, 0.25)" },
+          "50%": { backgroundColor: "rgba(57, 72, 103, 0.2)", borderColor: "rgba(57, 72, 103, 0.2)" },
           "100%": { backgroundColor: "transparent", borderColor: "rgba(57, 72, 103, 0.15)" },
         },
         fadeIn: {

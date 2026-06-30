@@ -18,7 +18,7 @@ export const SkillText = () => {
         className="Welcome-box py-[8px] px-[7px] border border-[#9BA4B5]/40 opacity-[0.9] mb-3 mx-auto"
       >
         <h1 className="Welcome-text text-[13px] px-2">
-          Cybersecurity & Development Skills
+          Built Through Practice
         </h1>
       </motion.div>
 
@@ -26,14 +26,14 @@ export const SkillText = () => {
         variants={slideInFromLeft(0.5)}
         className="mt-2 text-center mb-[4px] pointer-events-auto"
       >
-        <KineticText text="Skills and Technologies." className="text-4xl md:text-5xl font-bold text-[#212A3E] justify-center text-center [font-optical-sizing:auto]" />
+        <KineticText text="What I Work With" className="text-4xl md:text-5xl font-bold text-[#212A3E] justify-center text-center [font-optical-sizing:auto]" />
       </motion.div>
 
       <motion.div
         variants={slideInFromRight(0.5)}
         className="text-lg text-[#394867] font-medium mb-4 mt-[10px] text-center max-w-2xl mx-auto"
       >
-        Always learning, always building.
+        Learning by building. Growing through practice.
       </motion.div>
     </div>
   );
