@@ -109,7 +109,7 @@ export const About = () => {
                 Cybersecurity student
               </Highlighter>{" "}
               and{" "}
-              <Highlighter isView action="underline" color="#394867" strokeWidth={2} className="text-[#212A3E] font-bold">
+              <Highlighter isView action="highlight" color="#DDE6ED" strokeWidth={2} className="text-[#212A3E] font-bold">
                 security enthusiast
               </Highlighter>{" "}
               who thrives on exploring the intricate world of digital security.

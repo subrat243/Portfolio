@@ -4,8 +4,6 @@ import { SparklesIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
-import { HeroModel } from "@/components/sub/hero-model";
-
 import { TypingAnimation } from "@/components/sub/typing-animation";
 import {
   slideInFromLeft,
@@ -135,9 +133,6 @@ export const HeroContent = () => {
           </motion.a>
         </motion.div>
       </div>
-
-      {/* Right Side - 3D Model */}
-      <HeroModel />
     </motion.div>
   );
 };
