@@ -1,44 +1,6 @@
 "use client";
 
-import { Suspense, useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, useGLTF, Environment, ContactShadows } from "@react-three/drei";
 import { motion } from "framer-motion";
-import * as THREE from "three";
-
-function Model() {
-  const { scene } = useGLTF("/3d-model/model.gltf");
-  const ref = useRef<THREE.Group>(null);
-
-  useFrame((_, delta) => {
-    if (ref.current) {
-      ref.current.rotation.y += delta * 0.3;
-    }
-  });
-
-  return (
-    <group ref={ref} dispose={null}>
-      <primitive
-        object={scene}
-        scale={1.8}
-        position={[0, -0.5, 0]}
-      />
-    </group>
-  );
-}
-
-function LoadingFallback() {
-  return (
-    <div className="absolute inset-0 flex items-center justify-center">
-      <div className="relative">
-        <div className="w-16 h-16 border-4 border-[#9BA4B5]/30 border-t-[#212A3E] rounded-full animate-spin" />
-        <p className="mt-4 text-sm text-[#394867]/70 font-medium text-center">
-          Loading 3D Model...
-        </p>
-      </div>
-    </div>
-  );
-}
 
 export const HeroModel = () => {
   return (
@@ -48,53 +10,14 @@ export const HeroModel = () => {
       transition={{ delay: 1.2, duration: 1, ease: "easeOut" }}
       className="flex-1 w-full h-[400px] md:h-[500px] lg:h-[600px] relative order-1 lg:order-2 pointer-events-auto"
     >
-      <Suspense fallback={<LoadingFallback />}>
-        <Canvas
-          camera={{ position: [0, 0, 5], fov: 45 }}
-          gl={{ antialias: true, alpha: true }}
-          style={{ background: "transparent" }}
-        >
-          {/* Lighting */}
-          <ambientLight intensity={0.6} />
-          <directionalLight
-            position={[5, 5, 5]}
-            intensity={1.2}
-            castShadow
-          />
-          <directionalLight
-            position={[-3, 3, -3]}
-            intensity={0.4}
-            color="#9BA4B5"
-          />
-          <pointLight position={[0, 3, 0]} intensity={0.5} color="#394867" />
-
-          {/* 3D Model */}
-          <Model />
-
-          {/* Contact Shadows */}
-          <ContactShadows
-            position={[0, -1.5, 0]}
-            opacity={0.4}
-            scale={8}
-            blur={2.5}
-          />
-
-          {/* Environment for reflections */}
-          <Environment preset="city" />
-
-          {/* Controls */}
-          <OrbitControls
-            enableZoom={false}
-            enablePan={false}
-            autoRotate={false}
-            maxPolarAngle={Math.PI / 1.8}
-            minPolarAngle={Math.PI / 3}
-          />
-        </Canvas>
-      </Suspense>
+      <iframe
+        title="Game Ready: Cyber Deck"
+        frameBorder="0"
+        allowFullScreen
+        allow="autoplay; fullscreen; xr-spatial-tracking"
+        src="https://sketchfab.com/models/3ff72ea4eb9a4b929fc2ff199cb799a4/embed?ui_controls=0&ui_infos=0&ui_stop=0&ui_hint=0&ui_settings=0&ui_vr=0&ui_ar=0&ui_help=0&ui_annotations=0&ui_watermark=0&ui_watermark_link_only=1&autostart=1&transparent=1"
+        className="w-full h-full border-0 rounded-lg"
+      />
     </motion.div>
   );
 };
-
-// Preload the model
-useGLTF.preload("/3d-model/model.gltf");

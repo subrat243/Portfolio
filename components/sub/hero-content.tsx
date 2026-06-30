@@ -4,7 +4,7 @@ import { SparklesIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
-import dynamic from "next/dynamic";
+import { HeroModel } from "@/components/sub/hero-model";
 
 import { TypingAnimation } from "@/components/sub/typing-animation";
 import {
@@ -12,11 +12,6 @@ import {
   slideInFromTop,
 } from "@/lib/motion";
 import { EncryptedText } from "@/components/ui/encrypted-text";
-
-const HeroModel = dynamic(
-  () => import("@/components/sub/hero-model").then((mod) => mod.HeroModel),
-  { ssr: false }
-);
 
 export const HeroContent = () => {
   const [showSecondLine, setShowSecondLine] = useState(false);
