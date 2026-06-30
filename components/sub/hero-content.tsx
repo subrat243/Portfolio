@@ -28,7 +28,7 @@ export const HeroContent = () => {
           variants={slideInFromTop}
           className="Welcome-box py-[8px] px-[7px] border border-[#9BA4B5]/40 opacity-90 inline-flex items-center w-fit backdrop-blur-md pointer-events-auto"
         >
-          <h1 className="Welcome-text text-[13px] font-medium px-2">The Hacker's Perspective</h1>
+          <h1 className="Welcome-text text-[13px] font-medium px-2">The Hacker&apos;s Perspective</h1>
         </motion.div>
 
         {/* Main Heading with Encrypted Text Animation */}
