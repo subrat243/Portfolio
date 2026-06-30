@@ -20,7 +20,7 @@ export const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-col lg:flex-row items-center justify-between px-6 md:px-12 lg:px-10 py-12 md:py-20 w-full h-full max-w-[1400px] mx-auto gap-8 lg:gap-12 pointer-events-none"
+      className="flex flex-col lg:flex-row items-center justify-center px-6 md:px-12 lg:px-10 py-12 md:py-20 w-full h-full max-w-7xl mx-auto gap-8 lg:gap-16 pointer-events-none"
     >
       {/* Left Content Section */}
       <div className="w-full lg:w-[60%] xl:w-[65%] flex flex-col gap-4 md:gap-5 justify-center text-left lg:pr-8 order-2 lg:order-1 pointer-events-none">
@@ -137,7 +137,7 @@ export const HeroContent = () => {
       </div>
 
       {/* Right Content Section - Profile Card */}
-      <div className="w-full lg:w-[40%] xl:w-[35%] flex justify-center lg:justify-end items-center order-1 lg:order-2 pointer-events-none mt-10 lg:mt-0">
+      <div className="w-full lg:w-[40%] xl:w-[35%] flex justify-center items-center order-1 lg:order-2 pointer-events-none mt-10 lg:mt-0">
         <motion.div
           variants={slideInFromRight(0.5)}
           className="flex flex-col items-center pointer-events-auto"
