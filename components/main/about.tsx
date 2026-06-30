@@ -55,14 +55,11 @@ export const About = () => {
               className="text-lg text-[#394867] leading-relaxed"
             >
               Behind every terminal command is a curious mind driven by one question:
-              <br /><br />
-              <span className="italic font-semibold text-[#212A3E] text-xl">
-                &quot;How can this be made{" "}
-                <Highlighter isView action="highlight" color="#DDE6ED" className="text-[#212A3E] px-1">
-                  more secure?
-                </Highlighter>
-                &quot;
-              </span>
+              <br />
+              <br />
+              <Highlighter isView action="highlight" color="#DDE6ED" className="text-[#212A3E] font-bold px-1 italic">
+                &quot;How can this be made more secure?&quot;
+              </Highlighter>
             </motion.p>
 
             <motion.p
@@ -72,15 +69,17 @@ export const About = () => {
               As a{" "}
               <Highlighter isView action="highlight" color="#DDE6ED" className="text-[#212A3E] font-bold px-1">
                 cybersecurity enthusiast
-              </Highlighter>
-              , I focused on{" "}
-              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">penetration testing</Highlighter>,{" "}
-              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">web security</Highlighter>, and{" "}
-              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">network defense</Highlighter>.
-              I enjoy turning curiosity into practical skills through{" "}
-              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">real-world labs</Highlighter>,{" "}
-              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">security research</Highlighter>, and{" "}
-              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">personal projects</Highlighter>.
+              </Highlighter>{" "}
+              and learner who thrives on exploring the intricate world of digital security, I focused on{" "}
+              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-semibold">
+                penetration testing
+              </Highlighter>,{" "}
+              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-semibold">
+                web security
+              </Highlighter>, and{" "}
+              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-semibold">
+                network defense
+              </Highlighter>. I enjoy turning curiosity into practical skills through real-world labs, security research, and personal projects.
             </motion.p>
 
             <motion.p
