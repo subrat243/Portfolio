@@ -151,7 +151,6 @@ export const SparklesCore = (props: ParticlesProps) => {
               },
               effect: {
                 close: true,
-                fill: true,
                 options: {},
                 type: {} as SingleOrMultiple<string> | undefined,
               },
