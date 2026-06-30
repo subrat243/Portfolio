@@ -4,13 +4,14 @@ import type { PropsWithChildren } from "react";
 
 import { Footer } from "@/components/main/footer";
 import { Navbar } from "@/components/main/navbar";
-import { MatrixBackground } from "@/components/main/matrix-background";
+import { StarsCanvas } from "@/components/main/star-background";
 
 import ErrorBoundary from "@/components/error-boundary";
 import { siteConfig } from "@/config";
 import { cn } from "@/lib/utils";
 
 import "./globals.css";
+import { ThemeProvider } from "./providers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -37,7 +38,7 @@ export const metadata: Metadata = siteConfig;
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="en" className={cn("light", inter.variable, cedarville.variable)}>
+    <html lang="en" className={cn(inter.variable, cedarville.variable)} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -52,21 +53,22 @@ export default function RootLayout({ children }: PropsWithChildren) {
       </head>
       <body
         className={cn(
-          "bg-[#F1F6F9] text-[#212A3E] antialiased",
+          "bg-[#F1F6F9] dark:bg-dark-100 text-[#212A3E] dark:text-white overflow-y-scroll overflow-x-hidden antialiased transition-colors duration-300",
           inter.className,
           "min-h-screen font-sans",
         )}
         suppressHydrationWarning
       >
-        <MatrixBackground />
-        <ErrorBoundary>
-          <div className="relative w-full">
-            <Navbar />
-
-            <main className="relative w-full">{children}</main>
-            <Footer />
-          </div>
-        </ErrorBoundary>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          <ErrorBoundary>
+            <div className="relative w-full">
+              <Navbar />
+              <StarsCanvas />
+              <main className="relative w-full">{children}</main>
+              <Footer />
+            </div>
+          </ErrorBoundary>
+        </ThemeProvider>
       </body>
     </html>
   );

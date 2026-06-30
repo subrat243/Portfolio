@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 import {
   Navbar as NavbarContainer,
   NavBody,
@@ -16,6 +17,12 @@ import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const navItems = NAV_LINKS.map((link) => ({
     name: link.title,
@@ -30,7 +37,14 @@ export const Navbar = () => {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <AnimatedThemeToggler variant="star" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#212A3E]/5 text-[#394867] hover:bg-[#212A3E]/10 transition-colors" />
+            {mounted && (
+              <AnimatedThemeToggler
+                variant="star"
+                theme={theme === "dark" ? "dark" : "light"}
+                onThemeChange={(t) => setTheme(t)}
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-[#212A3E]/5 text-[#394867] dark:text-gray-300 dark:bg-white/5 hover:bg-[#212A3E]/10 dark:hover:bg-white/10 transition-colors"
+              />
+            )}
             <NavbarButton variant="primary" href="#contact" className="bg-[#212A3E] text-white hover:bg-[#394867] shadow-md">
               Contact
             </NavbarButton>
@@ -42,7 +56,14 @@ export const Navbar = () => {
           <MobileNavHeader>
             <NavbarLogo />
             <div className="flex items-center gap-2">
-              <AnimatedThemeToggler variant="star" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#212A3E]/5 text-[#394867] hover:bg-[#212A3E]/10 transition-colors" />
+              {mounted && (
+                <AnimatedThemeToggler
+                  variant="star"
+                  theme={theme === "dark" ? "dark" : "light"}
+                  onThemeChange={(t) => setTheme(t)}
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-[#212A3E]/5 text-[#394867] dark:text-gray-300 dark:bg-white/5 hover:bg-[#212A3E]/10 dark:hover:bg-white/10 transition-colors"
+                />
+              )}
               <MobileNavToggle
                 isOpen={isMobileMenuOpen}
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
