@@ -22,14 +22,14 @@ const Skeleton = ({ tag, Icon }: { tag: string; Icon: any }) => (
 const CERTIFICATE_CARDS = [
   {
     id: 0,
-    name: "Offensive Pentesting Professional",
-    designation: "Advanced Pentesting Labs & Network Scanning",
-    image: "/projects/Attack.jpg",
+    name: "Jr Penetration Tester",
+    designation: "TryHackMe",
+    image: "/certs/jr-pentester.jpg",
     content: (
       <div className="relative w-full h-full min-h-[112px] flex items-center justify-center overflow-hidden bg-[#212A3E]/5 p-1">
         <Image
-          src="/projects/Attack.jpg"
-          alt="Offensive Pentesting Certificate"
+          src="/certs/jr-pentester.jpg"
+          alt="Jr Penetration Tester Certificate"
           fill
           sizes="280px"
           className="object-cover rounded-lg opacity-90"
@@ -39,34 +39,34 @@ const CERTIFICATE_CARDS = [
   },
   {
     id: 1,
-    name: "Certified Network Security Specialist",
-    designation: "Network Monitoring & Packet Inspection",
-    image: "/projects/Network-monitoring.svg",
+    name: "Certified Network Security Professional",
+    designation: "ICSI",
+    image: "/certs/cnsp.jpg",
     content: (
-      <div className="relative w-full h-full min-h-[112px] flex items-center justify-center overflow-hidden bg-[#212A3E]/5 p-2">
+      <div className="relative w-full h-full min-h-[112px] flex items-center justify-center overflow-hidden bg-[#212A3E]/5 p-1">
         <Image
-          src="/projects/Network-monitoring.svg"
-          alt="Network Security Certificate"
-          width={180}
-          height={100}
-          className="object-contain h-full"
+          src="/certs/cnsp.jpg"
+          alt="Certified Network Security Professional Certificate"
+          fill
+          sizes="280px"
+          className="object-cover rounded-lg opacity-90"
         />
       </div>
     ),
   },
   {
     id: 2,
-    name: "Web App Vulnerability Assessment",
-    designation: "Enterprise Bug Bounty & Disclosures",
-    image: "/projects/Exploitation.svg",
+    name: "Pre Security",
+    designation: "TryHackMe",
+    image: "/certs/pre-security.jpg",
     content: (
-      <div className="relative w-full h-full min-h-[112px] flex items-center justify-center overflow-hidden bg-[#212A3E]/5 p-2">
+      <div className="relative w-full h-full min-h-[112px] flex items-center justify-center overflow-hidden bg-[#212A3E]/5 p-1">
         <Image
-          src="/projects/Exploitation.svg"
-          alt="Web App Security Certificate"
-          width={180}
-          height={100}
-          className="object-contain h-full"
+          src="/certs/pre-security.jpg"
+          alt="Pre Security Certificate"
+          fill
+          sizes="280px"
+          className="object-cover rounded-lg opacity-90"
         />
       </div>
     ),
