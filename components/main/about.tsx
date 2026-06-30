@@ -88,7 +88,7 @@ export const About = () => {
               </Highlighter>.I enjoy learning through{" "}
               <Highlighter isView action="highlight" color="#DDE6ED" className="text-[#212A3E] font-medium px-1">
                 real-world labs
-              </Highlighter>, security research, and personal projects.
+              </Highlighter>, building practical projects, CTFs and Security Reseacrh.
             </motion.p>
 
             <motion.p
