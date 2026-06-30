@@ -52,15 +52,15 @@ export default function RootLayout({ children }: PropsWithChildren) {
       </head>
       <body
         className={cn(
-          "bg-[#F1F6F9] text-[#212A3E] overflow-y-scroll overflow-x-hidden antialiased",
+          "bg-[#F1F6F9] text-[#212A3E] antialiased",
           inter.className,
           "min-h-screen font-sans",
         )}
         suppressHydrationWarning
       >
+        <MatrixBackground />
         <ErrorBoundary>
           <div className="relative w-full">
-            <MatrixBackground />
             <Navbar />
 
             <main className="relative w-full">{children}</main>
