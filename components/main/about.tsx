@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { SparklesIcon } from "@heroicons/react/24/solid";
+
 
 import {
   slideInFromLeft,
@@ -31,8 +31,7 @@ export const About = () => {
           viewport={{ once: true }}
           className="Welcome-box py-[8px] px-[7px] border border-[#9BA4B5]/40 opacity-[0.9] mb-3 mx-auto"
         >
-          <SparklesIcon className="text-[#394867] mr-[10px] h-5 w-5" />
-          <h1 className="Welcome-text text-[13px]">Wanna Know About Me</h1>
+          <h1 className="Welcome-text text-[13px] px-2">Wanna Know About Me</h1>
         </motion.div>
 
         <div className="flex flex-col items-center justify-center gap-10 w-full">
@@ -118,7 +117,7 @@ export const About = () => {
               width={1000}
               height={300}
               className="w-full h-auto object-cover"
-              style={{ marginBottom: "-6%" }}
+              style={{ marginBottom: "-2.5%" }}
               unoptimized
             />
           </motion.div>

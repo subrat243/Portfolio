@@ -29,8 +29,7 @@ export const Security = () => {
           viewport={{ once: true }}
           className="Welcome-box py-[8px] px-[7px] border border-[#9BA4B5]/40 opacity-[0.9] mb-3 mx-auto"
         >
-          <ShieldCheckIcon className="text-[#394867] mr-[10px] h-5 w-5" />
-          <h1 className="Welcome-text text-[13px]">Security Best Practices</h1>
+          <h1 className="Welcome-text text-[13px] px-2">Security Best Practices</h1>
         </motion.div>
 
         {/* Cover Title */}

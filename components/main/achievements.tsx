@@ -120,8 +120,7 @@ export const Achievements = () => {
           className="flex flex-col items-center justify-center mb-8 pointer-events-auto"
         >
           <div className="Welcome-box py-[8px] px-[7px] border border-[#9BA4B5]/40 opacity-90 inline-flex items-center mb-3 mx-auto">
-            <SparklesIcon className="text-[#394867] mr-[10px] h-5 w-5" />
-            <h2 className="Welcome-text text-[13px]">Milestones & Honors</h2>
+            <h2 className="Welcome-text text-[13px] px-2">Milestones & Honors</h2>
           </div>
 
           <KineticText text="My Achievements" className="text-4xl md:text-5xl font-bold text-[#212A3E] text-center justify-center [font-optical-sizing:auto]" />
