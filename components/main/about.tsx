@@ -41,7 +41,7 @@ export const About = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="flex flex-col gap-6 text-start lg:text-left max-w-[800px] mx-auto"
+            className="flex flex-col gap-6 text-start lg:text-left max-w-2xl mx-auto"
           >
             <motion.div
               variants={slideInFromRight(0.6)}
@@ -51,40 +51,36 @@ export const About = () => {
             </motion.div>
 
             <motion.p
-              variants={slideInFromRight(0.7)}
-              className="text-lg text-[#394867] leading-relaxed"
-            >
-              <span className="font-semibold text-[#212A3E]">Every vulnerability tells a story.</span>
-              <br />
-              Some reveal a simple mistake. Others expose overlooked assumptions.
-            </motion.p>
-
-            <motion.p
               variants={slideInFromRight(0.9)}
               className="text-lg text-[#394867] leading-relaxed"
             >
               Behind every terminal command is a curious mind driven by one question:
-              <br />
-              <span className="italic font-medium text-[#212A3E] mt-2 block">&quot;How can this be made more secure?&quot;</span>
+              <br /><br />
+              <span className="italic font-semibold text-[#212A3E] text-xl">
+                &quot;How can this be made{" "}
+                <Highlighter isView action="highlight" color="#DDE6ED" className="text-[#212A3E] px-1">
+                  more secure?
+                </Highlighter>
+                &quot;
+              </span>
             </motion.p>
 
             <motion.p
               variants={slideInFromRight(1.1)}
               className="text-lg text-[#394867]/90 leading-relaxed"
             >
-              That curiosity has led me into the world of cybersecurity, where I focus on{" "}
-              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
-                penetration testing
-              </Highlighter>,{" "}
-              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
-                web application security
-              </Highlighter>, and{" "}
-              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
-                network defense
-              </Highlighter>. Through{" "}
-              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
-                hands-on labs
-              </Highlighter>, security research, and personal projects, I continuously explore how systems fail, how attackers think, and how stronger defenses can be built.
+              As a{" "}
+              <Highlighter isView action="highlight" color="#DDE6ED" className="text-[#212A3E] font-bold px-1">
+                cybersecurity enthusiast
+              </Highlighter>
+              , I focused on{" "}
+              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">penetration testing</Highlighter>,{" "}
+              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">web security</Highlighter>, and{" "}
+              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">network defense</Highlighter>.
+              I enjoy turning curiosity into practical skills through{" "}
+              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">real-world labs</Highlighter>,{" "}
+              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">security research</Highlighter>, and{" "}
+              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">personal projects</Highlighter>.
             </motion.p>
 
             <motion.p
@@ -92,15 +88,9 @@ export const About = () => {
               className="text-lg text-[#394867]/90 leading-relaxed"
             >
               My goal is simple:{" "}
-              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
-                never stop learning
-              </Highlighter>,{" "}
-              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
-                never stop experimenting
-              </Highlighter>, and{" "}
-              <Highlighter isView action="underline" color="#9BA4B5" className="text-[#212A3E] font-medium">
-                never stop improving
-              </Highlighter>.
+              <Highlighter isView action="highlight" color="#DDE6ED" className="text-[#212A3E] font-medium px-1">never stop learning</Highlighter>,{" "}
+              <Highlighter isView action="highlight" color="#DDE6ED" className="text-[#212A3E] font-medium px-1">never stop experimenting</Highlighter>, and{" "}
+              <Highlighter isView action="highlight" color="#DDE6ED" className="text-[#212A3E] font-medium px-1">never stop improving</Highlighter>.
             </motion.p>
 
           </motion.div>
