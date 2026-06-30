@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import * as THREE from "three";
 
 function Model() {
-  const { scene } = useGLTF("/3d-model/evanescent_plasma/scene.gltf");
+  const { scene } = useGLTF("/3d-model/scene.glb");
   const ref = useRef<THREE.Group>(null);
 
   useEffect(() => {
@@ -15,23 +15,28 @@ function Model() {
       if (child.isMesh && child.material) {
         const mat = child.material;
 
-        // Enable transparency & double-sided rendering
+        // "hide" material — invisible bounding geometry
+        if (mat.name === "hide") {
+          child.visible = false;
+          return;
+        }
+
+        // Render the plasma as dark, visible geometry
         mat.transparent = true;
         mat.side = THREE.DoubleSide;
         mat.depthWrite = false;
+        mat.blending = THREE.NormalBlending;
+        mat.opacity = 0.7;
 
-        // Use additive blending for the glowing plasma effect
-        mat.blending = THREE.AdditiveBlending;
+        // Dark base color
+        mat.color = new THREE.Color(0x1a1a2e);
 
-        // Boost emissive glow from the base color texture
+        // Subtle dark emissive for depth
         if (mat.map) {
           mat.emissiveMap = mat.map;
-          mat.emissive = new THREE.Color(0xffffff);
-          mat.emissiveIntensity = 0.8;
+          mat.emissive = new THREE.Color(0x16213e);
+          mat.emissiveIntensity = 0.3;
         }
-
-        // Increase base opacity for visibility
-        mat.opacity = Math.max(mat.opacity, 0.6);
 
         mat.needsUpdate = true;
       }
@@ -89,7 +94,7 @@ export const HeroModel = () => {
           camera={{ position: [0, 0, 5], fov: 50 }}
           gl={{
             antialias: true,
-            alpha: true,
+            alpha: false,
             powerPreference: "high-performance",
           }}
           style={{ background: "transparent" }}
@@ -127,4 +132,4 @@ export const HeroModel = () => {
 };
 
 // Preload the model
-useGLTF.preload("/3d-model/evanescent_plasma/scene.gltf");
+useGLTF.preload("/3d-model/scene.glb");
