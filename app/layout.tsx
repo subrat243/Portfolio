@@ -7,6 +7,7 @@ import { Navbar } from "@/components/main/navbar";
 import { StarsCanvas } from "@/components/main/star-background";
 
 import ErrorBoundary from "@/components/error-boundary";
+import ClickSpark from "@/components/ui/click-spark";
 import { siteConfig } from "@/config";
 import { cn } from "@/lib/utils";
 
@@ -59,12 +60,20 @@ export default function RootLayout({ children }: PropsWithChildren) {
         suppressHydrationWarning
       >
         <ErrorBoundary>
-          <div className="relative w-full">
-            <Navbar />
-            <StarsCanvas />
-            <main className="relative w-full">{children}</main>
-            <Footer />
-          </div>
+          <ClickSpark
+            sparkColor='#212A3E'
+            sparkSize={10}
+            sparkRadius={15}
+            sparkCount={8}
+            duration={400}
+          >
+            <div className="relative w-full min-h-screen">
+              <Navbar />
+              <StarsCanvas />
+              <main className="relative w-full">{children}</main>
+              <Footer />
+            </div>
+          </ClickSpark>
         </ErrorBoundary>
       </body>
     </html>
