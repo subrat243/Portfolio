@@ -32,11 +32,8 @@ const CTFSkeleton = () => (
       />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#1a1f2e]" />
     </div>
-    {/* Header: avatar + rank */}
+    {/* Header: rank */}
     <div className="flex items-center gap-3 px-4 pb-4">
-      <div className="w-10 h-10 rounded-full bg-[#2a3244] border-2 border-[#f97316]/60 flex items-center justify-center shrink-0">
-        <span className="text-[10px] font-bold text-[#f97316]">CTF7</span>
-      </div>
       <div>
         <p className="text-white font-bold text-sm leading-none">kaizen</p>
         <p className="text-[#9BA4B5] text-[10px] font-mono mt-0.5">TEAM RANK: <span className="text-[#f97316]">#10</span></p>
