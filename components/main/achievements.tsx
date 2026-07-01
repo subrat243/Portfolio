@@ -29,7 +29,7 @@ const THMSkeleton = () => (
         alt="TryHackMe Profile"
         fill
         sizes="400px"
-        className="object-cover object-center"
+        className="object-contain object-center p-4"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#1a1f2e]" />
     </div>
@@ -121,9 +121,9 @@ const ACHIEVEMENTS_DATA = [
     isTHM: true,
   },
   {
-    title: "Offensive Security & Pentesting Prep",
+    title: "Professional Certifications",
     description:
-      "Successfully completed rigorous training and advanced lab scenarios in penetration testing, network vulnerability scanning, and offensive security methodologies.",
+      "Earned industry-recognized certifications that reinforce my knowledge in networking, cybersecurity fundamentals, and offensive security while supporting my commitment to continuous learning.",
     icon: AcademicCapIcon,
     tag: "Certification & Labs",
   },
