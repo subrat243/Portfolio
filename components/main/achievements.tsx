@@ -6,7 +6,6 @@ import { SparklesIcon, TrophyIcon, ShieldCheckIcon, AcademicCapIcon, StarIcon } 
 import { KineticText } from "@/components/ui/kinetic-text";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import { CardStack } from "@/components/ui/card-stack";
-import { TryHackMeCard } from "@/components/main/TryHackMeCard";
 
 const Skeleton = ({ tag, Icon }: { tag: string; Icon: any }) => (
   <div className="flex flex-1 w-full h-full min-h-[7rem] rounded-xl bg-gradient-to-br from-[#F1F6F9] to-[#DDE6ED] border border-[#9BA4B5]/30 p-4 flex flex-col justify-between overflow-hidden relative group/skeleton">
@@ -17,6 +16,47 @@ const Skeleton = ({ tag, Icon }: { tag: string; Icon: any }) => (
       <Icon className="w-6 h-6 text-[#212A3E]/40 group-hover/skeleton:text-[#212A3E] transition-colors duration-300" />
     </div>
     <div className="absolute -bottom-2 -right-2 w-24 h-24 bg-[#9BA4B5]/10 rounded-full blur-xl group-hover/skeleton:bg-[#9BA4B5]/20 transition-all duration-300" />
+  </div>
+);
+
+const CTFSkeleton = () => (
+  <div className="flex flex-1 w-full h-full min-h-[7rem] rounded-xl bg-[#1a1f2e] border border-[#9BA4B5]/20 p-4 flex flex-col gap-3 overflow-hidden relative">
+    {/* Header: avatar + rank */}
+    <div className="flex items-center gap-3">
+      <div className="w-10 h-10 rounded-full bg-[#2a3244] border-2 border-[#f97316]/60 flex items-center justify-center shrink-0">
+        <span className="text-[10px] font-bold text-[#f97316]">CTF7</span>
+      </div>
+      <div>
+        <p className="text-white font-bold text-sm leading-none">kaizen</p>
+        <p className="text-[#9BA4B5] text-[10px] font-mono mt-0.5">TEAM RANK: <span className="text-[#f97316]">#10</span></p>
+      </div>
+      <div className="ml-auto text-right">
+        <p className="text-[#9BA4B5] text-[10px] font-mono">DEF CON Pune CTF</p>
+        <p className="text-[#9BA4B5] text-[10px] font-mono">26 Mar, 2026</p>
+      </div>
+    </div>
+    {/* Progress */}
+    <div>
+      <p className="text-[#9BA4B5] text-[10px] font-mono mb-1">Progress: <span className="text-white">55%</span></p>
+      <div className="w-full h-1.5 bg-[#2a3244] rounded-full overflow-hidden">
+        <div className="h-full w-[55%] bg-[#f97316] rounded-full" />
+      </div>
+    </div>
+    {/* Stats row */}
+    <div className="flex gap-3 mt-auto">
+      <div className="flex-1 bg-[#2a3244] rounded-lg p-2 text-center">
+        <p className="text-white text-sm font-bold font-mono">17<span className="text-[#9BA4B5] text-[10px]">/31</span></p>
+        <p className="text-[#9BA4B5] text-[9px] font-mono tracking-widest mt-0.5">FLAGS</p>
+      </div>
+      <div className="flex-1 bg-[#2a3244] rounded-lg p-2 text-center">
+        <p className="text-white text-sm font-bold font-mono">5020<span className="text-[#9BA4B5] text-[10px]">/9410</span></p>
+        <p className="text-[#9BA4B5] text-[9px] font-mono tracking-widest mt-0.5">POINTS</p>
+      </div>
+      <div className="flex-1 bg-[#2a3244] rounded-lg p-2 text-center">
+        <p className="text-white text-sm font-bold font-mono">204</p>
+        <p className="text-[#9BA4B5] text-[9px] font-mono tracking-widest mt-0.5">PLAYERS</p>
+      </div>
+    </div>
   </div>
 );
 
@@ -59,11 +99,12 @@ const CERTIFICATE_CARDS = CERT_DATA.map((cert, index) => ({
 
 const ACHIEVEMENTS_DATA = [
   {
-    title: "Top 50 in Global CTF Competition",
+    title: "#10 Rank — DEF CON Pune CTF",
     description:
-      "Achieved a top 50 ranking among 1,200+ global competing teams in an elite Capture The Flag (CTF) competition, solving advanced binary exploitation and reverse engineering challenges.",
+      "Captured 17/31 flags and scored 5020/9410 points in the DEF CON Pune CTF (Jeopardy format), competing solo against 204 players. Ranked #10 in the team leaderboard.",
     icon: TrophyIcon,
     tag: "CTF Competition",
+    isCTF: true,
   },
   {
     title: "Offensive Security & Pentesting Prep",
@@ -104,7 +145,7 @@ export const Achievements = () => {
           className="flex flex-col items-center justify-center mb-8 pointer-events-auto"
         >
           <div className="Welcome-box py-[8px] px-[7px] border border-[#9BA4B5]/40 opacity-90 inline-flex items-center mb-3 mx-auto">
-            <h2 className="Welcome-text text-[13px] px-2">Milestones &amp; Honors</h2>
+            <h2 className="Welcome-text text-[13px] px-2">Milestones & Honors</h2>
           </div>
 
           <KineticText text="My Achievements" className="text-4xl md:text-5xl font-bold text-[#212A3E] text-center justify-center [font-optical-sizing:auto]" />
@@ -114,59 +155,41 @@ export const Achievements = () => {
           </p>
         </motion.div>
 
-        {/* Main content: Bento Grid + TryHackMe Card */}
-        <div className="flex flex-col xl:flex-row gap-8 items-start">
-          {/* Bento Grid Achievements */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="w-full xl:flex-1 relative z-20 mt-10 pointer-events-auto"
-          >
-            <BentoGrid className="max-w-4xl mx-auto">
-              {ACHIEVEMENTS_DATA.map((item, i) => {
-                const IconComponent = item.icon;
-                const isCert = item.title === "Offensive Security & Pentesting Prep";
-                return (
-                  <BentoGridItem
-                    key={item.title}
-                    title={item.title}
-                    description={item.description}
-                    header={
-                      isCert ? (
-                        <CardStack items={CERTIFICATE_CARDS} />
-                      ) : (
-                        <Skeleton tag={item.tag} Icon={IconComponent} />
-                      )
-                    }
-                    icon={<IconComponent className="h-6 w-6 text-[#212A3E]" />}
-                    className={i === 1 || i === 2 ? "md:col-span-2" : ""}
-                    isHorizontal={isCert}
-                  />
-                );
-              })}
-            </BentoGrid>
-          </motion.div>
-
-          {/* TryHackMe Profile Card */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.7, delay: 0.5 }}
-            className="w-full xl:w-[340px] shrink-0 mt-10 pointer-events-auto"
-          >
-            {/* Sub-header for the card */}
-            <div className="mb-4 text-center xl:text-left">
-              <div className="Welcome-box py-[8px] px-[7px] border border-[#9BA4B5]/40 opacity-90 inline-flex items-center mb-2">
-                <span className="Welcome-text text-[13px] px-2">Live Stats</span>
-              </div>
-              <p className="text-sm text-[#9BA4B5] font-medium">TryHackMe Profile</p>
-            </div>
-            <TryHackMeCard />
-          </motion.div>
-        </div>
+        {/* Bento Grid Achievements */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="w-full relative z-20 mt-10 pointer-events-auto"
+        >
+          <BentoGrid className="max-w-6xl mx-auto">
+            {ACHIEVEMENTS_DATA.map((item, i) => {
+              const IconComponent = item.icon;
+              const isCert = item.title === "Offensive Security & Pentesting Prep";
+              const isCTF = (item as any).isCTF;
+              return (
+                <BentoGridItem
+                  key={item.title}
+                  title={item.title}
+                  description={item.description}
+                  header={
+                    isCert ? (
+                      <CardStack items={CERTIFICATE_CARDS} />
+                    ) : isCTF ? (
+                      <CTFSkeleton />
+                    ) : (
+                      <Skeleton tag={item.tag} Icon={IconComponent} />
+                    )
+                  }
+                  icon={<IconComponent className="h-6 w-6 text-[#212A3E]" />}
+                  className={i === 1 || i === 2 ? "md:col-span-2" : ""}
+                  isHorizontal={isCert}
+                />
+              );
+            })}
+          </BentoGrid>
+        </motion.div>
       </div>
     </section>
   );
