@@ -61,9 +61,9 @@ export const HoverEffect = ({
                   item.principles
                     ? "p-4 md:p-6 bg-white border-[#9BA4B5]/40 shadow-sm hover:shadow-md transition-all duration-300 w-full"
                     : item.items
-                    ? "p-3 bg-white border-[#9BA4B5]/40 shadow-sm hover:shadow-md transition-all duration-300 min-h-[280px]"
+                    ? "p-3 bg-white border-[#9BA4B5]/40 shadow-sm hover:shadow-md transition-all duration-300 h-full"
                     : item.practices
-                    ? "p-3 bg-white border-[#9BA4B5]/40 shadow-sm hover:shadow-md transition-all duration-300 min-h-[320px]"
+                    ? "p-3 bg-white border-[#9BA4B5]/40 shadow-sm hover:shadow-md transition-all duration-300 h-full"
                     : "bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700"
                 }
               >
