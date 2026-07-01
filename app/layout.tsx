@@ -10,6 +10,7 @@ import ErrorBoundary from "@/components/error-boundary";
 import ClickSpark from "@/components/ui/click-spark";
 import { siteConfig } from "@/config";
 import { cn } from "@/lib/utils";
+import { Analytics } from "@vercel/analytics/react";
 
 import "./globals.css";
 
@@ -75,6 +76,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
             </div>
           </ClickSpark>
         </ErrorBoundary>
+        <Analytics />
       </body>
     </html>
   );
