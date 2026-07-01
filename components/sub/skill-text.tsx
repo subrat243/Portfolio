@@ -2,7 +2,8 @@
 
 
 import { motion } from "framer-motion";
-import { KineticText } from "@/components/ui/kinetic-text";
+import VariableProximity from "@/components/ui/variable-proximity";
+import { useRef } from "react";
 
 import {
   slideInFromLeft,
@@ -11,6 +12,8 @@ import {
 } from "@/lib/motion";
 
 export const SkillText = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
   return (
     <div className="w-full h-auto flex flex-col items-center justify-center">
       <motion.div
@@ -24,9 +27,19 @@ export const SkillText = () => {
 
       <motion.div
         variants={slideInFromLeft(0.5)}
-        className="mt-2 text-center mb-[4px] pointer-events-auto"
+        className="mt-2 text-center mb-[4px] pointer-events-auto w-full"
+        ref={containerRef}
+        style={{ position: 'relative' }}
       >
-        <KineticText text="What I Work With" className="text-4xl md:text-5xl font-bold text-[#212A3E] justify-center text-center [font-optical-sizing:auto]" />
+        <VariableProximity
+          label="What I Work With"
+          className="text-4xl md:text-5xl font-bold text-[#212A3E] justify-center text-center [font-optical-sizing:auto] block w-full"
+          fromFontVariationSettings="'wght' 400, 'opsz' 9"
+          toFontVariationSettings="'wght' 1000, 'opsz' 40"
+          containerRef={containerRef}
+          radius={100}
+          falloff='linear'
+        />
       </motion.div>
 
       <motion.div

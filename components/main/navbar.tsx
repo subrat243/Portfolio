@@ -12,7 +12,6 @@ import {
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
 import { NAV_LINKS } from "@/constants";
-import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -29,9 +28,8 @@ export const Navbar = () => {
         <NavBody>
           <NavbarLogo />
           <NavItems items={navItems} />
-          <div className="flex items-center gap-3">
-            <AnimatedThemeToggler variant="circle" />
-            <NavbarButton variant="primary" href="#contact" className="bg-[#212A3E] text-white hover:bg-[#394867] shadow-md dark:bg-[#E4E9EC] dark:text-[#0d1117] dark:hover:bg-[#9BA4B5]">
+          <div className="flex items-center gap-4">
+            <NavbarButton variant="primary" href="#contact" className="bg-[#212A3E] text-white hover:bg-[#394867] shadow-md">
               Contact
             </NavbarButton>
           </div>
@@ -42,7 +40,6 @@ export const Navbar = () => {
           <MobileNavHeader>
             <NavbarLogo />
             <div className="flex items-center gap-2">
-              <AnimatedThemeToggler variant="circle" />
               <MobileNavToggle
                 isOpen={isMobileMenuOpen}
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

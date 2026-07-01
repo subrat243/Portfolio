@@ -3,7 +3,8 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { SparklesIcon, TrophyIcon, ShieldCheckIcon, AcademicCapIcon, StarIcon } from "@heroicons/react/24/solid";
-import { KineticText } from "@/components/ui/kinetic-text";
+import VariableProximity from "@/components/ui/variable-proximity";
+import { useRef } from "react";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import { CardStack } from "@/components/ui/card-stack";
 
@@ -116,6 +117,8 @@ const ACHIEVEMENTS_DATA = [
 ];
 
 export const Achievements = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
   return (
     <section
       id="achievements"
@@ -134,7 +137,17 @@ export const Achievements = () => {
             <h2 className="Welcome-text text-[13px] px-2">Milestones & Honors</h2>
           </div>
 
-          <KineticText text="My Achievements" className="text-4xl md:text-5xl font-bold text-[#212A3E] text-center justify-center [font-optical-sizing:auto]" />
+          <div className="w-full" ref={containerRef} style={{ position: 'relative' }}>
+            <VariableProximity
+              label="My Achievements"
+              className="text-4xl md:text-5xl font-bold text-[#212A3E] text-center justify-center [font-optical-sizing:auto] block w-full"
+              fromFontVariationSettings="'wght' 400, 'opsz' 9"
+              toFontVariationSettings="'wght' 1000, 'opsz' 40"
+              containerRef={containerRef}
+              radius={100}
+              falloff='linear'
+            />
+          </div>
 
           <p className="text-[#394867] text-lg mt-4 max-w-2xl mx-auto text-center">
             A showcase of my major milestones, competitive rankings, and notable contributions in the cybersecurity landscape.

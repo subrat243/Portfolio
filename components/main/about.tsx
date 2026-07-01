@@ -10,9 +10,12 @@ import {
   slideInFromTop,
 } from "@/lib/motion";
 import { Highlighter } from "@/components/ui/highlighter";
-import { KineticText } from "@/components/ui/kinetic-text";
+import VariableProximity from "@/components/ui/variable-proximity";
+import { useRef } from "react";
 
 export const About = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
   return (
     <motion.section
       id="about"
@@ -42,8 +45,18 @@ export const About = () => {
             <motion.div
               variants={slideInFromRight(0.6)}
               className="pointer-events-auto"
+              ref={containerRef}
+              style={{ position: 'relative' }}
             >
-              <KineticText text="Who Am I?" className="text-4xl md:text-5xl font-bold text-[#212A3E] text-left justify-start [font-optical-sizing:auto]" />
+              <VariableProximity
+                label="Who Am I?"
+                className="text-4xl md:text-5xl font-bold text-[#212A3E] text-left justify-start [font-optical-sizing:auto] block w-full"
+                fromFontVariationSettings="'wght' 400, 'opsz' 9"
+                toFontVariationSettings="'wght' 1000, 'opsz' 40"
+                containerRef={containerRef}
+                radius={100}
+                falloff='linear'
+              />
             </motion.div>
 
             <motion.p

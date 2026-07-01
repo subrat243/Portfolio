@@ -3,9 +3,12 @@ import { motion } from "framer-motion";
 import { PROJECTS } from "@/constants";
 
 import { InfiniteMovingProjects } from "@/components/ui/infinite-moving-projects";
-import { KineticText } from "@/components/ui/kinetic-text";
+import VariableProximity from "@/components/ui/variable-proximity";
+import { useRef } from "react";
 
 export const Projects = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
   return (
     <section
       id="projects"
@@ -24,7 +27,17 @@ export const Projects = () => {
             <h2 className="Welcome-text text-[13px] px-2">Featured Work</h2>
           </div>
 
-          <KineticText text="Featured Projects" className="text-4xl md:text-5xl font-bold text-[#212A3E] text-center justify-center [font-optical-sizing:auto]" />
+          <div className="w-full" ref={containerRef} style={{ position: 'relative' }}>
+            <VariableProximity
+              label="Featured Projects"
+              className="text-4xl md:text-5xl font-bold text-[#212A3E] text-center justify-center [font-optical-sizing:auto] block w-full"
+              fromFontVariationSettings="'wght' 400, 'opsz' 9"
+              toFontVariationSettings="'wght' 1000, 'opsz' 40"
+              containerRef={containerRef}
+              radius={100}
+              falloff='linear'
+            />
+          </div>
 
           <p className="text-[#394867] text-lg mt-4 max-w-2xl mx-auto text-center">
             Every project begins with a question and ends with a lesson.
