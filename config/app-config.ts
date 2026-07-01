@@ -202,25 +202,24 @@ export const APP_CONFIG = {
   security: {
     bestPractices: [
       {
-        title: "Network Security",
+        title: "Zero Trust",
         practices: [
-          "Implement network segmentation",
-          "Use strong firewall configurations",
-          "Regular network monitoring and logging",
-          "Secure wireless network configurations",
-          "VPN implementation for remote access",
-          "Regular penetration testing",
+          "Never trust, always verify",
+          "Least privilege access",
+          "Multi-factor authentication",
+          "Identity-first security",
+          "Continuous verification",
         ],
       },
       {
-        title: "Access Control",
+        title: "Defense in Depth",
         practices: [
-          "Multi-factor authentication (MFA)",
-          "Principle of least privilege",
-          "Regular access reviews",
-          "Strong password policies",
-          "Role-based access control (RBAC)",
-          "Session management controls",
+          "Layered security controls",
+          "Network segmentation",
+          "Endpoint protection",
+          "Continuous monitoring",
+          "Incident response",
+          "Security logging",
         ],
       },
       {
