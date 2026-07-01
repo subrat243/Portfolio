@@ -59,7 +59,7 @@ export const HoverEffect = ({
               <Card
                 className={
                   item.principles
-                    ? "p-4 md:p-6 bg-white border-[#9BA4B5]/40 shadow-sm hover:shadow-md transition-all duration-300 w-full"
+                    ? "px-4 py-3 md:px-6 md:py-4 bg-white border-[#9BA4B5]/40 shadow-sm hover:shadow-md transition-all duration-300 w-full"
                     : item.items
                     ? "p-3 bg-white border-[#9BA4B5]/40 shadow-sm hover:shadow-md transition-all duration-300 h-full"
                     : item.practices
@@ -68,9 +68,9 @@ export const HoverEffect = ({
                 }
               >
                 {item.principles ? (
-                  <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-left py-2 px-2 md:px-4">
+                  <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-left px-2 md:px-4">
                     <div className="flex-1">
-                      <div className="flex items-center mb-4">
+                      <div className="flex items-center mb-2">
                         <motion.div
                           whileHover={{ scale: 1.05 }}
                           className="p-2.5 rounded-xl bg-[#F1F6F9] border border-[#9BA4B5]/30 mr-4 shadow-sm"
