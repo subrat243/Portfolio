@@ -60,12 +60,7 @@ export const ProjectCard = ({
             </div>
           </motion.div>
 
-          {/* Status Badge */}
-          <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
-            <div className="px-3 py-1 bg-[#212A3E] backdrop-blur-sm rounded-full border border-[#9BA4B5]/30">
-              <span className="text-xs font-medium text-white">Active</span>
-            </div>
-          </div>
+
         </div>
 
         {/* Content Container */}
