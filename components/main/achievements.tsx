@@ -21,37 +21,27 @@ const Skeleton = ({ tag, Icon }: { tag: string; Icon: any }) => (
 );
 
 const THMSkeleton = () => (
-  <div className="flex flex-1 w-full h-full min-h-[7rem] rounded-xl bg-[#1a1f2e] border border-[#9BA4B5]/20 flex flex-col justify-center p-4 relative overflow-hidden">
-    <div className="absolute inset-0 bg-[#0f1219] z-0" />
-    <div className="relative z-10 flex flex-col gap-3">
-      <div className="flex items-center gap-3">
-        <div className="w-12 h-12 rounded-full overflow-hidden border border-[#9BA4B5]/20 shrink-0 bg-[#212A3E] flex items-center justify-center">
-          <span className="text-xl">🕵️</span>
-        </div>
-        <div>
-          <h3 className="text-white font-bold text-sm leading-none">0xKaizen</h3>
-          <p className="text-[#9BA4B5] text-[10px] mt-1">[0xA][WIZARD] 🇮🇳 <span className="bg-white/10 px-1.5 py-0.5 rounded text-[8px] ml-1">Student</span></p>
-        </div>
+  <div className="flex flex-1 w-full h-full min-h-[7rem] rounded-xl bg-[#1a1f2e] border border-[#9BA4B5]/20 flex flex-col overflow-hidden relative">
+    {/* Banner Image */}
+    <div className="relative w-full h-36 shrink-0 overflow-hidden bg-white/5">
+      <Image
+        src="/achieve/thm.png"
+        alt="TryHackMe Profile"
+        fill
+        sizes="400px"
+        className="object-cover object-center"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#1a1f2e]" />
+    </div>
+    {/* Stats */}
+    <div className="flex items-center gap-3 px-4 pb-4">
+      <div>
+        <p className="text-white font-bold text-sm leading-none">0xKaizen</p>
+        <p className="text-[#9BA4B5] text-[10px] font-mono mt-0.5">GLOBAL RANK: <span className="text-yellow-500">top 4%</span></p>
       </div>
-      <div className="flex flex-col gap-2">
-        <div className="bg-[#212A3E] rounded-lg p-3 border border-[#9BA4B5]/10 flex items-center justify-between">
-          <span className="text-[#9BA4B5] text-[10px] font-medium uppercase tracking-wider">Rank <span className="text-yellow-500 lowercase ml-1 font-bold">top 4%</span></span>
-          <span className="text-white font-bold flex items-center gap-2 text-sm"><span className="text-yellow-500">🏆</span> 76766</span>
-        </div>
-        <div className="grid grid-cols-2 gap-2">
-          <div className="bg-[#212A3E] rounded-lg p-3 border border-[#9BA4B5]/10">
-            <span className="text-[#9BA4B5] text-[10px] font-medium uppercase tracking-wider block mb-1">Badges</span>
-            <span className="text-white font-bold flex items-center gap-2 text-sm">🏵️ 22</span>
-          </div>
-          <div className="bg-[#212A3E] rounded-lg p-3 border border-[#9BA4B5]/10">
-            <span className="text-[#9BA4B5] text-[10px] font-medium uppercase tracking-wider block mb-1">Rooms</span>
-            <span className="text-white font-bold flex items-center gap-2 text-sm">🚪 159</span>
-          </div>
-        </div>
-        <div className="bg-[#212A3E] rounded-lg p-3 border border-[#9BA4B5]/10 flex items-center justify-between">
-          <span className="text-[#9BA4B5] text-[10px] font-medium uppercase tracking-wider">Streak</span>
-          <span className="text-white font-bold flex items-center gap-2 text-sm">🔥 0</span>
-        </div>
+      <div className="ml-auto text-right">
+        <p className="text-[#9BA4B5] text-[10px] font-mono">TryHackMe Profile</p>
+        <p className="text-[#9BA4B5] text-[10px] font-mono">159 Rooms | 22 Badges</p>
       </div>
     </div>
   </div>
