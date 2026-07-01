@@ -51,7 +51,7 @@ export default function TerminalDemo() {
             "[✓] 3 endpoints found",
           ],
         }}
-        typingSpeed={45}
+        typingSpeed={80}
         delayBetweenCommands={1000}
       />
     </div>
