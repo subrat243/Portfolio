@@ -30,7 +30,7 @@ const THMSkeleton = () => (
         sizes="400px"
         className="object-contain object-center p-4"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#1a1f2e]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent from-50% to-[#1a1f2e]" />
     </div>
     {/* Stats */}
     <div className="flex items-center gap-3 px-4 pb-4">
@@ -57,7 +57,7 @@ const CTFSkeleton = () => (
         sizes="400px"
         className="object-cover object-top"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#1a1f2e]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent from-50% to-[#1a1f2e]" />
     </div>
     {/* Header: rank */}
     <div className="flex items-center gap-3 px-4 pb-4">
