@@ -20,6 +20,43 @@ const Skeleton = ({ tag, Icon }: { tag: string; Icon: any }) => (
   </div>
 );
 
+const THMSkeleton = () => (
+  <div className="flex flex-1 w-full h-full min-h-[7rem] rounded-xl bg-[#1a1f2e] border border-[#9BA4B5]/20 flex flex-col justify-center p-4 relative overflow-hidden">
+    <div className="absolute inset-0 bg-[#0f1219] z-0" />
+    <div className="relative z-10 flex flex-col gap-3">
+      <div className="flex items-center gap-3">
+        <div className="w-12 h-12 rounded-full overflow-hidden border border-[#9BA4B5]/20 shrink-0 bg-[#212A3E] flex items-center justify-center">
+          <span className="text-xl">🕵️</span>
+        </div>
+        <div>
+          <h3 className="text-white font-bold text-sm leading-none">0xKaizen</h3>
+          <p className="text-[#9BA4B5] text-[10px] mt-1">[0xA][WIZARD] 🇮🇳 <span className="bg-white/10 px-1.5 py-0.5 rounded text-[8px] ml-1">Student</span></p>
+        </div>
+      </div>
+      <div className="flex flex-col gap-2">
+        <div className="bg-[#212A3E] rounded-lg p-3 border border-[#9BA4B5]/10 flex items-center justify-between">
+          <span className="text-[#9BA4B5] text-[10px] font-medium uppercase tracking-wider">Rank <span className="text-yellow-500 lowercase ml-1 font-bold">top 4%</span></span>
+          <span className="text-white font-bold flex items-center gap-2 text-sm"><span className="text-yellow-500">🏆</span> 76766</span>
+        </div>
+        <div className="grid grid-cols-2 gap-2">
+          <div className="bg-[#212A3E] rounded-lg p-3 border border-[#9BA4B5]/10">
+            <span className="text-[#9BA4B5] text-[10px] font-medium uppercase tracking-wider block mb-1">Badges</span>
+            <span className="text-white font-bold flex items-center gap-2 text-sm">🏵️ 22</span>
+          </div>
+          <div className="bg-[#212A3E] rounded-lg p-3 border border-[#9BA4B5]/10">
+            <span className="text-[#9BA4B5] text-[10px] font-medium uppercase tracking-wider block mb-1">Rooms</span>
+            <span className="text-white font-bold flex items-center gap-2 text-sm">🚪 159</span>
+          </div>
+        </div>
+        <div className="bg-[#212A3E] rounded-lg p-3 border border-[#9BA4B5]/10 flex items-center justify-between">
+          <span className="text-[#9BA4B5] text-[10px] font-medium uppercase tracking-wider">Streak</span>
+          <span className="text-white font-bold flex items-center gap-2 text-sm">🔥 0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
 const CTFSkeleton = () => (
   <div className="flex flex-1 w-full h-full min-h-[7rem] rounded-xl bg-[#1a1f2e] border border-[#9BA4B5]/20 flex flex-col overflow-hidden relative">
     {/* Certificate Image */}
@@ -86,12 +123,12 @@ const CERTIFICATE_CARDS = CERT_DATA.map((cert, index) => ({
 
 const ACHIEVEMENTS_DATA = [
   {
-    title: "#10 Rank — DEF CON Pune CTF",
+    title: "0xKaizen — TryHackMe Profile",
     description:
-      "Captured 17/31 flags and scored 5020/9410 points in the DEF CON Pune CTF (Jeopardy format), competing solo against 204 players. Ranked #10 in the team leaderboard.",
-    icon: TrophyIcon,
-    tag: "CTF Competition",
-    isCTF: true,
+      "Just a cyber enthusiast working through labs and real-world stuff. Ranked in the top 4% globally with 159 completed rooms.",
+    icon: StarIcon,
+    tag: "TryHackMe",
+    isTHM: true,
   },
   {
     title: "Offensive Security & Pentesting Prep",
@@ -108,11 +145,12 @@ const ACHIEVEMENTS_DATA = [
     tag: "Bug Bounty",
   },
   {
-    title: "Open Source Security Contributor",
+    title: "#10 Rank — DEF CON Pune CTF",
     description:
-      "Actively contributed to prominent open-source cybersecurity tools and libraries, enhancing automated threat detection scripts and vulnerability parsers.",
-    icon: StarIcon,
-    tag: "Open Source",
+      "Captured 17/31 flags and scored 5020/9410 points in the DEF CON Pune CTF (Jeopardy format), competing solo against 204 players. Ranked #10 in the team leaderboard.",
+    icon: TrophyIcon,
+    tag: "CTF Competition",
+    isCTF: true,
   },
 ];
 
@@ -139,7 +177,7 @@ export const Achievements = () => {
 
           <div className="w-full" ref={containerRef} style={{ position: 'relative' }}>
             <VariableProximity
-              label="My Achievements"
+              label="Achievements & Milestones"
               className="text-4xl md:text-5xl font-bold text-[#212A3E] text-center justify-center [font-optical-sizing:auto] block w-full"
               fromFontVariationSettings="'wght' 400, 'opsz' 9"
               toFontVariationSettings="'wght' 1000, 'opsz' 40"
@@ -150,7 +188,7 @@ export const Achievements = () => {
           </div>
 
           <p className="text-[#394867] text-lg mt-4 max-w-2xl mx-auto text-center">
-            A showcase of my major milestones, competitive rankings, and notable contributions in the cybersecurity landscape.
+            Every achievement represents hours of learning, hands-on practice, and a commitment to becoming a better cybersecurity professional.
           </p>
         </motion.div>
 
@@ -177,6 +215,8 @@ export const Achievements = () => {
                       <CardStack items={CERTIFICATE_CARDS} />
                     ) : isCTF ? (
                       <CTFSkeleton />
+                    ) : (item as any).isTHM ? (
+                      <THMSkeleton />
                     ) : (
                       <Skeleton tag={item.tag} Icon={IconComponent} />
                     )
