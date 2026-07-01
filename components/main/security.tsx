@@ -29,7 +29,7 @@ export const Security = () => {
           viewport={{ once: true }}
           className="Welcome-box py-[8px] px-[7px] border border-[#9BA4B5]/40 opacity-[0.9] mb-3 mx-auto"
         >
-          <h1 className="Welcome-text text-[13px] px-2">Security Best Practices</h1>
+          <h1 className="Welcome-text text-[13px] px-2">Security Philosophy</h1>
         </motion.div>
 
         {/* Cover Title */}
@@ -40,7 +40,7 @@ export const Security = () => {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#212A3E] max-w-7xl mx-auto text-center mt-6 mb-0 relative z-20 py-2 pointer-events-auto"
         >
-          Cybersecurity & <Cover>Best Practices</Cover>
+          Cybersecurity & <Cover>Mindset</Cover>
         </motion.h1>
 
         {/* Sub Heading */}
@@ -51,7 +51,7 @@ export const Security = () => {
           viewport={{ once: true }}
           className="text-[#394867] text-lg mt-4 mb-8 max-w-2xl mx-auto text-center pointer-events-auto font-medium"
         >
-          Fundamental security principles and advanced defensive methodologies essential for protecting modern systems and mitigating emerging threats.
+          Strong security begins with the right mindset. These mindset guide how I approach system design, vulnerability assessment, and defensive security.
         </motion.p>
 
         {/* Security Practice Categories & Defense in Depth */}
@@ -61,14 +61,14 @@ export const Security = () => {
             items={[
               ...APP_CONFIG.security.bestPractices,
               {
-                title: "Defense in Depth",
+                title: "Think. Test. Secure.",
                 description:
-                  "Implementing multiple layers of security controls creates a comprehensive Defense in Depth strategy. No single security measure is sufficient; it's the combination of people, processes, and technology that creates an effective security posture against evolving cyber threats.",
+                  "I believe effective cybersecurity starts with understanding how attackers think. By combining an offensive mindset with defensive strategies, I focus on identifying weaknesses, reducing risk, and building systems that remain secure, resilient, and prepared for evolving threats.",
                 principles: [
-                  "Zero Trust Architecture",
+                  "Least Privilege",
                   "Continuous Monitoring",
-                  "Threat Intelligence",
-                  "Security Automation",
+                  "Risk Assessment",
+                  "Security Awareness",
                 ],
                 fullWidth: true,
               },

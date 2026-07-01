@@ -212,6 +212,16 @@ export const APP_CONFIG = {
         ],
       },
       {
+        title: "Think Like an Attacker",
+        practices: [
+          "Understand the attack surface",
+          "Question assumptions",
+          "Think like an adversary",
+          "Validate every finding",
+          "Learn from every vulnerability",
+        ],
+      },
+      {
         title: "Defense in Depth",
         practices: [
           "Layered security controls",
@@ -219,17 +229,6 @@ export const APP_CONFIG = {
           "Endpoint protection",
           "Continuous monitoring",
           "Security logging",
-        ],
-      },
-      {
-        title: "Think Like an Attacker",
-        practices: [
-          "Understand the attack surface",
-          "Question assumptions",
-          "Explore real-world attack paths",
-          "Validate every finding",
-          "Focus on practical impact",
-          "Learn from every vulnerability",
         ],
       },
     ],

@@ -40,7 +40,7 @@ const THMSkeleton = () => (
       </div>
       <div className="ml-auto text-right">
         <p className="text-[#9BA4B5] text-[10px] font-mono">TryHackMe Profile</p>
-        <p className="text-[#9BA4B5] text-[10px] font-mono">159 Rooms | 22 Badges</p>
+        <p className="text-[#9BA4B5] text-[10px] font-mono">160+ Rooms | 22 Badges</p>
       </div>
     </div>
   </div>
@@ -114,15 +114,15 @@ const ACHIEVEMENTS_DATA = [
   {
     title: "0xKaizen — TryHackMe Profile",
     description:
-      "Just a cyber enthusiast working through labs and real-world stuff. Ranked in the top 4% globally with 159 completed rooms.",
+      "Just a cyber enthusiast working through labs and real-world stuff. Ranked in the top 4% globally with 160+ completed rooms.",
     icon: StarIcon,
     tag: "TryHackMe",
     isTHM: true,
   },
   {
-    title: "Professional Certifications",
+    title: "Credential Vault",
     description:
-      "Earned industry-recognized certifications that reinforce my knowledge in networking, cybersecurity fundamentals, and offensive security while supporting my commitment to continuous learning.",
+      "Earned recognized certifications that reinforce my knowledge in networking, cybersecurity fundamentals, and offensive security while supporting my commitment to continuous learning.",
     icon: AcademicCapIcon,
     tag: "Certification & Labs",
   },
