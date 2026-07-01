@@ -22,8 +22,7 @@ const Skeleton = ({ tag, Icon }: { tag: string; Icon: any }) => (
 
 const THMSkeleton = () => (
   <div className="flex flex-1 w-full h-full min-h-[7rem] rounded-xl bg-[#1a1f2e] border border-[#9BA4B5]/20 flex flex-col overflow-hidden relative">
-    {/* Banner Image */}
-    <div className="relative w-full h-36 shrink-0 overflow-hidden bg-white/5">
+    <div className="relative w-full h-36 shrink-0 overflow-hidden bg-slate-200">
       <Image
         src="/achieve/thm.png"
         alt="TryHackMe Profile"
