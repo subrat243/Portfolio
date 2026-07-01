@@ -30,17 +30,19 @@ const THMSkeleton = () => (
         sizes="400px"
         className="object-contain object-center p-4"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent from-50% to-[#1a1f2e]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent from-0% to-[#1a1f2e]" />
     </div>
     {/* Stats */}
-    <div className="flex items-center gap-3 px-4 pb-4">
-      <div>
-        <p className="text-white font-bold text-sm leading-none">0xKaizen</p>
+    <div className="flex justify-between items-start px-4 pb-4 mt-auto">
+      <div className="flex flex-col gap-1">
+        <p className="text-white font-bold text-base leading-none">0xKaizen</p>
         <p className="text-[#9BA4B5] text-[10px] font-mono mt-0.5">GLOBAL RANK: <span className="text-yellow-500">top 4%</span></p>
+        <p className="text-[#9BA4B5] text-[10px] font-mono">Level 10 | 12398 Points</p>
       </div>
-      <div className="ml-auto text-right">
-        <p className="text-[#9BA4B5] text-[10px] font-mono">TryHackMe Profile</p>
-        <p className="text-[#9BA4B5] text-[10px] font-mono">160+ Rooms | 22 Badges</p>
+      <div className="flex flex-col gap-1 text-right mt-1">
+        <p className="text-[#9BA4B5] text-[10px] font-mono leading-none">TryHackMe Profile</p>
+        <p className="text-[#9BA4B5] text-[10px] font-mono mt-0.5">160+ Rooms | 22 Badges</p>
+        <p className="text-[#9BA4B5] text-[10px] font-mono">[0xA][WIZARD]</p>
       </div>
     </div>
   </div>
@@ -57,7 +59,7 @@ const CTFSkeleton = () => (
         sizes="400px"
         className="object-cover object-top"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent from-50% to-[#1a1f2e]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent from-0% to-[#1a1f2e]" />
     </div>
     {/* Header: rank */}
     <div className="flex items-center gap-3 px-4 pb-4">
