@@ -205,7 +205,7 @@ export const Achievements = () => {
               const isCTF = (item as any).isCTF;
               return (
                 <BentoGridItem
-                  key={item.title}
+                  key={i}
                   title={item.title}
                   description={item.description}
                   header={
