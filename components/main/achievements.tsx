@@ -6,6 +6,7 @@ import { SparklesIcon, TrophyIcon, ShieldCheckIcon, AcademicCapIcon, StarIcon } 
 import { KineticText } from "@/components/ui/kinetic-text";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import { CardStack } from "@/components/ui/card-stack";
+import { TryHackMeCard } from "@/components/main/TryHackMeCard";
 
 const Skeleton = ({ tag, Icon }: { tag: string; Icon: any }) => (
   <div className="flex flex-1 w-full h-full min-h-[7rem] rounded-xl bg-gradient-to-br from-[#F1F6F9] to-[#DDE6ED] border border-[#9BA4B5]/30 p-4 flex flex-col justify-between overflow-hidden relative group/skeleton">
@@ -103,7 +104,7 @@ export const Achievements = () => {
           className="flex flex-col items-center justify-center mb-8 pointer-events-auto"
         >
           <div className="Welcome-box py-[8px] px-[7px] border border-[#9BA4B5]/40 opacity-90 inline-flex items-center mb-3 mx-auto">
-            <h2 className="Welcome-text text-[13px] px-2">Milestones & Honors</h2>
+            <h2 className="Welcome-text text-[13px] px-2">Milestones &amp; Honors</h2>
           </div>
 
           <KineticText text="My Achievements" className="text-4xl md:text-5xl font-bold text-[#212A3E] text-center justify-center [font-optical-sizing:auto]" />
@@ -113,38 +114,59 @@ export const Achievements = () => {
           </p>
         </motion.div>
 
-        {/* Bento Grid Achievements */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="w-full relative z-20 mt-10 pointer-events-auto"
-        >
-          <BentoGrid className="max-w-6xl mx-auto">
-            {ACHIEVEMENTS_DATA.map((item, i) => {
-              const IconComponent = item.icon;
-              const isCert = item.title === "Offensive Security & Pentesting Prep";
-              return (
-                <BentoGridItem
-                  key={item.title}
-                  title={item.title}
-                  description={item.description}
-                  header={
-                    isCert ? (
-                      <CardStack items={CERTIFICATE_CARDS} />
-                    ) : (
-                      <Skeleton tag={item.tag} Icon={IconComponent} />
-                    )
-                  }
-                  icon={<IconComponent className="h-6 w-6 text-[#212A3E]" />}
-                  className={i === 1 || i === 2 ? "md:col-span-2" : ""}
-                  isHorizontal={isCert}
-                />
-              );
-            })}
-          </BentoGrid>
-        </motion.div>
+        {/* Main content: Bento Grid + TryHackMe Card */}
+        <div className="flex flex-col xl:flex-row gap-8 items-start">
+          {/* Bento Grid Achievements */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="w-full xl:flex-1 relative z-20 mt-10 pointer-events-auto"
+          >
+            <BentoGrid className="max-w-4xl mx-auto">
+              {ACHIEVEMENTS_DATA.map((item, i) => {
+                const IconComponent = item.icon;
+                const isCert = item.title === "Offensive Security & Pentesting Prep";
+                return (
+                  <BentoGridItem
+                    key={item.title}
+                    title={item.title}
+                    description={item.description}
+                    header={
+                      isCert ? (
+                        <CardStack items={CERTIFICATE_CARDS} />
+                      ) : (
+                        <Skeleton tag={item.tag} Icon={IconComponent} />
+                      )
+                    }
+                    icon={<IconComponent className="h-6 w-6 text-[#212A3E]" />}
+                    className={i === 1 || i === 2 ? "md:col-span-2" : ""}
+                    isHorizontal={isCert}
+                  />
+                );
+              })}
+            </BentoGrid>
+          </motion.div>
+
+          {/* TryHackMe Profile Card */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+            className="w-full xl:w-[340px] shrink-0 mt-10 pointer-events-auto"
+          >
+            {/* Sub-header for the card */}
+            <div className="mb-4 text-center xl:text-left">
+              <div className="Welcome-box py-[8px] px-[7px] border border-[#9BA4B5]/40 opacity-90 inline-flex items-center mb-2">
+                <span className="Welcome-text text-[13px] px-2">Live Stats</span>
+              </div>
+              <p className="text-sm text-[#9BA4B5] font-medium">TryHackMe Profile</p>
+            </div>
+            <TryHackMeCard />
+          </motion.div>
+        </div>
       </div>
     </section>
   );
