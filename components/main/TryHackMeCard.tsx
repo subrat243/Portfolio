@@ -292,12 +292,21 @@ export const TryHackMeCard: React.FC = () => {
   const [profile, setProfile] = useState<TryHackMeProfile | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const [rateLimited, setRateLimited] = useState(false);
 
   const fetchProfile = useCallback(async () => {
     setLoading(true);
     setError(false);
+    setRateLimited(false);
     try {
       const res = await fetch("/api/tryhackme");
+
+      if (res.status === 429) {
+        setRateLimited(true);
+        setLoading(false);
+        return;
+      }
+
       const json: TryHackMeApiResponse = await res.json();
 
       if (!json.success || !json.data) {
@@ -325,13 +334,43 @@ export const TryHackMeCard: React.FC = () => {
           </motion.div>
         )}
 
+        {!loading && rateLimited && (
+          <motion.div key="ratelimit" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              className="w-full rounded-2xl border border-amber-200/60 bg-amber-50/80 backdrop-blur-md p-8 flex flex-col items-center gap-4 text-center"
+            >
+              <div className="w-14 h-14 rounded-full bg-amber-100 flex items-center justify-center">
+                <svg className="w-7 h-7 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-[#212A3E] font-bold text-lg mb-1">Rate Limited</h3>
+                <p className="text-[#394867]/70 text-sm max-w-xs">
+                  TryHackMe is temporarily limiting requests. Please wait 30 seconds and try again.
+                </p>
+              </div>
+              <button
+                onClick={fetchProfile}
+                aria-label="Retry loading TryHackMe profile"
+                className="mt-2 px-6 py-2.5 bg-[#212A3E] text-white text-sm font-semibold rounded-lg hover:bg-[#394867] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#212A3E] focus:ring-offset-2"
+              >
+                Try Again
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+
         {!loading && error && (
           <motion.div key="error" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
             <ErrorCard onRetry={fetchProfile} />
           </motion.div>
         )}
 
-        {!loading && !error && profile && (
+        {!loading && !error && !rateLimited && profile && (
           <motion.div key="profile" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
             <ProfileCard profile={profile} />
           </motion.div>
@@ -342,3 +381,4 @@ export const TryHackMeCard: React.FC = () => {
 };
 
 export default TryHackMeCard;
+

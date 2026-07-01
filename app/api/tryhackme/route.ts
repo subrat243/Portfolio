@@ -12,8 +12,9 @@ export async function GET() {
       {
         status: 200,
         headers: {
-          // Cache for 5 minutes on CDN, revalidate in background
-          "Cache-Control": "public, s-maxage=300, stale-while-revalidate=600",
+          // Tell Vercel/CDN to cache for 5 min, serve stale for up to 10 min
+          "Cache-Control":
+            "public, s-maxage=300, stale-while-revalidate=600",
         },
       }
     );
@@ -21,15 +22,27 @@ export async function GET() {
     const message =
       error instanceof Error ? error.message : "Unknown error occurred";
 
-    console.error("[TryHackMe API Route] Error fetching profile:", message);
+    // Suppress noisy 429 logs – already logged in the lib
+    if (!message.includes("429")) {
+      console.error("[TryHackMe API Route] Error fetching profile:", message);
+    }
+
+    const isRateLimit = message.includes("429");
 
     return NextResponse.json(
       {
         success: false,
-        error: "Failed to fetch TryHackMe profile",
+        error: isRateLimit
+          ? "TryHackMe is rate-limiting requests. Please try again in a moment."
+          : "Failed to fetch TryHackMe profile",
         details: message,
       },
-      { status: 502 }
+      {
+        status: isRateLimit ? 429 : 502,
+        headers: isRateLimit
+          ? { "Retry-After": "30" }
+          : {},
+      }
     );
   }
 }
