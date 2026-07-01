@@ -20,9 +20,9 @@ const Skeleton = ({ tag, Icon }: { tag: string; Icon: any }) => (
 );
 
 const CTFSkeleton = () => (
-  <div className="flex flex-1 w-full h-full min-h-[7rem] rounded-xl bg-[#1a1f2e] border border-[#9BA4B5]/20 flex flex-col gap-3 overflow-hidden relative">
+  <div className="flex flex-1 w-full h-full min-h-[7rem] rounded-xl bg-[#1a1f2e] border border-[#9BA4B5]/20 flex flex-col overflow-hidden relative">
     {/* Certificate Image */}
-    <div className="relative w-full h-32 shrink-0 overflow-hidden">
+    <div className="relative w-full h-36 shrink-0 overflow-hidden">
       <Image
         src="/achieve/defcon-pune.png"
         alt="DEF CON Pune CTF"
@@ -32,43 +32,18 @@ const CTFSkeleton = () => (
       />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#1a1f2e]" />
     </div>
-    {/* Stats section */}
-    <div className="flex flex-col gap-3 px-4 pb-4">
-      {/* Header: avatar + rank */}
-      <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded-full bg-[#2a3244] border-2 border-[#f97316]/60 flex items-center justify-center shrink-0">
-          <span className="text-[10px] font-bold text-[#f97316]">CTF7</span>
-        </div>
-        <div>
-          <p className="text-white font-bold text-sm leading-none">kaizen</p>
-          <p className="text-[#9BA4B5] text-[10px] font-mono mt-0.5">TEAM RANK: <span className="text-[#f97316]">#10</span></p>
-        </div>
-        <div className="ml-auto text-right">
-          <p className="text-[#9BA4B5] text-[10px] font-mono">DEF CON Pune CTF</p>
-          <p className="text-[#9BA4B5] text-[10px] font-mono">26 Mar, 2026</p>
-        </div>
+    {/* Header: avatar + rank */}
+    <div className="flex items-center gap-3 px-4 pb-4">
+      <div className="w-10 h-10 rounded-full bg-[#2a3244] border-2 border-[#f97316]/60 flex items-center justify-center shrink-0">
+        <span className="text-[10px] font-bold text-[#f97316]">CTF7</span>
       </div>
-      {/* Progress */}
       <div>
-        <p className="text-[#9BA4B5] text-[10px] font-mono mb-1">Progress: <span className="text-white">55%</span></p>
-        <div className="w-full h-1.5 bg-[#2a3244] rounded-full overflow-hidden">
-          <div className="h-full w-[55%] bg-[#f97316] rounded-full" />
-        </div>
+        <p className="text-white font-bold text-sm leading-none">kaizen</p>
+        <p className="text-[#9BA4B5] text-[10px] font-mono mt-0.5">TEAM RANK: <span className="text-[#f97316]">#10</span></p>
       </div>
-      {/* Stats row */}
-      <div className="flex gap-3">
-        <div className="flex-1 bg-[#2a3244] rounded-lg p-2 text-center">
-          <p className="text-white text-sm font-bold font-mono">17<span className="text-[#9BA4B5] text-[10px]">/31</span></p>
-          <p className="text-[#9BA4B5] text-[9px] font-mono tracking-widest mt-0.5">FLAGS</p>
-        </div>
-        <div className="flex-1 bg-[#2a3244] rounded-lg p-2 text-center">
-          <p className="text-white text-sm font-bold font-mono">5020<span className="text-[#9BA4B5] text-[10px]">/9410</span></p>
-          <p className="text-[#9BA4B5] text-[9px] font-mono tracking-widest mt-0.5">POINTS</p>
-        </div>
-        <div className="flex-1 bg-[#2a3244] rounded-lg p-2 text-center">
-          <p className="text-white text-sm font-bold font-mono">204</p>
-          <p className="text-[#9BA4B5] text-[9px] font-mono tracking-widest mt-0.5">PLAYERS</p>
-        </div>
+      <div className="ml-auto text-right">
+        <p className="text-[#9BA4B5] text-[10px] font-mono">DEF CON Pune CTF</p>
+        <p className="text-[#9BA4B5] text-[10px] font-mono">26 Mar, 2026</p>
       </div>
     </div>
   </div>
