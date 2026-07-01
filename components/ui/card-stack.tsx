@@ -47,13 +47,13 @@ export const CardStack = ({
 
   return (
     <>
-      <div className="relative h-52 w-full max-w-[280px] mx-auto flex items-center justify-center mt-6 mb-2 pointer-events-auto">
+      <div className="relative h-72 w-full max-w-[320px] mx-auto flex items-center justify-center mt-6 mb-2 pointer-events-auto">
         {cards.map((card, index) => {
           return (
             <motion.div
               key={card.id}
               onClick={() => setSelectedCard(card)}
-              className="absolute bg-white h-48 w-full rounded-2xl p-4 shadow-lg border border-[#9BA4B5]/40 flex flex-col justify-between pointer-events-auto hover:border-[#212A3E] transition-colors duration-300 cursor-pointer group"
+              className="absolute bg-white h-[270px] w-full rounded-2xl p-4 shadow-lg border border-[#9BA4B5]/40 flex flex-col justify-between pointer-events-auto hover:border-[#212A3E] transition-colors duration-300 cursor-pointer group"
               style={{
                 transformOrigin: "top center",
               }}
