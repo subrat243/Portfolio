@@ -352,7 +352,11 @@ export function Terminal({
   useEffect(() => {
     if (phase !== "executing") return;
 
-    setLines((prev) => [...prev, { type: "command", content: currentCommand }]);
+    if (currentCommand.trim().toLowerCase() === "clear") {
+      setLines([]);
+    } else {
+      setLines((prev) => [...prev, { type: "command", content: currentCommand }]);
+    }
     setCurrentText("");
 
     if (currentOutputs.length > 0) {

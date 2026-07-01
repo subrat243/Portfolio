@@ -9,8 +9,10 @@ export default function TerminalDemo() {
         commands={[
           "nmap -sV --script vuln 10.10.10.5",
           "python3 recon.py -t target.com",
+          "clear",
           "hashcat -m 0 hashes.txt wordlist.txt",
           "sqlmap -u 'target.com/?id=1' --dbs",
+          "clear",
           "gobuster dir -u http://10.0.0.1 -w common.txt",
         ]}
         outputs={{
@@ -27,19 +29,21 @@ export default function TerminalDemo() {
             "[+] api.target.com  → 198.51.0.2",
             "[✓] Attack surface mapped",
           ],
-          2: [
+          2: [],
+          3: [
             "Speed: 8.2 GH/s",
             "Progress: 67.3% [ETA 00:02]",
             "[+] e10adc3...: 123456",
             "[+] 3 of 8 cracked",
           ],
-          3: [
+          4: [
             "[*] Testing parameter 'id'...",
             "[+] Type: time-based blind",
             "[+] DBs: [users, admin, config]",
             "[!] Admin panel accessible",
           ],
-          4: [
+          5: [],
+          6: [
             "[*] Starting directory scan...",
             "[+] /admin     → 200 OK",
             "[+] /backup    → 200 OK",
