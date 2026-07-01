@@ -6,41 +6,36 @@ import { motion } from "framer-motion";
 import { FOOTER_DATA } from "@/constants";
 import { APP_CONFIG } from "@/config/app-config";
 import { LayoutTextFlip } from "@/components/ui/layout-text-flip";
+import TerminalDemo from "@/components/terminal-demo";
 
 export const Footer = () => {
   return (
     <footer id="contact" className="w-full h-full bg-transparent text-[#394867] shadow-md p-[15px] py-20 relative z-[9999] overflow-hidden">
       <div className="w-full flex flex-col items-center justify-center m-auto relative z-[10000] pointer-events-auto">
-        {/* Call to Action - Ready to Collaborate */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16 z-10 relative w-full px-4"
-        >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-7xl mx-auto w-full mb-16 z-10 relative px-4 pointer-events-auto">
+          {/* Call to Action - Ready to Collaborate */}
           <motion.div
-            initial={{ scale: 0.9 }}
-            whileInView={{ scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="space-y-6"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+            className="text-left space-y-6"
           >
-            <div className="max-w-2xl mx-auto">
-              <motion.div className="relative my-4 flex flex-col items-center justify-center gap-3 text-center sm:mb-6 sm:flex-row pointer-events-auto">
+            <div className="max-w-xl">
+              <motion.div className="relative my-4 flex flex-col items-start justify-start gap-3 sm:mb-6 sm:flex-row pointer-events-auto text-left">
                 <LayoutTextFlip
                   text="Ready to"
                   words={["Collaborate?", "Innovate?", "Secure?", "Build?"]}
                 />
               </motion.div>
-              <p className="text-[#394867] mb-6 leading-relaxed text-base md:text-lg">
+              <p className="text-[#394867] mb-6 leading-relaxed text-base md:text-lg text-left">
                 I&apos;m always excited to work on new cybersecurity projects
                 and explore innovative security solutions. Let&apos;s build
                 something amazing together!
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-start items-center sm:items-start">
               <motion.a
                 href="https://github.com/subrat243"
                 target="_blank"
@@ -91,7 +86,18 @@ export const Footer = () => {
               </motion.a>
             </div>
           </motion.div>
-        </motion.div>
+
+          {/* Terminal Demo */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+            className="w-full"
+          >
+            <TerminalDemo />
+          </motion.div>
+        </div>
 
         <div className="w-full max-w-5xl h-full flex flex-col md:flex-row items-center justify-around gap-10 md:gap-6 mx-auto border-t border-[#9BA4B5]/20 pt-12">
           {/* Show both Social Media and Contact Me sections horizontally */}
