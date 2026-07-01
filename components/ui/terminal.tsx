@@ -380,7 +380,10 @@ export function Terminal({
     } else if (outputIdx >= currentOutputs.length) {
       const t = setTimeout(() => {
         if (isLastCommand) {
-          setPhase("done");
+          // Loop back to the first command instead of stopping
+          setLines([]);
+          setCommandIdx(0);
+          setPhase("pausing");
         } else {
           setPhase("pausing");
         }
