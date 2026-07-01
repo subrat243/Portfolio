@@ -25,6 +25,61 @@
     --color-neutral-700: #212A3E;
     --color-neutral-800: #212A3E;
     --color-neutral-900: #1a1a2e;
+
+    /* Theme transition */
+    --theme-transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Dark mode overrides */
+html.dark {
+    --color-primary-purple: #E4E9EC;
+    --color-primary-cyan: #9BA4B5;
+    --color-dark-main: #0d1117;
+    --color-dark-secondary: #161b22;
+    --color-dark-tertiary: #1c2333;
+    --color-border-primary: #30363d;
+    --color-text-accent: #9BA4B5;
+    --gradient-primary: #E4E9EC;
+    --gradient-welcome: #9BA4B5;
+    --shadow-glow: 0 4px 20px rgba(0, 0, 0, 0.4);
+
+    --color-neutral-100: #161b22;
+    --color-neutral-300: #30363d;
+    --color-neutral-500: #9BA4B5;
+    --color-neutral-700: #E4E9EC;
+    --color-neutral-800: #F1F6F9;
+    --color-neutral-900: #ffffff;
+}
+
+html.dark body {
+    background-color: #0d1117;
+    color: #E4E9EC;
+}
+
+html.dark .Welcome-box {
+    background-color: #161b22;
+    border-color: #30363d;
+}
+
+html.dark .Welcome-text {
+    color: #9BA4B5;
+}
+
+html.dark ::-webkit-scrollbar-track {
+    background: #0d1117;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+    background: #30363d;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+    background: #9BA4B5;
+}
+
+html.dark ::selection {
+    background-color: #394867;
+    color: #F1F6F9;
 }
 
 /* Base styles */
@@ -55,6 +110,7 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Utility classes */
@@ -397,4 +453,30 @@ video {
     .opacity-600 {
         opacity: 0.6;
     }
+}
+
+/* Dark mode component overrides */
+html.dark .bg-white {
+    background-color: #161b22 !important;
+}
+
+html.dark .bg-\[\#F1F6F9\] {
+    background-color: #161b22 !important;
+}
+
+html.dark .bg-\[\#DDE6ED\] {
+    background-color: #1c2333 !important;
+}
+
+html.dark .border-\[\#9BA4B5\]\/40,
+html.dark .border-\[\#9BA4B5\]\/20 {
+    border-color: #30363d !important;
+}
+
+html.dark .text-\[\#212A3E\] {
+    color: #E4E9EC !important;
+}
+
+html.dark .text-\[\#394867\] {
+    color: #9BA4B5 !important;
 }
