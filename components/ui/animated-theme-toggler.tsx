@@ -22,52 +22,78 @@ interface AnimatedThemeTogglerProps {
   onThemeChange?: (theme: "light" | "dark") => void;
 }
 
-function getClipPath(variant: TransitionVariant, size: number): string {
-  const r = size / 2;
+/**
+ * Build the final (fully revealed) clip-path, anchored at (ox, oy).
+ * r is the radius/size needed to cover the entire viewport.
+ */
+function buildEndClip(
+  variant: TransitionVariant,
+  ox: number,
+  oy: number,
+  r: number
+): string {
   switch (variant) {
     case "circle":
-      return `circle(${size}px at 50% 50%)`;
+      return `circle(${r}px at ${ox}px ${oy}px)`;
     case "square":
-      return `polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)`;
-    case "triangle":
-      return `polygon(50% 0%, 100% 100%, 0% 100%)`;
-    case "diamond":
-      return `polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)`;
+      return `polygon(${ox - r}px ${oy - r}px, ${ox + r}px ${oy - r}px, ${ox + r}px ${oy + r}px, ${ox - r}px ${oy + r}px)`;
     case "rectangle":
-      return `polygon(0% 10%, 100% 10%, 100% 90%, 0% 90%)`;
-    case "hexagon":
-      return `polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)`;
-    case "star":
-      return `polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)`;
+      return `polygon(${ox - r}px ${oy - r * 0.6}px, ${ox + r}px ${oy - r * 0.6}px, ${ox + r}px ${oy + r * 0.6}px, ${ox - r}px ${oy + r * 0.6}px)`;
+    case "diamond":
+      return `polygon(${ox}px ${oy - r}px, ${ox + r}px ${oy}px, ${ox}px ${oy + r}px, ${ox - r}px ${oy}px)`;
+    case "triangle":
+      return `polygon(${ox}px ${oy - r}px, ${ox + r}px ${oy + r}px, ${ox - r}px ${oy + r}px)`;
+    case "hexagon": {
+      const pts = [0, 60, 120, 180, 240, 300].map((deg) => {
+        const rad = (deg * Math.PI) / 180;
+        return `${ox + r * Math.cos(rad)}px ${oy + r * Math.sin(rad)}px`;
+      });
+      return `polygon(${pts.join(", ")})`;
+    }
+    case "star": {
+      const pts: string[] = [];
+      for (let i = 0; i < 10; i++) {
+        const rad = ((i * 36 - 90) * Math.PI) / 180;
+        const radius = i % 2 === 0 ? r : r * 0.45;
+        pts.push(`${ox + radius * Math.cos(rad)}px ${oy + radius * Math.sin(rad)}px`);
+      }
+      return `polygon(${pts.join(", ")})`;
+    }
     default:
-      return `circle(${size}px at 50% 50%)`;
+      return `circle(${r}px at ${ox}px ${oy}px)`;
   }
 }
 
-function getInitialClipPath(variant: TransitionVariant): string {
+/**
+ * Build the collapsed (zero-size) clip-path, anchored at (ox, oy).
+ */
+function buildStartClip(
+  variant: TransitionVariant,
+  ox: number,
+  oy: number
+): string {
   switch (variant) {
     case "circle":
-      return `circle(0px at 50% 50%)`;
+      return `circle(0px at ${ox}px ${oy}px)`;
     case "square":
-      return `polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%)`;
-    case "triangle":
-      return `polygon(50% 50%, 50% 50%, 50% 50%)`;
-    case "diamond":
-      return `polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%)`;
     case "rectangle":
-      return `polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%)`;
+      return `polygon(${ox}px ${oy}px, ${ox}px ${oy}px, ${ox}px ${oy}px, ${ox}px ${oy}px)`;
+    case "diamond":
+      return `polygon(${ox}px ${oy}px, ${ox}px ${oy}px, ${ox}px ${oy}px, ${ox}px ${oy}px)`;
+    case "triangle":
+      return `polygon(${ox}px ${oy}px, ${ox}px ${oy}px, ${ox}px ${oy}px)`;
     case "hexagon":
-      return `polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%)`;
+      return `polygon(${[0,1,2,3,4,5].map(() => `${ox}px ${oy}px`).join(", ")})`;
     case "star":
-      return `polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%)`;
+      return `polygon(${[0,1,2,3,4,5,6,7,8,9].map(() => `${ox}px ${oy}px`).join(", ")})`;
     default:
-      return `circle(0px at 50% 50%)`;
+      return `circle(0px at ${ox}px ${oy}px)`;
   }
 }
 
 export function AnimatedThemeToggler({
   className,
-  duration = 400,
+  duration = 500,
   variant = "circle",
   fromCenter = false,
   theme: controlledTheme,
@@ -87,6 +113,7 @@ export function AnimatedThemeToggler({
       document.documentElement.classList.toggle("dark", dark);
     } else {
       setIsDark(controlledTheme === "dark");
+      document.documentElement.classList.toggle("dark", controlledTheme === "dark");
     }
   }, []);
 
@@ -101,37 +128,39 @@ export function AnimatedThemeToggler({
     const next = !isDark;
     const nextTheme = next ? "dark" : "light";
 
-    // Use View Transitions API if available
-    if (
-      typeof document !== "undefined" &&
-      "startViewTransition" in document &&
-      buttonRef.current
-    ) {
-      const btn = buttonRef.current;
-      const rect = btn.getBoundingClientRect();
-      const originX = fromCenter
+    const supportsVT =
+      typeof document !== "undefined" && "startViewTransition" in document;
+
+    if (supportsVT && buttonRef.current) {
+      const rect = buttonRef.current.getBoundingClientRect();
+      const ox = fromCenter
         ? window.innerWidth / 2
         : rect.left + rect.width / 2;
-      const originY = fromCenter
+      const oy = fromCenter
         ? window.innerHeight / 2
         : rect.top + rect.height / 2;
 
-      // Compute the size needed to cover the full viewport
-      const maxDist = Math.hypot(
-        Math.max(originX, window.innerWidth - originX),
-        Math.max(originY, window.innerHeight - originY)
+      // Radius large enough to cover every corner from (ox, oy)
+      const r = Math.hypot(
+        Math.max(ox, window.innerWidth - ox),
+        Math.max(oy, window.innerHeight - oy)
       );
-      const endClip = getClipPath(variant, maxDist * 2.2);
-      const startClip = getInitialClipPath(variant);
+
+      const startClip = buildStartClip(variant, ox, oy);
+      const endClip = buildEndClip(variant, ox, oy, r * 1.1);
 
       const style = document.createElement("style");
       style.textContent = `
-        ::view-transition-old(root) { animation: none; }
-        ::view-transition-new(root) {
-          animation: theme-reveal ${duration}ms ease forwards;
-          transform-origin: ${originX}px ${originY}px;
+        ::view-transition-old(root) {
+          animation: none;
+          z-index: 1;
         }
-        @keyframes theme-reveal {
+        ::view-transition-new(root) {
+          animation: vt-reveal ${duration}ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          z-index: 9999;
+          will-change: clip-path;
+        }
+        @keyframes vt-reveal {
           from { clip-path: ${startClip}; }
           to   { clip-path: ${endClip}; }
         }
@@ -151,7 +180,7 @@ export function AnimatedThemeToggler({
         document.head.removeChild(style);
       });
     } else {
-      // Fallback without View Transitions
+      // Fallback: no View Transitions support
       document.documentElement.classList.toggle("dark", next);
       if (controlledTheme === undefined) {
         localStorage.setItem("theme", nextTheme);
@@ -174,13 +203,17 @@ export function AnimatedThemeToggler({
       )}
     >
       <span
-        className="transition-all duration-300"
-        style={{ transform: isDark ? "rotate(0deg)" : "rotate(180deg)", opacity: 1 }}
+        key={isDark ? "sun" : "moon"}
+        style={{
+          display: "flex",
+          transition: "transform 300ms ease, opacity 300ms ease",
+          transform: "rotate(0deg)",
+        }}
       >
         {isDark ? (
           <SunIcon className="w-4 h-4 text-amber-400" />
         ) : (
-          <MoonIcon className="w-4 h-4 text-[#394867]" />
+          <MoonIcon className="w-4 h-4 text-[#394867] dark:text-[#9BA4B5]" />
         )}
       </span>
     </button>
