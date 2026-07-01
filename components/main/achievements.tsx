@@ -192,7 +192,7 @@ export const Achievements = () => {
           <BentoGrid className="max-w-6xl mx-auto">
             {ACHIEVEMENTS_DATA.map((item, i) => {
               const IconComponent = item.icon;
-              const isCert = item.title === "Offensive Security & Pentesting Prep";
+              const isCert = item.tag === "Certification & Labs";
               const isCTF = (item as any).isCTF;
               return (
                 <BentoGridItem
