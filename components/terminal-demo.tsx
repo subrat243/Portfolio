@@ -3,7 +3,7 @@ import { Terminal } from "@/components/ui/terminal";
 
 export default function TerminalDemo() {
   return (
-    <section className="w-full py-10 md:py-20">
+    <div className="w-full">
       <Terminal
         commands={[
           "npx shadcn@latest init",
@@ -23,6 +23,6 @@ export default function TerminalDemo() {
         typingSpeed={45}
         delayBetweenCommands={1000}
       />
-    </section>
+    </div>
   );
 }
