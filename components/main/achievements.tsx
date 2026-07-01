@@ -122,7 +122,7 @@ const ACHIEVEMENTS_DATA = [
   {
     title: "Credential Vault",
     description:
-      "Earned recognized certifications that reinforce my knowledge in networking, cybersecurity fundamentals, and offensive security while supporting my commitment to continuous learning.",
+      "Earned recognized certifications and completed a cybersecurity internship that reinforce my knowledge in networking, cybersecurity fundamentals, and offensive security while supporting my commitment to continuous learning.",
     icon: AcademicCapIcon,
     tag: "Certification & Labs",
   },
