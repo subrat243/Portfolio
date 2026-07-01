@@ -33,19 +33,17 @@ const THMSkeleton = () => (
       <div className="absolute inset-0 bg-gradient-to-b from-transparent from-0% to-[#1a1f2e]" />
     </div>
     {/* Stats */}
-    <div className="flex justify-between items-start px-4 pb-4 mt-auto">
-      <div className="flex flex-col gap-1">
-        <p className="text-white font-bold text-base leading-none">0xKaizen</p>
+    <div className="flex items-center gap-3 px-4 pb-4">
+      <div>
+        <p className="text-white font-bold text-sm leading-none">0xKaizen</p>
         <p className="text-[#9BA4B5] text-[10px] font-mono mt-0.5">GLOBAL RANK: <span className="text-yellow-500">top 4%</span></p>
-        <p className="text-[#9BA4B5] text-[10px] font-mono">Level 10 | 12398 Points</p>
       </div>
-      <div className="flex flex-col gap-1 text-right mt-1">
-        <p className="text-[#9BA4B5] text-[10px] font-mono leading-none">TryHackMe Profile</p>
-        <p className="text-[#9BA4B5] text-[10px] font-mono mt-0.5">160+ Rooms | 22 Badges</p>
-        <p className="text-[#9BA4B5] text-[10px] font-mono">[0xA][WIZARD]</p>
+      <div className="ml-auto text-right">
+        <p className="text-[#9BA4B5] text-[10px] font-mono">TryHackMe Profile</p>
+        <p className="text-[#9BA4B5] text-[10px] font-mono">160+ Rooms | 22 Badges</p>
       </div>
     </div>
-  </div>
+  </div >
 );
 
 const CTFSkeleton = () => (
@@ -114,7 +112,16 @@ const CERTIFICATE_CARDS = CERT_DATA.map((cert, index) => ({
 
 const ACHIEVEMENTS_DATA = [
   {
-    title: "0xKaizen — TryHackMe Profile",
+    title: (
+      <a 
+        href="https://tryhackme.com/p/0xKaizen" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="hover:underline decoration-[#9BA4B5] underline-offset-4"
+      >
+        0xKaizen — TryHackMe Profile
+      </a>
+    ),
     description:
       "Just a cyber enthusiast working through labs and real-world stuff. Ranked in the top 4% globally with 160+ completed rooms.",
     icon: StarIcon,
