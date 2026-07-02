@@ -90,13 +90,13 @@ const CTFSkeleton = () => (
 
 const StellarSkeleton = () => (
   <div className="flex flex-1 w-full h-full min-h-[7rem] rounded-xl bg-[#1a1f2e] border border-[#9BA4B5]/20 flex flex-col overflow-hidden relative">
-    <div className="relative w-full h-36 shrink-0 overflow-hidden">
+    <div className="relative w-full h-36 shrink-0 overflow-hidden bg-white">
       <Image
         src="/achieve/stellar.png"
         alt="Stellar Hackathon"
         fill
         sizes="400px"
-        className="object-cover object-top"
+        className="object-contain object-center p-2"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent from-30% via-[#1a1f2e]/80 to-[#1a1f2e]" />
     </div>
