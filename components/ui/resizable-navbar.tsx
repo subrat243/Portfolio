@@ -28,6 +28,7 @@ interface NavItemsProps {
   }[];
   className?: string;
   onItemClick?: () => void;
+  children?: React.ReactNode;
 }
 
 interface MobileNavProps {
@@ -114,7 +115,12 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
   );
 };
 
-export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
+export const NavItems = ({
+  items,
+  className,
+  onItemClick,
+  children,
+}: NavItemsProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
@@ -142,6 +148,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
           <span className="relative z-20">{item.name}</span>
         </a>
       ))}
+      {children}
     </motion.div>
   );
 };

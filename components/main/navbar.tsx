@@ -27,16 +27,15 @@ export const Navbar = () => {
         {/* Desktop Navigation */}
         <NavBody>
           <NavbarLogo />
-          <NavItems items={navItems} />
-          <div className="flex items-center gap-4">
+          <NavItems items={navItems}>
             <NavbarButton
               variant="primary"
               href="#contact"
-              className="bg-[#212A3E] text-white hover:bg-[#394867] shadow-md"
+              className="bg-[#212A3E] text-white hover:bg-[#394867] shadow-md ml-2"
             >
               Contact
             </NavbarButton>
-          </div>
+          </NavItems>
         </NavBody>
 
         {/* Mobile Navigation */}
