@@ -100,13 +100,9 @@ export const Footer = () => {
             </div>
 
             <div className="mt-8 flex items-center gap-3 text-sm text-[#394867] font-medium pointer-events-auto">
-              <div className="relative flex h-3 w-3 shrink-0">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-              </div>
               <p>
                 <span className="font-bold">Currently exploring:</span> Web
-                Security &bull; Cloud Security &bull; Red Teaming web3 security
+                Security &bull; Cloud Security &bull; AI security
               </p>
             </div>
           </motion.div>
