@@ -25,7 +25,7 @@ export const Footer = () => {
             className="text-left space-y-6"
           >
             <div className="max-w-xl">
-              <motion.div className="relative my-4 flex flex-col items-start justify-start gap-3 sm:mb-6 sm:flex-row pointer-events-auto text-left">
+              <motion.div className="relative my-4 flex flex-col items-start justify-start gap-3 sm:mb-6 sm:flex-row sm:items-center pointer-events-auto text-left">
                 <LayoutTextFlip
                   text="Ready to"
                   words={[
@@ -81,7 +81,7 @@ export const Footer = () => {
                 className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-[#212A3E] text-[#212A3E] font-semibold rounded-lg hover:bg-[#212A3E]/5 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#212A3E]/45 focus:ring-offset-2 cursor-pointer"
                 style={{ pointerEvents: "auto" }}
               >
-                <span>Get In Touch</span>
+                <span>Contact Me</span>
                 <svg
                   className="w-5 h-5"
                   fill="none"
@@ -205,7 +205,7 @@ export const Footer = () => {
             }}
             className="mt-2 text-xs text-[#394867]"
           >
-            Built with fun and Curiosity
+            Built with curiosity, coffee, and countless terminal sessions.
           </motion.div>
         </motion.div>
       </div>
