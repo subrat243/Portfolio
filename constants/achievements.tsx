@@ -126,6 +126,7 @@ export const ACHIEVEMENTS_DATA = [
       "Ranked #9 as a solo participant among 100+ hackers in the Stellar Blockchain Hackathon hosted at Centurion University Bhubaneswar. Designed and built DeCent Pay, a decentralized escrow platform powered by the Stellar blockchain, earning a cash prize and official hackathon merchandise.",
     icon: TrophyIcon,
     tag: "Hackathon",
+    isStellar: true,
   },
   {
     title: "#10 Rank — DEF CON Pune CTF",

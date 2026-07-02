@@ -88,6 +88,35 @@ const CTFSkeleton = () => (
   </div>
 );
 
+const StellarSkeleton = () => (
+  <div className="flex flex-1 w-full h-full min-h-[7rem] rounded-xl bg-[#1a1f2e] border border-[#9BA4B5]/20 flex flex-col overflow-hidden relative">
+    <div className="relative w-full h-36 shrink-0 overflow-hidden bg-white/5">
+      <Image
+        src="/achieve/stellar.png"
+        alt="Stellar Hackathon"
+        fill
+        sizes="400px"
+        className="object-contain object-center p-4"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent from-0% to-[#1a1f2e]" />
+    </div>
+    <div className="flex items-center gap-3 px-4 pb-4">
+      <div>
+        <p className="text-white font-bold text-sm leading-none">kaizen</p>
+        <p className="text-[#9BA4B5] text-[10px] font-mono mt-0.5">
+          RANK: <span className="text-yellow-500">#9</span>
+        </p>
+      </div>
+      <div className="ml-auto text-right">
+        <p className="text-[#9BA4B5] text-[10px] font-mono">
+          Stellar Hackathon
+        </p>
+        <p className="text-[#9BA4B5] text-[10px] font-mono">Solo Participant</p>
+      </div>
+    </div>
+  </div>
+);
+
 export const Achievements = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -146,6 +175,7 @@ export const Achievements = () => {
               const IconComponent = item.icon;
               const isCert = item.tag === "Certification & Labs";
               const isCTF = (item as any).isCTF;
+              const isStellar = (item as any).isStellar;
               return (
                 <BentoGridItem
                   key={i}
@@ -156,6 +186,8 @@ export const Achievements = () => {
                       <CardStack items={CERTIFICATE_CARDS} />
                     ) : isCTF ? (
                       <CTFSkeleton />
+                    ) : isStellar ? (
+                      <StellarSkeleton />
                     ) : (item as any).isTHM ? (
                       <THMSkeleton />
                     ) : (
