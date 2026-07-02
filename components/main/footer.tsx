@@ -74,35 +74,12 @@ export const Footer = () => {
                   />
                 </svg>
               </motion.a>
-
-              <motion.a
-                href={APP_CONFIG.social.email}
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-[#212A3E] text-[#212A3E] font-semibold rounded-lg hover:bg-[#212A3E]/5 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#212A3E]/45 focus:ring-offset-2 cursor-pointer"
-                style={{ pointerEvents: "auto" }}
-              >
-                <span>Contact Me</span>
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
-                  />
-                </svg>
-              </motion.a>
             </div>
 
             <div className="mt-8 flex items-center gap-3 text-sm text-[#394867] font-medium pointer-events-auto">
               <p>
                 <span className="font-bold">Currently exploring:</span> Web
-                Security &bull; Cloud Security &bull; AI security
+                Security &bull; Cloud Security &bull; AI Security
               </p>
             </div>
           </motion.div>
