@@ -41,9 +41,10 @@ export const Footer = () => {
                 />
               </motion.div>
               <p className="text-[#394867] mb-6 leading-relaxed text-base md:text-lg text-left">
-                I&apos;m always excited to work on new cybersecurity projects
-                and explore innovative security solutions. Let&apos;s build
-                something amazing together!
+                Interested in penetration testing, security research, or
+                building secure applications? I'm always open to collaborating
+                on impactful projects, contributing to open source, and solving
+                real-world security challenges.
               </p>
             </div>
 
@@ -96,6 +97,17 @@ export const Footer = () => {
                   />
                 </svg>
               </motion.a>
+            </div>
+
+            <div className="mt-8 flex items-center gap-3 text-sm text-[#394867] font-medium pointer-events-auto">
+              <div className="relative flex h-3 w-3 shrink-0">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+              </div>
+              <p>
+                <span className="font-bold">Currently exploring:</span> Web
+                Security &bull; Cloud Security &bull; Red Teaming web3 security
+              </p>
             </div>
           </motion.div>
 
