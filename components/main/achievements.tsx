@@ -35,7 +35,7 @@ const THMSkeleton = () => (
         alt="TryHackMe Profile"
         fill
         sizes="400px"
-        className="object-contain object-center p-4"
+        className="object-contain object-center p-1"
       />
     </div>
     {/* Stats */}
