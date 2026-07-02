@@ -96,9 +96,9 @@ const StellarSkeleton = () => (
         alt="Stellar Hackathon"
         fill
         sizes="400px"
-        className="object-cover object-center"
+        className="object-cover object-top"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent from-0% to-[#1a1f2e]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent from-30% via-[#1a1f2e]/80 to-[#1a1f2e]" />
     </div>
     <div className="flex items-center gap-3 px-4 pb-4">
       <div>
