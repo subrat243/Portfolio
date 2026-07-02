@@ -50,9 +50,7 @@ const THMSkeleton = () => (
         <p className="text-[#9BA4B5] text-[10px] font-mono">
           TryHackMe Profile
         </p>
-        <p className="text-[#9BA4B5] text-[10px] font-mono">
-          160+ Rooms | 22 Badges
-        </p>
+        <p className="text-[#9BA4B5] text-[10px] font-mono">22 Badges</p>
       </div>
     </div>
   </div>
