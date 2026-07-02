@@ -28,7 +28,7 @@ export const About = () => {
         <div className="flex flex-col items-center justify-center gap-10 w-full">
           {/* About Content */}
           <motion.div
-            variants={slideInFromRight(0.8)}
+            variants={slideInFromRight(0.2)}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -44,7 +44,7 @@ export const About = () => {
               </h1>
             </motion.div>
             <motion.div
-              variants={slideInFromRight(0.6)}
+              variants={slideInFromRight(0.3)}
               className="pointer-events-auto"
               ref={containerRef}
               style={{ position: "relative" }}
@@ -61,7 +61,7 @@ export const About = () => {
             </motion.div>
 
             <motion.p
-              variants={slideInFromRight(0.9)}
+              variants={slideInFromRight(0.4)}
               className="text-lg text-[#394867] leading-relaxed"
             >
               Behind every terminal command is a curious mind driven by one
@@ -79,7 +79,7 @@ export const About = () => {
             </motion.p>
 
             <motion.p
-              variants={slideInFromRight(1.1)}
+              variants={slideInFromRight(0.5)}
               className="text-lg text-[#394867]/90 leading-relaxed"
             >
               As a{" "}
@@ -101,7 +101,7 @@ export const About = () => {
             </motion.p>
 
             <motion.p
-              variants={slideInFromRight(1.3)}
+              variants={slideInFromRight(0.6)}
               className="text-lg text-[#394867]/90 leading-relaxed"
             >
               My goal is simple:{" "}
@@ -122,7 +122,7 @@ export const About = () => {
 
           {/* GIF Frame */}
           <motion.div
-            variants={slideInFromRight(1.5)}
+            variants={slideInFromRight(0.7)}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
