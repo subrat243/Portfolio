@@ -28,7 +28,16 @@ export const Footer = () => {
               <motion.div className="relative my-4 flex flex-col items-start justify-start gap-3 sm:mb-6 sm:flex-row pointer-events-auto text-left">
                 <LayoutTextFlip
                   text="Ready to"
-                  words={["Collaborate?", "Innovate?", "Secure?", "Build?"]}
+                  words={[
+                    "Challenge?",
+                    "Test?",
+                    "Harden?",
+                    "Explore?",
+                    "Fortify?",
+                    "Improve?",
+                    "Secure?",
+                    "Audit?",
+                  ]}
                 />
               </motion.div>
               <p className="text-[#394867] mb-6 leading-relaxed text-base md:text-lg text-left">
@@ -49,7 +58,7 @@ export const Footer = () => {
                 tabIndex={0}
                 style={{ pointerEvents: "auto" }}
               >
-                <span className="relative z-10">View More Projects</span>
+                <span className="relative z-10">View My Projects</span>
                 <svg
                   className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200"
                   fill="none"
