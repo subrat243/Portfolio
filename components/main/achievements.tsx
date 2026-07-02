@@ -2,7 +2,13 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { SparklesIcon, TrophyIcon, ShieldCheckIcon, AcademicCapIcon, StarIcon } from "@heroicons/react/24/solid";
+import {
+  SparklesIcon,
+  TrophyIcon,
+  ShieldCheckIcon,
+  AcademicCapIcon,
+  StarIcon,
+} from "@heroicons/react/24/solid";
 import VariableProximity from "@/components/ui/variable-proximity";
 import { useRef } from "react";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
@@ -36,14 +42,20 @@ const THMSkeleton = () => (
     <div className="flex items-center gap-3 px-4 pb-4">
       <div>
         <p className="text-white font-bold text-sm leading-none">0xKaizen</p>
-        <p className="text-[#9BA4B5] text-[10px] font-mono mt-0.5">GLOBAL RANK: <span className="text-yellow-500">top 4%</span></p>
+        <p className="text-[#9BA4B5] text-[10px] font-mono mt-0.5">
+          GLOBAL RANK: <span className="text-yellow-500">top 4%</span>
+        </p>
       </div>
       <div className="ml-auto text-right">
-        <p className="text-[#9BA4B5] text-[10px] font-mono">TryHackMe Profile</p>
-        <p className="text-[#9BA4B5] text-[10px] font-mono">160+ Rooms | 22 Badges</p>
+        <p className="text-[#9BA4B5] text-[10px] font-mono">
+          TryHackMe Profile
+        </p>
+        <p className="text-[#9BA4B5] text-[10px] font-mono">
+          160+ Rooms | 22 Badges
+        </p>
       </div>
     </div>
-  </div >
+  </div>
 );
 
 const CTFSkeleton = () => (
@@ -63,7 +75,9 @@ const CTFSkeleton = () => (
     <div className="flex items-center gap-3 px-4 pb-4">
       <div>
         <p className="text-white font-bold text-sm leading-none">kaizen</p>
-        <p className="text-[#9BA4B5] text-[10px] font-mono mt-0.5">TEAM RANK: <span className="text-[#f97316]">#10</span></p>
+        <p className="text-[#9BA4B5] text-[10px] font-mono mt-0.5">
+          TEAM RANK: <span className="text-[#f97316]">#10</span>
+        </p>
       </div>
       <div className="ml-auto text-right">
         <p className="text-[#9BA4B5] text-[10px] font-mono">DEF CON Pune CTF</p>
@@ -74,22 +88,74 @@ const CTFSkeleton = () => (
 );
 
 const CERT_DATA = [
-  { name: "Jr Penetration Tester", designation: "TryHackMe", file: "jr-pentester.jpg" },
+  {
+    name: "Jr Penetration Tester",
+    designation: "TryHackMe",
+    file: "jr-pentester.jpg",
+  },
   { name: "Pre Security", designation: "TryHackMe", file: "pre-security.jpg" },
-  { name: "Certified Network Security Professional", designation: "The SecOps Group", file: "cnsp.jpg" },
+  {
+    name: "Certified Network Security Professional",
+    designation: "The SecOps Group",
+    file: "cnsp.jpg",
+  },
   { name: "Advent of Cyber", designation: "TryHackMe", file: "aoc-2025.jpg" },
-  { name: "Certified Cyber Security Expert", designation: "The Red Team Leader", file: "ccep.jpg" },
-  { name: "Cybersecurity Internship", designation: "CyberDojo", file: "cyberdojo.jpg" },
-  { name: "Cybersecurity Fundamental", designation: "IBM SkillsBuild", file: "cybersec-fundamental.jpg" },
-  { name: "Skill India Cybersecurity", designation: "Skill India", file: "cybersec-skillindia.jpg" },
-  { name: "Cybersecurity 101", designation: "TryHackMe", file: "cybersecurity-101.jpg" },
-  { name: "Cybersecurity Fundamentals", designation: "Cybrary", file: "cybersecurity-fundamentals.jpg" },
-  { name: "Defensive Security & Cyber Risk", designation: "Cybrary", file: "defensive-security-and-cyber-risk.jpg" },
-  { name: "Defensive Security Operations", designation: "Cybrary", file: "defensive-security-operations.jpg" },
-  { name: "Cybersecurity Internship", designation: "Internship Studio", file: "internship-studio.jpg" },
-  { name: "Intro to Cybersecurity", designation: "Cisco", file: "intro-to-cybersec.jpg" },
+  {
+    name: "Certified Cyber Security Expert",
+    designation: "The Red Team Leader",
+    file: "ccep.jpg",
+  },
+  {
+    name: "Cybersecurity Internship",
+    designation: "CyberDojo",
+    file: "cyberdojo.jpg",
+  },
+  {
+    name: "Cybersecurity Fundamental",
+    designation: "IBM SkillsBuild",
+    file: "cybersec-fundamental.jpg",
+  },
+  {
+    name: "Skill India Cybersecurity",
+    designation: "Skill India",
+    file: "cybersec-skillindia.jpg",
+  },
+  {
+    name: "Cybersecurity 101",
+    designation: "TryHackMe",
+    file: "cybersecurity-101.jpg",
+  },
+  {
+    name: "Cybersecurity Fundamentals",
+    designation: "Cybrary",
+    file: "cybersecurity-fundamentals.jpg",
+  },
+  {
+    name: "Defensive Security & Cyber Risk",
+    designation: "Cybrary",
+    file: "defensive-security-and-cyber-risk.jpg",
+  },
+  {
+    name: "Defensive Security Operations",
+    designation: "Cybrary",
+    file: "defensive-security-operations.jpg",
+  },
+  {
+    name: "Cybersecurity Internship",
+    designation: "Internship Studio",
+    file: "internship-studio.jpg",
+  },
+  {
+    name: "Intro to Cybersecurity",
+    designation: "Cisco",
+    file: "intro-to-cybersec.jpg",
+  },
   { name: "Network Basics", designation: "Cisco", file: "network-basic.jpg" },
-  { name: "Network Fundamentals", designation: "Cybrary", file: "network-fundamentals.jpg" },
+  {
+    name: "Network Fundamentals",
+    designation: "Cybrary",
+    file: "network-fundamentals.jpg",
+  },
 ];
 
 const CERTIFICATE_CARDS = CERT_DATA.map((cert, index) => ({
@@ -113,9 +179,9 @@ const CERTIFICATE_CARDS = CERT_DATA.map((cert, index) => ({
 const ACHIEVEMENTS_DATA = [
   {
     title: (
-      <a 
-        href="https://tryhackme.com/p/0xKaizen" 
-        target="_blank" 
+      <a
+        href="https://tryhackme.com/p/0xKaizen"
+        target="_blank"
         rel="noopener noreferrer"
         className="hover:underline decoration-[#9BA4B5] underline-offset-4"
       >
@@ -136,11 +202,11 @@ const ACHIEVEMENTS_DATA = [
     tag: "Certification & Labs",
   },
   {
-    title: "Bug Bounty Hall of Fame",
+    title: "Stellar Blockchain Hackathon",
     description:
-      "Acknowledged in multiple enterprise Bug Bounty programs for responsibly disclosing critical vulnerabilities (SQLi, SSRF, and RCE), helping secure major web applications.",
-    icon: ShieldCheckIcon,
-    tag: "Bug Bounty",
+      "Ranked #9 as a solo participant among 100+ hackers in the Stellar Blockchain Hackathon hosted at Centurion University Bhubaneswar. Designed and built DeCent Pay, a decentralized escrow platform powered by the Stellar blockchain, earning a cash prize and official hackathon merchandise.",
+    icon: TrophyIcon,
+    tag: "Hackathon",
   },
   {
     title: "#10 Rank — DEF CON Pune CTF",
@@ -170,10 +236,16 @@ export const Achievements = () => {
           className="flex flex-col items-center justify-center mb-8 pointer-events-auto"
         >
           <div className="Welcome-box py-[8px] px-[7px] border border-[#9BA4B5]/40 opacity-90 inline-flex items-center mb-3 mx-auto">
-            <h2 className="Welcome-text text-[13px] px-2">Milestones & Honors</h2>
+            <h2 className="Welcome-text text-[13px] px-2">
+              Milestones & Honors
+            </h2>
           </div>
 
-          <div className="w-full" ref={containerRef} style={{ position: 'relative' }}>
+          <div
+            className="w-full"
+            ref={containerRef}
+            style={{ position: "relative" }}
+          >
             <VariableProximity
               label="Achievements & Milestones"
               className="text-4xl md:text-5xl font-bold text-[#212A3E] text-center justify-center [font-optical-sizing:auto] block w-full"
@@ -181,12 +253,13 @@ export const Achievements = () => {
               toFontVariationSettings="'wght' 1000, 'opsz' 40"
               containerRef={containerRef}
               radius={100}
-              falloff='linear'
+              falloff="linear"
             />
           </div>
 
           <p className="text-[#394867] text-lg mt-4 max-w-2xl mx-auto text-center">
-            Every achievement represents hours of learning, hands-on practice, and a commitment to becoming a better cybersecurity professional.
+            Every achievement represents hours of learning, hands-on practice,
+            and a commitment to becoming a better cybersecurity professional.
           </p>
         </motion.div>
 
@@ -231,5 +304,3 @@ export const Achievements = () => {
     </section>
   );
 };
-
-

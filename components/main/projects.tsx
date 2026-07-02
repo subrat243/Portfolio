@@ -27,7 +27,11 @@ export const Projects = () => {
             <h2 className="Welcome-text text-[13px] px-2">Featured Work</h2>
           </div>
 
-          <div className="w-full" ref={containerRef} style={{ position: 'relative' }}>
+          <div
+            className="w-full"
+            ref={containerRef}
+            style={{ position: "relative" }}
+          >
             <VariableProximity
               label="Featured Projects"
               className="text-4xl md:text-5xl font-bold text-[#212A3E] text-center justify-center [font-optical-sizing:auto] block w-full"
@@ -35,13 +39,15 @@ export const Projects = () => {
               toFontVariationSettings="'wght' 1000, 'opsz' 40"
               containerRef={containerRef}
               radius={100}
-              falloff='linear'
+              falloff="linear"
             />
           </div>
 
           <p className="text-[#394867] text-lg mt-4 max-w-2xl mx-auto text-center">
-            Every project begins with a question and ends with a lesson.
-            These projects demonstrate my approach to cybersecurity—building tools, automating tasks, and applying knowledge to solve real-world security challenges.
+            Every project begins with a question and ends with a lesson. These
+            projects demonstrate my approach to cybersecurity—building tools,
+            automating tasks, and applying knowledge to solve real-world
+            security challenges.
           </p>
         </motion.div>
       </div>
@@ -54,7 +60,11 @@ export const Projects = () => {
         transition={{ duration: 0.8, delay: 0.3 }}
         className="w-full relative z-20 mt-4"
       >
-        <InfiniteMovingProjects items={PROJECTS} direction="right" speed="slow" />
+        <InfiniteMovingProjects
+          items={PROJECTS}
+          direction="right"
+          speed="slow"
+        />
       </motion.div>
     </section>
   );

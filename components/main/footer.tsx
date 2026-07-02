@@ -10,7 +10,10 @@ import TerminalDemo from "@/components/terminal-demo";
 
 export const Footer = () => {
   return (
-    <footer id="contact" className="w-full h-full bg-transparent text-[#394867] shadow-md p-[15px] py-20 relative z-20 overflow-hidden">
+    <footer
+      id="contact"
+      className="w-full h-full bg-transparent text-[#394867] shadow-md p-[15px] py-20 relative z-20 overflow-hidden"
+    >
       <div className="w-full flex flex-col items-center justify-center m-auto relative z-30 pointer-events-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-7xl mx-auto w-full mb-16 z-10 relative px-4 pointer-events-auto">
           {/* Call to Action - Ready to Collaborate */}

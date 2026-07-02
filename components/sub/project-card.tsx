@@ -59,8 +59,6 @@ export const ProjectCard = ({
               <ArrowTopRightOnSquareIcon className="w-4 h-4 text-white" />
             </div>
           </motion.div>
-
-
         </div>
 
         {/* Content Container */}

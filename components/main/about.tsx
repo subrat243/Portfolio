@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-
 import {
   slideInFromLeft,
   slideInFromRight,
@@ -40,13 +39,15 @@ export const About = () => {
               variants={slideInFromTop}
               className="Welcome-box py-[8px] px-[7px] border border-[#9BA4B5]/40 opacity-[0.9] self-start mb-[-10px]"
             >
-              <h1 className="Welcome-text text-[13px] px-2">Behind the Terminal</h1>
+              <h1 className="Welcome-text text-[13px] px-2">
+                Behind the Terminal
+              </h1>
             </motion.div>
             <motion.div
               variants={slideInFromRight(0.6)}
               className="pointer-events-auto"
               ref={containerRef}
-              style={{ position: 'relative' }}
+              style={{ position: "relative" }}
             >
               <VariableProximity
                 label="Who Am I?"
@@ -55,7 +56,7 @@ export const About = () => {
                 toFontVariationSettings="'wght' 1000, 'opsz' 40"
                 containerRef={containerRef}
                 radius={100}
-                falloff='linear'
+                falloff="linear"
               />
             </motion.div>
 
@@ -63,10 +64,16 @@ export const About = () => {
               variants={slideInFromRight(0.9)}
               className="text-lg text-[#394867] leading-relaxed"
             >
-              Behind every terminal command is a curious mind driven by one question:
+              Behind every terminal command is a curious mind driven by one
+              question:
               <br />
               <br />
-              <Highlighter isView action="box" color="#DDE6ED" className="text-[#212A3E] px-1 italic">
+              <Highlighter
+                isView
+                action="box"
+                color="#DDE6ED"
+                className="text-[#212A3E] px-1 italic"
+              >
                 &quot;How can this be made more secure?&quot;
               </Highlighter>
             </motion.p>
@@ -79,16 +86,18 @@ export const About = () => {
               <span className="text-[#212A3E] font-medium">
                 cybersecurity enthusiast
               </span>{" "}
-              and a learner who thrives on exploring the intricate world of digital security, I focused on{" "}
+              and a learner who thrives on exploring the intricate world of
+              digital security, I focused on{" "}
               <span className="text-[#212A3E] font-medium">
                 penetration testing
-              </span>,{" "}
-              <span className="text-[#212A3E] font-medium">
-                web security
-              </span>, and{" "}
+              </span>
+              , <span className="text-[#212A3E] font-medium">web security</span>
+              , and{" "}
               <span className="text-[#212A3E] font-medium">
                 network defense
-              </span>. I enjoy turning curiosity into practical skills through real-world labs, security research, and personal projects.
+              </span>
+              . I enjoy turning curiosity into practical skills through
+              real-world labs, security research, and personal projects.
             </motion.p>
 
             <motion.p
@@ -96,11 +105,19 @@ export const About = () => {
               className="text-lg text-[#394867]/90 leading-relaxed"
             >
               My goal is simple:{" "}
-              <span className="text-[#212A3E] font-medium">never stop learning</span>,{" "}
-              <span className="text-[#212A3E] font-medium">never stop experimenting</span>, and{" "}
-              <span className="text-[#212A3E] font-medium">never stop improving</span>.
+              <span className="text-[#212A3E] font-medium">
+                never stop learning
+              </span>
+              ,{" "}
+              <span className="text-[#212A3E] font-medium">
+                never stop experimenting
+              </span>
+              , and{" "}
+              <span className="text-[#212A3E] font-medium">
+                never stop improving
+              </span>
+              .
             </motion.p>
-
           </motion.div>
 
           {/* GIF Frame */}

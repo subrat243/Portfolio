@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 
 export const siteConfig: Metadata = {
   title: "Subrat Samantaray | Cybersecurity Portfolio",
-  description: "Cybersecurity student specializing in network security, threat detection, and offensive security.",
+  description:
+    "Cybersecurity student specializing in network security, threat detection, and offensive security.",
   keywords: [
     "reactjs",
     "nextjs",

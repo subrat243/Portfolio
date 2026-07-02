@@ -144,7 +144,15 @@ export const EncryptedText: React.FC<EncryptedTextProps> = ({
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [isInView, isMounted, text, revealDelayMs, charset, flipDelayMs, startDelayMs]);
+  }, [
+    isInView,
+    isMounted,
+    text,
+    revealDelayMs,
+    charset,
+    flipDelayMs,
+    startDelayMs,
+  ]);
 
   if (!text) return null;
 
@@ -170,7 +178,7 @@ export const EncryptedText: React.FC<EncryptedTextProps> = ({
           <span
             key={index}
             className={cn(
-              (!isMounted || isRevealed) ? revealedClassName : encryptedClassName,
+              !isMounted || isRevealed ? revealedClassName : encryptedClassName,
             )}
           >
             {displayChar}

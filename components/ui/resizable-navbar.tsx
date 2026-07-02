@@ -10,7 +10,6 @@ import {
 
 import React, { useRef, useState } from "react";
 
-
 interface NavbarProps {
   children: React.ReactNode;
   className?: string;
@@ -94,8 +93,12 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         paddingRight: visible ? "1.5rem" : "2.5rem",
         paddingTop: visible ? "0.6rem" : "0.8rem",
         paddingBottom: visible ? "0.6rem" : "0.8rem",
-        backgroundColor: visible ? "rgba(255, 255, 255, 0.4)" : "rgba(241, 246, 249, 0.75)",
-        borderColor: visible ? "rgba(155, 164, 181, 0.25)" : "rgba(155, 164, 181, 0.15)",
+        backgroundColor: visible
+          ? "rgba(255, 255, 255, 0.4)"
+          : "rgba(241, 246, 249, 0.75)",
+        borderColor: visible
+          ? "rgba(155, 164, 181, 0.25)"
+          : "rgba(155, 164, 181, 0.15)",
       }}
       transition={{
         duration: 0.7,
@@ -158,8 +161,12 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
         paddingRight: visible ? "1rem" : "1.5rem",
         paddingTop: visible ? "0.75rem" : "0.75rem",
         paddingBottom: visible ? "0.75rem" : "0.75rem",
-        backgroundColor: visible ? "rgba(255, 255, 255, 0.4)" : "rgba(241, 246, 249, 0.75)",
-        borderColor: visible ? "rgba(155, 164, 181, 0.25)" : "rgba(155, 164, 181, 0.15)",
+        backgroundColor: visible
+          ? "rgba(255, 255, 255, 0.4)"
+          : "rgba(241, 246, 249, 0.75)",
+        borderColor: visible
+          ? "rgba(155, 164, 181, 0.25)"
+          : "rgba(155, 164, 181, 0.15)",
       }}
       transition={{
         duration: 0.7,
@@ -224,9 +231,15 @@ export const MobileNavToggle = ({
   onClick: () => void;
 }) => {
   return isOpen ? (
-    <IconX className="text-[#212A3E] w-6 h-6 cursor-pointer" onClick={onClick} />
+    <IconX
+      className="text-[#212A3E] w-6 h-6 cursor-pointer"
+      onClick={onClick}
+    />
   ) : (
-    <IconMenu2 className="text-[#212A3E] w-6 h-6 cursor-pointer" onClick={onClick} />
+    <IconMenu2
+      className="text-[#212A3E] w-6 h-6 cursor-pointer"
+      onClick={onClick}
+    />
   );
 };
 
@@ -264,8 +277,7 @@ export const NavbarButton = ({
   className?: string;
   variant?: "primary" | "secondary" | "dark" | "gradient";
 } & (
-  | React.ComponentPropsWithoutRef<"a">
-  | React.ComponentPropsWithoutRef<"button">
+  React.ComponentPropsWithoutRef<"a"> | React.ComponentPropsWithoutRef<"button">
 )) => {
   const baseStyles =
     "px-4 py-2 rounded-md bg-white button bg-white text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";

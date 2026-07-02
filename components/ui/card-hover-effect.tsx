@@ -29,7 +29,7 @@ export const HoverEffect = ({
       <div
         className={cn(
           "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4",
-          className?.replace(/\bpy-10\b/g, "")
+          className?.replace(/\bpy-10\b/g, ""),
         )}
         onMouseLeave={() => setHoveredIndex(null)}
       >
@@ -51,7 +51,12 @@ export const HoverEffect = ({
                       transition: { duration: 0.15 },
                     }}
                     transition={{
-                      layout: { type: "spring", stiffness: 150, damping: 15, mass: 0.8 },
+                      layout: {
+                        type: "spring",
+                        stiffness: 150,
+                        damping: 15,
+                        mass: 0.8,
+                      },
                     }}
                   />
                 )}
@@ -61,10 +66,10 @@ export const HoverEffect = ({
                   item.principles
                     ? "px-4 py-3 md:px-6 md:py-4 bg-white border-[#9BA4B5]/40 shadow-sm hover:shadow-md transition-all duration-300 w-full"
                     : item.items
-                    ? "p-3 bg-white border-[#9BA4B5]/40 shadow-sm hover:shadow-md transition-all duration-300 h-full"
-                    : item.practices
-                    ? "p-3 bg-white border-[#9BA4B5]/40 shadow-sm hover:shadow-md transition-all duration-300 h-full"
-                    : "bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700"
+                      ? "p-3 bg-white border-[#9BA4B5]/40 shadow-sm hover:shadow-md transition-all duration-300 h-full"
+                      : item.practices
+                        ? "p-3 bg-white border-[#9BA4B5]/40 shadow-sm hover:shadow-md transition-all duration-300 h-full"
+                        : "bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700"
                 }
               >
                 {item.principles ? (
@@ -194,7 +199,7 @@ export const HoverEffect = ({
 
           const wrapperClass = cn(
             "relative group block p-2 h-full w-full",
-            item.fullWidth ? "md:col-span-2 lg:col-span-3" : ""
+            item.fullWidth ? "md:col-span-2 lg:col-span-3" : "",
           );
 
           if (item.link) {
@@ -236,7 +241,7 @@ export const Card = ({
     <div
       className={cn(
         "rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
-        className
+        className,
       )}
     >
       <div className="relative z-50">
@@ -269,7 +274,7 @@ export const CardDescription = ({
     <p
       className={cn(
         "mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm",
-        className
+        className,
       )}
     >
       {children}

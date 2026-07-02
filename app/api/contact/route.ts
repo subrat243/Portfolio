@@ -1,9 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
 
 // Sends email using Resend API if RESEND_API_KEY is present
-async function sendWithResend({ name, email, subject, message }: { name: string; email: string; subject: string; message: string; }) {
+async function sendWithResend({
+  name,
+  email,
+  subject,
+  message,
+}: {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}) {
   const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) return { ok: false, error: "RESEND_API_KEY not configured" } as const;
+  if (!apiKey)
+    return { ok: false, error: "RESEND_API_KEY not configured" } as const;
 
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
@@ -42,7 +53,10 @@ export async function POST(req: NextRequest) {
     const sent = await sendWithResend({ name, email, subject, message });
     if (!sent.ok) {
       console.error("Email send failed:", sent.error);
-      return NextResponse.json({ message: "Email service not configured. Please set RESEND_API_KEY." }, { status: 500 });
+      return NextResponse.json(
+        { message: "Email service not configured. Please set RESEND_API_KEY." },
+        { status: 500 },
+      );
     }
 
     return NextResponse.json({ ok: true });
@@ -50,5 +64,3 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ message: "Invalid request" }, { status: 400 });
   }
 }
-
-

@@ -16,8 +16,6 @@ export const Hero = () => {
         <BackgroundRippleEffect rows={20} cols={30} cellSize={60} />
       </div>
 
-
-
       {/* Content - Top layer */}
       <div className="relative z-10 flex-1 flex items-center justify-center pointer-events-none">
         <HeroContent />

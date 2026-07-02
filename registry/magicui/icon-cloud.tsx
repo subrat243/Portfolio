@@ -24,7 +24,12 @@ export function IconCloud({ icons = [], images = [] }: IconCloudProps) {
   // Combine icons and images into a single list of React elements
   const allElements = useMemo(() => {
     const renderedImages = images.map((url, i) => (
-      <img key={`img-${i}`} src={url} alt="icon" className="w-12 h-12 rounded-full object-contain" />
+      <img
+        key={`img-${i}`}
+        src={url}
+        alt="icon"
+        className="w-12 h-12 rounded-full object-contain"
+      />
     ));
     return [...icons, ...renderedImages];
   }, [icons, images]);

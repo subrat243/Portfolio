@@ -29,7 +29,11 @@ export const Navbar = () => {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton variant="primary" href="#contact" className="bg-[#212A3E] text-white hover:bg-[#394867] shadow-md">
+            <NavbarButton
+              variant="primary"
+              href="#contact"
+              className="bg-[#212A3E] text-white hover:bg-[#394867] shadow-md"
+            >
               Contact
             </NavbarButton>
           </div>
@@ -77,4 +81,3 @@ export const Navbar = () => {
     </div>
   );
 };
-

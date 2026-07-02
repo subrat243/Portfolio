@@ -51,7 +51,9 @@ export const Security = () => {
           viewport={{ once: true }}
           className="text-[#394867] text-lg mt-4 mb-8 max-w-2xl mx-auto text-center pointer-events-auto font-medium"
         >
-          Strong security begins with the right mindset. These mindset guide how I approach system design, vulnerability assessment, and defensive security.
+          Strong security begins with the right mindset. These mindset guide how
+          I approach system design, vulnerability assessment, and defensive
+          security.
         </motion.p>
 
         {/* Security Practice Categories & Defense in Depth */}

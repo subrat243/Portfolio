@@ -39,7 +39,11 @@ export const metadata: Metadata = siteConfig;
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="en" className={cn(inter.variable, cedarville.variable)} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={cn(inter.variable, cedarville.variable)}
+      suppressHydrationWarning
+    >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -62,7 +66,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
       >
         <ErrorBoundary>
           <ClickSpark
-            sparkColor='#212A3E'
+            sparkColor="#212A3E"
             sparkSize={10}
             sparkRadius={15}
             sparkCount={8}

@@ -1,6 +1,5 @@
 "use client";
 
-
 import { motion } from "framer-motion";
 import VariableProximity from "@/components/ui/variable-proximity";
 import { useRef } from "react";
@@ -29,7 +28,7 @@ export const SkillText = () => {
         variants={slideInFromLeft(0.5)}
         className="mt-2 text-center mb-[4px] pointer-events-auto w-full"
         ref={containerRef}
-        style={{ position: 'relative' }}
+        style={{ position: "relative" }}
       >
         <VariableProximity
           label="What I Work With"
@@ -38,7 +37,7 @@ export const SkillText = () => {
           toFontVariationSettings="'wght' 1000, 'opsz' 40"
           containerRef={containerRef}
           radius={100}
-          falloff='linear'
+          falloff="linear"
         />
       </motion.div>
 

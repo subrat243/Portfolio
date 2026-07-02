@@ -21,10 +21,19 @@ export const KineticText: React.FC<KineticTextProps> = ({
   const characters = text.split("");
 
   return (
-    <Component className={cn("inline-flex flex-wrap cursor-default select-none", className)}>
+    <Component
+      className={cn(
+        "inline-flex flex-wrap cursor-default select-none",
+        className,
+      )}
+    >
       {characters.map((char, index) => {
         if (char === " ") {
-          return <span key={index} className="w-[0.3em]">&nbsp;</span>;
+          return (
+            <span key={index} className="w-[0.3em]">
+              &nbsp;
+            </span>
+          );
         }
 
         // Determine font weight and scale based on distance to hoveredIndex

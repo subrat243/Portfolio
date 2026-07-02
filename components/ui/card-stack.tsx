@@ -86,67 +86,79 @@ export const CardStack = ({
       </div>
 
       {/* Popup Modal for Certificate Image via React Portal */}
-      {mounted && typeof document !== "undefined" && createPortal(
-        <AnimatePresence>
-          {selectedCard && selectedCard.image && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setSelectedCard(null)}
-              className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/80 backdrop-blur-md p-4 pointer-events-auto"
-            >
+      {mounted &&
+        typeof document !== "undefined" &&
+        createPortal(
+          <AnimatePresence>
+            {selectedCard && selectedCard.image && (
               <motion.div
-                initial={{ scale: 0.9, opacity: 0, y: 20 }}
-                animate={{ scale: 1, opacity: 1, y: 0 }}
-                exit={{ scale: 0.9, opacity: 0, y: 20 }}
-                transition={{ type: "spring", damping: 20, stiffness: 300 }}
-                onClick={(e) => e.stopPropagation()}
-                className="bg-white rounded-2xl p-6 max-w-3xl w-full shadow-2xl border border-[#9BA4B5]/40 flex flex-col relative overflow-hidden pointer-events-auto"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setSelectedCard(null)}
+                className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/80 backdrop-blur-md p-4 pointer-events-auto"
               >
-                {/* Close Button */}
-                <button
-                  onClick={() => setSelectedCard(null)}
-                  className="absolute top-4 right-4 z-10 p-2 text-[#212A3E] hover:bg-[#212A3E]/10 rounded-full transition-colors duration-200 cursor-pointer pointer-events-auto"
-                  aria-label="Close modal"
+                <motion.div
+                  initial={{ scale: 0.9, opacity: 0, y: 20 }}
+                  animate={{ scale: 1, opacity: 1, y: 0 }}
+                  exit={{ scale: 0.9, opacity: 0, y: 20 }}
+                  transition={{ type: "spring", damping: 20, stiffness: 300 }}
+                  onClick={(e) => e.stopPropagation()}
+                  className="bg-white rounded-2xl p-6 max-w-3xl w-full shadow-2xl border border-[#9BA4B5]/40 flex flex-col relative overflow-hidden pointer-events-auto"
                 >
-                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
+                  {/* Close Button */}
+                  <button
+                    onClick={() => setSelectedCard(null)}
+                    className="absolute top-4 right-4 z-10 p-2 text-[#212A3E] hover:bg-[#212A3E]/10 rounded-full transition-colors duration-200 cursor-pointer pointer-events-auto"
+                    aria-label="Close modal"
+                  >
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
 
-                {/* Certificate Image Container */}
-                <div className="relative w-full aspect-[16/9] bg-[#F1F6F9] rounded-xl overflow-hidden mb-6 border border-[#9BA4B5]/20 flex items-center justify-center p-4">
-                  <Image
-                    src={selectedCard.image}
-                    alt={selectedCard.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 800px"
-                    className="object-contain p-2"
-                    priority
-                  />
-                </div>
-
-                {/* Certificate Details */}
-                <div className="flex flex-col text-left">
-                  <div className="flex items-center gap-3 mb-2">
-                    <h3 className="text-2xl font-bold text-[#212A3E]">
-                      {selectedCard.name}
-                    </h3>
-                    <span className="px-3 py-1 bg-[#394867]/10 border border-[#394867]/20 rounded-full text-xs font-semibold text-[#394867]">
-                      Verified
-                    </span>
+                  {/* Certificate Image Container */}
+                  <div className="relative w-full aspect-[16/9] bg-[#F1F6F9] rounded-xl overflow-hidden mb-6 border border-[#9BA4B5]/20 flex items-center justify-center p-4">
+                    <Image
+                      src={selectedCard.image}
+                      alt={selectedCard.name}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 800px"
+                      className="object-contain p-2"
+                      priority
+                    />
                   </div>
-                  <p className="text-base text-[#394867]/90 leading-relaxed">
-                    {selectedCard.designation}
-                  </p>
-                </div>
+
+                  {/* Certificate Details */}
+                  <div className="flex flex-col text-left">
+                    <div className="flex items-center gap-3 mb-2">
+                      <h3 className="text-2xl font-bold text-[#212A3E]">
+                        {selectedCard.name}
+                      </h3>
+                      <span className="px-3 py-1 bg-[#394867]/10 border border-[#394867]/20 rounded-full text-xs font-semibold text-[#394867]">
+                        Verified
+                      </span>
+                    </div>
+                    <p className="text-base text-[#394867]/90 leading-relaxed">
+                      {selectedCard.designation}
+                    </p>
+                  </div>
+                </motion.div>
               </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>,
-        document.body
-      )}
+            )}
+          </AnimatePresence>,
+          document.body,
+        )}
     </>
   );
 };

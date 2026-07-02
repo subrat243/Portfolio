@@ -228,7 +228,10 @@ export function Terminal({
     if (currentCommand.trim().toLowerCase() === "clear") {
       setLines([]);
     } else {
-      setLines((prev) => [...prev, { type: "command", content: currentCommand }]);
+      setLines((prev) => [
+        ...prev,
+        { type: "command", content: currentCommand },
+      ]);
     }
     setCurrentText("");
 

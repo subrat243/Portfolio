@@ -6,8 +6,7 @@ export const APP_CONFIG = {
   site: {
     name: "Subrat Samantaray Portfolio",
     title: "Subrat Samantaray | Cybersecurity Portfolio",
-    description:
-      "A Cybersecurity student.",
+    description: "A Cybersecurity student.",
     url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
     author: "Subrat Samantaray",
     email: "[EMAIL_ADDRESS]",
@@ -158,7 +157,18 @@ export const APP_CONFIG = {
       },
       {
         title: "Security Technologies",
-        items: ["SIEM", "IDS/IPS", "EDR", "VPN", "Antivirus", "Firewalls", "WAF", "Endpoint Security", "Threat Intelligence", "Zero Trust"],
+        items: [
+          "SIEM",
+          "IDS/IPS",
+          "EDR",
+          "VPN",
+          "Antivirus",
+          "Firewalls",
+          "WAF",
+          "Endpoint Security",
+          "Threat Intelligence",
+          "Zero Trust",
+        ],
       },
       {
         title: "Security Practices",
@@ -175,11 +185,28 @@ export const APP_CONFIG = {
       },
       {
         title: "Frameworks & Standards",
-        items: ["OWASP Top 10", "MITRE ATT&CK", "NIST CSF", "ISO 27001/27002", "PCI DSS", "HIPAA", "GDPR"],
+        items: [
+          "OWASP Top 10",
+          "MITRE ATT&CK",
+          "NIST CSF",
+          "ISO 27001/27002",
+          "PCI DSS",
+          "HIPAA",
+          "GDPR",
+        ],
       },
       {
         title: "Platforms & Virtualization",
-        items: ["Linux", "Windows", "WSL", "VirtualBox", "VMWare", "Docker", "Git", "GitHub"],
+        items: [
+          "Linux",
+          "Windows",
+          "WSL",
+          "VirtualBox",
+          "VMWare",
+          "Docker",
+          "Git",
+          "GitHub",
+        ],
       },
       {
         title: "Networking",

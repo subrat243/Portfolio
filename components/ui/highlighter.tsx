@@ -74,7 +74,17 @@ export const Highlighter: React.FC<HighlighterProps> = ({
         clearTimeout(timer);
       };
     }
-  }, [inView, isView, action, color, strokeWidth, animationDuration, iterations, padding, multiline]);
+  }, [
+    inView,
+    isView,
+    action,
+    color,
+    strokeWidth,
+    animationDuration,
+    iterations,
+    padding,
+    multiline,
+  ]);
 
   return (
     <span className="relative inline-block">

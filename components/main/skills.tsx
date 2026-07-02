@@ -7,7 +7,10 @@ import { HoverEffect } from "@/components/ui/card-hover-effect";
 
 export const Skills = () => {
   return (
-    <section id="skills" className="relative w-full py-20 px-8 lg:px-10 min-h-screen bg-transparent">
+    <section
+      id="skills"
+      className="relative w-full py-20 px-8 lg:px-10 min-h-screen bg-transparent"
+    >
       <div className="relative z-10 w-full max-w-7xl mx-auto">
         <SkillText />
 

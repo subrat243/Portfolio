@@ -19,10 +19,7 @@ export const BackgroundRippleEffect = ({
   const ref = useRef<any>(null);
 
   return (
-    <div
-      ref={ref}
-      className="absolute inset-0 h-full w-full"
-    >
+    <div ref={ref} className="absolute inset-0 h-full w-full">
       <div className="relative h-auto w-auto overflow-hidden">
         <div className="pointer-events-none absolute inset-0 z-[2] h-full w-full overflow-hidden" />
         <DivGrid
@@ -69,7 +66,7 @@ const DivGrid = ({
   borderColor = "#3f3f46",
   fillColor = "rgba(14,165,233,0.3)",
   clickedCell = null,
-  onCellClick = () => { },
+  onCellClick = () => {},
   interactive = true,
 }: DivGridProps) => {
   const cells = useMemo(
@@ -99,9 +96,9 @@ const DivGrid = ({
 
         const style: CellStyle = clickedCell
           ? {
-            "--delay": `${delay}ms`,
-            "--duration": `${duration}ms`,
-          }
+              "--delay": `${delay}ms`,
+              "--duration": `${duration}ms`,
+            }
           : {};
 
         return (
