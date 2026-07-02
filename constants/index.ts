@@ -1,4 +1,4 @@
-import { FaTelegram } from "react-icons/fa";
+import { FaTelegram, FaDiscord } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { RxGithubLogo, RxTwitterLogo, RxLinkedinLogo } from "react-icons/rx";
 import APP_CONFIG from "@/config/app-config";
@@ -46,6 +46,11 @@ export const FOOTER_DATA = [
         name: "Email",
         icon: MdEmail,
         link: APP_CONFIG.social.email,
+      },
+      {
+        name: "Discord",
+        icon: FaDiscord,
+        link: APP_CONFIG.social.discord,
       },
     ],
   },

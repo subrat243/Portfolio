@@ -40,6 +40,7 @@ export const APP_CONFIG = {
     github: "https://github.com/subrat243",
     telegram: "https://t.me/subrat243",
     email: "mailto:subratsamantaray43@gmail.com",
+    discord: "#",
   },
 
   // Assets Configuration
