@@ -98,7 +98,7 @@ const StellarSkeleton = () => (
         sizes="400px"
         className="object-contain object-center p-2"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent from-50% to-[#1a1f2e]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#1a1f2e]" />
     </div>
     <div className="flex items-center gap-3 px-4 pb-4 mt-auto">
       <div>
