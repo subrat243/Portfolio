@@ -30,6 +30,7 @@ export const APP_CONFIG = {
       { title: "Projects", href: "#projects", isExternal: false },
       { title: "Achievements", href: "#achievements", isExternal: false },
       { title: "Security", href: "#security", isExternal: false },
+      { title: "Contact", href: "#contact", isExternal: false },
     ],
   },
 

@@ -11,7 +11,7 @@ import {
   MobileNavToggle,
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
-import { NAV_LINKS } from "@/constants";
+import { NAV_LINKS, CV_DOWNLOAD_URL } from "@/constants";
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -27,15 +27,18 @@ export const Navbar = () => {
         {/* Desktop Navigation */}
         <NavBody>
           <NavbarLogo />
-          <NavItems items={navItems}>
+          <NavItems items={navItems} />
+          <div className="flex items-center gap-4 z-50">
             <NavbarButton
               variant="primary"
-              href="#contact"
-              className="bg-[#212A3E] text-white hover:bg-[#394867] shadow-md ml-2"
+              href={CV_DOWNLOAD_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#212A3E] text-white hover:bg-[#394867] shadow-md"
             >
-              Contact
+              Download CV
             </NavbarButton>
-          </NavItems>
+          </div>
         </NavBody>
 
         {/* Mobile Navigation */}
@@ -66,12 +69,14 @@ export const Navbar = () => {
             ))}
             <div className="flex w-full flex-col gap-4 pt-4">
               <NavbarButton
-                href="#contact"
+                href={CV_DOWNLOAD_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
                 className="w-full text-center bg-[#212A3E] text-white hover:bg-[#394867]"
               >
-                Contact
+                Download CV
               </NavbarButton>
             </div>
           </MobileNavMenu>
