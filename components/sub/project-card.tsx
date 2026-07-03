@@ -57,8 +57,6 @@ export const ProjectCard = ({
 
         {/* Bottom Banner (Dark) */}
         <div className="bg-[#212A3E] px-6 lg:px-8 pb-6 lg:pb-8 pt-5 relative z-10 flex flex-col justify-end transition-colors duration-500 group-hover:bg-[#151b29] mt-auto rounded-b-2xl">
-          {/* Layered Straight Divider */}
-          <div className="absolute left-0 right-0 bottom-full w-full h-4 bg-[#394867]/80 group-hover:bg-[#212A3E]/80 transition-colors duration-500 z-0" />
           <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-gradient-to-tr from-[#9BA4B5]/10 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700 ease-out" />
 
           {/* Technology Tags */}
