@@ -54,10 +54,10 @@ export const Projects = () => {
 
       {/* Infinite Moving Project Cards - Edge to Edge */}
       <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 1, ease: "easeOut", delay: 0.1 }}
         className="w-full relative z-20 mt-4"
       >
         <InfiniteMovingProjects
