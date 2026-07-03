@@ -56,7 +56,21 @@ export const ProjectCard = ({
         </div>
 
         {/* Bottom Banner (Dark) */}
-        <div className="bg-[#212A3E] p-6 lg:p-8 pt-6 relative z-10 flex flex-col justify-end transition-colors duration-500 group-hover:bg-[#151b29] mt-auto">
+        <div className="bg-[#212A3E] p-6 lg:p-8 pt-6 relative z-10 flex flex-col justify-end transition-colors duration-500 group-hover:bg-[#151b29] mt-auto rounded-b-2xl">
+          {/* Wavy Divider */}
+          <div className="absolute left-0 right-0 bottom-full w-full overflow-hidden leading-none z-0 translate-y-[1px]">
+            <svg
+              className="relative block w-full h-8 md:h-10 text-[#212A3E] group-hover:text-[#151b29] transition-colors duration-500"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1440 320"
+              preserveAspectRatio="none"
+            >
+              <path
+                fill="currentColor"
+                d="M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,165.3C672,171,768,213,864,224C960,235,1056,213,1152,192C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+              ></path>
+            </svg>
+          </div>
           <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-gradient-to-tr from-[#9BA4B5]/10 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700 ease-out" />
 
           {/* Technology Tags */}
@@ -65,13 +79,13 @@ export const ProjectCard = ({
               {technologies.slice(0, 3).map((tech) => (
                 <span
                   key={tech}
-                  className="px-2.5 py-1 text-[11px] font-semibold tracking-wide uppercase rounded-md border transition-colors duration-300 bg-cyan-500/10 text-cyan-50 border-cyan-500/30 group-hover:border-cyan-400/50 group-hover:bg-cyan-500/20 backdrop-blur-md"
+                  className="px-2.5 py-1 text-[11px] font-semibold tracking-wide uppercase rounded-md border transition-colors duration-300 bg-white/10 text-white border-white/10 group-hover:border-white/20 group-hover:bg-white/20 backdrop-blur-md"
                 >
                   {tech}
                 </span>
               ))}
               {technologies.length > 3 && (
-                <span className="px-2.5 py-1 bg-cyan-500/10 text-cyan-50 text-[11px] font-semibold tracking-wide uppercase rounded-md border border-cyan-500/30 backdrop-blur-md">
+                <span className="px-2.5 py-1 bg-white/10 text-white text-[11px] font-semibold tracking-wide uppercase rounded-md border border-white/10 backdrop-blur-md">
                   +{technologies.length - 3}
                 </span>
               )}
@@ -79,7 +93,7 @@ export const ProjectCard = ({
           )}
 
           {/* Action Footer */}
-          <div className="flex items-center justify-between pt-4 border-t border-cyan-500/30 relative z-10">
+          <div className="flex items-center justify-between pt-4 border-t border-white/10 relative z-10">
             <span className="text-sm text-white font-semibold group-hover:translate-x-1 transition-transform duration-300">
               View Project
             </span>
@@ -105,7 +119,7 @@ export const ProjectCard = ({
             initial={{ scaleX: 0 }}
             whileHover={{ scaleX: 1 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-cyan-400 to-blue-500 origin-left z-20"
+            className="absolute bottom-0 left-0 right-0 h-[3px] bg-white/80 origin-left z-20"
           />
         </div>
       </motion.div>
