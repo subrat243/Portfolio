@@ -36,7 +36,7 @@ export const Navbar = () => {
               rel="noopener noreferrer"
               className="bg-[#212A3E] text-white hover:bg-[#394867] shadow-md"
             >
-              Download CV
+              Resume
             </NavbarButton>
           </div>
         </NavBody>

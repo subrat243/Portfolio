@@ -42,7 +42,7 @@ export const Footer = () => {
               </motion.div>
               <p className="text-[#394867] mb-6 leading-relaxed text-base md:text-lg text-left">
                 Interested in penetration testing, security research, or
-                building secure applications? I'm always open to collaborating
+                building secure applications? I&apos;m always open to collaborating
                 on impactful projects, contributing to open source, and solving
                 real-world security challenges.
               </p>

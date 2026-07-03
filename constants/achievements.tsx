@@ -104,7 +104,7 @@ export const ACHIEVEMENTS_DATA = [
         rel="noopener noreferrer"
         className="hover:underline decoration-[#9BA4B5] underline-offset-4"
       >
-        0xKaizen — TryHackMe Profile
+        TryHackMe Profile
       </a>
     ),
     description:
@@ -116,7 +116,7 @@ export const ACHIEVEMENTS_DATA = [
   {
     title: "Credential Vault",
     description:
-      "Earned recognized certifications and completed a cybersecurity internship that reinforce my knowledge in networking, cybersecurity fundamentals, and offensive security while supporting my commitment to continuous learning.",
+      "Earned recognized certifications and cybersecurity internship that reinforce my knowledge in networking, cybersecurity fundamentals, and offensive security while supporting my commitment to continuous learning.",
     icon: AcademicCapIcon,
     tag: "Certification & Labs",
   },
@@ -129,7 +129,7 @@ export const ACHIEVEMENTS_DATA = [
     isStellar: true,
   },
   {
-    title: "#10 Rank — DEF CON Pune CTF",
+    title: "DEF CON Pune CTF",
     description:
       "Captured 17/31 flags and scored 5020/9410 points in the DEF CON Pune CTF (Jeopardy format), competing solo against 204 players. Ranked #10 in the team leaderboard.",
     icon: TrophyIcon,

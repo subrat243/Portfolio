@@ -58,16 +58,11 @@ export const Projects = () => {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8, delay: 0.3 }}
-        className="w-full relative z-20 mt-4 flex flex-col gap-6"
+        className="w-full relative z-20 mt-4"
       >
         <InfiniteMovingProjects
           items={PROJECTS}
           direction="right"
-          speed="slow"
-        />
-        <InfiniteMovingProjects
-          items={PROJECTS}
-          direction="left"
           speed="slow"
         />
       </motion.div>
