@@ -57,15 +57,24 @@ export const ProjectCard = ({
 
         {/* Bottom Banner (Dark) */}
         <div className="bg-[#212A3E] p-6 lg:p-8 pt-6 relative z-10 flex flex-col justify-end transition-colors duration-500 group-hover:bg-[#151b29] mt-auto rounded-b-2xl">
-          {/* Wavy Divider */}
+          {/* Layered Wavy Divider */}
           <div className="absolute left-0 right-0 bottom-full w-full overflow-hidden leading-none z-0 translate-y-[1px]">
             <svg
-              className="relative block w-full h-8 md:h-10 text-[#212A3E] group-hover:text-[#151b29] transition-colors duration-500"
+              className="relative block w-full h-10 md:h-12 transition-colors duration-500"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 1440 320"
               preserveAspectRatio="none"
             >
+              {/* Lighter Wave (Back) */}
               <path
+                className="text-[#394867] group-hover:text-[#212A3E] transition-colors duration-500"
+                fill="currentColor"
+                fillOpacity="0.8"
+                d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,160C960,181,1056,203,1152,192C1248,181,1344,139,1392,117.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+              ></path>
+              {/* Darker Wave (Front) */}
+              <path
+                className="text-[#212A3E] group-hover:text-[#151b29] transition-colors duration-500"
                 fill="currentColor"
                 d="M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,165.3C672,171,768,213,864,224C960,235,1056,213,1152,192C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
               ></path>
