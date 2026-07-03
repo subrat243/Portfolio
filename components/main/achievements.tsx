@@ -28,8 +28,8 @@ const Skeleton = ({ tag, Icon }: { tag: string; Icon: any }) => (
 );
 
 const THMSkeleton = () => (
-  <div className="flex flex-1 w-full h-full min-h-[7rem] rounded-xl bg-[#1a1f2e] border border-[#9BA4B5]/20 flex flex-col overflow-hidden relative">
-    <div className="relative w-full h-36 shrink-0 overflow-hidden bg-slate-200">
+  <div className="flex flex-1 w-full h-full min-h-[7rem] rounded-xl bg-slate-200 border border-[#9BA4B5]/20 flex flex-col overflow-hidden relative">
+    <div className="relative w-full flex-1 min-h-[8rem] overflow-hidden">
       <Image
         src="/achieve/thm.png"
         alt="TryHackMe Profile"
@@ -39,7 +39,7 @@ const THMSkeleton = () => (
       />
     </div>
     {/* Stats */}
-    <div className="flex items-center gap-3 p-4 mt-auto">
+    <div className="flex items-center gap-3 p-3 mt-auto bg-[#1a1f2e]">
       <div>
         <p className="text-white font-bold text-sm leading-none">0xKaizen</p>
         <p className="text-[#9BA4B5] text-[10px] font-mono mt-0.5">
@@ -47,7 +47,9 @@ const THMSkeleton = () => (
         </p>
       </div>
       <div className="ml-auto text-right">
-        <p className="text-[#9BA4B5] text-[10px] font-mono">TryHackMe Profile</p>
+        <p className="text-[#9BA4B5] text-[10px] font-mono">
+          TryHackMe Profile
+        </p>
         <p className="text-[#9BA4B5] text-[10px] font-mono">22 Badges</p>
       </div>
     </div>
@@ -55,9 +57,9 @@ const THMSkeleton = () => (
 );
 
 const CTFSkeleton = () => (
-  <div className="flex flex-1 w-full h-full min-h-[7rem] rounded-xl bg-[#1a1f2e] border border-[#9BA4B5]/20 flex flex-col overflow-hidden relative">
+  <div className="flex flex-1 w-full h-full min-h-[7rem] rounded-xl bg-black border border-[#9BA4B5]/20 flex flex-col overflow-hidden relative">
     {/* Certificate Image */}
-    <div className="relative w-full h-36 shrink-0 overflow-hidden">
+    <div className="relative w-full flex-1 min-h-[8rem] overflow-hidden">
       <Image
         src="/achieve/defcon-pune.png"
         alt="DEF CON Pune CTF"
@@ -67,7 +69,7 @@ const CTFSkeleton = () => (
       />
     </div>
     {/* Header: rank */}
-    <div className="flex items-center gap-3 p-4 mt-auto">
+    <div className="flex items-center gap-3 p-3 mt-auto bg-[#1a1f2e]">
       <div>
         <p className="text-white font-bold text-sm leading-none">kaizen</p>
         <p className="text-[#9BA4B5] text-[10px] font-mono mt-0.5">
@@ -83,8 +85,8 @@ const CTFSkeleton = () => (
 );
 
 const StellarSkeleton = () => (
-  <div className="flex flex-1 w-full h-full min-h-[7rem] rounded-xl bg-[#1a1f2e] border border-[#9BA4B5]/20 flex flex-col overflow-hidden relative">
-    <div className="relative w-full h-36 shrink-0 overflow-hidden bg-white">
+  <div className="flex flex-1 w-full h-full min-h-[7rem] rounded-xl bg-white border border-[#9BA4B5]/20 flex flex-col overflow-hidden relative">
+    <div className="relative w-full flex-1 min-h-[8rem] overflow-hidden">
       <Image
         src="/achieve/stellar.png"
         alt="Stellar Hackathon"
@@ -93,7 +95,7 @@ const StellarSkeleton = () => (
         className="object-contain object-center p-2"
       />
     </div>
-    <div className="flex items-center gap-3 p-4 mt-auto">
+    <div className="flex items-center gap-3 p-3 mt-auto bg-[#1a1f2e]">
       <div>
         <p className="text-[#9BA4B5] text-[10px] font-mono mt-0.5">
           RANK: <span className="text-yellow-500">#9</span>
