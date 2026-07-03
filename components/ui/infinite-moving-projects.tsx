@@ -97,7 +97,6 @@ export const InfiniteMovingProjects = ({
           >
             <div className="w-full transition-all duration-300 group-hover:-translate-y-2 group-hover:scale-[1.02]">
               <ProjectCard
-                src={item.image}
                 title={item.title}
                 description={item.description}
                 link={item.link}
