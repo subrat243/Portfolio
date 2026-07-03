@@ -65,13 +65,13 @@ export const ProjectCard = ({
               {technologies.slice(0, 3).map((tech) => (
                 <span
                   key={tech}
-                  className="px-2.5 py-1 text-[11px] font-semibold tracking-wide uppercase rounded-md border transition-colors duration-300 bg-white/10 text-white border-white/10 group-hover:border-white/20 group-hover:bg-white/20 backdrop-blur-md"
+                  className="px-2.5 py-1 text-[11px] font-semibold tracking-wide uppercase rounded-md border transition-colors duration-300 bg-cyan-500/10 text-cyan-50 border-cyan-500/30 group-hover:border-cyan-400/50 group-hover:bg-cyan-500/20 backdrop-blur-md"
                 >
                   {tech}
                 </span>
               ))}
               {technologies.length > 3 && (
-                <span className="px-2.5 py-1 bg-white/10 text-white text-[11px] font-semibold tracking-wide uppercase rounded-md border border-white/10 backdrop-blur-md">
+                <span className="px-2.5 py-1 bg-cyan-500/10 text-cyan-50 text-[11px] font-semibold tracking-wide uppercase rounded-md border border-cyan-500/30 backdrop-blur-md">
                   +{technologies.length - 3}
                 </span>
               )}
@@ -79,7 +79,7 @@ export const ProjectCard = ({
           )}
 
           {/* Action Footer */}
-          <div className="flex items-center justify-between pt-4 border-t border-white/10 relative z-10">
+          <div className="flex items-center justify-between pt-4 border-t border-cyan-500/30 relative z-10">
             <span className="text-sm text-white font-semibold group-hover:translate-x-1 transition-transform duration-300">
               View Project
             </span>
@@ -105,7 +105,7 @@ export const ProjectCard = ({
             initial={{ scaleX: 0 }}
             whileHover={{ scaleX: 1 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="absolute bottom-0 left-0 right-0 h-[3px] bg-white/80 origin-left z-20"
+            className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-cyan-400 to-blue-500 origin-left z-20"
           />
         </div>
       </motion.div>
