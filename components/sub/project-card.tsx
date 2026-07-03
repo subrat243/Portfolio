@@ -1,12 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 
 type ProjectCardProps = {
-  src: string;
   title: string;
   description: string;
   link: string;
@@ -14,7 +12,6 @@ type ProjectCardProps = {
 };
 
 export const ProjectCard = ({
-  src,
   title,
   description,
   link,
@@ -33,34 +30,6 @@ export const ProjectCard = ({
         transition={{ duration: 0.3, ease: "easeOut" }}
         className="relative overflow-hidden rounded-xl shadow-sm border border-[#9BA4B5]/40 bg-white hover:border-[#212A3E]/60 transition-all duration-300 h-full flex flex-col"
       >
-        {/* Image Container */}
-        <div className="relative overflow-hidden aspect-[16/10] flex-shrink-0">
-          <Image
-            src={src}
-            alt={title}
-            width={600}
-            height={375}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            priority={false}
-            quality={85}
-          />
-
-          {/* Image Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#212A3E]/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-          {/* External Link Icon */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8, x: 8 }}
-            whileHover={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute top-4 right-4 group-hover:opacity-100 opacity-0"
-          >
-            <div className="p-2.5 bg-[#212A3E]/70 backdrop-blur-md rounded-full border border-[#9BA4B5]/20 shadow-sm hover:bg-[#212A3E]/90 transition-colors duration-200">
-              <ArrowTopRightOnSquareIcon className="w-4 h-4 text-white" />
-            </div>
-          </motion.div>
-        </div>
-
         {/* Content Container */}
         <div className="p-5 lg:p-6 flex flex-col flex-grow">
           {/* Title */}
@@ -75,7 +44,7 @@ export const ProjectCard = ({
 
           {/* Technology Tags */}
           {technologies.length > 0 && (
-            <div className="flex flex-wrap gap-2 mb-4 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100">
+            <div className="flex flex-wrap gap-2 mb-4 transition-all duration-300">
               {technologies.slice(0, 3).map((tech, index) => (
                 <span
                   key={tech}
@@ -93,7 +62,7 @@ export const ProjectCard = ({
           )}
 
           {/* Action Footer */}
-          <div className="flex items-center justify-between mt-auto pt-2 border-t border-[#9BA4B5]/20 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-150">
+          <div className="flex items-center justify-between mt-auto pt-2 border-t border-[#9BA4B5]/20 transition-all duration-300">
             <span className="text-xs text-[#9BA4B5] font-medium">
               View Project
             </span>
