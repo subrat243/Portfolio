@@ -41,7 +41,7 @@ export const APP_CONFIG = {
     github: "https://github.com/subrat243",
     telegram: "https://t.me/subrat243",
     email: "mailto:subratsamantaray43@gmail.com",
-    discord: "#",
+    discord: "https://discord.com/users/954625259582132255",
   },
 
   // Assets Configuration
@@ -57,30 +57,30 @@ export const APP_CONFIG = {
   // CV Download Configuration
   cv: {
     downloadUrl:
-      "https://drive.google.com/file/d/1WfqN880l_3L2lpYShY7ugSLNm_NFchB_/view?usp=sharing",
+      "https://drive.google.com/file/d/1hYF_Q7p93-XXkqfjez1tjtIbIFHiIdh6/view?usp=sharing",
     directDownloadUrl:
-      "https://drive.google.com/file/d/1WfqN880l_3L2lpYShY7ugSLNm_NFchB_/view?usp=drive_link",
+      "https://drive.google.com/file/d/1hYF_Q7p93-XXkqfjez1tjtIbIFHiIdh6/view?usp=sharing",
     filename: "Subrat_Samantaray_Resume.pdf",
   },
 
   // Projects Configuration
   projects: [
     {
-      id: "vuln-scanner",
-      title: "Automated Vulnerability Scanning Tool",
+      id: "netvuln",
+      title: "NetVuln - Network Vulnerability Scanner",
       description:
-        "Python-based tool that automates vulnerability scanning using Nmap. It scans targets (IP or domain) for open ports, detects services, and checks for known vulnerabilities.",
-      image: "/projects/Attack.jpg",
+        "NetVuln is a Python-based network vulnerability scanner that automates vulnerability scanning using Nmap. It scans targets (IP or domain) for open ports, detects services, and checks for known vulnerabilities.",
+      image: "/projects/netvuln.jpg",
       link: "https://github.com/subrat243/Vuln-Scanner",
       technologies: ["Python", "NMAP", "Security"],
       featured: true,
     },
     {
-      id: "deauth-dos-tool",
+      id: "deauth",
       title: "DeAuth - The Network Stress Testing Tool",
       description:
         "A lightweight yet powerful network stress testing tool built with Scapy, designed to simulate diverse traffic patterns and protocols for both quick assessments and detailed network analysis.",
-      image: "/projects/Exploitation.svg",
+      image: "/projects/deauth.jpg",
       link: "https://github.com/subrat243/DeAuth",
       technologies: ["Python", "Scapy", "Network Security"],
       featured: true,
@@ -90,49 +90,59 @@ export const APP_CONFIG = {
       title: "Wifi Deauthentication Toolkit",
       description:
         "A Bash script for performing Wi-Fi deauthentication attacks using the Aircrack-ng suite. This tool is designed for educational purposes and authorized penetration testing.",
-      image: "/projects/Network-monitoring.svg",
+      image: "/projects/wifi-deauth.jpg",
       link: "https://github.com/subrat243/Wifi-Deauthentication-Tool",
       technologies: ["Network Analysis", "Security", "Bash"],
       featured: true,
     },
     {
       id: "hashify",
-      title: "Hashify - Hash Identifier Tool",
+      title: "Hashify - Hash Type Identifier Tool",
       description:
         "Script to identifies hash types using a comprehensive library of regular expressions, combining the modern structure of hashify with the extensive algorithm list.",
-      image: "/projects/Data-security.svg",
+      image: "/projects/hashify.jpg",
       link: "https://github.com/subrat243/Hashify",
       technologies: ["Python", "Hash", "Cryptography", "Security"],
       featured: true,
     },
     {
-      id: "port-scanner",
-      title: "Advanced Port Scanner & Service Detector",
+      id: "shadow-flow",
+      title: "Shadow Flow - Automated Pentest Toolkit",
       description:
-        "High-performance asynchronous port scanner engineered in Python. It rapidly detects available network services, identifies banner grabs, and maps potential attack surfaces.",
-      image: "/projects/Attack.jpg",
-      link: "https://github.com/subrat243/Port-Scanner",
+        "An automated penetration testing toolkit for streamlined web application security assessments and vulnerability discovery.",
+      image: "/projects/shadow-flow.jpg",
+      link: "https://github.com/subrat243/Shadow-Flow",
       technologies: ["Python", "Networking", "Socket", "Security"],
       featured: true,
     },
     {
-      id: "log-analyzer",
-      title: "Intrusion Detection & Log Analyzer",
+      id: "dark-walker",
+      title: "Dark Walker - DarkWeb Monitoring Tool",
       description:
-        "Automated log analysis and parsing toolkit designed to analyze web server logs for SQL Injection, XSS attempts, and anomalous traffic patterns in real-time.",
-      image: "/projects/Network-monitoring.svg",
-      link: "https://github.com/subrat243/Log-Analyzer",
-      technologies: ["Python", "Regex", "SIEM", "Security"],
+        "This project is a cybersecurity initiative that monitors the dark web for sensitive information such as compromised credentials, leaked data, and other illicit activities.",
+      image: "/projects/dark-walker.jpg",
+      link: "https://github.com/subrat243/Dark-Walker",
+      technologies: ["Python", "Web Scraping", "Security"],
       featured: true,
     },
     {
-      id: "crypto-utility",
-      title: "Secure File Encryption Utility",
+      id: "intelify",
+      title: "Intelify - Threat Intelligence Platform",
       description:
-        "Advanced cryptographic tool implementing AES-256 encryption and key derivation functions to protect sensitive files and securely manage cryptographic keys.",
-      image: "/projects/Data-security.svg",
-      link: "https://github.com/subrat243/Crypto-Utility",
-      technologies: ["Python", "Cryptography", "AES-256", "Security"],
+        "This project is a cybersecurity initiative that collects and analyzes threat intelligence from various sources, providing real-time threat detection and mitigation capabilities.",
+      image: "/projects/intelify.jpg",
+      link: "https://github.com/subrat243/Intelify",
+      technologies: ["Python", "Web Scraping", "Security"],
+      featured: true,
+    },
+    {
+      id: "phisherman",
+      title: "Phisherman - Phishing Detection System",
+      description:
+        "Phisherman is an AI-powered anti-phishing tool that utilizes machine learning to detect and prevent phishing attacks, protecting users from fraudulent websites and malicious links.",
+      image: "/projects/phisherman.jpg",
+      link: "https://github.com/subrat243/Phisherman",
+      technologies: ["Python", "Machine Learning", "Security"],
       featured: true,
     },
   ],
