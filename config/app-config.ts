@@ -60,7 +60,7 @@ export const APP_CONFIG = {
       "https://drive.google.com/file/d/1hYF_Q7p93-XXkqfjez1tjtIbIFHiIdh6/view?usp=sharing",
     directDownloadUrl:
       "https://drive.google.com/file/d/1hYF_Q7p93-XXkqfjez1tjtIbIFHiIdh6/view?usp=sharing",
-    filename: "Subrat_Samantaray_Resume.pdf",
+    filename: "Subrat_Samantaray_Resume_Penetration_Tester.pdf",
   },
 
   // Projects Configuration
