@@ -3,7 +3,7 @@
 import { Points, PointMaterial } from "@react-three/drei";
 import { Canvas, type PointsProps, useFrame } from "@react-three/fiber";
 import * as random from "maath/random";
-import { useState, useRef, Suspense } from "react";
+import { useState, useRef, Suspense, useEffect } from "react";
 import type { Points as PointsType } from "three";
 
 export const StarBackground = (props: PointsProps) => {
@@ -40,12 +40,32 @@ export const StarBackground = (props: PointsProps) => {
   );
 };
 
-export const StarsCanvas = () => (
-  <div className="w-full h-full fixed inset-0 z-[5] pointer-events-none opacity-20">
-    <Canvas camera={{ position: [0, 0, 1] }} style={{ pointerEvents: "none" }}>
-      <Suspense fallback={null}>
-        <StarBackground />
-      </Suspense>
-    </Canvas>
-  </div>
-);
+export const StarsCanvas = () => {
+  const [webGLAvailable, setWebGLAvailable] = useState(false);
+
+  useEffect(() => {
+    const canvas = document.createElement("canvas");
+    const context =
+      canvas.getContext("webgl2") ?? canvas.getContext("webgl");
+
+    if (context) {
+      context.getExtension("WEBGL_lose_context")?.loseContext();
+      setWebGLAvailable(true);
+    }
+  }, []);
+
+  return (
+    <div className="w-full h-full fixed inset-0 z-[5] pointer-events-none opacity-20">
+      {webGLAvailable && (
+        <Canvas
+          camera={{ position: [0, 0, 1] }}
+          style={{ pointerEvents: "none" }}
+        >
+          <Suspense fallback={null}>
+            <StarBackground />
+          </Suspense>
+        </Canvas>
+      )}
+    </div>
+  );
+};
