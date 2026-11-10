@@ -1,5 +1,5 @@
 {
-  "name": "space-portfolio",
+  "name": "Portfolio",
   "version": "1.0.1",
   "private": true,
   "scripts": {
@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "author": "Sanidhya Kumar Verma <sanidhya.verma12345@gmail.com> (https://github.com/sanidhyy)",
-  "description": "Welcome to my full stack Next.js 14 space portfolio.",
+  "author": "Subrat Samantaray <subratsamantaray43@gmail.com> (https://github.com/subrat243)",
+  "description": "Welcome to my portfolio.",
   "keywords": [
     "reactjs",
     "nextjs",
@@ -44,23 +44,13 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sanidhyy/space-portfolioit.git"
+    "url": "git+https://github.com/subrat243/Portfolio"
   },
-  "homepage": "https://github.com/sanidhyy/space-portfolio#readme",
+  "homepage": "https://github.com/subrat243/Portfolio#readme",
   "bugs": {
-    "url": "https://github.com/sanidhyy/space-portfolio/issues",
-    "email": "sanidhya.verma12345@gmail.com"
+    "url": "https://github.com/subrat243/Portfolio/issues",
+    "email": "subratsamantaray43@gmail.com"
   },
-  "funding": [
-    {
-      "type": "patreon",
-      "url": "https://www.patreon.com/sanidhy"
-    },
-    {
-      "type": "Buy me a coffee",
-      "url": "https://www.buymeacoffee.com/sanidhy"
-    }
-  ],
   "dependencies": {
     "@heroicons/react": "^2.1.1",
     "@react-three/drei": "^9.93.0",
