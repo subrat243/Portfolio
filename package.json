@@ -1,55 +1,11 @@
 {
   "name": "Portfolio",
-  "version": "1.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
-  },
-  "author": "Subrat Samantaray <subratsamantaray43@gmail.com> (https://github.com/subrat243)",
-  "description": "Welcome to my portfolio.",
-  "keywords": [
-    "reactjs",
-    "nextjs",
-    "vercel",
-    "react",
-    "space-portfolio",
-    "portfolio",
-    "react-icons",
-    "cn",
-    "clsx",
-    "3d-portfolio",
-    "3d-website",
-    "sonner",
-    "framer-motion",
-    "motion",
-    "animation",
-    "heroicons",
-    "next-themes",
-    "postcss",
-    "prettier",
-    "react-dom",
-    "tailwindcss",
-    "tailwindcss-animate",
-    "ui/ux",
-    "js",
-    "javascript",
-    "typescript",
-    "eslint",
-    "html",
-    "css"
-  ],
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/subrat243/Portfolio"
-  },
-  "homepage": "https://github.com/subrat243/Portfolio#readme",
-  "bugs": {
-    "url": "https://github.com/subrat243/Portfolio/issues",
-    "email": "subratsamantaray43@gmail.com"
   },
   "dependencies": {
     "@heroicons/react": "^2.1.1",
@@ -83,9 +39,5 @@
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
-  },
-  "main": "next.config.js",
-  "directories": {
-    "lib": "lib"
   }
 }
